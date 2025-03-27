@@ -7,22 +7,9 @@ import ModernGL as GL
 
 function create_main_menu()
     if CImGui.BeginMainMenuBar()
-        if CImGui.BeginMenu("Edit")
-            if CImGui.MenuItem("Undo", "CTRL+Z")
-                @info "Trigger Undo | find me here: $(@__FILE__) at line $(@__LINE__)"
-            end
-            if CImGui.MenuItem("Redo", "CTRL+Y", false, false)  # disabled item
-                @info "Trigger Redo | find me here: $(@__FILE__) at line $(@__LINE__)"
-            end
-            CImGui.Separator()
-            if CImGui.MenuItem("Cut", "CTRL+X")
-                @info "Trigger Cut | find me here: $(@__FILE__) at line $(@__LINE__)"
-            end
-            if CImGui.MenuItem("Copy", "CTRL+C")
-                @info "Trigger Copy | find me here: $(@__FILE__) at line $(@__LINE__)"
-            end
-            if CImGui.MenuItem("Paste", "CTRL+V")
-                @info "Trigger Paste | find me here: $(@__FILE__) at line $(@__LINE__)"
+        if CImGui.BeginMenu("File")
+            if CImGui.MenuItem("Exit", "CTRL+Z")
+                @info "Trigger Exit | find me here: $(@__FILE__) at line $(@__LINE__)"
             end
             CImGui.EndMenu()
         end
@@ -54,7 +41,7 @@ engine = nothing
 
 CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
     create_main_menu()
-    
+
 end
 
 println("hehe")
