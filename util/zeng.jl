@@ -5,6 +5,12 @@ using CImGui.CSyntax
 import GLFW
 import ModernGL as GL
 
+function setup_fonts()
+    fonts_dir = "/Users/lihuang/Library/Fonts"
+    fonts = unsafe_load(CImGui.GetIO().Fonts)
+    CImGui.AddFontFromFileTTF(fonts, joinpath(fonts_dir, "FiraCode-Regular.ttf"), 16)
+end
+
 function create_main_menu()
     if CImGui.BeginMainMenuBar()
         if CImGui.BeginMenu("File")
@@ -46,9 +52,7 @@ if unsafe_load(io.ConfigFlags) & ImGuiConfigFlags_ViewportsEnable == ImGuiConfig
     CImGui.c_set!(style.Colors, CImGui.ImGuiCol_WindowBg, ImVec4(col.x, col.y, col.z, 1.0f0))
 end
 
-fonts_dir = "/Users/lihuang/Library/Fonts"
-fonts = unsafe_load(CImGui.GetIO().Fonts)
-CImGui.AddFontFromFileTTF(fonts, joinpath(fonts_dir, "FiraCode-Regular.ttf"), 16)
+setup_fonts()
 
 clear_color = Cfloat[0.45, 0.55, 0.60, 1.00]
 engine = nothing
