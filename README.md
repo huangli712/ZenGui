@@ -1,12 +1,12 @@
 # ZenGui
 
-ZenApps provides some basic applications which are based on the ZenCore library. Actually, it is one of the core components of the [**Zen**](https://github.com/huangli712/Zen) DFT + DMFT computation framework. It should be integrated with the Zen framework, working together with the other components.
+ZenGui is the graphic user interface for the [**Zen**](https://github.com/huangli712/Zen) DFT + DMFT computation framework. In other words, it should not be used separately.
 
-This package is currently under developement. **IT DOESN'T WORK NOW!**
+This package is currently under heavy developement. **PLEASE USE IT AT YOUR OWN RISK!**
 
 ## Version
 
-v0.0.1-devel.210622
+v0.0.2-devel.250327
 
 ## License
 
