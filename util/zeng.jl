@@ -46,16 +46,15 @@ if unsafe_load(io.ConfigFlags) & ImGuiConfigFlags_ViewportsEnable == ImGuiConfig
     CImGui.c_set!(style.Colors, CImGui.ImGuiCol_WindowBg, ImVec4(col.x, col.y, col.z, 1.0f0))
 end
 
+fonts_dir = "/Users/lihuang/Library/Fonts"
 fonts = unsafe_load(CImGui.GetIO().Fonts)
-default_font = CImGui.AddFontDefault(fonts)
-@show fonts, default_font
+CImGui.AddFontFromFileTTF(fonts, joinpath(fonts_dir, "FiraCode-Regular.ttf"), 16)
 
 clear_color = Cfloat[0.45, 0.55, 0.60, 1.00]
 engine = nothing
 
 CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
     create_main_menu()
-
 end
 
 println("hehe")
