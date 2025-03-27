@@ -46,6 +46,10 @@ if unsafe_load(io.ConfigFlags) & ImGuiConfigFlags_ViewportsEnable == ImGuiConfig
     CImGui.c_set!(style.Colors, CImGui.ImGuiCol_WindowBg, ImVec4(col.x, col.y, col.z, 1.0f0))
 end
 
+fonts = unsafe_load(CImGui.GetIO().Fonts)
+default_font = CImGui.AddFontDefault(fonts)
+@show fonts, default_font
+
 clear_color = Cfloat[0.45, 0.55, 0.60, 1.00]
 engine = nothing
 
