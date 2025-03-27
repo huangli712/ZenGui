@@ -12,3 +12,4 @@
 *.cycle
 .DS_Store
 fort.*
+imgui.ini
