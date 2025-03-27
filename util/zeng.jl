@@ -13,6 +13,16 @@ function create_main_menu()
             end
             CImGui.EndMenu()
         end
+        #
+        if CImGui.BeginMenu("Edit")
+            CImGui.EndMenu()
+        end
+        #
+        if CImGui.BeginMenu("Help")
+            if CImGui.MenuItem("About ZenGui")
+            end
+            CImGui.EndMenu()
+        end
         CImGui.EndMainMenuBar()
     end
 end
