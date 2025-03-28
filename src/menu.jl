@@ -43,6 +43,9 @@ Setup items in menu ``Edit''.
 """
 function set_menu_edit()
     if CImGui.BeginMenu("Edit")
+        if CImGui.BeginMeun("Quantum Impurity Solvers")
+            CImGui.EndMeun()
+        end
         CImGui.EndMenu()
     end
 end
