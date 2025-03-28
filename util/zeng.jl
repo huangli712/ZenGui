@@ -1,74 +1,24 @@
-using CImGui
-using CImGui.lib
-using CImGui.CSyntax
+#!/usr/bin/env julia
 
-import GLFW
-import ModernGL as GL
+#
+# This julia script will start a web app. Then the users can visit this
+# app with any modern web browser, such as Chrome, Edge, and Safari. The
+# default URL is
+#
+#    http://127.0.0.1:8848
+#
+# This app provides a simple yet userful graphic user interface for the
+# `ACFlow` package. The users can use it to do analytic continuations
+# and visualize the calculated results online. Note that this app suits
+# short analytic continuation simulations.
+#
+# Usage:
+#
+#     $ acg.jl
+#
 
-function setup_config_flags()
-    io = CImGui.GetIO()
-    io.ConfigFlags = unsafe_load(io.ConfigFlags) | CImGui.ImGuiConfigFlags_DockingEnable
-    io.ConfigFlags = unsafe_load(io.ConfigFlags) | CImGui.ImGuiConfigFlags_ViewportsEnable
-end
+push!(LOAD_PATH, "../src")
+using ZenGui
 
-function tweak_window()
-    io = CImGui.GetIO()
-    style = Ptr{ImGuiStyle}(CImGui.GetStyle())
-    if unsafe_load(io.ConfigFlags) & ImGuiConfigFlags_ViewportsEnable == ImGuiConfigFlags_ViewportsEnable
-        style.WindowRounding = 5.0f0
-        col = CImGui.c_get(style.Colors, CImGui.ImGuiCol_WindowBg)
-        CImGui.c_set!(style.Colors, CImGui.ImGuiCol_WindowBg, ImVec4(col.x, col.y, col.z, 1.0f0))
-    end
-end
-
-function setup_fonts()
-    fonts_dir = "/Users/lihuang/Library/Fonts"
-    fonts = unsafe_load(CImGui.GetIO().Fonts)
-    CImGui.AddFontFromFileTTF(fonts, joinpath(fonts_dir, "FiraCode-Regular.ttf"), 16)
-end
-
-function create_main_menu()
-    if CImGui.BeginMainMenuBar()
-        if CImGui.BeginMenu("File")
-            if CImGui.MenuItem("Exit", "CTRL+Z")
-                @info "Trigger Exit | find me here: $(@__FILE__) at line $(@__LINE__)"
-            end
-            CImGui.EndMenu()
-        end
-        #
-        if CImGui.BeginMenu("Edit")
-            CImGui.EndMenu()
-        end
-        #
-        if CImGui.BeginMenu("Help")
-            if CImGui.MenuItem("About ZenGui")
-            end
-            CImGui.EndMenu()
-        end
-        CImGui.EndMainMenuBar()
-    end
-end
-
-CImGui.set_backend(:GlfwOpenGL3)
-
-# setup Dear ImGui context
-ctx = CImGui.CreateContext()
-
-# enable docking and multi-viewport
-setup_config_flags()
-
-# When viewports are enabled we tweak WindowRounding/WindowBg so platform
-# windows can look identical to regular ones.
-tweak_window()
-
-# Load Fonts
-setup_fonts()
-
-clear_color = Cfloat[0.45, 0.55, 0.60, 1.00]
-engine = nothing
-
-CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
-    create_main_menu()
-end
-
+zeng_run()
 println("hehe")
