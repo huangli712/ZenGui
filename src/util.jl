@@ -1,6 +1,6 @@
 #
 # Project : Camellia
-# Source  : ZenGui.jl
+# Source  : util.jl
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #

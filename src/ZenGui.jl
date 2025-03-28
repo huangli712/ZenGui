@@ -6,3 +6,6 @@
 #
 # Last modified: 2025/03/28
 #
+
+module ZenGui
+end
