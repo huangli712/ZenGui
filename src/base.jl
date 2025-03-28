@@ -16,6 +16,11 @@ function zeng_run()
     # enable docking and multi-viewport
     setup_config_flags()
 
+    # setup Dear ImGui style
+    CImGui.StyleColorsDark()
+    # CImGui.StyleColorsClassic()
+    # CImGui.StyleColorsLight()
+
     # When viewports are enabled we tweak WindowRounding/WindowBg so platform
     # windows can look identical to regular ones.
     tweak_window()

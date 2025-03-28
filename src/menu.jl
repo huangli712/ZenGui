@@ -29,6 +29,25 @@ Setup items in menu ``File''.
 """
 function set_menu_file()
     if CImGui.BeginMenu("File")
+        if CImGui.BeginMenu("Window's Style")
+            if CImGui.MenuItem("Classic")
+                CImGui.StyleColorsClassic()
+                @info "Trigger File -> Windows's Style -> Classic"
+            end
+            if CImGui.MenuItem("Dark")
+                CImGui.StyleColorsDark()
+                @info "Trigger File -> Windows's Style -> Dark"
+            end
+            if CImGui.MenuItem("Light")
+                CImGui.StyleColorsLight()
+                @info "Trigger File -> Windows's Style -> Light"
+            end
+            #
+            CImGui.EndMenu()
+        end
+        #
+        CImGui.Separator()
+        # 
         if CImGui.MenuItem("Exit")
             @info "Trigger File -> Exit"
         end
@@ -43,6 +62,14 @@ Setup items in menu ``Edit''.
 """
 function set_menu_edit()
     if CImGui.BeginMenu("Edit")
+        if CImGui.BeginMenu("Integrated Package")
+            if CImGui.MenuItem("Zen")
+                @info "Trigger Edit -> Integrated Package -> Zen"
+            end
+            #
+            CImGui.EndMenu()
+        end
+        #
         if CImGui.BeginMenu("Dynamical Mean-Field Theory")
             if CImGui.MenuItem("Dyson")
                 @info "Trigger Edit -> Dynamical Mean-Field Theory -> Dyson"
@@ -103,6 +130,9 @@ function set_menu_help()
             if CImGui.MenuItem("DFermion")
                 @info "Trigger Help -> Documentation -> DFermion"
             end
+            #
+            CImGui.Separator()
+            #
             if CImGui.MenuItem("iQIST")
                 @info "Trigger Help -> Documentation -> iQIST"
             end
