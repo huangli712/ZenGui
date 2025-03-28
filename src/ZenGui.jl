@@ -13,6 +13,13 @@
 """
 module ZenGui
 
+using CImGui
+using CImGui.lib
+using CImGui.CSyntax
+
+import GLFW
+import ModernGL as GL
+
 include("global.jl")
 
 include("util.jl")
