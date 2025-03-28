@@ -27,6 +27,6 @@ function zeng_run()
     engine = nothing
 
     CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
-        create_main_menu()
+        create_menu()
     end
 end
