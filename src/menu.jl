@@ -56,22 +56,28 @@ function set_menu_help()
     if CImGui.BeginMenu("Help")
         if CImGui.BeginMenu("Documentation")
             if CImGui.MenuItem("Zen")
+                @info "Trigger Help -> Documentation -> Zen"
             end
             #
             CImGui.Separator()
             # 
             if CImGui.MenuItem("Dyson")
+                @info "Trigger Help -> Documentation -> Dyson"
             end
             if CImGui.MenuItem("DFermion")
+                @info "Trigger Help -> Documentation -> DFermion"
             end
             if CImGui.MenuItem("iQIST")
+                @info "Trigger Help -> Documentation -> iQIST"
             end
             #
             CImGui.Separator()
             #
             if CImGui.MenuItem("ACFlow")
+                @info "Trigger Help -> Documentation -> ACFlow"
             end
             if CImGui.MenuItem("ACTest")
+                @info "Trigger Help -> Documentation -> ACTest"
             end
             #
             CImGui.EndMenu()
@@ -80,8 +86,10 @@ function set_menu_help()
         CImGui.Separator()
         #
         if CImGui.MenuItem("User's manual")
+            @info "Trigger Help -> User's manual"
         end
         if CImGui.MenuItem("About ZenGui")
+            @info "Trigger Help -> About ZenGui"
         end
         #
         CImGui.EndMenu()
