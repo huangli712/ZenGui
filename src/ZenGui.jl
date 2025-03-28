@@ -27,6 +27,9 @@ include("util.jl")
 include("menu.jl")
 
 include("zen.jl")
+include("dyson.jl")
+include("dfermion.jl")
+
 include("ctseg.jl")
 include("cthyb.jl")
 include("atomic.jl")
