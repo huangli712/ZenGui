@@ -43,9 +43,13 @@ Setup items in menu ``Edit''.
 """
 function set_menu_edit()
     if CImGui.BeginMenu("Edit")
-        if CImGui.BeginMeun("Quantum Impurity Solvers")
-            CImGui.EndMeun()
+        if CImGui.BeginMenu("Quantum Impurity Solvers")
+            if CImGui.MenuItem("iQIST | CTSEG")
+                @info "Trigger Edit -> Quantum Impurity Solvers -> iQIST | CTSEG"
+            end
+            CImGui.EndMenu()
         end
+        #
         CImGui.EndMenu()
     end
 end
