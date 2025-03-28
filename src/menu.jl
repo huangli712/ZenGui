@@ -30,7 +30,7 @@ Setup items in menu ``File''.
 function set_menu_file()
     if CImGui.BeginMenu("File")
         if CImGui.MenuItem("Exit")
-            @info "Trigger Exit"
+            @info "Trigger File -> Exit"
         end
         CImGui.EndMenu()
     end
@@ -43,6 +43,17 @@ Setup items in menu ``Edit''.
 """
 function set_menu_edit()
     if CImGui.BeginMenu("Edit")
+        if CImGui.BeginMenu("Dynamical Mean-Field Theory")
+            if CImGui.MenuItem("Dyson")
+                @info "Trigger Edit -> Dynamical Mean-Field Theory -> Dyson"
+            end
+            if CImGui.MenuItem("DFermion")
+                @info "Trigger Edit -> Dynamical Mean-Field Theory -> DFermion"
+            end
+            #
+            CImGui.EndMenu()
+        end
+        #
         if CImGui.BeginMenu("Quantum Impurity Solvers")
             if CImGui.MenuItem("iQIST | CTSEG")
                 @info "Trigger Edit -> Quantum Impurity Solvers -> iQIST | CTSEG"
@@ -52,6 +63,17 @@ function set_menu_edit()
             end
             if CImGui.MenuItem("iQIST | ATOMIC")
                 @info "Trigger Edit -> Quantum Impurity Solvers -> iQIST | ATOMIC"
+            end
+            #
+            CImGui.EndMenu()
+        end
+        #
+        if CImGui.BeginMenu("Analytic Continuation")
+            if CImGui.MenuItem("ACFlow")
+                @info "Trigger Edit -> Analytic Continuation -> ACFlow"
+            end
+            if CImGui.MenuItem("ACTest")
+                @info "Trigger Edit -> Analytic Continuation -> ACTest"
             end
             #
             CImGui.EndMenu()
