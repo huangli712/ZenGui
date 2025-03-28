@@ -37,5 +37,6 @@ include("actest.jl")
 include("about.jl")
 
 include("base.jl")
+export zeng_run
 
 end
