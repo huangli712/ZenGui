@@ -7,6 +7,11 @@
 # Last modified: 2025/03/28
 #
 
+"""
+    create_menu
+
+Generate menu in the main window.
+"""
 function create_menu()
     if CImGui.BeginMainMenuBar()
         set_menu_file()
@@ -17,6 +22,11 @@ function create_menu()
     end
 end
 
+"""
+    set_menu_file
+
+Setup items in menu ``File''. 
+"""
 function set_menu_file()
     if CImGui.BeginMenu("File")
         if CImGui.MenuItem("Exit")
@@ -26,12 +36,22 @@ function set_menu_file()
     end
 end
 
+"""
+   set_menu_edit
+
+Setup items in menu ``Edit''. 
+"""
 function set_menu_edit()
     if CImGui.BeginMenu("Edit")
         CImGui.EndMenu()
     end
 end
 
+"""
+   set_menu_help
+
+Setup items in menu ``Help''. 
+"""
 function set_menu_help()
     if CImGui.BeginMenu("Help")
         if CImGui.MenuItem("About ZenGui")
