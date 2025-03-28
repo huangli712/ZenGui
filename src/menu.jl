@@ -54,17 +54,33 @@ Setup items in menu ``Help''.
 """
 function set_menu_help()
     if CImGui.BeginMenu("Help")
-        if CImGui.MenuItem("Documentation -> Zen")
-        end
-        if CImGui.MenuItem("Documentation -> iQIST")
-        end
-        if CImGui.MenuItem("Documentation -> ACFlow")
-        end
-        if CImGui.MenuItem("Documentation -> ACTest")
+        if CImGui.BeginMenu("Documentation")
+            if CImGui.MenuItem("Zen")
+            end
+            #
+            CImGui.Separator()
+            # 
+            if CImGui.MenuItem("Dyson")
+            end
+            if CImGui.MenuItem("DFermion")
+            end
+            if CImGui.MenuItem("iQIST")
+            end
+            #
+            CImGui.Separator()
+            #
+            if CImGui.MenuItem("ACFlow")
+            end
+            if CImGui.MenuItem("ACTest")
+            end
+            #
+            CImGui.EndMenu()
         end
         #
         CImGui.Separator()
         #
+        if CImGui.MenuItem("User's manual")
+        end
         if CImGui.MenuItem("About ZenGui")
         end
         #
