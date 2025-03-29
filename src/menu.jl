@@ -4,11 +4,11 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/03/28
+# Last modified: 2025/03/29
 #
 
 """
-    create_menu
+    create_menu()
 
 Generate menu in the main window.
 """
@@ -16,6 +16,7 @@ function create_menu()
     if CImGui.BeginMainMenuBar()
         set_menu_file()
         set_menu_edit()
+        set_menu_style()
         set_menu_help()
         #
         CImGui.EndMainMenuBar()
@@ -23,27 +24,14 @@ function create_menu()
 end
 
 """
-    set_menu_file
+    set_menu_file()
 
 Setup items in menu ``File''. 
 """
 function set_menu_file()
     if CImGui.BeginMenu("File")
-        if CImGui.BeginMenu("Window's Style")
-            if CImGui.MenuItem("Classic")
-                CImGui.StyleColorsClassic()
-                @info "Trigger File -> Windows's Style -> Classic"
-            end
-            if CImGui.MenuItem("Dark")
-                CImGui.StyleColorsDark()
-                @info "Trigger File -> Windows's Style -> Dark"
-            end
-            if CImGui.MenuItem("Light")
-                CImGui.StyleColorsLight()
-                @info "Trigger File -> Windows's Style -> Light"
-            end
-            #
-            CImGui.EndMenu()
+        if CImGui.MenuItem("Open...")
+            @info "Trigger File -> Open..."
         end
         #
         CImGui.Separator()
@@ -51,12 +39,13 @@ function set_menu_file()
         if CImGui.MenuItem("Exit")
             @info "Trigger File -> Exit"
         end
+        #
         CImGui.EndMenu()
     end
 end
 
 """
-   set_menu_edit
+   set_menu_edit()
 
 Setup items in menu ``Edit''. 
 """
@@ -111,7 +100,31 @@ function set_menu_edit()
 end
 
 """
-   set_menu_help
+   set_menu_style()
+
+Setup items in menu ``Style''. 
+"""
+function set_menu_style()
+    if CImGui.BeginMenu("Style")
+        if CImGui.MenuItem("Classic")
+            CImGui.StyleColorsClassic()
+            @info "Trigger Style -> Classic"
+        end
+        if CImGui.MenuItem("Dark")
+            CImGui.StyleColorsDark()
+            @info "Trigger Style -> Dark"
+        end
+        if CImGui.MenuItem("Light")
+            CImGui.StyleColorsLight()
+            @info "Trigger Style -> Light"
+        end
+        #
+        CImGui.EndMenu()
+    end
+end
+
+"""
+   set_menu_help()
 
 Setup items in menu ``Help''. 
 """
