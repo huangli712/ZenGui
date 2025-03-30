@@ -167,9 +167,7 @@ function set_menu_help()
         if CImGui.MenuItem("User's manual")
             @info "Trigger Help -> User's manual"
         end
-        if CImGui.MenuItem("About ZenGui")
-            @info "Trigger Help -> About ZenGui"
-        end
+        #@c CImGui.MenuItem("About ZenGui", C_NULL, &show_app_about)
         #
         CImGui.EndMenu()
     end
