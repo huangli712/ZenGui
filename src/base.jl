@@ -32,6 +32,8 @@ function zeng_run()
     show_app_about = true
     CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
         create_menu()
+        @show show_app_about
         show_app_about && @c create_app_about(&show_app_about)
+        @show show_app_about
     end
 end
