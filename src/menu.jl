@@ -8,6 +8,7 @@
 #
 
 show_app_acflow = false
+show_app_actest = false
 show_app_about = false
 
 """
@@ -89,10 +90,9 @@ function set_menu_edit()
         #
         if CImGui.BeginMenu("Analytic Continuation")
             global show_app_acflow
+            global show_app_actest
             @c CImGui.MenuItem("ACFlow", C_NULL, &show_app_acflow)
-            if CImGui.MenuItem("ACTest")
-                @info "Trigger Edit -> Analytic Continuation -> ACTest"
-            end
+            @c CImGui.MenuItem("ACTest", C_NULL, &show_app_actest)
             #
             CImGui.EndMenu()
         end

@@ -30,11 +30,13 @@ function zeng_run()
     engine = nothing
 
     global show_app_acflow
+    global show_app_actest
     global show_app_about
     CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
         create_menu()
 
         show_app_acflow && @c create_app_acflow(&show_app_acflow)
+        show_app_actest && @c create_app_actest(&show_app_actest)
         show_app_about && @c create_app_about(&show_app_about)
     end
 end
