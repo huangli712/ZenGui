@@ -21,6 +21,8 @@ using CImGui.CSyntax.CStatic
 import GLFW
 import ModernGL as GL
 
+show_app_about = false
+
 include("global.jl")
 
 include("util.jl")

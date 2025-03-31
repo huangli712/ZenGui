@@ -7,6 +7,8 @@
 # Last modified: 2025/03/29
 #
 
+
+
 function zeng_run()
     CImGui.set_backend(:GlfwOpenGL3)
 
@@ -29,11 +31,11 @@ function zeng_run()
     clear_color = Cfloat[0.45, 0.55, 0.60, 1.00]
     engine = nothing
 
-    show_app_about = true
+    global show_app_about
     CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
         create_menu()
-        @show show_app_about
+        #@show show_app_about
         show_app_about && @c create_app_about(&show_app_about)
-        @show show_app_about
+        #@show show_app_about
     end
 end
