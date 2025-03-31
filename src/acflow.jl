@@ -17,7 +17,7 @@ function create_app_acflow(p_open::Ref{Bool})
 
     # Fix size of the window
     window_width = 400.0
-    window_height = 300.0
+    window_height = 600.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
     CImGui.Text("ACFlow")
