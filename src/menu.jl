@@ -7,6 +7,8 @@
 # Last modified: 2025/03/29
 #
 
+show_app_about = false
+
 """
     create_menu()
 

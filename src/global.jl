@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/03/28
+# Last modified: 2025/03/31
 #
 
 #=
@@ -163,7 +163,7 @@ Name of this julia toolkit.
 
 See also: [`__VERSION__`](@ref).
 """
-const __LIBNAME__ = "ACTest"
+const __LIBNAME__ = "ZenGui"
 
 """
     __VERSION__
@@ -172,7 +172,7 @@ Version of this julia toolkit.
 
 See also: [`__RELEASE__`](@ref).
 """
-const __VERSION__ = v"1.1.1-devel.250121"
+const __VERSION__ = v"0.2.0-devel.250331"
 
 """
     __RELEASE__
@@ -181,7 +181,7 @@ Release date of this julia toolkit.
 
 See also: [`__AUTHORS__`](@ref).
 """
-const __RELEASE__ = "2025/01"
+const __RELEASE__ = "2025/03"
 
 #=
 *Remarks* :
@@ -206,7 +206,7 @@ const __AUTHORS__ = [(name = "Li Huang", email = "huangli@caep.cn")]
 """
     authors()
 
-Print authors / contributors of the `ACTest` toolkit.
+Print authors / contributors of the `ZenGui` toolkit.
 
 See also: [`__AUTHORS__`](@ref).
 """
@@ -216,5 +216,3 @@ function authors()
         println("  $(a.name) (email: $(a.email))")
     end
 end
-
-show_app_about = false
