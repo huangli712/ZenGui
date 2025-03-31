@@ -1,6 +1,6 @@
 # ZenGui
 
-*A full-fledged analytic continuation toolkit in Julia*
+*A general-purpose graphic user interface for ab initio dynamical mean-field theory codes*
 
 !!! info
 
