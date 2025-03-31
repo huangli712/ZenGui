@@ -8,7 +8,7 @@
 #
 
 function create_app_acflow(p_open::Ref{Bool})
-    # Create the about window, which is modal and can not be resized.
+    # Create the ACFlow window, which is modal and can not be resized.
     CImGui.Begin(
         "ACFlow",
         p_open,
