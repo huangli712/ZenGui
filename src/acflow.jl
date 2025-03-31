@@ -28,7 +28,7 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.SameLine()
     CImGui.SetNextItemWidth(widget_input_width)
     finput = "giw.data"
-    CImGui.InputText("", finput, 20)
+    CImGui.InputText("", finput, length(finput))
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "solver :")
     CImGui.SameLine()
