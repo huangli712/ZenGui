@@ -88,9 +88,8 @@ function set_menu_edit()
         end
         #
         if CImGui.BeginMenu("Analytic Continuation")
-            if CImGui.MenuItem("ACFlow")
-                @info "Trigger Edit -> Analytic Continuation -> ACFlow"
-            end
+            global show_app_acflow
+            @c CImGui.MenuItem("ACFlow", C_NULL, &show_app_acflow)
             if CImGui.MenuItem("ACTest")
                 @info "Trigger Edit -> Analytic Continuation -> ACTest"
             end
