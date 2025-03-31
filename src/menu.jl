@@ -35,7 +35,7 @@ end
 """
     set_menu_file()
 
-Setup items in menu ``File''. 
+Setup items in menu ``File''.
 """
 function set_menu_file()
     if CImGui.BeginMenu("File")
@@ -44,7 +44,7 @@ function set_menu_file()
         end
         #
         CImGui.Separator()
-        # 
+        #
         if CImGui.MenuItem("Exit")
             @info "Trigger File -> Exit"
         end
@@ -56,7 +56,7 @@ end
 """
    set_menu_edit()
 
-Setup items in menu ``Edit''. 
+Setup items in menu ``Edit''.
 """
 function set_menu_edit()
     if CImGui.BeginMenu("Edit")
@@ -104,7 +104,7 @@ end
 """
    set_menu_style()
 
-Setup items in menu ``Style''. 
+Setup items in menu ``Style''.
 """
 function set_menu_style()
     if CImGui.BeginMenu("Style")
@@ -128,7 +128,7 @@ end
 """
    set_menu_help()
 
-Setup items in menu ``Help''. 
+Setup items in menu ``Help''.
 """
 function set_menu_help()
     if CImGui.BeginMenu("Help")
@@ -138,7 +138,7 @@ function set_menu_help()
             end
             #
             CImGui.Separator()
-            # 
+            #
             if CImGui.MenuItem("Dyson")
                 @info "Trigger Help -> Documentation -> Dyson"
             end

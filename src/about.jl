@@ -61,11 +61,11 @@ function create_app_about(p_open::Ref{Bool})
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Github :")
     CImGui.SameLine()
     CImGui.Text("https://github.com/huangli712/ZenGui")
-    
+
     CImGui.Spacing()
     CImGui.TextWrapped("Powered by the Julia language (v$VERSION) " *
         "and the Dear ImGui library (v$(CImGui.IMGUI_VERSION)).")
-    
+
     # Create a `OK` button. It will reset `p_open`.
     CImGui.Dummy(ImVec2(0.0,10.0))
     #
@@ -74,7 +74,7 @@ function create_app_about(p_open::Ref{Bool})
     #
     button_width = 80.0
     button_height = 25.0
-    if CImGui.Button("OK", ImVec2(button_width, button_height)) 
+    if CImGui.Button("OK", ImVec2(button_width, button_height))
         p_open[] = false
     end
     #
