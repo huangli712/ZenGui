@@ -10,10 +10,13 @@
 """
     create_app_about(p_open::Ref{Bool})
 
-
+Display the `About` window, which is used to show some userful information
+for users.
 """
 function create_app_about(p_open::Ref{Bool})
-    CImGui.Begin("About ZenGui", p_open, CImGui.ImGuiWindowFlags_Modal)
+    # Create the about window, which is modal and can not be resized.
+    flags = CImGui.ImGuiWindowFlags_Modal && CImGui.ImGuiWindowFlags_NoResize
+    CImGui.Begin("About ZenGui", p_open, flags)
     CImGui.SetWindowSize(ImVec2(400.0,300.0))
     
     #CImGui.SameLine(150)
