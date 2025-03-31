@@ -7,6 +7,8 @@
 # Last modified: 2025/03/31
 #
 
+show_app_dyson = false
+show_app_dfermion = false
 show_app_ctseg = false
 show_app_cthyb = false
 show_app_atomic = false
@@ -67,12 +69,10 @@ function set_menu_edit()
         end
         #
         if CImGui.BeginMenu("Dynamical Mean-Field Theory")
-            if CImGui.MenuItem("Dyson")
-                @info "Trigger Edit -> Dynamical Mean-Field Theory -> Dyson"
-            end
-            if CImGui.MenuItem("DFermion")
-                @info "Trigger Edit -> Dynamical Mean-Field Theory -> DFermion"
-            end
+            global show_app_dyson
+            global show_app_dfermion
+            @c CImGui.MenuItem("Dyson", C_NULL, &show_app_dyson)
+            @c CImGui.MenuItem("DFermion", C_NULL, &show_app_dfermion)
             #
             CImGui.EndMenu()
         end
@@ -81,8 +81,8 @@ function set_menu_edit()
             global show_app_ctseg
             global show_app_cthyb
             global show_app_atomic
-            @c CImGui.MenuItem("iQIST | CTSEG" , C_NULL, &show_app_ctseg)
-            @c CImGui.MenuItem("iQIST | CTHYB" , C_NULL, &show_app_cthyb)
+            @c CImGui.MenuItem("iQIST | CTSEG", C_NULL, &show_app_ctseg)
+            @c CImGui.MenuItem("iQIST | CTHYB", C_NULL, &show_app_cthyb)
             @c CImGui.MenuItem("iQIST | ATOMIC", C_NULL, &show_app_atomic)
             #
             CImGui.EndMenu()
