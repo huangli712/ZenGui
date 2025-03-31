@@ -17,7 +17,6 @@ function tweak_window()
     io = CImGui.GetIO()
     style = Ptr{ImGuiStyle}(CImGui.GetStyle())
     style.AntiAliasedLines = true
-    style.AntiAliasedShapes = true
     if unsafe_load(io.ConfigFlags) & ImGuiConfigFlags_ViewportsEnable == ImGuiConfigFlags_ViewportsEnable
         style.WindowRounding = 5.0f0
         col = CImGui.c_get(style.Colors, CImGui.ImGuiCol_WindowBg)

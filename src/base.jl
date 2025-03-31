@@ -4,10 +4,8 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/03/29
+# Last modified: 2025/03/31
 #
-
-
 
 function zeng_run()
     CImGui.set_backend(:GlfwOpenGL3)
@@ -34,8 +32,8 @@ function zeng_run()
     global show_app_about
     CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
         create_menu()
-        #@show show_app_about
+
+        show_app_acflow && @c create_app_acflow(&show_app_acflow)
         show_app_about && @c create_app_about(&show_app_about)
-        #@show show_app_about
     end
 end

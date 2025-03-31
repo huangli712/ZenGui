@@ -7,6 +7,7 @@
 # Last modified: 2025/03/31
 #
 
+show_app_acflow = false
 show_app_about = false
 
 """
