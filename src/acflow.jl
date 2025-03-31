@@ -20,10 +20,15 @@ function create_app_acflow(p_open::Ref{Bool})
     window_height = 600.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
+    widget_input_width = 100
 
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "finput :")
     CImGui.SameLine()
     CImGui.Text("Filename for input data")
+    CImGui.SameLine()
+    CImGui.SetNextItemWidth(widget_input_width)
+    finput = "giw.data"
+    CImGui.InputText("", finput, 20)
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "solver :")
     CImGui.SameLine()
