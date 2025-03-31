@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/03/28
+# Last modified: 2025/03/31
 #
 
 function setup_config_flags()
@@ -16,6 +16,8 @@ end
 function tweak_window()
     io = CImGui.GetIO()
     style = Ptr{ImGuiStyle}(CImGui.GetStyle())
+    style.AntiAliasedLines = true
+    style.AntiAliasedShapes = true
     if unsafe_load(io.ConfigFlags) & ImGuiConfigFlags_ViewportsEnable == ImGuiConfigFlags_ViewportsEnable
         style.WindowRounding = 5.0f0
         col = CImGui.c_get(style.Colors, CImGui.ImGuiCol_WindowBg)
