@@ -15,29 +15,61 @@ for users.
 """
 function create_app_about(p_open::Ref{Bool})
     # Create the about window, which is modal and can not be resized.
-    flags = CImGui.ImGuiWindowFlags_Modal && CImGui.ImGuiWindowFlags_NoResize
-    CImGui.Begin("About ZenGui", p_open, flags)
-    CImGui.SetWindowSize(ImVec2(400.0,300.0))
-    
-    #CImGui.SameLine(150)
-    #CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "ZenGui")
-    win_width = CImGui.GetWindowWidth()
+    CImGui.Begin(
+        "About ZenGui",
+        p_open,
+        CImGui.ImGuiWindowFlags_Modal | CImGui.ImGuiWindowFlags_NoResize
+    )
+
+    # Fix size of the window
+    window_width = 400.0
+    window_height = 300.0
+    CImGui.SetWindowSize(ImVec2(window_width, window_height))
+
+    # Below are some widges
+
+    # We want to make sure `ZenGui` is shown in the middle of the window.
     txt_width = CImGui.CalcTextSize("ZenGui").x
-    offset = (win_width - txt_width) / 2.0
+    offset = (window_width - txt_width) / 2.0
     CImGui.SameLine(offset)
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "ZenGui")
-
+    #
     CImGui.Spacing()
-    CImGui.TextWrapped("A general-purposed graphic user interface for ab initio dynamical mean-field theory codes")
-
-
+    CImGui.TextWrapped("A general-purposed graphic user interface for " *
+        "ab initio dynamical mean-field theory codes")
+    #
+    CImGui.Spacing()
     CImGui.Separator()
-    CImGui.Text("Dear ImGui $(CImGui.IMGUI_VERSION)")
+    CImGui.Dummy(ImVec2(0.0,20.0))
+
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Author : ")
+    CImGui.SameLine()
+    CImGui.Text("Li Huang")
+    #
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Contact: ")
+    CImGui.SameLine()
+    CImGui.Text("huangli at caep.cn")
+    #
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Version: ")
+    CImGui.SameLine()
+    CImGui.Text("v0.2.0-devel.250331")
+    #
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "License: ")
+    CImGui.SameLine()
+    CImGui.Text("GNU General Public License Version 3")
+    #
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Github : ")
+    CImGui.SameLine()
+    CImGui.Text("https://github.com/huangli712/ZenGui")
     
-    CImGui.Text("By Omar Cornut and all dear imgui contributors.")
-    CImGui.Text("Dear ImGui is licensed under the MIT License, see LICENSE for more information.")
-    if CImGui.Button("OK", (120, 0)) 
+    CImGui.Spacing()
+    CImGui.TextWrapped("Powered by the Julia language (v$VERSION) " *
+        "and the Dear ImGui library (v$(CImGui.IMGUI_VERSION)).")
+    
+    CImGui.Spacing()
+    if CImGui.Button("OK", ImVec2(80.0, 0.0)) 
         p_open[] = false
     end
+
     CImGui.End()
 end
