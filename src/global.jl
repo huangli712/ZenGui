@@ -216,3 +216,5 @@ function authors()
         println("  $(a.name) (email: $(a.email))")
     end
 end
+
+show_app_about = false
