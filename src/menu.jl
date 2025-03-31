@@ -7,6 +7,9 @@
 # Last modified: 2025/03/31
 #
 
+show_app_ctseg = false
+show_app_cthyb = false
+show_app_atomic = false
 show_app_acflow = false
 show_app_actest = false
 show_app_about = false
@@ -75,15 +78,12 @@ function set_menu_edit()
         end
         #
         if CImGui.BeginMenu("Quantum Impurity Solvers")
-            if CImGui.MenuItem("iQIST | CTSEG")
-                @info "Trigger Edit -> Quantum Impurity Solvers -> iQIST | CTSEG"
-            end
-            if CImGui.MenuItem("iQIST | CTHYB")
-                @info "Trigger Edit -> Quantum Impurity Solvers -> iQIST | CTHYB"
-            end
-            if CImGui.MenuItem("iQIST | ATOMIC")
-                @info "Trigger Edit -> Quantum Impurity Solvers -> iQIST | ATOMIC"
-            end
+            global show_app_ctseg
+            global show_app_cthyb
+            global show_app_atomic
+            @c CImGui.MenuItem("iQIST | CTSEG" , C_NULL, &show_app_ctseg)
+            @c CImGui.MenuItem("iQIST | CTHYB" , C_NULL, &show_app_cthyb)
+            @c CImGui.MenuItem("iQIST | ATOMIC", C_NULL, &show_app_atomic)
             #
             CImGui.EndMenu()
         end
