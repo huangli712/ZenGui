@@ -72,6 +72,10 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "fwrite :")
     CImGui.SameLine()
     CImGui.Text("Are the analytic continuation results written into files")
+    #
+    CImGui.Spacing()
+    CImGui.Separator()
+    CImGui.Dummy(ImVec2(0.0,10.0))
 
     # End of this window
     CImGui.End()
