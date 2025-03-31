@@ -29,6 +29,7 @@ function zeng_run()
     clear_color = Cfloat[0.45, 0.55, 0.60, 1.00]
     engine = nothing
 
+    global show_app_acflow
     global show_app_about
     CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
         create_menu()
