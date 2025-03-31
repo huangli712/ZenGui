@@ -29,6 +29,7 @@ function zeng_run()
     clear_color = Cfloat[0.45, 0.55, 0.60, 1.00]
     engine = nothing
 
+    global show_app_zen
     global show_app_dyson
     global show_app_dfermion
     global show_app_ctseg
@@ -40,6 +41,7 @@ function zeng_run()
     CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
         create_menu()
 
+        show_app_zen && @c create_app_zen(&show_app_zen)
         show_app_dyson && @c create_app_dyson(&show_app_dyson)
         show_app_dfermion && @c create_app_dyson(&show_app_dfermion)
         show_app_ctseg && @c create_app_ctseg(&show_app_ctseg)

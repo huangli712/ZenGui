@@ -7,6 +7,7 @@
 # Last modified: 2025/03/31
 #
 
+show_app_zen = false
 show_app_dyson = false
 show_app_dfermion = false
 show_app_ctseg = false
@@ -61,9 +62,8 @@ Setup items in menu ``Edit''.
 function set_menu_edit()
     if CImGui.BeginMenu("Edit")
         if CImGui.BeginMenu("Integrated Package")
-            if CImGui.MenuItem("Zen")
-                @info "Trigger Edit -> Integrated Package -> Zen"
-            end
+            global show_app_zen
+            @c CImGui.MenuItem("Zen", C_NULL, &show_app_zen)
             #
             CImGui.EndMenu()
         end
