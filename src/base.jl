@@ -39,6 +39,7 @@ function zeng_run()
         create_menu()
 
         show_app_ctseg && @c create_app_ctseg(&show_app_ctseg)
+        show_app_cthyb && @c create_app_cthyb(&show_app_cthyb)
         show_app_acflow && @c create_app_acflow(&show_app_acflow)
         show_app_actest && @c create_app_actest(&show_app_actest)
         show_app_about && @c create_app_about(&show_app_about)
