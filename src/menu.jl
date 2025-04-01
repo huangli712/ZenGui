@@ -36,10 +36,7 @@ function set_menu_file()
         #
         CImGui.Separator()
         #
-        if CImGui.MenuItem("Exit")
-            @info "Trigger File -> Exit"
-            FMENU._EXIT = true
-        end
+        @c CImGui.MenuItem("Exit", C_NULL, &FMENU._EXIT)
         #
         CImGui.EndMenu()
     end
