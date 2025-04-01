@@ -49,7 +49,7 @@ function zeng_run()
         FMENU._DARK     && handle_menu_dark()
         FMENU._LIGHT    && handle_menu_light()
         #
-        FMENU._ZEN      && @show "HELP ZEN"; FMENU._ZEN = false
+        FMENU._ZEN      && handle_menu_zen()
         FMENU._DYSON    && @show "HELP DYSON"; FMENU._DYSON = false
         FMENU._DFERMION && @show "HELP DFERMION"; FMENU._DFERMION = false
         FMENU._IQIST    && @show "HELP IQIST"; FMENU._IQIST = false
@@ -83,4 +83,30 @@ end
 function handle_menu_light()
     CImGui.StyleColorsLight()
     FMENU._LIGHT = false
+end
+
+function handle_menu_zen()
+    @show "HELP ZEN"
+    FMENU._ZEN = false
+end
+
+function handle_menu_dyson()
+end
+
+function handle_menu_dfermion()
+end
+
+function handle_menu_iqist()
+end
+
+function handle_menu_acflow()
+end
+
+function handle_menu_acflow()
+end
+
+function handle_menu_actest()
+end
+
+function handle_menu_zengui()
 end
