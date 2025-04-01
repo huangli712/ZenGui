@@ -32,8 +32,8 @@ function zeng_run()
     CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
         create_menu()
 
-        FMENU._OPEN     && @show "OPEN"
-        FMENU._SAVE     && @show "SAVE"
+        FMENU._OPEN     && @show "OPEN"; FMENU._OPEN = false
+        FMENU._SAVE     && @show "SAVE"; FMENU._SAVE = false
         FMENU._EXIT     && return :imgui_exit_loop
         #
         FMENU.ZEN       && @c create_app_zen(&FMENU.ZEN)
@@ -45,17 +45,17 @@ function zeng_run()
         FMENU.ACFLOW    && @c create_app_acflow(&FMENU.ACFLOW)
         FMENU.ACTEST    && @c create_app_actest(&FMENU.ACTEST)
         #
-        FMENU._CLASSIC  && change_style()
-        FMENU._DARK     && change_style()
-        FMENU._LIGHT    && change_style()
+        FMENU._CLASSIC  && CImGui.StyleColorsClassic(); FMENU._CLASSIC = false
+        FMENU._DARK     && CImGui.StyleColorsDark(); FMENU._DARK = false
+        FMENU._LIGHT    && CImGui.StyleColorsLight(); FMENU._LIGHT = false
         #
-        FMENU._ZEN      && @show "HELP ZEN"
-        FMENU._DYSON    && @show "HELP DYSON"
-        FMENU._DFERMION && @show "HELP DFERMION"
-        FMENU._IQIST    && @show "HELP IQIST"
-        FMENU._ACFLOW   && @show "HELP ACFLOW"
-        FMENU._ACTEST   && @show "HELP ACTEST"
-        FMENU._ZENGUI   && @show "HELP ZENGUI"
+        FMENU._ZEN      && @show "HELP ZEN"; FMENU._ZEN = false
+        FMENU._DYSON    && @show "HELP DYSON"; FMENU._DYSON = false
+        FMENU._DFERMION && @show "HELP DFERMION"; FMENU._DFERMION = false
+        FMENU._IQIST    && @show "HELP IQIST"; FMENU._IQIST = false
+        FMENU._ACFLOW   && @show "HELP ACFLOW"; FMENU._ACFLOW = false
+        FMENU._ACTEST   && @show "HELP ACTEST"; FMENU._ACTEST = false
+        FMENU._ZENGUI   && @show "HELP ZENGUI"; FMENU._ZENGUI = false
         FMENU._ABOUT    && @c create_app_about(&FMENU._ABOUT)
     end
 end

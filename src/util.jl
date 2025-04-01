@@ -30,13 +30,3 @@ function setup_fonts()
     fonts = unsafe_load(CImGui.GetIO().Fonts)
     CImGui.AddFontFromFileTTF(fonts, joinpath(fonts_dir, "FiraCode-Regular.ttf"), 16)
 end
-
-function change_style()
-    FMENU._CLASSIC && CImGui.StyleColorsClassic()
-    FMENU._DARK && CImGui.StyleColorsDark()
-    FMENU._LIGHT && CImGui.StyleColorsLight()
-    #
-    FMENU._CLASSIC = false
-    FMENU._DARK = false
-    FMENU._LIGHT = false
-end
