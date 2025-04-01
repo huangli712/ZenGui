@@ -1,15 +1,8 @@
 *~
-*.o
-*.a
-*.x
-*.ir
-*.mod
 *.dat
-*.log
 *.out
 *.swp
 *.data
-*.cycle
 .DS_Store
-fort.*
 imgui.ini
+docs/build

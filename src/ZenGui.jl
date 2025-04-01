@@ -95,6 +95,11 @@ export authors
 include("util.jl")
 
 include("menu.jl")
+export create_menu
+export set_menu_file
+export set_menu_edit
+export set_menu_style
+export set_menu_help
 
 include("zen.jl")
 
@@ -109,9 +114,9 @@ include("acflow.jl")
 include("actest.jl")
 
 include("about.jl")
+export create_app_about
 
 include("base.jl")
-
 export zeng_run
 
 end
