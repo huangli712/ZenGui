@@ -10,7 +10,7 @@
 """
     create_menu()
 
-Generate menu in the main window.
+Generate menu items in the main window.
 """
 function create_menu()
     if CImGui.BeginMainMenuBar()

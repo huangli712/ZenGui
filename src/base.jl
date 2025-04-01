@@ -29,28 +29,18 @@ function zeng_run()
     clear_color = Cfloat[0.45, 0.55, 0.60, 1.00]
     engine = nothing
 
-    global show_app_zen
-    global show_app_dyson
-    global show_app_dfermion
-    global show_app_ctseg
-    global show_app_cthyb
-    global show_app_atomic
-    global show_app_acflow
-    global show_app_actest
-
     CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
         create_menu()
 
-        show_app_zen && @c create_app_zen(&show_app_zen)
-        show_app_dyson && @c create_app_dyson(&show_app_dyson)
-        show_app_dfermion && @c create_app_dyson(&show_app_dfermion)
-        show_app_ctseg && @c create_app_ctseg(&show_app_ctseg)
-        show_app_cthyb && @c create_app_cthyb(&show_app_cthyb)
-        show_app_atomic && @c create_app_atomic(&show_app_atomic)
-        show_app_acflow && @c create_app_acflow(&show_app_acflow)
-        show_app_actest && @c create_app_actest(&show_app_actest)
-        @show FMENU.ABOUT
-        FMENU.ABOUT && @c create_app_about(&(FMENU.ABOUT))
-        @show FMENU.ABOUT
+        FMENU.ZEN      && @c create_app_zen(&(FMENU.ZEN))
+        FMENU.DYSON    && @c create_app_dyson(&(FMENU.DYSON))
+        FMENU.DFERMION && @c create_app_dyson(&(FMENU.DFERMION))
+        FMENU.CTSEG    && @c create_app_ctseg(&(FMENU.CTSEG))
+        FMENU.CTHYB    && @c create_app_cthyb(&(FMENU.CTHYB))
+        FMENU.ATOMIC   && @c create_app_atomic(&(FMENU.ATOMIC))
+        FMENU.ACFLOW   && @c create_app_acflow(&(FMENU.ACFLOW))
+        FMENU.ACTEST   && @c create_app_actest(&(FMENU.ACTEST))
+        FMENU.ABOUT    && @c create_app_about(&(FMENU.ABOUT))
+        return :imgui_exit_loop
     end
 end
