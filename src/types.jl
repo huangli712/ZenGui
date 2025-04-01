@@ -59,3 +59,11 @@ FMENU = MenuFlags(
     false,
     false
 )
+
+mutable struct ACFLOW_PBASE
+    finput :: String
+end
+
+PBASE = ACFLOW_PBASE(
+    "giw.data"
+)

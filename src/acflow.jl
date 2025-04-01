@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/03/31
+# Last modified: 2025/04/01
 #
 
 function create_app_acflow(p_open::Ref{Bool})
@@ -12,7 +12,7 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.Begin(
         "ACFlow",
         p_open,
-        CImGui.ImGuiWindowFlags_Modal | CImGui.ImGuiWindowFlags_NoResize
+        CImGui.ImGuiWindowFlags_NoResize
     )
 
     # Fix size of the window
@@ -23,14 +23,10 @@ function create_app_acflow(p_open::Ref{Bool})
     widget_input_width = 100
     widget_combo_width = 100
 
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "finput :")
-    CImGui.SameLine()
-    CImGui.Text("Filename for input data")
-    CImGui.SameLine()
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic finput = "giw.data" begin
-        CImGui.InputText("T1", finput, length(finput) * 2)
-    end
+    CImGui.InputText(" Filename for input data", PBASE.finput, length(PBASE.finput))
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(finput)" * PBASE.finput)
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "solver :")
     CImGui.SameLine()
@@ -122,6 +118,12 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.Spacing()
     CImGui.Separator()
     CImGui.Dummy(ImVec2(0.0,10.0))
+
+    button_width = 80.0
+    button_height = 25.0
+    if CImGui.Button("Generate", ImVec2(button_width, button_height))
+        @show PBASE
+    end
 
     # End of this window
     CImGui.End()
