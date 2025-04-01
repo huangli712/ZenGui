@@ -20,5 +20,9 @@ makedocs(
     modules = [ZenGui],
     pages = [
         "Home" => "index.md",
+        "Introduction" => "intro.md",
+        "Installation" => "install.md",
+        "Usage" => "usage.md",
+        "Library" => "library.md",
     ],
 )
