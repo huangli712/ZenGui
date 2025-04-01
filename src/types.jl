@@ -8,19 +8,42 @@
 #
 
 mutable struct MenuFlags
-    ZEN      :: Bool
-    DYSON    :: Bool
-    DFERMION :: Bool
-    CTSEG    :: Bool
-    CTHYB    :: Bool
-    ATOMIC   :: Bool
-    ACFLOW   :: Bool
-    ACTEST   :: Bool
-    ABOUT    :: Bool
-    _EXIT    :: Bool
+    _EXIT     :: Bool
+    #
+    ZEN       :: Bool
+    DYSON     :: Bool
+    DFERMION  :: Bool
+    CTSEG     :: Bool
+    CTHYB     :: Bool
+    ATOMIC    :: Bool
+    ACFLOW    :: Bool
+    ACTEST    :: Bool
+    #
+    _CLASSIC  :: Bool
+    _DARK     :: Bool
+    _LIGHT    :: Bool
+    #
+    _ZEN      :: Bool
+    _DYSON    :: Bool
+    _DFERMION :: Bool
+    _IQIST    :: Bool
+    _ACFLOW   :: Bool
+    _ACTEST   :: Bool
+    _ZENGUI   :: Bool
+    ABOUT     :: Bool
 end
 
 FMENU = MenuFlags(
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
     false,
     false,
     false,
