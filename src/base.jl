@@ -32,14 +32,14 @@ function zeng_run()
     CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
         create_menu()
 
-        FMENU.ZEN      && @c create_app_zen(&(FMENU.ZEN))
-        FMENU.DYSON    && @c create_app_dyson(&(FMENU.DYSON))
-        FMENU.DFERMION && @c create_app_dyson(&(FMENU.DFERMION))
-        FMENU.CTSEG    && @c create_app_ctseg(&(FMENU.CTSEG))
-        FMENU.CTHYB    && @c create_app_cthyb(&(FMENU.CTHYB))
-        FMENU.ATOMIC   && @c create_app_atomic(&(FMENU.ATOMIC))
-        FMENU.ACFLOW   && @c create_app_acflow(&(FMENU.ACFLOW))
-        FMENU.ACTEST   && @c create_app_actest(&(FMENU.ACTEST))
-        FMENU.ABOUT    && @c create_app_about(&(FMENU.ABOUT))
+        FMENU.ZEN      && @c create_app_zen(&FMENU.ZEN)
+        FMENU.DYSON    && @c create_app_dyson(&FMENU.DYSON)
+        FMENU.DFERMION && @c create_app_dyson(&FMENU.DFERMION)
+        FMENU.CTSEG    && @c create_app_ctseg(&FMENU.CTSEG)
+        FMENU.CTHYB    && @c create_app_cthyb(&FMENU.CTHYB)
+        FMENU.ATOMIC   && @c create_app_atomic(&FMENU.ATOMIC)
+        FMENU.ACFLOW   && @c create_app_acflow(&FMENU.ACFLOW)
+        FMENU.ACTEST   && @c create_app_actest(&FMENU.ACTEST)
+        FMENU.ABOUT    && @c create_app_about(&FMENU.ABOUT)
     end
 end

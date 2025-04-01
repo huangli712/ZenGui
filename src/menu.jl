@@ -52,7 +52,7 @@ Setup items in menu ``Edit''.
 function set_menu_edit()
     if CImGui.BeginMenu("Edit")
         if CImGui.BeginMenu("Integrated Package")
-            @c CImGui.MenuItem("Zen", C_NULL, &(FMENU.ZEN))
+            @c CImGui.MenuItem("Zen", C_NULL, &FMENU.ZEN)
             #
             CImGui.EndMenu()
         end
@@ -151,7 +151,7 @@ function set_menu_help()
         if CImGui.MenuItem("User's manual")
             @info "Trigger Help -> User's manual"
         end
-        @c CImGui.MenuItem("About ZenGui", C_NULL, &(FMENU.ABOUT))
+        @c CImGui.MenuItem("About ZenGui", C_NULL, &FMENU.ABOUT)
         #
         CImGui.EndMenu()
     end
