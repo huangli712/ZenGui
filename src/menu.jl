@@ -58,23 +58,23 @@ function set_menu_edit()
         end
         #
         if CImGui.BeginMenu("Dynamical Mean-Field Theory")
-            @c CImGui.MenuItem("Dyson", C_NULL, &(FMENU.DYSON))
-            @c CImGui.MenuItem("DFermion", C_NULL, &(FMENU.DFERMION))
+            @c CImGui.MenuItem("Dyson", C_NULL, &FMENU.DYSON)
+            @c CImGui.MenuItem("DFermion", C_NULL, &FMENU.DFERMION)
             #
             CImGui.EndMenu()
         end
         #
         if CImGui.BeginMenu("Quantum Impurity Solvers")
-            @c CImGui.MenuItem("iQIST | CTSEG", C_NULL, &(FMENU.CTSEG))
-            @c CImGui.MenuItem("iQIST | CTHYB", C_NULL, &(FMENU.CTHYB))
-            @c CImGui.MenuItem("iQIST | ATOMIC", C_NULL, &(FMENU.ATOMIC))
+            @c CImGui.MenuItem("iQIST | CTSEG", C_NULL, &FMENU.CTSEG)
+            @c CImGui.MenuItem("iQIST | CTHYB", C_NULL, &FMENU.CTHYB)
+            @c CImGui.MenuItem("iQIST | ATOMIC", C_NULL, &FMENU.ATOMIC)
             #
             CImGui.EndMenu()
         end
         #
         if CImGui.BeginMenu("Analytic Continuation")
-            @c CImGui.MenuItem("ACFlow", C_NULL, &(FMENU.ACFLOW))
-            @c CImGui.MenuItem("ACTest", C_NULL, &(FMENU.ACTEST))
+            @c CImGui.MenuItem("ACFlow", C_NULL, &FMENU.ACFLOW)
+            @c CImGui.MenuItem("ACTest", C_NULL, &FMENU.ACTEST)
             #
             CImGui.EndMenu()
         end
