@@ -48,7 +48,9 @@ function zeng_run()
         FMENU._CLASSIC && change_style()
         FMENU._DARK    && change_style()
         FMENU._LIGHT   && change_style()
-
+        #
+        FMENU._ZEN     && @show "HELP ZEN"
+        FMENU._DYSON   && @show "HELP DYSON"
         FMENU.ABOUT    && @c create_app_about(&FMENU.ABOUT)
     end
 end
