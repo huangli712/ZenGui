@@ -32,8 +32,10 @@ function zeng_run()
     CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
         create_menu()
 
+        FMENU._OPEN    && @show "OPEN"
+        FMENU._SAVE    && @show "SAVE"
         FMENU._EXIT    && return :imgui_exit_loop
-
+        #
         FMENU.ZEN      && @c create_app_zen(&FMENU.ZEN)
         FMENU.DYSON    && @c create_app_dyson(&FMENU.DYSON)
         FMENU.DFERMION && @c create_app_dyson(&FMENU.DFERMION)
@@ -42,6 +44,11 @@ function zeng_run()
         FMENU.ATOMIC   && @c create_app_atomic(&FMENU.ATOMIC)
         FMENU.ACFLOW   && @c create_app_acflow(&FMENU.ACFLOW)
         FMENU.ACTEST   && @c create_app_actest(&FMENU.ACTEST)
+        #
+        FMENU._CLASSIC && change_style()
+        FMENU._DARK    && change_style()
+        FMENU._LIGHT   && change_style()
+
         FMENU.ABOUT    && @c create_app_about(&FMENU.ABOUT)
     end
 end
