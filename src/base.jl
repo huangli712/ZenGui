@@ -51,11 +51,11 @@ function zeng_run()
         #
         FMENU._ZEN      && handle_menu_zen()
         FMENU._DYSON    && handle_menu_dyson()
-        FMENU._DFERMION && 
-        FMENU._IQIST    && 
-        FMENU._ACFLOW   && 
-        FMENU._ACTEST   && 
-        FMENU._ZENGUI   && 
+        FMENU._DFERMION && handle_menu_dfermion()
+        FMENU._IQIST    && handle_menu_iqist()
+        FMENU._ACFLOW   && handle_menu_acflow()
+        FMENU._ACTEST   && handle_menu_actest()
+        FMENU._ZENGUI   && handle_menu_zengui()
         FMENU._ABOUT    && @c create_app_about(&FMENU._ABOUT)
     end
 end
