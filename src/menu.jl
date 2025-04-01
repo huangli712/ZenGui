@@ -38,6 +38,7 @@ function set_menu_file()
         #
         if CImGui.MenuItem("Exit")
             @info "Trigger File -> Exit"
+            FMENU._EXIT = true
         end
         #
         CImGui.EndMenu()

@@ -17,9 +17,11 @@ mutable struct MenuFlags
     ACFLOW   :: Bool
     ACTEST   :: Bool
     ABOUT    :: Bool
+    _EXIT    :: Bool
 end
 
 FMENU = MenuFlags(
+    false,
     false,
     false,
     false,
