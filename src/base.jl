@@ -50,12 +50,12 @@ function zeng_run()
         FMENU._LIGHT    && handle_menu_light()
         #
         FMENU._ZEN      && handle_menu_zen()
-        FMENU._DYSON    && @show "HELP DYSON"; FMENU._DYSON = false
-        FMENU._DFERMION && @show "HELP DFERMION"; FMENU._DFERMION = false
-        FMENU._IQIST    && @show "HELP IQIST"; FMENU._IQIST = false
-        FMENU._ACFLOW   && @show "HELP ACFLOW"; FMENU._ACFLOW = false
-        FMENU._ACTEST   && @show "HELP ACTEST"; FMENU._ACTEST = false
-        FMENU._ZENGUI   && @show "HELP ZENGUI"; FMENU._ZENGUI = false
+        FMENU._DYSON    && handle_menu_dyson()
+        FMENU._DFERMION && 
+        FMENU._IQIST    && 
+        FMENU._ACFLOW   && 
+        FMENU._ACTEST   && 
+        FMENU._ZENGUI   && 
         FMENU._ABOUT    && @c create_app_about(&FMENU._ABOUT)
     end
 end
@@ -91,22 +91,31 @@ function handle_menu_zen()
 end
 
 function handle_menu_dyson()
+    @show "HELP DYSON"
+    FMENU._DYSON = false
 end
 
 function handle_menu_dfermion()
+    @show "HELP DFERMION"
+    FMENU._DFERMION = false
 end
 
 function handle_menu_iqist()
+    @show "HELP IQIST"
+    FMENU._IQIST = false
 end
 
 function handle_menu_acflow()
-end
-
-function handle_menu_acflow()
+    @show "HELP ACFLOW"
+    FMENU._ACFLOW = false
 end
 
 function handle_menu_actest()
+    @show "HELP ACTEST"
+    FMENU._ACTEST = false
 end
 
 function handle_menu_zengui()
+    @show "HELP ZENGUI"
+    FMENU._ZENGUI = false
 end
