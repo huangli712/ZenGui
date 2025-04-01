@@ -49,6 +49,9 @@ function zeng_run()
         show_app_atomic && @c create_app_atomic(&show_app_atomic)
         show_app_acflow && @c create_app_acflow(&show_app_acflow)
         show_app_actest && @c create_app_actest(&show_app_actest)
-        show_app_about && @c create_app_about(&show_app_about)
+        #show_app_about && @c create_app_about(&show_app_about)
+        @show MENUFLAGS.show_app_about
+        MENUFLAGS.show_app_about && @c create_app_about(&(MENUFLAGS.show_app_about))
+        @show MENUFLAGS.show_app_about
     end
 end

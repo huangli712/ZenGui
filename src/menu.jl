@@ -17,6 +17,12 @@ show_app_acflow = false
 show_app_actest = false
 show_app_about = false
 
+mutable struct MenuFlags
+    show_app_about :: Bool
+end
+
+MENUFLAGS = MenuFlags(false)
+
 """
     create_menu()
 
@@ -169,8 +175,9 @@ function set_menu_help()
         if CImGui.MenuItem("User's manual")
             @info "Trigger Help -> User's manual"
         end
-        global show_app_about
-        @c CImGui.MenuItem("About ZenGui", C_NULL, &show_app_about)
+        #global show_app_about
+        #@c CImGui.MenuItem("About ZenGui", C_NULL, &show_app_about)
+        @c CImGui.MenuItem("About ZenGui", C_NULL, &(MENUFLAGS.show_app_about))
         #
         CImGui.EndMenu()
     end
