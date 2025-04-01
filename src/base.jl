@@ -32,25 +32,30 @@ function zeng_run()
     CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
         create_menu()
 
-        FMENU._OPEN    && @show "OPEN"
-        FMENU._SAVE    && @show "SAVE"
-        FMENU._EXIT    && return :imgui_exit_loop
+        FMENU._OPEN     && @show "OPEN"
+        FMENU._SAVE     && @show "SAVE"
+        FMENU._EXIT     && return :imgui_exit_loop
         #
-        FMENU.ZEN      && @c create_app_zen(&FMENU.ZEN)
-        FMENU.DYSON    && @c create_app_dyson(&FMENU.DYSON)
-        FMENU.DFERMION && @c create_app_dyson(&FMENU.DFERMION)
-        FMENU.CTSEG    && @c create_app_ctseg(&FMENU.CTSEG)
-        FMENU.CTHYB    && @c create_app_cthyb(&FMENU.CTHYB)
-        FMENU.ATOMIC   && @c create_app_atomic(&FMENU.ATOMIC)
-        FMENU.ACFLOW   && @c create_app_acflow(&FMENU.ACFLOW)
-        FMENU.ACTEST   && @c create_app_actest(&FMENU.ACTEST)
+        FMENU.ZEN       && @c create_app_zen(&FMENU.ZEN)
+        FMENU.DYSON     && @c create_app_dyson(&FMENU.DYSON)
+        FMENU.DFERMION  && @c create_app_dyson(&FMENU.DFERMION)
+        FMENU.CTSEG     && @c create_app_ctseg(&FMENU.CTSEG)
+        FMENU.CTHYB     && @c create_app_cthyb(&FMENU.CTHYB)
+        FMENU.ATOMIC    && @c create_app_atomic(&FMENU.ATOMIC)
+        FMENU.ACFLOW    && @c create_app_acflow(&FMENU.ACFLOW)
+        FMENU.ACTEST    && @c create_app_actest(&FMENU.ACTEST)
         #
-        FMENU._CLASSIC && change_style()
-        FMENU._DARK    && change_style()
-        FMENU._LIGHT   && change_style()
+        FMENU._CLASSIC  && change_style()
+        FMENU._DARK     && change_style()
+        FMENU._LIGHT    && change_style()
         #
-        FMENU._ZEN     && @show "HELP ZEN"
-        FMENU._DYSON   && @show "HELP DYSON"
-        FMENU.ABOUT    && @c create_app_about(&FMENU.ABOUT)
+        FMENU._ZEN      && @show "HELP ZEN"
+        FMENU._DYSON    && @show "HELP DYSON"
+        FMENU._DFERMION && @show "HELP DFERMION"
+        FMENU._IQIST    && @show "HELP IQIST"
+        FMENU._ACFLOW   && @show "HELP ACFLOW"
+        FMENU._ACTEST   && @show "HELP ACTEST"
+        FMENU._ZENGUI   && @show "HELP ZENGUI"
+        FMENU.ABOUT     && @c create_app_about(&FMENU.ABOUT)
     end
 end
