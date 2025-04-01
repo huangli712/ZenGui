@@ -43,7 +43,5 @@ function zeng_run()
         FMENU.ACFLOW   && @c create_app_acflow(&FMENU.ACFLOW)
         FMENU.ACTEST   && @c create_app_actest(&FMENU.ACTEST)
         FMENU.ABOUT    && @c create_app_about(&FMENU.ABOUT)
-
-        
     end
 end
