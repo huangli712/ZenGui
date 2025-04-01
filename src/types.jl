@@ -8,6 +8,7 @@
 #
 
 mutable struct MenuFlags
+    _OPEN     :: Bool
     _SAVE     :: Bool
     _EXIT     :: Bool
     #
@@ -35,6 +36,7 @@ mutable struct MenuFlags
 end
 
 FMENU = MenuFlags(
+    false,
     false,
     false,
     false,

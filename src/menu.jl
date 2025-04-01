@@ -30,9 +30,8 @@ Setup items in menu ``File''.
 """
 function set_menu_file()
     if CImGui.BeginMenu("File")
-        if CImGui.MenuItem("Open...")
-            @info "Trigger File -> Open..."
-        end
+        @c CImGui.MenuItem("Open...", C_NULL, &FMENU._OPEN)
+        @c CImGui.MenuItem("Save As", C_NULL, &FMENU._SAVE)
         #
         CImGui.Separator()
         #
@@ -88,18 +87,9 @@ Setup items in menu ``Style''.
 """
 function set_menu_style()
     if CImGui.BeginMenu("Style")
-        if CImGui.MenuItem("Classic")
-            CImGui.StyleColorsClassic()
-            @info "Trigger Style -> Classic"
-        end
-        if CImGui.MenuItem("Dark")
-            CImGui.StyleColorsDark()
-            @info "Trigger Style -> Dark"
-        end
-        if CImGui.MenuItem("Light")
-            CImGui.StyleColorsLight()
-            @info "Trigger Style -> Light"
-        end
+        @c CImGui.MenuItem("Classic", C_NULL, &FMENU._CLASSIC)
+        @c CImGui.MenuItem("Dark", C_NULL, &FMENU._DARK)
+        @c CImGui.MenuItem("Light", C_NULL, &FMENU._LIGHT)
         #
         CImGui.EndMenu()
     end
@@ -113,42 +103,28 @@ Setup items in menu ``Help''.
 function set_menu_help()
     if CImGui.BeginMenu("Help")
         if CImGui.BeginMenu("Documentation")
-            if CImGui.MenuItem("Zen")
-                @info "Trigger Help -> Documentation -> Zen"
-            end
+            @c CImGui.MenuItem("Zen", C_NULL, &FMENU._ZEN)
             #
             CImGui.Separator()
             #
-            if CImGui.MenuItem("Dyson")
-                @info "Trigger Help -> Documentation -> Dyson"
-            end
-            if CImGui.MenuItem("DFermion")
-                @info "Trigger Help -> Documentation -> DFermion"
-            end
+            @c CImGui.MenuItem("Dyson", C_NULL, &FMENU._DYSON)
+            @c CImGui.MenuItem("DFermion", C_NULL, &FMENU._DFERMION)
             #
             CImGui.Separator()
             #
-            if CImGui.MenuItem("iQIST")
-                @info "Trigger Help -> Documentation -> iQIST"
-            end
+            @c CImGui.MenuItem("iQIST", C_NULL, &FMENU._IQIST)
             #
             CImGui.Separator()
             #
-            if CImGui.MenuItem("ACFlow")
-                @info "Trigger Help -> Documentation -> ACFlow"
-            end
-            if CImGui.MenuItem("ACTest")
-                @info "Trigger Help -> Documentation -> ACTest"
-            end
+            @c CImGui.MenuItem("ACFlow", C_NULL, &FMENU._ACFLOW)
+            @c CImGui.MenuItem("ACTest", C_NULL, &FMENU._ACTEST)
             #
             CImGui.EndMenu()
         end
         #
         CImGui.Separator()
         #
-        if CImGui.MenuItem("User's manual")
-            @info "Trigger Help -> User's manual"
-        end
+        @c CImGui.MenuItem("User's manual", C_NULL, &FMENU._ZENGUI)
         @c CImGui.MenuItem("About ZenGui", C_NULL, &FMENU.ABOUT)
         #
         CImGui.EndMenu()
