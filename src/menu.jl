@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/03/31
+# Last modified: 2025/04/01
 #
 
 show_app_zen = false
@@ -15,13 +15,6 @@ show_app_cthyb = false
 show_app_atomic = false
 show_app_acflow = false
 show_app_actest = false
-show_app_about = false
-
-mutable struct MenuFlags
-    show_app_about :: Bool
-end
-
-MENUFLAGS = MenuFlags(false)
 
 """
     create_menu()
@@ -175,9 +168,7 @@ function set_menu_help()
         if CImGui.MenuItem("User's manual")
             @info "Trigger Help -> User's manual"
         end
-        #global show_app_about
-        #@c CImGui.MenuItem("About ZenGui", C_NULL, &show_app_about)
-        @c CImGui.MenuItem("About ZenGui", C_NULL, &(MENUFLAGS.show_app_about))
+        @c CImGui.MenuItem("About ZenGui", C_NULL, &(FMENU.ABOUT))
         #
         CImGui.EndMenu()
     end

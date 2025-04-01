@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/03/31
+# Last modified: 2025/04/01
 #
 
 function zeng_run()
@@ -37,7 +37,7 @@ function zeng_run()
     global show_app_atomic
     global show_app_acflow
     global show_app_actest
-    global show_app_about
+
     CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
         create_menu()
 
@@ -49,9 +49,8 @@ function zeng_run()
         show_app_atomic && @c create_app_atomic(&show_app_atomic)
         show_app_acflow && @c create_app_acflow(&show_app_acflow)
         show_app_actest && @c create_app_actest(&show_app_actest)
-        #show_app_about && @c create_app_about(&show_app_about)
-        @show MENUFLAGS.show_app_about
-        MENUFLAGS.show_app_about && @c create_app_about(&(MENUFLAGS.show_app_about))
-        @show MENUFLAGS.show_app_about
+        @show FMENU.ABOUT
+        FMENU.ABOUT && @c create_app_about(&(FMENU.ABOUT))
+        @show FMENU.ABOUT
     end
 end
