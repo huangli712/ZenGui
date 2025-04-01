@@ -38,6 +38,7 @@ function set_menu_file()
         #
         if CImGui.MenuItem("Exit")
             @info "Trigger File -> Exit"
+            return :imgui_exit_loop
         end
         #
         CImGui.EndMenu()
