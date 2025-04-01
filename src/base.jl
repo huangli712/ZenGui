@@ -56,6 +56,6 @@ function zeng_run()
         FMENU._ACFLOW   && @show "HELP ACFLOW"
         FMENU._ACTEST   && @show "HELP ACTEST"
         FMENU._ZENGUI   && @show "HELP ZENGUI"
-        FMENU.ABOUT     && @c create_app_about(&FMENU.ABOUT)
+        FMENU._ABOUT    && @c create_app_about(&FMENU._ABOUT)
     end
 end

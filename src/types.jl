@@ -32,7 +32,7 @@ mutable struct MenuFlags
     _ACFLOW   :: Bool
     _ACTEST   :: Bool
     _ZENGUI   :: Bool
-    ABOUT     :: Bool
+    _ABOUT    :: Bool
 end
 
 FMENU = MenuFlags(
