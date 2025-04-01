@@ -92,6 +92,8 @@ export __AUTHORS__
 #
 export authors
 
+include("types.jl")
+
 include("util.jl")
 
 include("menu.jl")
