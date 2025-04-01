@@ -8,7 +8,25 @@
 #
 
 mutable struct MenuFlags
-    ABOUT :: Bool
+    ZEN      :: Bool
+    DYSON    :: Bool
+    DFERMION :: Bool
+    CTSEG    :: Bool
+    CTHYB    :: Bool
+    ATOMIC   :: Bool
+    ACFLOW   :: Bool
+    ACTEST   :: Bool
+    ABOUT    :: Bool
 end
 
-FMENU = MenuFlags(false)
+FMENU = MenuFlags(
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+)

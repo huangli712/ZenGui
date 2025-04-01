@@ -7,15 +7,6 @@
 # Last modified: 2025/04/01
 #
 
-show_app_zen = false
-show_app_dyson = false
-show_app_dfermion = false
-show_app_ctseg = false
-show_app_cthyb = false
-show_app_atomic = false
-show_app_acflow = false
-show_app_actest = false
-
 """
     create_menu()
 
