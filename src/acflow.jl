@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/01
+# Last modified: 2025/04/02
 #
 
 function create_app_acflow(p_open::Ref{Bool})
@@ -26,17 +26,16 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.SetNextItemWidth(widget_input_width)
     CImGui.InputText(" Filename for input data", PBASE.finput, length(PBASE.finput))
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(finput)" * PBASE.finput)
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(finput)")
     #
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "solver :")
-    CImGui.SameLine()
-    CImGui.Text("Solver for the analytic continuation problem")
-    CImGui.SameLine()
     CImGui.SetNextItemWidth(widget_combo_width)
     solvers = ["MaxEnt", "BarRat", "NevanAC", "StochAC", "StochSK", "StochOM", "StochPX"]
-    @cstatic solver_id = Cint(0) begin
-        @c CImGui.Combo("C1", &solver_id, solvers)
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" Solver for the analytic continuation problem", &id, solvers)
+        PBASE.solver = solvers[id + 1]
     end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(solver)")
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "ktype  :")
     CImGui.SameLine()

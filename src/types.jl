@@ -62,8 +62,10 @@ FMENU = MenuFlags(
 
 mutable struct ACFLOW_PBASE
     finput :: String
+    solver :: String
 end
 
 PBASE = ACFLOW_PBASE(
-    "giw.data"
+    "giw.data",
+    "MaxEnt"
 )
