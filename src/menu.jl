@@ -52,37 +52,29 @@ Setup items in menu ``Edit''.
 function set_menu_edit()
     if CImGui.BeginMenu("Edit")
         if CImGui.BeginMenu("Integrated Package")
-            global show_app_zen
-            @c CImGui.MenuItem("Zen", C_NULL, &show_app_zen)
+            @c CImGui.MenuItem("Zen", C_NULL, &(FMENU.ZEN))
             #
             CImGui.EndMenu()
         end
         #
         if CImGui.BeginMenu("Dynamical Mean-Field Theory")
-            global show_app_dyson
-            global show_app_dfermion
-            @c CImGui.MenuItem("Dyson", C_NULL, &show_app_dyson)
-            @c CImGui.MenuItem("DFermion", C_NULL, &show_app_dfermion)
+            @c CImGui.MenuItem("Dyson", C_NULL, &(FMENU.DYSON))
+            @c CImGui.MenuItem("DFermion", C_NULL, &(FMENU.DFERMION))
             #
             CImGui.EndMenu()
         end
         #
         if CImGui.BeginMenu("Quantum Impurity Solvers")
-            global show_app_ctseg
-            global show_app_cthyb
-            global show_app_atomic
-            @c CImGui.MenuItem("iQIST | CTSEG", C_NULL, &show_app_ctseg)
-            @c CImGui.MenuItem("iQIST | CTHYB", C_NULL, &show_app_cthyb)
-            @c CImGui.MenuItem("iQIST | ATOMIC", C_NULL, &show_app_atomic)
+            @c CImGui.MenuItem("iQIST | CTSEG", C_NULL, &(FMENU.CTSEG))
+            @c CImGui.MenuItem("iQIST | CTHYB", C_NULL, &(FMENU.CTHYB))
+            @c CImGui.MenuItem("iQIST | ATOMIC", C_NULL, &(FMENU.ATOMIC))
             #
             CImGui.EndMenu()
         end
         #
         if CImGui.BeginMenu("Analytic Continuation")
-            global show_app_acflow
-            global show_app_actest
-            @c CImGui.MenuItem("ACFlow", C_NULL, &show_app_acflow)
-            @c CImGui.MenuItem("ACTest", C_NULL, &show_app_actest)
+            @c CImGui.MenuItem("ACFlow", C_NULL, &(FMENU.ACFLOW))
+            @c CImGui.MenuItem("ACTest", C_NULL, &(FMENU.ACTEST))
             #
             CImGui.EndMenu()
         end
