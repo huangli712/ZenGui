@@ -4,13 +4,14 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/03/31
+# Last modified: 2025/04/01
 #
 
 function setup_config_flags()
     io = CImGui.GetIO()
     io.ConfigFlags = unsafe_load(io.ConfigFlags) | CImGui.ImGuiConfigFlags_DockingEnable
     io.ConfigFlags = unsafe_load(io.ConfigFlags) | CImGui.ImGuiConfigFlags_ViewportsEnable
+    io.IniFilename = C_NULL
 end
 
 function tweak_window()
