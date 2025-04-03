@@ -1,4 +1,4 @@
-push!(LOAD_PATH, "../src")
+haskey(ENV,"ZEN_GUI") && pushfirst!(LOAD_PATH, ENV["ZEN_GUI"])
 
 using Documenter
 using ZenGui
@@ -14,7 +14,6 @@ makedocs(
         size_threshold = 409600, # 400kb
         assets = ["assets/zengui.css"],
         collapselevel = 1,
-        inventory_version = "0.3.0"
     ),
     remotes = nothing,
     modules = [ZenGui],
