@@ -4,10 +4,11 @@
 #
 # Usage:
 #
-#     $ zeng.jl
+#     $ ./zeng.jl
 #
 
-push!(LOAD_PATH, "../src")
+haskey(ENV,"ZEN_GUI") && pushfirst!(LOAD_PATH, ENV["ZEN_GUI"])
+
 using ZenGui
 
 zeng_run()
