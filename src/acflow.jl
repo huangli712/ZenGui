@@ -58,13 +58,14 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ktype)")
     #
     # Input: mtype
-
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "mtype  :")
+    CImGui.SetNextItemWidth(widget_combo_width)
+    mtype_list = ["flat", "gauss", "1gauss", "2gauss", "lorentz", "1lorentz", "2lorentz", "risedecay", "file"]
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" Type of default model function", &id, mtype_list)
+        PBASE.mtype = mtype_list[id + 1]
+    end
     CImGui.SameLine()
-    CImGui.Text("Type of default model function")
-    CImGui.SameLine()
-    CImGui.SetNextItemWidth(widget_input_width)
-    CImGui.Text("TODO")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mtype)$(PBASE.mtype)")
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "grid   :")
     CImGui.SameLine()

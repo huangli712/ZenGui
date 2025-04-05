@@ -64,10 +64,12 @@ mutable struct ACFLOW_PBASE
     finput :: String
     solver :: String
     ktype  :: String
+    mtype  :: String
 end
 
 PBASE = ACFLOW_PBASE(
     "giw.data",
     "MaxEnt",
-    "fermi"
+    "fermi",
+    "flat"
 )
