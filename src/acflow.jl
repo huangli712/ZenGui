@@ -35,7 +35,7 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.SetNextItemWidth(widget_input_width)
     CImGui.InputText(" Filename for input data", PBASE.finput, length(PBASE.finput))
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(finput)")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(finput)$(PBASE.finput)")
     #
     # Input: solver
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -45,7 +45,7 @@ function create_app_acflow(p_open::Ref{Bool})
         PBASE.solver = solver_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(solver)")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(solver)$(PBASE.solver)")
     #
     # Input: ktype
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -55,7 +55,7 @@ function create_app_acflow(p_open::Ref{Bool})
         PBASE.ktype = ktype_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ktype)")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ktype)$(PBASE.ktype)")
     #
     # Input: mtype
     CImGui.SetNextItemWidth(widget_combo_width)
