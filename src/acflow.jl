@@ -33,7 +33,10 @@ function create_app_acflow(p_open::Ref{Bool})
 
     # Input: finput
     CImGui.SetNextItemWidth(widget_input_width)
-    CImGui.InputText(" Filename for input data", PBASE.finput, length(PBASE.finput))
+    @cstatic buf = "giw.data" * "\0"^60 begin
+        CImGui.InputText(" Filename for input data", buf, length(buf))
+        PBASE.finput = buf
+    end    
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(finput)$(PBASE.finput)")
     #
