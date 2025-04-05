@@ -1,12 +1,12 @@
 # ZenGui
 
-ZenGui is the graphic user interface for the [**Zen**](https://github.com/huangli712/Zen) DFT + DMFT computation framework. Now it is also interfaced with quantum impurity solvers (the **iQIST** code), analytic continuation tools (the **ACFlow** and **ACTest** codes), and dynamical mean-field theory engine (the **Dyson** and **DFermion** codes).
+ZenGui is the graphic user interface for the [**Zen**](https://github.com/huangli712/Zen) DFT + DMFT computation framework. But now it is interfaced with the quantum impurity solvers (the **iQIST** code), analytic continuation tools (the **ACFlow** and **ACTest** codes), and dynamical mean-field theory engines (the **Dyson** and **DFermion** codes) as well.
 
 This package is currently under heavy developement. **PLEASE USE IT AT YOUR OWN RISK!**
 
 ## Version
 
-v0.3.1-devel.250403
+v0.4.0-devel.250406
 
 ## License
 
