@@ -7,6 +7,9 @@
 # Last modified: 2025/04/06
 #
 
+"""
+    MenuFlags
+"""
 mutable struct MenuFlags
     _OPEN     :: Bool
     _SAVE     :: Bool
@@ -35,6 +38,9 @@ mutable struct MenuFlags
     _ABOUT    :: Bool
 end
 
+"""
+    FMENU
+"""
 FMENU = MenuFlags(
     false,
     false,
@@ -60,6 +66,9 @@ FMENU = MenuFlags(
     false
 )
 
+"""
+    ACFLOW_PBASE
+"""
 mutable struct ACFLOW_PBASE
     finput  :: String
     solver  :: String
@@ -76,6 +85,9 @@ mutable struct ACFLOW_PBASE
     fwrite  :: Bool
 end
 
+"""
+    PBASE
+"""
 PBASE = ACFLOW_PBASE(
     "giw.data",
     "MaxEnt",
