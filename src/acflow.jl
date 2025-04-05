@@ -96,12 +96,14 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ngrid)$(PBASE.ngrid)")
     #
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "nmesh  :")
-    CImGui.SameLine()
-    CImGui.Text("Number of mesh points")
-    CImGui.SameLine()
+    # Input: nmesh
     CImGui.SetNextItemWidth(widget_input_width)
-    CImGui.Text("TODO")
+    @cstatic _i = Cint(501) begin
+        @c CImGui.InputInt(" Number of mesh points", &_i)
+        PBASE.nmesh = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmesh)$(PBASE.nmesh)")
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "wmax   :")
     CImGui.SameLine()
