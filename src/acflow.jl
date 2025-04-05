@@ -131,21 +131,32 @@ function create_app_acflow(p_open::Ref{Bool})
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PBASE.beta)")
-
     #
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "offdiag:")
-    CImGui.SameLine()
+    # Input: offdiag
+    @cstatic _i = Cint(0) begin
+        @c CImGui.RadioButton("Offdiagonal", &_i, 1)
+        CImGui.SameLine()
+        @c CImGui.RadioButton("Diagonal", &_i, 0)
+        _i == 1 && (PBASE.offdiag = true)
+        _i == 0 && (PBASE.offdiag = false)
+    end
+    #CImGui.SameLine()
     CImGui.Text("Is it the offdiagonal part in matrix-valued function")
     CImGui.SameLine()
-    CImGui.SetNextItemWidth(widget_input_width)
-    CImGui.Text("TODO")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(offdiag)$(PBASE.offdiag)")
     #
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "fwrite :")
-    CImGui.SameLine()
+    # Input: fwrite
+    @cstatic _i = Cint(0) begin
+        @c CImGui.RadioButton("Write to files", &_i, 1)
+        CImGui.SameLine()
+        @c CImGui.RadioButton("Keep silence", &_i, 0)
+        _i == 1 && (PBASE.fwrite = true)
+        _i == 0 && (PBASE.fwrite = false)
+    end
+    #CImGui.SameLine()
     CImGui.Text("Are the analytic continuation results written into files")
     CImGui.SameLine()
-    CImGui.SetNextItemWidth(widget_input_width)
-    CImGui.Text("TODO")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(fwrite)$(PBASE.fwrite)")
     #
     CImGui.Spacing()
     CImGui.Separator()
