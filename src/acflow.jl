@@ -87,12 +87,11 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mesh)$(PBASE.mesh)")
     #
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "ngrid  :")
-    CImGui.SameLine()
-    CImGui.Text("Number of grid points")
-    CImGui.SameLine()
+    # Input: ngrid
     CImGui.SetNextItemWidth(widget_input_width)
-    CImGui.Text("TODO")
+
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ngrid)$(PBASE.ngrid)")
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "nmesh  :")
     CImGui.SameLine()

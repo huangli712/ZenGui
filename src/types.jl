@@ -61,12 +61,19 @@ FMENU = MenuFlags(
 )
 
 mutable struct ACFLOW_PBASE
-    finput :: String
-    solver :: String
-    ktype  :: String
-    mtype  :: String
-    grid   :: String
-    mesh   :: String
+    finput  :: String
+    solver  :: String
+    ktype   :: String
+    mtype   :: String
+    grid    :: String
+    mesh    :: String
+    ngrid   :: I64
+    nmesh   :: I64
+    wmax    :: F64
+    wmin    :: F64
+    beta    :: F64
+    offdiag :: Bool
+    fwrite  :: Bool
 end
 
 PBASE = ACFLOW_PBASE(
@@ -75,5 +82,12 @@ PBASE = ACFLOW_PBASE(
     "fermi",
     "flat",
     "ffreq",
-    "linear"
+    "linear",
+    10,
+    501,
+    5.0,
+    -5.0,
+    10.0,
+    false,
+    true
 )
