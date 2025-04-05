@@ -114,12 +114,14 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmax)$(PBASE.wmax)")
     #
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "wmin   :")
-    CImGui.SameLine()
-    CImGui.Text("Left boundary (minimum value) of output mesh")
-    CImGui.SameLine()
+    # Input: wmin
     CImGui.SetNextItemWidth(widget_input_width)
-    CImGui.Text("TODO")
+    @cstatic _f = Cfloat(-5.0) begin
+        @c CImGui.InputFloat(" Left boundary (minimum value) of output mesh", &_f)
+        PBASE.wmin = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmin)$(PBASE.wmin)")
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "beta   :")
     CImGui.SameLine()
