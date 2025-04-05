@@ -105,12 +105,14 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmesh)$(PBASE.nmesh)")
     #
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "wmax   :")
-    CImGui.SameLine()
-    CImGui.Text("Right boundary (maximum value) of output mesh")
-    CImGui.SameLine()
+    # Input: wmax
     CImGui.SetNextItemWidth(widget_input_width)
-    CImGui.Text("TODO")
+    @cstatic _f = Cfloat(5.0) begin
+        @c CImGui.InputFloat(" Right boundary (maximum value) of output mesh", &_f)
+        PBASE.wmax = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmax)$(PBASE.wmax)")
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "wmin   :")
     CImGui.SameLine()
