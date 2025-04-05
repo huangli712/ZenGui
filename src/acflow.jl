@@ -77,13 +77,15 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(grid)$(PBASE.grid)")
     #
-    #
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "mesh   :")
+    # Input: mesh
+    CImGui.SetNextItemWidth(widget_combo_width)
+    mesh_list = ["linear", "tangent", "lorentz", "halflorentz"]
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" Mesh for output data (real axis)", &id, mesh_list)
+        PBASE.mesh = mesh_list[id + 1]
+    end
     CImGui.SameLine()
-    CImGui.Text("Mesh for output data (real axis)")
-    CImGui.SameLine()
-    CImGui.SetNextItemWidth(widget_input_width)
-    CImGui.Text("TODO")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mesh)$(PBASE.mesh)")
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "ngrid  :")
     CImGui.SameLine()
