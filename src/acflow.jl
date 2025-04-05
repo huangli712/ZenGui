@@ -67,12 +67,16 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mtype)$(PBASE.mtype)")
     #
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "grid   :")
+    # Input: grid
+    CImGui.SetNextItemWidth(widget_combo_width)
+    grid_list = ["ftime", "fpart", "btime", "bpart", "ffreq", "ffrag", "bfreq", "bfrag"]
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" Grid for input data (imaginary axis)", &id, grid_list)
+        PBASE.grid = grid_list[id + 1]
+    end
     CImGui.SameLine()
-    CImGui.Text("Grid for input data (imaginary axis)")
-    CImGui.SameLine()
-    CImGui.SetNextItemWidth(widget_input_width)
-    CImGui.Text("TODO")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(grid)$(PBASE.grid)")
+    #
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "mesh   :")
     CImGui.SameLine()

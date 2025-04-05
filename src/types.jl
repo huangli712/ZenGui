@@ -65,11 +65,15 @@ mutable struct ACFLOW_PBASE
     solver :: String
     ktype  :: String
     mtype  :: String
+    grid   :: String
+    mesh   :: String
 end
 
 PBASE = ACFLOW_PBASE(
     "giw.data",
     "MaxEnt",
     "fermi",
-    "flat"
+    "flat",
+    "ffreq",
+    "linear"
 )
