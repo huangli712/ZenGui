@@ -89,7 +89,10 @@ function create_app_acflow(p_open::Ref{Bool})
     #
     # Input: ngrid
     CImGui.SetNextItemWidth(widget_input_width)
-
+    @cstatic _i = Cint(10) begin
+        @c CImGui.InputInt(" Number of grid points", &_i)
+        PBASE.ngrid = _i
+    end    
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ngrid)$(PBASE.ngrid)")
     #
