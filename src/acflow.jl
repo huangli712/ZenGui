@@ -123,12 +123,15 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmin)$(PBASE.wmin)")
     #
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "beta   :")
-    CImGui.SameLine()
-    CImGui.Text("Inverse temperature")
-    CImGui.SameLine()
+    # Input: beta
     CImGui.SetNextItemWidth(widget_input_width)
-    CImGui.Text("TODO")
+    @cstatic _f = Cfloat(10.0) begin
+        @c CImGui.InputFloat(" Inverse temperature", &_f)
+        PBASE.beta = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PBASE.beta)")
+
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "offdiag:")
     CImGui.SameLine()
