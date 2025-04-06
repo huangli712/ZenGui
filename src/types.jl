@@ -217,3 +217,23 @@ PStochOM = ACFLOW_PStochOM(
     0.02,
     -1.0
 )
+
+mutable struct ACFLOW_PStochPX
+    method :: String
+    nfine  :: I64
+    npole  :: I64
+    ntry   :: I64
+    nstep  :: I64
+    theta  :: F64
+    eta    :: F64
+end
+
+PStochPX = ACFLOW_PStochPX(
+    "mean",
+    100000,
+    200,
+    1000,
+    1000000,
+    1e+6,
+    1e-4    
+)
