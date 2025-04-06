@@ -171,6 +171,24 @@ function create_app_acflow(p_open::Ref{Bool})
         CImGui.Text("Analytic Continuation Solver: MaxEnt")
     end
 
+    if PBASE.solver == "BarRat"
+    end
+
+    if PBASE.solver == "NevanAC"
+    end
+
+    if PBASE.solver == "StochAC"
+    end
+
+    if PBASE.solver == "StochSK"
+    end
+
+    if PBASE.solver == "StochOM"
+    end
+
+    if PBASE.solver == "StochPX"
+    end
+
     CImGui.Separator()
     CImGui.Dummy(ImVec2(0.0,10.0))
 
