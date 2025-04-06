@@ -310,6 +310,16 @@ function _acflow_barrat_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(atype)$(PBarRat.atype)")
+    #
+    # Input: denoise
+    CImGui.SetNextItemWidth(widget_combo_width)
+    denoise_list = ["none", "prony_s", "prony_o"]
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" How to denoise the input data", &id, denoise_list)
+        PBarRat.denoise = denoise_list[id + 1]
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(denoise)$(PBarRat.denoise)")
 
 end
 
