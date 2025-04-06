@@ -137,3 +137,19 @@ PBarRat = ACFLOW_PBarRat(
     1e-3,
     1e-2
 )
+
+mutable struct ACFLOW_PNevanAC
+    pick  :: Bool
+    hardy :: Bool
+    hmax  :: I64
+    alpha :: F64
+    eta   :: F64
+end
+
+PNevanAC = ACFLOW_PNevanAC(
+    true,
+    true,
+    50,
+    1e-4,
+    1e-2
+)
