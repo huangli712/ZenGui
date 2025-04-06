@@ -244,6 +244,15 @@ function _acflow_maxent_block()
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(method)$(PMaxEnt.method)")
     #
+    # Input: stype
+    CImGui.SetNextItemWidth(widget_combo_width)
+    stype_list = ["sj", "br"]
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" Type of the entropic term", &id, stype_list)
+        PMaxEnt.stype = stype_list[id + 1]
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(stype)$(PMaxEnt.stype)")
 end
 
 """
