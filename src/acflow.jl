@@ -224,23 +224,58 @@ function _acflow_base_block()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(fwrite)$(PBASE.fwrite)")
 end
 
+"""
+    _acflow_maxent_block()
+
+Widgets for the [MaxEnt] block in the ac.toml.
+"""
 function _acflow_maxent_block()
 end
 
+"""
+    _acflow_barrat_block()
+
+Widgets for the [BarRat] block in the ac.toml.
+"""
 function _acflow_barrat_block()
 end
 
+"""
+    _acflow_nevanac_block()
+
+Widgets for the [NevanAC] block in the ac.toml.
+"""
 function _acflow_nevanac_block()
 end
 
+"""
+    _acflow_stochac_block()
+
+Widgets for the [StochAC] block in the ac.toml.
+"""
 function _acflow_stochac_block()
 end
 
+"""
+    _acflow_stochsk_block()
+
+Widgets for the [StochSK] block in the ac.toml.
+"""
 function _acflow_stochsk_block()
 end
 
+"""
+    _acflow_stochom_block()
+
+Widgets for the [StochOM] block in the ac.toml.
+"""
 function _acflow_stochom_block()
 end
 
+"""
+    _acflow_stochpx_block()
+
+Widgets for the [StochPX] block in the ac.toml.
+"""
 function _acflow_stochpx_block()
 end
