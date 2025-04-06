@@ -121,3 +121,19 @@ PMaxEnt = ACFLOW_PMaxEnt(
     10.0,
     -1.0
 )
+
+mutable struct ACFLOW_PBarRat
+    atype   :: String
+    denoise :: String
+    epsilon :: F64
+    pcut    :: F64
+    eta     :: F64
+end
+
+PBarRat = ACFLOW_PBarRat(
+    "cont",
+    "prony",
+    1e-10,
+    1e-3,
+    1e-2
+)
