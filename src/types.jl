@@ -104,6 +104,9 @@ PBASE = ACFLOW_PBASE(
     true
 )
 
+"""
+    ACFLOW_PMaxEnt
+"""
 mutable struct ACFLOW_PMaxEnt
     method :: String
     stype  :: String
@@ -113,6 +116,9 @@ mutable struct ACFLOW_PMaxEnt
     blur   :: F64
 end
 
+"""
+    PMaxEnt
+"""
 PMaxEnt = ACFLOW_PMaxEnt(
     "chi2kink",
     "sj",
@@ -122,6 +128,9 @@ PMaxEnt = ACFLOW_PMaxEnt(
     -1.0
 )
 
+"""
+    ACFLOW_PBarRat
+"""
 mutable struct ACFLOW_PBarRat
     atype   :: String
     denoise :: String
@@ -130,6 +139,9 @@ mutable struct ACFLOW_PBarRat
     eta     :: F64
 end
 
+"""
+    PBarRat
+"""
 PBarRat = ACFLOW_PBarRat(
     "cont",
     "prony",
@@ -138,6 +150,9 @@ PBarRat = ACFLOW_PBarRat(
     1e-2
 )
 
+"""
+    ACFLOW_PNevanAC
+"""
 mutable struct ACFLOW_PNevanAC
     pick  :: Bool
     hardy :: Bool
@@ -146,6 +161,9 @@ mutable struct ACFLOW_PNevanAC
     eta   :: F64
 end
 
+"""
+    PNevanAC
+"""
 PNevanAC = ACFLOW_PNevanAC(
     true,
     true,
@@ -154,6 +172,9 @@ PNevanAC = ACFLOW_PNevanAC(
     1e-2
 )
 
+"""
+    ACFLOW_PStochAC
+"""
 mutable struct ACFLOW_PStochAC
     nfine :: I64
     ngamm :: I64
@@ -165,6 +186,9 @@ mutable struct ACFLOW_PStochAC
     ratio :: F64
 end
 
+"""
+    PStochAC
+"""
 PStochAC = ACFLOW_PStochAC(
     10000,
     512,
@@ -176,6 +200,9 @@ PStochAC = ACFLOW_PStochAC(
     1.20
 )
 
+"""
+    ACFLOW_PStochSK
+"""
 mutable struct ACFLOW_PStochSK
     method :: String
     nfine  :: I64
@@ -188,6 +215,9 @@ mutable struct ACFLOW_PStochSK
     ratio  :: F64
 end
 
+"""
+    PStochSK
+"""
 PStochSK = ACFLOW_PStochSK(
     "chi2min",
     100000,
@@ -197,9 +227,12 @@ PStochSK = ACFLOW_PStochSK(
     200,
     10,
     1e+6,
-    0.90    
+    0.90
 )
 
+"""
+    ACFLOW_PStochOM
+"""
 mutable struct ACFLOW_PStochOM
     ntry  :: I64
     nstep :: I64
@@ -209,6 +242,9 @@ mutable struct ACFLOW_PStochOM
     norm  :: F64
 end
 
+"""
+    PStochOM
+"""
 PStochOM = ACFLOW_PStochOM(
     2000,
     1000,
@@ -218,6 +254,9 @@ PStochOM = ACFLOW_PStochOM(
     -1.0
 )
 
+"""
+    ACFLOW_PStochPX
+"""
 mutable struct ACFLOW_PStochPX
     method :: String
     nfine  :: I64
@@ -228,6 +267,9 @@ mutable struct ACFLOW_PStochPX
     eta    :: F64
 end
 
+"""
+    PStochPX
+"""
 PStochPX = ACFLOW_PStochPX(
     "mean",
     100000,
@@ -235,5 +277,5 @@ PStochPX = ACFLOW_PStochPX(
     1000,
     1000000,
     1e+6,
-    1e-4    
+    1e-4
 )

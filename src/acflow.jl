@@ -38,7 +38,7 @@ function create_app_acflow(p_open::Ref{Bool})
     @cstatic buf = "giw.data" * "\0"^60 begin
         CImGui.InputText(" Filename for input data", buf, length(buf))
         PBASE.finput = buf
-    end    
+    end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(finput)$(PBASE.finput)")
     #
@@ -97,7 +97,7 @@ function create_app_acflow(p_open::Ref{Bool})
     @cstatic _i = Cint(10) begin
         @c CImGui.InputInt(" Number of grid points", &_i)
         PBASE.ngrid = _i
-    end    
+    end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ngrid)$(PBASE.ngrid)")
     #
