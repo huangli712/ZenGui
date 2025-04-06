@@ -238,6 +238,9 @@ end
 Widgets for the [BarRat] block in the ac.toml.
 """
 function _acflow_barrat_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
 end
 
 """
@@ -246,6 +249,9 @@ end
 Widgets for the [NevanAC] block in the ac.toml.
 """
 function _acflow_nevanac_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
 end
 
 """
@@ -254,6 +260,9 @@ end
 Widgets for the [StochAC] block in the ac.toml.
 """
 function _acflow_stochac_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
 end
 
 """
@@ -262,6 +271,9 @@ end
 Widgets for the [StochSK] block in the ac.toml.
 """
 function _acflow_stochsk_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
 end
 
 """
@@ -270,6 +282,9 @@ end
 Widgets for the [StochOM] block in the ac.toml.
 """
 function _acflow_stochom_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
 end
 
 """
@@ -278,4 +293,7 @@ end
 Widgets for the [StochPX] block in the ac.toml.
 """
 function _acflow_stochpx_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
 end
