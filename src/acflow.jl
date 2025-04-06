@@ -83,6 +83,11 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.End()
 end
 
+"""
+    _acflow_base_block()
+
+Widgets for the [BASE] block in the ac.toml.
+"""
 function _acflow_base_block()
     # Define the default size for widgets
     widget_input_width = 100
