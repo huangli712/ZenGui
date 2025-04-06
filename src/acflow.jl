@@ -31,8 +31,53 @@ function create_app_acflow(p_open::Ref{Bool})
     widget_button_width = 80.0
     widget_button_height = 25.0
 
-    # Below the widgets are placed one by one.
 
+    #
+    CImGui.Spacing()
+    CImGui.Separator()
+    CImGui.Spacing()
+
+    if PBASE.solver == "MaxEnt"
+        CImGui.Text("Analytic Continuation Solver: MaxEnt")
+        _acflow_maxent_block()
+    end
+
+    if PBASE.solver == "BarRat"
+        _acflow_barrat_block()
+    end
+
+    if PBASE.solver == "NevanAC"
+        _acflow_nevanac_block()
+    end
+
+    if PBASE.solver == "StochAC"
+        _acflow_stochac_block()
+    end
+
+    if PBASE.solver == "StochSK"
+        _acflow_stochsk_block()
+    end
+
+    if PBASE.solver == "StochOM"
+        _acflow_stochom_block()
+    end
+
+    if PBASE.solver == "StochPX"
+        _acflow_stochpx_block()
+    end
+
+    CImGui.Separator()
+    CImGui.Dummy(ImVec2(0.0,10.0))
+
+    if CImGui.Button("Generate", ImVec2(widget_button_width, widget_button_height))
+        @show PBASE
+    end
+
+    # End of this window
+    CImGui.End()
+end
+
+function _acflow_base_block()
     # Input: finput
     CImGui.SetNextItemWidth(widget_input_width)
     @cstatic buf = "giw.data" * "\0"^60 begin
@@ -162,45 +207,6 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.Text("Are the analytic continuation results written into files")
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(fwrite)$(PBASE.fwrite)")
-    #
-    CImGui.Spacing()
-    CImGui.Separator()
-    CImGui.Spacing()
-
-    if PBASE.solver == "MaxEnt"
-        CImGui.Text("Analytic Continuation Solver: MaxEnt")
-    end
-
-    if PBASE.solver == "BarRat"
-    end
-
-    if PBASE.solver == "NevanAC"
-    end
-
-    if PBASE.solver == "StochAC"
-    end
-
-    if PBASE.solver == "StochSK"
-    end
-
-    if PBASE.solver == "StochOM"
-    end
-
-    if PBASE.solver == "StochPX"
-    end
-
-    CImGui.Separator()
-    CImGui.Dummy(ImVec2(0.0,10.0))
-
-    if CImGui.Button("Generate", ImVec2(widget_button_width, widget_button_height))
-        @show PBASE
-    end
-
-    # End of this window
-    CImGui.End()
-end
-
-function _acflow_base_block()
 end
 
 function _acflow_maxent_block()
