@@ -31,7 +31,7 @@ function create_app_acflow(p_open::Ref{Bool})
 
     # For the [BASE] block in the ac.toml
     _acflow_base_block()
-    
+
     # For the separator
     CImGui.Spacing()
     CImGui.Separator()
@@ -73,7 +73,7 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.Spacing()
     CImGui.Separator()
     CImGui.Spacing()
-    
+
     # For the buttons
     if CImGui.Button("View", ImVec2(widget_button_width, widget_button_height))
         @show PBASE
@@ -288,7 +288,7 @@ function _acflow_maxent_block()
         PMaxEnt.blur = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(blur)$(PMaxEnt.blur)")     
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(blur)$(PMaxEnt.blur)")
 end
 
 """
@@ -300,6 +300,8 @@ function _acflow_barrat_block()
     # Define the default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
+
+
 end
 
 """
