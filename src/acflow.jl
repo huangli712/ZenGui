@@ -29,13 +29,18 @@ function create_app_acflow(p_open::Ref{Bool})
     widget_button_width = 80.0
     widget_button_height = 25.0
 
+    # For the [BASE] block in the ac.toml
     _acflow_base_block()
-    #
+    
+    # For the separator
     CImGui.Spacing()
     CImGui.Separator()
     CImGui.Spacing()
-    #
+
+    # For the [Solver] block in the ac.toml. It should change upon the
+    # selection of analytic continuation solver.
     CImGui.Text("Analytic Continuation Solver: $(PBASE.solver)")
+    #
     if PBASE.solver == "MaxEnt"
         _acflow_maxent_block()
     end
@@ -64,11 +69,13 @@ function create_app_acflow(p_open::Ref{Bool})
         _acflow_stochpx_block()
     end
 
+    # For the separator
     CImGui.Spacing()
     CImGui.Separator()
     CImGui.Spacing()
     
-    if CImGui.Button("Generate", ImVec2(widget_button_width, widget_button_height))
+    # For the buttons
+    if CImGui.Button("View", ImVec2(widget_button_width, widget_button_height))
         @show PBASE
     end
 
