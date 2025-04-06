@@ -323,8 +323,8 @@ function _acflow_barrat_block()
     #
     # Input: epsilon
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _f = Cfloat(1e-10) begin
-        @c CImGui.InputFloat(" Threshold for the Prony approximation", &_f)
+    @cstatic _f = Cdouble(1e-10) begin
+        @c CImGui.InputDouble(" Threshold for the Prony approximation", &_f)
         PBarRat.epsilon = _f
     end
     CImGui.SameLine()
