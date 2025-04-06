@@ -103,3 +103,21 @@ PBASE = ACFLOW_PBASE(
     false,
     true
 )
+
+mutable struct ACFLOW_PMaxEnt
+    method :: String
+    stype  :: String
+    nalph  :: I64
+    alpha  :: F64
+    ratio  :: F64
+    blur   :: F64
+end
+
+PMaxEnt = ACFLOW_PMaxEnt(
+    "chi2kink",
+    "sj",
+    12,
+    1e9,
+    10.0,
+    -1.0
+)
