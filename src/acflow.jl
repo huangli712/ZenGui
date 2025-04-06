@@ -257,12 +257,20 @@ function _acflow_maxent_block()
     # Input: nalph
     CImGui.SetNextItemWidth(widget_input_width)
     @cstatic _i = Cint(12) begin
-        @c CImGui.InputInt(" Total number of the chosen α parameters"", &_i)
+        @c CImGui.InputInt(" Total number of the chosen α parameters", &_i)
         PMaxEnt.nalph = _i
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nalph)$(PMaxEnt.nalph)")
     #
+    # Input: alpha
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cfloat(1e9) begin
+        @c CImGui.InputFloat(" Starting value for the α parameter", &_f)
+        PMaxEnt.alpha = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(alpha)$(PMaxEnt.alpha)")    
 end
 
 """
