@@ -199,3 +199,21 @@ PStochSK = ACFLOW_PStochSK(
     1e+6,
     0.90    
 )
+
+mutable struct ACFLOW_PStochOM
+    ntry  :: I64
+    nstep :: I64
+    nbox  :: I64
+    sbox  :: F64
+    wbox  :: F64
+    norm  :: F64
+end
+
+PStochOM = ACFLOW_PStochOM(
+    2000,
+    1000,
+    100,
+    0.005,
+    0.02,
+    -1.0
+)
