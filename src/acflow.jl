@@ -270,7 +270,16 @@ function _acflow_maxent_block()
         PMaxEnt.alpha = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(alpha)$(PMaxEnt.alpha)")    
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(alpha)$(PMaxEnt.alpha)")
+    #
+    # Input: ratio
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cfloat(10.0) begin
+        @c CImGui.InputFloat(" Scaling factor for the α parameter", &_f)
+        PMaxEnt.ratio = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ratio)$(PMaxEnt.ratio)")       
 end
 
 """
