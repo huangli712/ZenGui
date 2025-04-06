@@ -320,7 +320,15 @@ function _acflow_barrat_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(denoise)$(PBarRat.denoise)")
-
+    #
+    # Input: epsilon
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cfloat(1e-10) begin
+        @c CImGui.InputFloat(" Threshold for the Prony approximation", &_f)
+        PBarRat.epsilon = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(epsilon)$(PBarRat.epsilon)")
 end
 
 """
