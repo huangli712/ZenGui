@@ -279,7 +279,16 @@ function _acflow_maxent_block()
         PMaxEnt.ratio = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ratio)$(PMaxEnt.ratio)")       
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ratio)$(PMaxEnt.ratio)")
+    #
+    # Input: blur
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cfloat(-1.0) begin
+        @c CImGui.InputFloat(" Shall we preblur the kernel and spectrum", &_f)
+        PMaxEnt.blur = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(blur)$(PMaxEnt.blur)")     
 end
 
 """
