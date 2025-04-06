@@ -199,3 +199,27 @@ function create_app_acflow(p_open::Ref{Bool})
     # End of this window
     CImGui.End()
 end
+
+function _acflow_base_block()
+end
+
+function _acflow_maxent_block()
+end
+
+function _acflow_barrat_block()
+end
+
+function _acflow_nevanac_block()
+end
+
+function _acflow_stochac_block()
+end
+
+function _acflow_stochsk_block()
+end
+
+function _acflow_stochom_block()
+end
+
+function _acflow_stochpx_block()
+end
