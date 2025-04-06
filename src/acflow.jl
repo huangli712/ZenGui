@@ -303,7 +303,7 @@ function _acflow_barrat_block()
 
     # Input: atype
     CImGui.SetNextItemWidth(widget_combo_width)
-    atype_list = ["historic", "classic", "bryan", "chi2kink"]
+    atype_list = ["cont", "delta"]
     @cstatic id = Cint(0) begin
         @c CImGui.Combo(" Possible type of the spectrum", &id, atype_list)
         PBarRat.atype = atype_list[id + 1]
