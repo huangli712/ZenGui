@@ -230,6 +230,20 @@ end
 Widgets for the [MaxEnt] block in the ac.toml.
 """
 function _acflow_maxent_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    # Input: method
+    CImGui.SetNextItemWidth(widget_combo_width)
+    method_list = ["historic", "classic", "bryan", "chi2kink"]
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" How to determine the optimized α parameter", &id, method_list)
+        PMaxEnt.method = method_list[id + 1]
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(method)$(PMaxEnt.method)")
+    #
 end
 
 """
