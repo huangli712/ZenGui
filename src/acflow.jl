@@ -26,49 +26,48 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
     # Define the default size for widgets
-    widget_input_width = 100
-    widget_combo_width = 100
     widget_button_width = 80.0
     widget_button_height = 25.0
 
-
+    _acflow_base_block()
     #
     CImGui.Spacing()
     CImGui.Separator()
     CImGui.Spacing()
-
+    #
+    CImGui.Text("Analytic Continuation Solver: $(PBASE.solver)")
     if PBASE.solver == "MaxEnt"
-        CImGui.Text("Analytic Continuation Solver: MaxEnt")
         _acflow_maxent_block()
     end
-
+    #
     if PBASE.solver == "BarRat"
         _acflow_barrat_block()
     end
-
+    #
     if PBASE.solver == "NevanAC"
         _acflow_nevanac_block()
     end
-
+    #
     if PBASE.solver == "StochAC"
         _acflow_stochac_block()
     end
-
+    #
     if PBASE.solver == "StochSK"
         _acflow_stochsk_block()
     end
-
+    #
     if PBASE.solver == "StochOM"
         _acflow_stochom_block()
     end
-
+    #
     if PBASE.solver == "StochPX"
         _acflow_stochpx_block()
     end
 
+    CImGui.Spacing()
     CImGui.Separator()
-    CImGui.Dummy(ImVec2(0.0,10.0))
-
+    CImGui.Spacing()
+    
     if CImGui.Button("Generate", ImVec2(widget_button_width, widget_button_height))
         @show PBASE
     end
@@ -78,6 +77,10 @@ function create_app_acflow(p_open::Ref{Bool})
 end
 
 function _acflow_base_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
     # Input: finput
     CImGui.SetNextItemWidth(widget_input_width)
     @cstatic buf = "giw.data" * "\0"^60 begin
