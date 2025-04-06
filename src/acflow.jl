@@ -28,6 +28,8 @@ function create_app_acflow(p_open::Ref{Bool})
     # Define the default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
+    widget_button_width = 80.0
+    widget_button_height = 25.0
 
     # Below the widgets are placed one by one.
 
@@ -163,11 +165,16 @@ function create_app_acflow(p_open::Ref{Bool})
     #
     CImGui.Spacing()
     CImGui.Separator()
+    CImGui.Spacing()
+
+    if PBASE.solver == "MaxEnt"
+        CImGui.Text("Analytic Continuation Solver: MaxEnt")
+    end
+
+    CImGui.Separator()
     CImGui.Dummy(ImVec2(0.0,10.0))
 
-    button_width = 80.0
-    button_height = 25.0
-    if CImGui.Button("Generate", ImVec2(button_width, button_height))
+    if CImGui.Button("Generate", ImVec2(widget_button_width, widget_button_height))
         @show PBASE
     end
 
