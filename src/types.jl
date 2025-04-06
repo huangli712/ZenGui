@@ -175,3 +175,27 @@ PStochAC = ACFLOW_PStochAC(
     1.00,
     1.20
 )
+
+mutable struct ACFLOW_PStochSK
+    method :: String
+    nfine  :: I64
+    ngamm  :: I64
+    nwarm  :: I64
+    nstep  :: I64
+    ndump  :: I64
+    retry  :: I64
+    theta  :: F64
+    ratio  :: F64
+end
+
+PStochSK = ACFLOW_PStochSK(
+    "chi2min",
+    100000,
+    1000,
+    1000,
+    20000,
+    200,
+    10,
+    1e+6,
+    0.90    
+)
