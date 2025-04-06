@@ -97,7 +97,7 @@ function _acflow_base_block()
     CImGui.SetNextItemWidth(widget_input_width)
     @cstatic buf = "giw.data" * "\0"^60 begin
         CImGui.InputText(" Filename for input data", buf, length(buf))
-        PBASE.finput = buf
+        PBASE.finput = rstrip(buf,'\0')
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(finput)$(PBASE.finput)")
