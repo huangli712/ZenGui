@@ -153,3 +153,25 @@ PNevanAC = ACFLOW_PNevanAC(
     1e-4,
     1e-2
 )
+
+mutable struct ACFLOW_PStochAC
+    nfine :: I64
+    ngamm :: I64
+    nwarm :: I64
+    nstep :: I64
+    ndump :: I64
+    nalph :: I64
+    alpha :: F64
+    ratio :: F64
+end
+
+PStochAC = ACFLOW_PStochAC(
+    10000,
+    512,
+    4000,
+    4000000,
+    40000,
+    20,
+    1.00,
+    1.20
+)
