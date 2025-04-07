@@ -426,6 +426,15 @@ function _acflow_stochac_block()
     # Define the default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
+
+    # Input: nfine
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(10000) begin
+        @c CImGui.InputInt(" Number of points of a very fine linear mesh", &_i)
+        PStochAC.nfine = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nfine)$(PStochAC.nfine)")
 end
 
 """
