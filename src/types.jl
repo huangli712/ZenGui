@@ -297,3 +297,9 @@ function _struct_to_dict(s::ACFLOW_PBASE)
         "fwrite"  => s.fwrite
     )
 end
+
+function _dict_to_toml(d::Dict{String,Any})
+    io = IOBuffer()
+    TOML.print(io,d)
+    return String(take!(io))
+end

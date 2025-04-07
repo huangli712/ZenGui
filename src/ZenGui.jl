@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/03/31
+# Last modified: 2025/04/08
 #
 
 """
@@ -36,6 +36,7 @@ module ZenGui
 
 using Dates
 using Printf
+using TOML
 
 #=
 ### *Using Third-Party Libraries*
