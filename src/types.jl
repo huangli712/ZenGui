@@ -309,6 +309,24 @@ function _struct_to_dict(s::ACFLOW_PMaxEnt)
     )
 end
 
+function _struct_to_dict(s::ACFLOW_PBarRat)
+end
+
+function _struct_to_dict(s::ACFLOW_PNevanAC)
+end
+
+function _struct_to_dict(s::ACFLOW_PStochAC)
+end
+
+function _struct_to_dict(s::ACFLOW_PStochSK)
+end
+
+function _struct_to_dict(s::ACFLOW_PStochOM)
+end
+
+function _struct_to_dict(s::ACFLOW_PStochPX)
+end
+
 function _dict_to_toml(d::Dict)
     io = IOBuffer()
     TOML.print(io,d)
