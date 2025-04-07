@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/03/31
+# Last modified: 2025/04/08
 #
 
 """
@@ -52,7 +52,7 @@ function create_app_about(p_open::Ref{Bool})
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Version:")
     CImGui.SameLine()
-    CImGui.Text("v0.2.0-devel.250331")
+    CImGui.Text("v0.2.0-devel.250408")
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "License:")
     CImGui.SameLine()
