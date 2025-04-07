@@ -279,3 +279,21 @@ PStochPX = ACFLOW_PStochPX(
     1e+6,
     1e-4
 )
+
+function _struct_to_dict(s::ACFLOW_PBASE)
+    return Dict{String,Any}(
+        "finput"  => s.finput,
+        "solver"  => s.solver,
+        "ktype"   => s.ktype,
+        "mtype"   => s.mtype,
+        "grid"    => s.grid,
+        "mesh"    => s.mesh,
+        "ngrid"   => s.ngrid,
+        "nmesh"   => s.nmesh,
+        "wmax"    => s.wmax,
+        "wmin"    => s.wmin,
+        "beta"    => s.beta,
+        "offdiag" => s.offdiag,
+        "fwrite"  => s.fwrite
+    )
+end
