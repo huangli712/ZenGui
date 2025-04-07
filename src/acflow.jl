@@ -489,6 +489,15 @@ function _acflow_stochac_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(alpha)$(PStochAC.alpha)")
+    #
+    # Input: ratio
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(1.2) begin
+        @c CImGui.InputDouble(" Scaling factor for the α parameter", &_f)
+        PStochAC.ratio = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ratio)$(PStochAC.ratio)")
 end
 
 """
