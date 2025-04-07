@@ -374,6 +374,20 @@ function _acflow_nevanac_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(pick)$(PNevanAC.pick)")
+    #
+    # Input: pick
+    CImGui.SetNextItemWidth(widget_combo_width)
+    hardy_list = ["Yes", "No"]
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" Perform Hardy basis optimization or not", &id, hardy_list)
+        if id == 0
+            PNevanAC.hardy = true
+        else
+            PNevanAC.hardy = false
+        end
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(hardy)$(PNevanAC.hardy)")
 
 end
 
