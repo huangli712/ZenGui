@@ -172,8 +172,8 @@ function _acflow_base_block()
     #
     # Input: wmax
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _f = Cfloat(5.0) begin
-        @c CImGui.InputFloat(" Right boundary (maximum value) of output mesh", &_f)
+    @cstatic _f = Cdouble(5.0) begin
+        @c CImGui.InputDouble(" Right boundary (maximum value) of output mesh", &_f)
         PBASE.wmax = _f
     end
     CImGui.SameLine()
@@ -181,8 +181,8 @@ function _acflow_base_block()
     #
     # Input: wmin
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _f = Cfloat(-5.0) begin
-        @c CImGui.InputFloat(" Left boundary (minimum value) of output mesh", &_f)
+    @cstatic _f = Cdouble(-5.0) begin
+        @c CImGui.InputDouble(" Left boundary (minimum value) of output mesh", &_f)
         PBASE.wmin = _f
     end
     CImGui.SameLine()
@@ -190,8 +190,8 @@ function _acflow_base_block()
     #
     # Input: beta
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _f = Cfloat(10.0) begin
-        @c CImGui.InputFloat(" Inverse temperature", &_f)
+    @cstatic _f = Cdouble(10.0) begin
+        @c CImGui.InputDouble(" Inverse temperature", &_f)
         PBASE.beta = _f
     end
     CImGui.SameLine()
@@ -267,8 +267,8 @@ function _acflow_maxent_block()
     #
     # Input: alpha
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _f = Cfloat(1e9) begin
-        @c CImGui.InputFloat(" Starting value for the α parameter", &_f)
+    @cstatic _f = Cdouble(1e9) begin
+        @c CImGui.InputDouble(" Starting value for the α parameter", &_f)
         PMaxEnt.alpha = _f
     end
     CImGui.SameLine()
@@ -276,8 +276,8 @@ function _acflow_maxent_block()
     #
     # Input: ratio
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _f = Cfloat(10.0) begin
-        @c CImGui.InputFloat(" Scaling factor for the α parameter", &_f)
+    @cstatic _f = Cdouble(10.0) begin
+        @c CImGui.InputDouble(" Scaling factor for the α parameter", &_f)
         PMaxEnt.ratio = _f
     end
     CImGui.SameLine()
@@ -285,8 +285,8 @@ function _acflow_maxent_block()
     #
     # Input: blur
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _f = Cfloat(-1.0) begin
-        @c CImGui.InputFloat(" Shall we preblur the kernel and spectrum", &_f)
+    @cstatic _f = Cdouble(-1.0) begin
+        @c CImGui.InputDouble(" Shall we preblur the kernel and spectrum", &_f)
         PMaxEnt.blur = _f
     end
     CImGui.SameLine()
@@ -400,8 +400,8 @@ function _acflow_nevanac_block()
     #
     # Input: alpha
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _f = Cfloat(1e-4) begin
-        @c CImGui.InputFloat(" Regulation parameter for smooth norm", &_f)
+    @cstatic _f = Cdouble(1e-4) begin
+        @c CImGui.InputDouble(" Regulation parameter for smooth norm", &_f)
         PNevanAC.alpha = _f
     end
     CImGui.SameLine()
