@@ -480,6 +480,15 @@ function _acflow_stochac_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nalph)$(PStochAC.nalph)")
+    #
+    # Input: alpha
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(1.0) begin
+        @c CImGui.InputDouble(" Starting value for the α parameter", &_f)
+        PStochAC.alpha = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(alpha)$(PStochAC.alpha)")
 end
 
 """
