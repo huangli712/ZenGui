@@ -6,7 +6,7 @@ This package is currently under heavy developement. **PLEASE USE IT AT YOUR OWN 
 
 ## Version
 
-v0.4.0-devel.250406
+v0.5.0-devel.250408
 
 ## License
 
