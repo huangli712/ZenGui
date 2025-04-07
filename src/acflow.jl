@@ -80,7 +80,7 @@ function create_app_acflow(p_open::Ref{Bool})
         @cstatic read_only=false text="Hello World!\n" begin
             @c CImGui.Checkbox("Read-only", &read_only)
             flags = CImGui.ImGuiInputTextFlags_AllowTabInput | (read_only ? CImGui.ImGuiInputTextFlags_ReadOnly : 0)
-            CImGui.InputTextMultiline("source", text, length(text), ImVec2(-1.0, CImGui.GetTextLineHeight() * 16), flags)
+            CImGui.InputTextMultiline("source", text, length(text), ImVec2(400, 600), flags)
         end
         CImGui.Button("OK", ImVec2(widget_button_width, widget_button_height)) && CImGui.CloseCurrentPopup()
         CImGui.EndPopup()
