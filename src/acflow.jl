@@ -397,7 +397,24 @@ function _acflow_nevanac_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(hmax)$(PNevanAC.hmax)")
-
+    #
+    # Input: alpha
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cfloat(1e-4) begin
+        @c CImGui.InputFloat(" Regulation parameter for smooth norm", &_f)
+        PNevanAC.alpha = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(alpha)$(PNevanAC.alpha)")
+    #
+    # Input: eta
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(1e-2) begin
+        @c CImGui.InputDouble(" Tiny distance from the real axis", &_f)
+        PNevanAC.eta = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(eta)$(PNevanAC.eta)")
 end
 
 """
