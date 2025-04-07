@@ -281,7 +281,7 @@ PStochPX = ACFLOW_PStochPX(
 )
 
 function _struct_to_dict(s::ACFLOW_PBASE)
-    return Dict{String,Any}(
+    d = Dict{String,Any}(
         "finput"  => s.finput,
         "solver"  => s.solver,
         "ktype"   => s.ktype,
@@ -296,6 +296,7 @@ function _struct_to_dict(s::ACFLOW_PBASE)
         "offdiag" => s.offdiag,
         "fwrite"  => s.fwrite
     )
+    return Dict("BASE" => d)
 end
 
 function _dict_to_toml(d::Dict{String,Any})
