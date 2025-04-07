@@ -603,57 +603,59 @@ function _acflow_stochom_block()
     widget_input_width = 100
     widget_combo_width = 100
 
-    # Input: retry
+    # Input: ntry
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _i = Cint(10) begin
-        @c CImGui.InputInt(" How often to recalculate the goodness function", &_i)
-        PStochSK.retry = _i
+    @cstatic _i = Cint(2000) begin
+        @c CImGui.InputInt(" Number of attempts (tries) to seek the solution", &_i)
+        PStochOM.ntry = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(retry)$(PStochSK.retry)")
-    # Input: retry
-    CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _i = Cint(10) begin
-        @c CImGui.InputInt(" How often to recalculate the goodness function", &_i)
-        PStochSK.retry = _i
-    end
-    CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(retry)$(PStochSK.retry)")
-    # Input: retry
-    CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _i = Cint(10) begin
-        @c CImGui.InputInt(" How often to recalculate the goodness function", &_i)
-        PStochSK.retry = _i
-    end
-    CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(retry)$(PStochSK.retry)")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ntry)$(PStochOM.ntry)")
     #
-    # Input: ratio
+    # Input: nstep
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _f = Cdouble(0.9) begin
-        @c CImGui.InputDouble(" Scaling factor for the Θ parameter", &_f)
-        PStochSK.ratio = _f
+    @cstatic _i = Cint(1000) begin
+        @c CImGui.InputInt(" Number of Monte Carlo steps per attempt / try", &_i)
+        PStochOM.nstep = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ratio)$(PStochSK.ratio)")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nstep)$(PStochOM.nstep)")
     #
-    # Input: ratio
+    # Input: nbox
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _f = Cdouble(0.9) begin
-        @c CImGui.InputDouble(" Scaling factor for the Θ parameter", &_f)
-        PStochSK.ratio = _f
+    @cstatic _i = Cint(100) begin
+        @c CImGui.InputInt(" Number of boxes to construct the spectrum", &_i)
+        PStochOM.nbox = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ratio)$(PStochSK.ratio)")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nbox)$(PStochOM.nbox)")
     #
-    # Input: ratio
+    # Input: sbox
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _f = Cdouble(0.9) begin
-        @c CImGui.InputDouble(" Scaling factor for the Θ parameter", &_f)
-        PStochSK.ratio = _f
+    @cstatic _f = Cdouble(0.005) begin
+        @c CImGui.InputDouble(" Minimum area of the randomly generated boxes", &_f)
+        PStochOM.sbox = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ratio)$(PStochSK.ratio)")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sbox)$(PStochOM.sbox)")
+    #
+    # Input: wbox
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(0.02) begin
+        @c CImGui.InputDouble(" Minimum width of the randomly generated boxes", &_f)
+        PStochOM.wbox = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wbox)$(PStochOM.wbox)")
+    #
+    # Input: norm
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(-1.0) begin
+        @c CImGui.InputDouble(" Is the norm calculated", &_f)
+        PStochSK.norm = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(norm)$(PStochOM.norm)")
 end
 
 """
