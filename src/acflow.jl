@@ -361,6 +361,19 @@ function _acflow_nevanac_block()
     widget_input_width = 100
     widget_combo_width = 100
 
+    # Input: pick
+    CImGui.SetNextItemWidth(widget_combo_width)
+    pick_list = ["Yes", "No"]
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" Check the Pick criterion or not", &id, pick_list)
+        if id == 0
+            PNevanAC.pick = true
+        else
+            PNevanAC.pick = false
+        end
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(pick)$(PNevanAC.pick)")
 
 end
 
