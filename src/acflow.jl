@@ -435,6 +435,51 @@ function _acflow_stochac_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nfine)$(PStochAC.nfine)")
+    #
+    # Input: ngamm
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(512) begin
+        @c CImGui.InputInt(" Number of δ functions", &_i)
+        PStochAC.ngamm = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ngamm)$(PStochAC.ngamm)")
+    #
+    # Input: nwarm
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(4000) begin
+        @c CImGui.InputInt(" Number of Monte Carlo thermalization steps", &_i)
+        PStochAC.nwarm = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nwarm)$(PStochAC.nwarm)")
+    #
+    # Input: nstep
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(4000000) begin
+        @c CImGui.InputInt(" Number of Monte Carlo sweeping steps", &_i)
+        PStochAC.nstep = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nstep)$(PStochAC.nstep)")
+    #
+    # Input: ndump
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(40000) begin
+        @c CImGui.InputInt(" Intervals for monitoring Monte Carlo sweeps", &_i)
+        PStochAC.ndump = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ndump)$(PStochAC.ndump)")
+    #
+    # Input: nalph
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(20) begin
+        @c CImGui.InputInt(" Total number of the chosen α parameters", &_i)
+        PStochAC.nalph = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nalph)$(PStochAC.nalph)")
 end
 
 """
