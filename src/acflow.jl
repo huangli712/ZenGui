@@ -667,4 +667,68 @@ function _acflow_stochpx_block()
     # Define the default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
+
+    # Input: method
+    CImGui.SetNextItemWidth(widget_combo_width)
+    method_list = ["best", "mean"]
+    @cstatic id = Cint(1) begin
+        @c CImGui.Combo(" How to evaluate the final spectral density", &id, method_list)
+        PStochPX.method = method_list[id + 1]
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(method)$(PStochPX.method)")
+    #
+    # Input: nfine
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(100000) begin
+        @c CImGui.InputInt(" Number of grid points for a very fine mesh", &_i)
+        PStochPX.nfine = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nfine)$(PStochPX.nfine)")
+    #
+    # Input: npole
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(200) begin
+        @c CImGui.InputInt(" Number of poles", &_i)
+        PStochPX.npole = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(npole)$(PStochPX.npole)")
+    #
+    # Input: ntry
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(1000) begin
+        @c CImGui.InputInt(" Number of attempts (tries) to seek the solution", &_i)
+        PStochPX.ntry = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ntry)$(PStochPX.ntry)")
+    #
+    # Input: nstep
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(1000000) begin
+        @c CImGui.InputInt(" Number of Monte Carlo steps per attempt / try", &_i)
+        PStochPX.nstep = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nstep)$(PStochPX.nstep)")
+    #
+    # Input: theta
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(1e+6) begin
+        @c CImGui.InputDouble(" Artificial inverse temperature", &_f)
+        PStochPX.theta = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(theta)$(PStochPX.theta)")
+    #
+    # Input: eta
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(1e-4) begin
+        @c CImGui.InputDouble(" Tiny distance from the real axis", &_f)
+        PStochPX.eta = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(eta)$(PStochPX.eta)")
 end
