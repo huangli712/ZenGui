@@ -299,6 +299,18 @@ function _struct_to_dict(s::ACFLOW_PBASE)
     return Dict("BASE" => d)
 end
 
+function _struct_to_dict(s::ACFLOW_PMaxEnt)
+    d = Dict{String,Any}(
+        "method" => s.method,
+        "stype"  => s.stype,
+        "nalph"  => s.nalph,
+        "alpha"  => s.alpha,
+        "ratio"  => s.ratio,
+        "blur"   => s.blur
+    )
+    return Dict("MaxEnt" => d)
+end
+
 function _dict_to_toml(d::Dict)
     io = IOBuffer()
     TOML.print(io,d)
