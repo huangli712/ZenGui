@@ -340,6 +340,15 @@ function _acflow_barrat_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(pcut)$(PBarRat.pcut)")
+    #
+    # Input: eta
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(1e-2) begin
+        @c CImGui.InputDouble(" Tiny distance from the real axis", &_f)
+        PBarRat.eta = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(eta)$(PBarRat.eta)")
 end
 
 """
