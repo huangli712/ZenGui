@@ -81,9 +81,7 @@ function create_app_acflow(p_open::Ref{Bool})
     #
     if CImGui.BeginPopupModal("View", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
         @cstatic read_only=false text="Hello World!" begin
-            #@show PBASE
-            #@show _struct_to_dict(PBASE)
-            text = _dict_to_toml(_struct_to_dict(PBASE))    
+            text = _dict_to_toml(_build_acflow_dict()) 
             @c CImGui.Checkbox("Read-only", &read_only)
             flags = read_only ? CImGui.ImGuiInputTextFlags_ReadOnly : 0
             flags = CImGui.ImGuiInputTextFlags_AllowTabInput | flags

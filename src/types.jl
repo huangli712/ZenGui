@@ -281,7 +281,7 @@ PStochPX = ACFLOW_PStochPX(
 )
 
 function _struct_to_dict(s::ACFLOW_PBASE)
-    d = Dict{String,Any}(
+    return Dict{String,Any}(
         "finput"  => s.finput,
         "solver"  => s.solver,
         "ktype"   => s.ktype,
@@ -296,11 +296,10 @@ function _struct_to_dict(s::ACFLOW_PBASE)
         "offdiag" => s.offdiag,
         "fwrite"  => s.fwrite
     )
-    return Dict("BASE" => d)
 end
 
 function _struct_to_dict(s::ACFLOW_PMaxEnt)
-    d = Dict{String,Any}(
+    return Dict{String,Any}(
         "method" => s.method,
         "stype"  => s.stype,
         "nalph"  => s.nalph,
@@ -308,11 +307,19 @@ function _struct_to_dict(s::ACFLOW_PMaxEnt)
         "ratio"  => s.ratio,
         "blur"   => s.blur
     )
-    return Dict("MaxEnt" => d)
 end
 
 function _dict_to_toml(d::Dict)
     io = IOBuffer()
     TOML.print(io,d)
     return String(take!(io))
+end
+
+function _build_acflow_dict()
+    if PBASE.solver == "MaxEnt"
+        return Dict(
+            "BASE" => _struct_to_dict(PBASE),
+            "MaxEnt" => _struct_to_dict(PMaxEnt)
+        )
+    end
 end
