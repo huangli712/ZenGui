@@ -388,6 +388,15 @@ function _acflow_nevanac_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(hardy)$(PNevanAC.hardy)")
+    #
+    # Input: hmax
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(50) begin
+        @c CImGui.InputInt(" Upper cut off of Hardy order", &_i)
+        PNevanAC.hmax = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(hmax)$(PNevanAC.hmax)")
 
 end
 
