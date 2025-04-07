@@ -602,6 +602,58 @@ function _acflow_stochom_block()
     # Define the default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
+
+    # Input: retry
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(10) begin
+        @c CImGui.InputInt(" How often to recalculate the goodness function", &_i)
+        PStochSK.retry = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(retry)$(PStochSK.retry)")
+    # Input: retry
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(10) begin
+        @c CImGui.InputInt(" How often to recalculate the goodness function", &_i)
+        PStochSK.retry = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(retry)$(PStochSK.retry)")
+    # Input: retry
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(10) begin
+        @c CImGui.InputInt(" How often to recalculate the goodness function", &_i)
+        PStochSK.retry = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(retry)$(PStochSK.retry)")
+    #
+    # Input: ratio
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(0.9) begin
+        @c CImGui.InputDouble(" Scaling factor for the Θ parameter", &_f)
+        PStochSK.ratio = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ratio)$(PStochSK.ratio)")
+    #
+    # Input: ratio
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(0.9) begin
+        @c CImGui.InputDouble(" Scaling factor for the Θ parameter", &_f)
+        PStochSK.ratio = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ratio)$(PStochSK.ratio)")
+    #
+    # Input: ratio
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(0.9) begin
+        @c CImGui.InputDouble(" Scaling factor for the Θ parameter", &_f)
+        PStochSK.ratio = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ratio)$(PStochSK.ratio)")
 end
 
 """
