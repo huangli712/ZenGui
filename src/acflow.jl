@@ -522,7 +522,7 @@ function _acflow_stochsk_block()
     #
     # Input: nfine
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _i = Cint(10000) begin
+    @cstatic _i = Cint(100000) begin
         @c CImGui.InputInt(" Number of points of a very fine linear mesh", &_i)
         PStochSK.nfine = _i
     end
@@ -531,7 +531,7 @@ function _acflow_stochsk_block()
     #
     # Input: ngamm
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _i = Cint(512) begin
+    @cstatic _i = Cint(1000) begin
         @c CImGui.InputInt(" Number of δ functions", &_i)
         PStochSK.ngamm = _i
     end
@@ -540,7 +540,7 @@ function _acflow_stochsk_block()
     #
     # Input: nwarm
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _i = Cint(4000) begin
+    @cstatic _i = Cint(1000) begin
         @c CImGui.InputInt(" Number of Monte Carlo thermalization steps", &_i)
         PStochSK.nwarm = _i
     end
@@ -549,7 +549,7 @@ function _acflow_stochsk_block()
     #
     # Input: nstep
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _i = Cint(4000000) begin
+    @cstatic _i = Cint(20000) begin
         @c CImGui.InputInt(" Number of Monte Carlo sweeping steps", &_i)
         PStochSK.nstep = _i
     end
@@ -558,7 +558,7 @@ function _acflow_stochsk_block()
     #
     # Input: ndump
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _i = Cint(40000) begin
+    @cstatic _i = Cint(200) begin
         @c CImGui.InputInt(" Intervals for monitoring Monte Carlo sweeps", &_i)
         PStochSK.ndump = _i
     end
@@ -567,7 +567,7 @@ function _acflow_stochsk_block()
     #
     # Input: retry
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _i = Cint(20) begin
+    @cstatic _i = Cint(10) begin
         @c CImGui.InputInt(" How often to recalculate the goodness function", &_i)
         PStochSK.retry = _i
     end
@@ -576,7 +576,7 @@ function _acflow_stochsk_block()
     #
     # Input: theta
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _f = Cdouble(1.0) begin
+    @cstatic _f = Cdouble(1e+6) begin
         @c CImGui.InputDouble(" Starting value for the Θ parameter", &_f)
         PStochSK.theta = _f
     end
@@ -585,7 +585,7 @@ function _acflow_stochsk_block()
     #
     # Input: ratio
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _f = Cdouble(1.2) begin
+    @cstatic _f = Cdouble(0.9) begin
         @c CImGui.InputDouble(" Scaling factor for the Θ parameter", &_f)
         PStochSK.ratio = _f
     end
