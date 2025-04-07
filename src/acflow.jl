@@ -198,14 +198,16 @@ function _acflow_base_block()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PBASE.beta)")
     #
     # Input: offdiag
-    @cstatic _i = Cint(0) begin
-        @c CImGui.RadioButton("Offdiagonal", &_i, 1)
-        CImGui.SameLine()
-        @c CImGui.RadioButton("Diagonal", &_i, 0)
-        _i == 1 && (PBASE.offdiag = true)
-        _i == 0 && (PBASE.offdiag = false)
+    CImGui.SetNextItemWidth(widget_combo_width)
+    offdiag_list = ["Yes", "No"]
+    @cstatic id = Cint(1) begin
+        @c CImGui.Combo(" Is it the offdiagonal part in matrix-valued function", &id, offdiag_list)
+        if id == 0
+            PBASE.offdiag = true
+        else
+            PBASE.offdiag = false
+        end
     end
-    CImGui.Text("Is it the offdiagonal part in matrix-valued function")
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(offdiag)$(PBASE.offdiag)")
     #
