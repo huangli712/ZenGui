@@ -509,6 +509,88 @@ function _acflow_stochsk_block()
     # Define the default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
+
+    # Input: method
+    CImGui.SetNextItemWidth(widget_combo_width)
+    method_list = ["chi2min", "chi2kink"]
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" How to determine the optimized Θ parameter", &id, method_list)
+        PStochSK.method = method_list[id + 1]
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(method)$(PStochSK.method)")
+    #
+    # Input: nfine
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(10000) begin
+        @c CImGui.InputInt(" Number of points of a very fine linear mesh", &_i)
+        PStochSK.nfine = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nfine)$(PStochSK.nfine)")
+    #
+    # Input: ngamm
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(512) begin
+        @c CImGui.InputInt(" Number of δ functions", &_i)
+        PStochSK.ngamm = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ngamm)$(PStochSK.ngamm)")
+    #
+    # Input: nwarm
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(4000) begin
+        @c CImGui.InputInt(" Number of Monte Carlo thermalization steps", &_i)
+        PStochSK.nwarm = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nwarm)$(PStochSK.nwarm)")
+    #
+    # Input: nstep
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(4000000) begin
+        @c CImGui.InputInt(" Number of Monte Carlo sweeping steps", &_i)
+        PStochSK.nstep = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nstep)$(PStochSK.nstep)")
+    #
+    # Input: ndump
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(40000) begin
+        @c CImGui.InputInt(" Intervals for monitoring Monte Carlo sweeps", &_i)
+        PStochSK.ndump = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ndump)$(PStochSK.ndump)")
+    #
+    # Input: retry
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(20) begin
+        @c CImGui.InputInt(" How often to recalculate the goodness function", &_i)
+        PStochSK.retry = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(retry)$(PStochSK.retry)")
+    #
+    # Input: theta
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(1.0) begin
+        @c CImGui.InputDouble(" Starting value for the Θ parameter", &_f)
+        PStochSK.theta = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(theta)$(PStochSK.theta)")
+    #
+    # Input: ratio
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(1.2) begin
+        @c CImGui.InputDouble(" Scaling factor for the Θ parameter", &_f)
+        PStochSK.ratio = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ratio)$(PStochSK.ratio)")
 end
 
 """
