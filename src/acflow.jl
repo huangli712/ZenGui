@@ -331,6 +331,15 @@ function _acflow_barrat_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(epsilon)$(PBarRat.epsilon)")
+    #
+    # Input: pcut
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(1e-3) begin
+        @c CImGui.InputDouble(" Cutoff for unphysical poles", &_f)
+        PBarRat.pcut = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(pcut)$(PBarRat.pcut)")
 end
 
 """
