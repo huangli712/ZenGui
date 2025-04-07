@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/06
+# Last modified: 2025/04/07
 #
 
 """
@@ -75,8 +75,15 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.Spacing()
 
     # For the buttons
-    if CImGui.Button("View", ImVec2(widget_button_width, widget_button_height))
-        @show PBASE
+    CImGui.Button("View", ImVec2(widget_button_width, widget_button_height)) && CImGui.OpenPopup("View")
+    if CImGui.BeginPopupModal("View", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
+        @cstatic read_only=false text="Hello World!\n" begin
+            @c CImGui.Checkbox("Read-only", &read_only)
+            flags = CImGui.ImGuiInputTextFlags_AllowTabInput | (read_only ? CImGui.ImGuiInputTextFlags_ReadOnly : 0)
+            CImGui.InputTextMultiline("source", text, length(text), ImVec2(-1.0, CImGui.GetTextLineHeight() * 16), flags)
+        end
+        CImGui.Button("OK", ImVec2(widget_button_width, widget_button_height)) && CImGui.CloseCurrentPopup()
+        CImGui.EndPopup()
     end
 
     # End of this window
