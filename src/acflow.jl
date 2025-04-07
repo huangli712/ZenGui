@@ -652,7 +652,7 @@ function _acflow_stochom_block()
     CImGui.SetNextItemWidth(widget_input_width)
     @cstatic _f = Cdouble(-1.0) begin
         @c CImGui.InputDouble(" Is the norm calculated", &_f)
-        PStochSK.norm = _f
+        PStochOM.norm = _f
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(norm)$(PStochOM.norm)")
