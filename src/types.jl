@@ -379,12 +379,12 @@ end
 """
 function _struct_to_dict(s::ACFLOW_PStochOM)
     return Dict{String,Any}(
-        "ntry"    => 2000,
-        "nstep"   => 1000,
-        "nbox"    => 100,
-        "sbox"    => 0.005,
-        "wbox"    => 0.02,
-        "norm"    => -1.0,        
+        "ntry"    => s.ntry,
+        "nstep"   => s.nstep,
+        "nbox"    => s.nbox,
+        "sbox"    => s.sbox,
+        "wbox"    => s.wbox,
+        "norm"    => s.norm,        
     )
 end
 
