@@ -7,6 +7,14 @@
 # Last modified: 2025/04/08
 #
 
+mutable struct CURRENT_WINDOW
+    name :: String 
+end
+
+CWIN = CURRENT_WINDOW(
+    "nothing"
+)
+
 """
     MenuFlags
 """

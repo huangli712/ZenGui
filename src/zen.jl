@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/03/31
+# Last modified: 2025/4/08
 #
 
 function create_app_zen(p_open::Ref{Bool})
@@ -12,8 +12,12 @@ function create_app_zen(p_open::Ref{Bool})
     CImGui.Begin(
         "Zen",
         p_open,
-        CImGui.ImGuiWindowFlags_Modal | CImGui.ImGuiWindowFlags_NoResize
+        CImGui.ImGuiWindowFlags_NoResize
     )
+
+    if CImGui.IsWindowFocused()
+        CWIN.name = "ZEN"
+    end
 
     # Fix size of the window
     window_width = 400.0

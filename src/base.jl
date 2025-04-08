@@ -68,6 +68,8 @@ end
 function handle_menu_save()
     @show "SAVE"
     FMENU._SAVE = false
+    @show FMENU
+    @show CWIN
 end
 
 function handle_menu_classic()

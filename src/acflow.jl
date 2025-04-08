@@ -20,6 +20,10 @@ function create_app_acflow(p_open::Ref{Bool})
         CImGui.ImGuiWindowFlags_NoResize
     )
 
+    if CImGui.IsWindowFocused()
+        CWIN.name = "ACFLOW"
+    end
+
     # Fix size of the window
     window_width = 600.0
     window_height = 600.0
