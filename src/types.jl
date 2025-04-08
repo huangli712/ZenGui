@@ -447,6 +447,9 @@ function _struct_to_dict(s::ACFLOW_PStochPX)
     )
 end
 
+"""
+    _struct_to_dict(s::ACTEST_PTEST)
+"""
 function _struct_to_dict(s::ACTEST_PTEST)
     return Dict{String,Any}(
         "solver"  => s.solver,
