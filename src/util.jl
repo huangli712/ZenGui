@@ -64,6 +64,21 @@ macro cswitch(constexpr, body)
     return esc(Expr(:block, jumptable, flow))
 end
 
+"""
+    sorry()
+
+Print an error message to the screen.
+
+### Arguments
+N/A
+
+### Returns
+N/A
+"""
+function sorry()
+    error("Sorry, this feature has not been implemented")
+end
+
 function setup_config_flags()
     io = CImGui.GetIO()
     io.ConfigFlags = unsafe_load(io.ConfigFlags) | CImGui.ImGuiConfigFlags_DockingEnable

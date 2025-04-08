@@ -355,11 +355,19 @@ end
     _build_acflow_dict()
 """
 function _build_acflow_dict()
-    if PBASE.solver == "MaxEnt"
-        return Dict(
-            "BASE" => _struct_to_dict(PBASE),
-            "MaxEnt" => _struct_to_dict(PMaxEnt)
-        )
+    @cswitch PBASE.solver begin
+
+        @case "MaxEnt"
+            return Dict(
+                "BASE" => _struct_to_dict(PBASE),
+                "MaxEnt" => _struct_to_dict(PMaxEnt)
+            )
+            break
+
+        @default
+            sorry()
+            break
+
     end
 end
 
