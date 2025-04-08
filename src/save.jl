@@ -8,24 +8,27 @@
 #
 
 """
-    save_acflow()
+    save_acflow(p_open::Ref{Bool})
 """
-function save_acflow()
-    CImGui.OpenPopup("Save")
-    #
-    if CImGui.BeginPopupModal("Save", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
+function save_acflow(p_open::Ref{Bool})
+    CImGui.Begin(
+        "Save",
+        p_open,
+        CImGui.ImGuiWindowFlags_Modal | CImGui.ImGuiWindowFlags_NoResize
+    )
+
         file = joinpath(pwd(), "ac.toml")
         CImGui.Text("The configurtion file for ACFlow will be saved at $file.")
         #
         if CImGui.Button("OK")
-            CImGui.CloseCurrentPopup()
+            p_open[] = false
+            D = _build_acflow_dict()
+            open("ac.toml", "w") do fout
+                TOML.print(fout, D)
+            end
         end
         #
-        CImGui.EndPopup()
-    end
+    CImGui.End()
     #
-    D = _build_acflow_dict()
-    open("ac.toml", "w") do fout
-        TOML.print(fout, D)
-    end
+
 end

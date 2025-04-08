@@ -64,7 +64,6 @@ end
 """
 function handle_menu_save()
     @show "IN SAVE MENU"
-    FMENU._SAVE = false
 
     @cswitch CWIN.name begin
         
@@ -107,8 +106,7 @@ function handle_menu_save()
         @case "ACFLOW"
             if FMENU.ACFLOW
                 @show "SAVE ACFLOW"
-                save_acflow()
-                
+                @c save_acflow(&FMENU._SAVE)
             end
             break
 
