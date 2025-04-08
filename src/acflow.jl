@@ -58,6 +58,8 @@ function _acflow_base_block()
     widget_input_width = 100
     widget_combo_width = 100
 
+    CImGui.Text("Basic Configuration")
+
     # Input: finput
     CImGui.SetNextItemWidth(widget_input_width)
     @cstatic buf = "giw.data" * "\0"^60 begin
