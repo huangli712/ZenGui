@@ -151,29 +151,78 @@ _build_actest_dict
 #
 _dict_to_toml
 
+#
 include("menu.jl")
+#
 export create_menu
+#
 export set_menu_file
 export set_menu_edit
 export set_menu_style
 export set_menu_help
 
+#
 include("zen.jl")
+#
+export create_app_zen
 
+#
 include("dyson.jl")
+#
+export create_app_dyson
+
+#
 include("dfermion.jl")
+#
+export create_app_dfermion
 
+#
 include("ctseg.jl")
+#
+export create_app_ctseg
+
+#
 include("cthyb.jl")
+#
+export create_app_cthyb
+
+#
 include("atomic.jl")
+#
+export create_app_atomic
 
+#
 include("acflow.jl")
-include("actest.jl")
+#
+export create_app_acflow
+#
 
+#
+include("actest.jl")
+#
+export create_app_actest
+
+#
 include("about.jl")
+#
 export create_app_about
 
+#
 include("base.jl")
+#
 export zeng_run
+#
+export handle_menu_open
+export handle_menu_save
+export handle_menu_classic
+export handle_menu_dark
+export handle_menu_light
+export handle_menu_zen
+export handle_menu_dyson
+export handle_menu_dfermion
+export handle_menu_iqist
+export handle_menu_acflow
+export handle_menu_actest
+export handle_menu_zengui
 
 end
