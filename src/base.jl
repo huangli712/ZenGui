@@ -38,7 +38,7 @@ function zeng_run()
         #
         FMENU.ZEN       && @c create_app_zen(&FMENU.ZEN)
         FMENU.DYSON     && @c create_app_dyson(&FMENU.DYSON)
-        FMENU.DFERMION  && @c create_app_dyson(&FMENU.DFERMION)
+        FMENU.DFERMION  && @c create_app_dfermion(&FMENU.DFERMION)
         FMENU.CTSEG     && @c create_app_ctseg(&FMENU.CTSEG)
         FMENU.CTHYB     && @c create_app_cthyb(&FMENU.CTHYB)
         FMENU.ATOMIC    && @c create_app_atomic(&FMENU.ATOMIC)
@@ -66,10 +66,62 @@ function handle_menu_open()
 end
 
 function handle_menu_save()
-    @show "SAVE"
+    @show "IN SAVE MEUN"
     FMENU._SAVE = false
-    @show FMENU
-    @show CWIN
+    #@show FMENU
+    #@show CWIN
+
+    @cswitch CWIN.name begin
+        
+        @case "ZEN"
+            if FMENU.ZEN
+                @show "SAVE ZEN"
+            end
+            break
+
+        @case "DYSON"
+            if FMENU.DYSON
+                @show "SAVE DYSON"
+            end
+            break
+
+        @case "DFERMION"
+            if FMENU.DFERMION
+                @show "SAVE DFERMION"
+            end
+            break
+
+        @case "CTSEG"
+            if FMENU.CTSEG
+                @show "SAVE CTSEG"
+            end
+            break
+
+        @case "CTHYB"
+            if FMENU.CTHYB
+                @show "SAVE CTHYB"
+            end
+            break
+
+        @case "ATOMIC"
+            if FMENU.ATOMIC
+                @show "SAVE ATOMIC"
+            end
+            break
+
+        @case "ACFLOW"
+            if FMENU.ACFLOW
+                @show "SAVE ACFLOW"
+            end
+            break
+
+        @case "ACTEST"
+            if FMENU.ACTEST
+                @show "SAVE ACTEST"
+            end
+            break
+
+    end
 end
 
 function handle_menu_classic()
