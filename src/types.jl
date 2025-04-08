@@ -337,7 +337,7 @@ function _struct_to_dict(s::ACFLOW_PNevanAC)
         "hardy"   => s.hardy,
         "hmax"    => s.hmax,
         "alpha"   => s.alpha,
-        "eta"     => s.eta,      
+        "eta"     => s.eta,
     )
 end
 
@@ -353,7 +353,7 @@ function _struct_to_dict(s::ACFLOW_PStochAC)
         "ndump"   => s.ndump,
         "nalph"   => s.nalph,
         "alpha"   => s.alpha,
-        "ratio"   => s.ratio,        
+        "ratio"   => s.ratio,
     )
 end
 
@@ -370,7 +370,7 @@ function _struct_to_dict(s::ACFLOW_PStochSK)
         "ndump"   => s.ndump,
         "retry"   => s.retry,
         "theta"   => s.theta,
-        "ratio"   => s.ratio,        
+        "ratio"   => s.ratio,
     )
 end
 
@@ -384,7 +384,7 @@ function _struct_to_dict(s::ACFLOW_PStochOM)
         "nbox"    => s.nbox,
         "sbox"    => s.sbox,
         "wbox"    => s.wbox,
-        "norm"    => s.norm,        
+        "norm"    => s.norm,
     )
 end
 
@@ -393,13 +393,13 @@ end
 """
 function _struct_to_dict(s::ACFLOW_PStochPX)
     return Dict{String,Any}(
-        "method"  => "mean",
-        "nfine"   => 100000,
-        "npole"   => 200,
-        "ntry"    => 1000,
-        "nstep"   => 1000000,
-        "theta"   => 1e+6,
-        "eta"     => 1e-4,        
+        "method"  => s.method,
+        "nfine"   => s.nfine,
+        "npole"   => s.npole,
+        "ntry"    => s.ntry,
+        "nstep"   => s.nstep,
+        "theta"   => s.theta,
+        "eta"     => s.eta,
     )
 end
 
