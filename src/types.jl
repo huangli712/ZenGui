@@ -362,15 +362,15 @@ end
 """
 function _struct_to_dict(s::ACFLOW_PStochSK)
     return Dict{String,Any}(
-        "method"  => "chi2min",
-        "nfine"   => 100000,
-        "ngamm"   => 1000,
-        "nwarm"   => 1000,
-        "nstep"   => 20000,
-        "ndump"   => 200,
-        "retry"   => 10,
-        "theta"   => 1e+6,
-        "ratio"   => 0.90,        
+        "method"  => s.method,
+        "nfine"   => s.nfine,
+        "ngamm"   => s.ngamm,
+        "nwarm"   => s.nwarm,
+        "nstep"   => s.nstep,
+        "ndump"   => s.ndump,
+        "retry"   => s.retry,
+        "theta"   => s.theta,
+        "ratio"   => s.ratio,        
     )
 end
 
