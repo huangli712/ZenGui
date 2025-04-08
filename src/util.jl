@@ -92,7 +92,7 @@ function setup_fonts()
     CImGui.AddFontFromFileTTF(fonts, joinpath(fonts_dir, "FiraCode-Regular.ttf"), 16)
 end
 
-function tweak_window()
+function setup_window()
     io = CImGui.GetIO()
     style = Ptr{ImGuiStyle}(CImGui.GetStyle())
     style.AntiAliasedLines = true

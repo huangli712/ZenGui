@@ -114,6 +114,7 @@ export sorry
 #
 export setup_flags
 export setup_fonts
+export setup_window
 
 
 include("types.jl")
