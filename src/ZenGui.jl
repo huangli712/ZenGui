@@ -116,8 +116,11 @@ export setup_flags
 export setup_fonts
 export setup_window
 
-
+#
 include("types.jl")
+#
+export MenuFlags
+export FMENU
 
 include("menu.jl")
 export create_menu
