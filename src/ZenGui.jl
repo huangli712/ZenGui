@@ -121,6 +121,35 @@ include("types.jl")
 #
 export MenuFlags
 export FMENU
+#
+export ACFLOW_PBASE
+export ACFLOW_PMaxEnt
+export ACFLOW_PBarRat
+export ACFLOW_PNevanAC
+export ACFLOW_PStochAC
+export ACFLOW_PStochSK
+export ACFLOW_PStochOM
+export ACFLOW_PStochPX
+#
+export PBASE
+export PMaxEnt
+export PBarRat
+export PNevanAC
+export PStochAC
+export PStochSK
+export PStochOM
+export PStochPX
+#
+export ACTEST_PTEST
+#
+export PTEST
+#
+_struct_to_dict
+#
+_build_acflow_dict
+_build_actest_dict
+#
+_dict_to_toml
 
 include("menu.jl")
 export create_menu
