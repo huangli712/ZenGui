@@ -25,10 +25,6 @@ function create_app_acflow(p_open::Ref{Bool})
     window_height = 600.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
-    # Define the default size for widgets
-    widget_button_width = 80.0
-    widget_button_height = 25.0
-
     # For the [BASE] block in the ac.toml
     _acflow_base_block()
 
@@ -37,69 +33,16 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.Separator()
     CImGui.Spacing()
 
-    # For the [Solver] block in the ac.toml. It should change upon the
-    # selection of analytic continuation solver.
-    CImGui.Text("Analytic Continuation Solver: $(PBASE.solver)")
-    #
-    if PBASE.solver == "MaxEnt"
-        _acflow_maxent_block()
-    end
-    #
-    if PBASE.solver == "BarRat"
-        _acflow_barrat_block()
-    end
-    #
-    if PBASE.solver == "NevanAC"
-        _acflow_nevanac_block()
-    end
-    #
-    if PBASE.solver == "StochAC"
-        _acflow_stochac_block()
-    end
-    #
-    if PBASE.solver == "StochSK"
-        _acflow_stochsk_block()
-    end
-    #
-    if PBASE.solver == "StochOM"
-        _acflow_stochom_block()
-    end
-    #
-    if PBASE.solver == "StochPX"
-        _acflow_stochpx_block()
-    end
+    # For the [Solver] block in the ac.toml
+    _acflow_solver_block()
 
     # For the separator
     CImGui.Spacing()
     CImGui.Separator()
     CImGui.Spacing()
 
-    # For the buttons
-    if CImGui.Button("View", ImVec2(widget_button_width, widget_button_height))
-        CImGui.OpenPopup("View")
-    end
-    #
-    if CImGui.BeginPopupModal("View", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
-        @cstatic read_only=false text="Hello World!" begin
-            text = _dict_to_toml(_build_acflow_dict()) 
-            @c CImGui.Checkbox("Read-only", &read_only)
-            flags = read_only ? CImGui.ImGuiInputTextFlags_ReadOnly : 0
-            flags = CImGui.ImGuiInputTextFlags_AllowTabInput | flags
-            CImGui.InputTextMultiline("##source", text, 10000, ImVec2(400, 600), flags)
-        end
-        #
-        if CImGui.Button("OK", ImVec2(widget_button_width, widget_button_height))
-            CImGui.CloseCurrentPopup()
-        end
-        #
-        CImGui.EndPopup()
-    end
-    #
-    CImGui.SameLine()
-    #
-    if CImGui.Button("Close", ImVec2(widget_button_width, widget_button_height))
-        p_open[] = false
-    end
+    # For the buttons in the bottom of this window
+    _acflow_bottom_block(p_open)
 
     # End of this window
     CImGui.End()
@@ -246,6 +189,72 @@ function _acflow_base_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(fwrite)$(PBASE.fwrite)")
+end
+
+function _acflow_solver_block()
+    # It should change upon the selection of analytic continuation solver.
+    CImGui.Text("Analytic Continuation Solver: $(PBASE.solver)")
+    #
+    if PBASE.solver == "MaxEnt"
+        _acflow_maxent_block()
+    end
+    #
+    if PBASE.solver == "BarRat"
+        _acflow_barrat_block()
+    end
+    #
+    if PBASE.solver == "NevanAC"
+        _acflow_nevanac_block()
+    end
+    #
+    if PBASE.solver == "StochAC"
+        _acflow_stochac_block()
+    end
+    #
+    if PBASE.solver == "StochSK"
+        _acflow_stochsk_block()
+    end
+    #
+    if PBASE.solver == "StochOM"
+        _acflow_stochom_block()
+    end
+    #
+    if PBASE.solver == "StochPX"
+        _acflow_stochpx_block()
+    end
+end
+
+function _acflow_bottom_block(p_open::Ref{Bool})
+    # Define the default size for widgets
+    widget_button_width = 80.0
+    widget_button_height = 25.0
+
+    # For the buttons
+    if CImGui.Button("View", ImVec2(widget_button_width, widget_button_height))
+        CImGui.OpenPopup("View")
+    end
+    #
+    if CImGui.BeginPopupModal("View", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
+        @cstatic read_only=false text="Hello World!" begin
+            text = _dict_to_toml(_build_acflow_dict()) 
+            @c CImGui.Checkbox("Read-only", &read_only)
+            flags = read_only ? CImGui.ImGuiInputTextFlags_ReadOnly : 0
+            flags = CImGui.ImGuiInputTextFlags_AllowTabInput | flags
+            CImGui.InputTextMultiline("##source", text, 10000, ImVec2(400, 600), flags)
+        end
+        #
+        if CImGui.Button("OK", ImVec2(widget_button_width, widget_button_height))
+            CImGui.CloseCurrentPopup()
+        end
+        #
+        CImGui.EndPopup()
+    end
+    #
+    CImGui.SameLine()
+    #
+    if CImGui.Button("Close", ImVec2(widget_button_width, widget_button_height))
+        p_open[] = false
+    end
 end
 
 """
