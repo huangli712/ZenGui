@@ -86,6 +86,94 @@ mutable struct ACFLOW_PBASE
 end
 
 """
+    ACFLOW_PMaxEnt
+"""
+mutable struct ACFLOW_PMaxEnt
+    method :: String
+    stype  :: String
+    nalph  :: I64
+    alpha  :: F64
+    ratio  :: F64
+    blur   :: F64
+end
+
+"""
+    ACFLOW_PBarRat
+"""
+mutable struct ACFLOW_PBarRat
+    atype   :: String
+    denoise :: String
+    epsilon :: F64
+    pcut    :: F64
+    eta     :: F64
+end
+
+"""
+    ACFLOW_PNevanAC
+"""
+mutable struct ACFLOW_PNevanAC
+    pick  :: Bool
+    hardy :: Bool
+    hmax  :: I64
+    alpha :: F64
+    eta   :: F64
+end
+
+"""
+    ACFLOW_PStochAC
+"""
+mutable struct ACFLOW_PStochAC
+    nfine :: I64
+    ngamm :: I64
+    nwarm :: I64
+    nstep :: I64
+    ndump :: I64
+    nalph :: I64
+    alpha :: F64
+    ratio :: F64
+end
+
+"""
+    ACFLOW_PStochSK
+"""
+mutable struct ACFLOW_PStochSK
+    method :: String
+    nfine  :: I64
+    ngamm  :: I64
+    nwarm  :: I64
+    nstep  :: I64
+    ndump  :: I64
+    retry  :: I64
+    theta  :: F64
+    ratio  :: F64
+end
+
+"""
+    ACFLOW_PStochOM
+"""
+mutable struct ACFLOW_PStochOM
+    ntry  :: I64
+    nstep :: I64
+    nbox  :: I64
+    sbox  :: F64
+    wbox  :: F64
+    norm  :: F64
+end
+
+"""
+    ACFLOW_PStochPX
+"""
+mutable struct ACFLOW_PStochPX
+    method :: String
+    nfine  :: I64
+    npole  :: I64
+    ntry   :: I64
+    nstep  :: I64
+    theta  :: F64
+    eta    :: F64
+end
+
+"""
     PBASE
 """
 PBASE = ACFLOW_PBASE(
@@ -105,18 +193,6 @@ PBASE = ACFLOW_PBASE(
 )
 
 """
-    ACFLOW_PMaxEnt
-"""
-mutable struct ACFLOW_PMaxEnt
-    method :: String
-    stype  :: String
-    nalph  :: I64
-    alpha  :: F64
-    ratio  :: F64
-    blur   :: F64
-end
-
-"""
     PMaxEnt
 """
 PMaxEnt = ACFLOW_PMaxEnt(
@@ -127,17 +203,6 @@ PMaxEnt = ACFLOW_PMaxEnt(
     10.0,
     -1.0
 )
-
-"""
-    ACFLOW_PBarRat
-"""
-mutable struct ACFLOW_PBarRat
-    atype   :: String
-    denoise :: String
-    epsilon :: F64
-    pcut    :: F64
-    eta     :: F64
-end
 
 """
     PBarRat
@@ -151,17 +216,6 @@ PBarRat = ACFLOW_PBarRat(
 )
 
 """
-    ACFLOW_PNevanAC
-"""
-mutable struct ACFLOW_PNevanAC
-    pick  :: Bool
-    hardy :: Bool
-    hmax  :: I64
-    alpha :: F64
-    eta   :: F64
-end
-
-"""
     PNevanAC
 """
 PNevanAC = ACFLOW_PNevanAC(
@@ -171,20 +225,6 @@ PNevanAC = ACFLOW_PNevanAC(
     1e-4,
     1e-2
 )
-
-"""
-    ACFLOW_PStochAC
-"""
-mutable struct ACFLOW_PStochAC
-    nfine :: I64
-    ngamm :: I64
-    nwarm :: I64
-    nstep :: I64
-    ndump :: I64
-    nalph :: I64
-    alpha :: F64
-    ratio :: F64
-end
 
 """
     PStochAC
@@ -199,21 +239,6 @@ PStochAC = ACFLOW_PStochAC(
     1.00,
     1.20
 )
-
-"""
-    ACFLOW_PStochSK
-"""
-mutable struct ACFLOW_PStochSK
-    method :: String
-    nfine  :: I64
-    ngamm  :: I64
-    nwarm  :: I64
-    nstep  :: I64
-    ndump  :: I64
-    retry  :: I64
-    theta  :: F64
-    ratio  :: F64
-end
 
 """
     PStochSK
@@ -231,18 +256,6 @@ PStochSK = ACFLOW_PStochSK(
 )
 
 """
-    ACFLOW_PStochOM
-"""
-mutable struct ACFLOW_PStochOM
-    ntry  :: I64
-    nstep :: I64
-    nbox  :: I64
-    sbox  :: F64
-    wbox  :: F64
-    norm  :: F64
-end
-
-"""
     PStochOM
 """
 PStochOM = ACFLOW_PStochOM(
@@ -253,19 +266,6 @@ PStochOM = ACFLOW_PStochOM(
     0.02,
     -1.0
 )
-
-"""
-    ACFLOW_PStochPX
-"""
-mutable struct ACFLOW_PStochPX
-    method :: String
-    nfine  :: I64
-    npole  :: I64
-    ntry   :: I64
-    nstep  :: I64
-    theta  :: F64
-    eta    :: F64
-end
 
 """
     PStochPX
