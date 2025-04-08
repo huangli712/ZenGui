@@ -280,6 +280,44 @@ PStochPX = ACFLOW_PStochPX(
     1e-4
 )
 
+mutable struct ACTEST_PTEST
+    solver  :: String
+    ptype   :: String
+    ktype   :: String
+    grid    :: String
+    mesh    :: String
+    ngrid   :: I64
+    nmesh   :: I64
+    ntest   :: I64
+    wmax    :: F64
+    wmin    :: F64
+    pmax    :: F64
+    pmin    :: F64
+    beta    :: F64
+    noise   :: F64
+    offdiag :: Bool
+    lpeak   :: Array
+end
+
+PTEST = ACTEST_PTEST(
+    "MaxEnt",
+    "gauss",
+    "fermi",
+    "ffreq",
+    "linear",
+    10,
+    501,
+    100,
+    5.0,
+    -5.0,
+    4.0,
+    -4.0,
+    10.0,
+    1.0e-6,
+    false,
+    [1,2,3]
+)
+
 """
     _struct_to_dict(s::ACFLOW_PBASE)
 """
@@ -463,6 +501,9 @@ function _build_acflow_dict()
             break
 
     end
+end
+
+function _build_actest_dict()
 end
 
 """
