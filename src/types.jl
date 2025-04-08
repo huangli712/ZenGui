@@ -319,36 +319,88 @@ end
     _struct_to_dict(s::ACFLOW_PBarRat)
 """
 function _struct_to_dict(s::ACFLOW_PBarRat)
+    return Dict{String,Any}(
+        "atype"   => "cont",
+        "denoise" => "prony",
+        "epsilon" => 1e-10,
+        "pcut"    => 1e-3,
+        "eta"     => 1e-2,
+    )
 end
 
 """
     _struct_to_dict(s::ACFLOW_PNevanAC)
 """
 function _struct_to_dict(s::ACFLOW_PNevanAC)
+    return Dict{String,Any}(
+        "pick"    => true,
+        "hardy"   => true,
+        "hmax"    => 50,
+        "alpha"   => 1e-4,
+        "eta"     => 1e-2,        
+    )
 end
 
 """
     _struct_to_dict(s::ACFLOW_PStochAC)
 """
 function _struct_to_dict(s::ACFLOW_PStochAC)
+    return Dict{String,Any}(
+        "nfine"   => 10000,
+        "ngamm"   => 512,
+        "nwarm"   => 4000,
+        "nstep"   => 4000000,
+        "ndump"   => 40000,
+        "nalph"   => 20,
+        "alpha"   => 1.00,
+        "ratio"   => 1.20,        
+    )
 end
 
 """
     _struct_to_dict(s::ACFLOW_PStochSK)
 """
 function _struct_to_dict(s::ACFLOW_PStochSK)
+    return Dict{String,Any}(
+        "method"  => "chi2min",
+        "nfine"   => 100000,
+        "ngamm"   => 1000,
+        "nwarm"   => 1000,
+        "nstep"   => 20000,
+        "ndump"   => 200,
+        "retry"   => 10,
+        "theta"   => 1e+6,
+        "ratio"   => 0.90,        
+    )
 end
 
 """
     _struct_to_dict(s::ACFLOW_PStochOM)
 """
 function _struct_to_dict(s::ACFLOW_PStochOM)
+    return Dict{String,Any}(
+        "ntry"    => 2000,
+        "nstep"   => 1000,
+        "nbox"    => 100,
+        "sbox"    => 0.005,
+        "wbox"    => 0.02,
+        "norm"    => -1.0,        
+    )
 end
 
 """
     _struct_to_dict(s::ACFLOW_PStochPX)
 """
 function _struct_to_dict(s::ACFLOW_PStochPX)
+    return Dict{String,Any}(
+        "method"  => "mean",
+        "nfine"   => 100000,
+        "npole"   => 200,
+        "ntry"    => 1000,
+        "nstep"   => 1000000,
+        "theta"   => 1e+6,
+        "eta"     => 1e-4,        
+    )
 end
 
 """
