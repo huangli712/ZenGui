@@ -116,6 +116,10 @@ function handle_menu_save()
             end
             break
 
+        @default
+            FMENU._SAVE = false
+            break
+
     end
 end
 
