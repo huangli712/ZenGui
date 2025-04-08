@@ -79,11 +79,17 @@ function sorry()
     error("Sorry, this feature has not been implemented")
 end
 
-function setup_config_flags()
+function setup_flags()
     io = CImGui.GetIO()
     io.ConfigFlags = unsafe_load(io.ConfigFlags) | CImGui.ImGuiConfigFlags_DockingEnable
     io.ConfigFlags = unsafe_load(io.ConfigFlags) | CImGui.ImGuiConfigFlags_ViewportsEnable
     io.IniFilename = C_NULL
+end
+
+function setup_fonts()
+    fonts_dir = "/Users/lihuang/Library/Fonts"
+    fonts = unsafe_load(CImGui.GetIO().Fonts)
+    CImGui.AddFontFromFileTTF(fonts, joinpath(fonts_dir, "FiraCode-Regular.ttf"), 16)
 end
 
 function tweak_window()
@@ -95,10 +101,4 @@ function tweak_window()
         col = CImGui.c_get(style.Colors, CImGui.ImGuiCol_WindowBg)
         CImGui.c_set!(style.Colors, CImGui.ImGuiCol_WindowBg, ImVec4(col.x, col.y, col.z, 1.0f0))
     end
-end
-
-function setup_fonts()
-    fonts_dir = "/Users/lihuang/Library/Fonts"
-    fonts = unsafe_load(CImGui.GetIO().Fonts)
-    CImGui.AddFontFromFileTTF(fonts, joinpath(fonts_dir, "FiraCode-Regular.ttf"), 16)
 end

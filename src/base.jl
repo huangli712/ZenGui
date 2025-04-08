@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/01
+# Last modified: 2025/04/08
 #
 
 function zeng_run()
@@ -14,7 +14,7 @@ function zeng_run()
     ctx = CImGui.CreateContext()
 
     # enable docking and multi-viewport
-    setup_config_flags()
+    setup_flags()
 
     # setup Dear ImGui style
     CImGui.StyleColorsDark()

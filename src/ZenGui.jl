@@ -106,7 +106,15 @@ export __AUTHORS__
 #
 export authors
 
+#
 include("util.jl")
+#
+export @cswitch
+export sorry
+#
+export setup_flags
+export setup_fonts
+
 
 include("types.jl")
 
