@@ -447,6 +447,27 @@ function _struct_to_dict(s::ACFLOW_PStochPX)
     )
 end
 
+function _struct_to_dict(s::ACTEST_PTEST)
+    return Dict{String,Any}(
+        "solver"  => s.solver,
+        "ptype"   => s.ptype,
+        "ktype"   => s.ktype,
+        "grid"    => s.grid,
+        "mesh"    => s.mesh,
+        "ngrid"   => s.ngrid,
+        "nmesh"   => s.nmesh,
+        "ntest"   => s.ntest,
+        "wmax"    => s.wmax,
+        "wmin"    => s.wmin,
+        "pmax"    => s.pmax,
+        "pmin"    => s.pmin,
+        "beta"    => s.beta,
+        "noise"   => s.noise,
+        "offdiag" => s.offdiag,
+        "lpeak"   => s.lpeak,
+    )
+end
+
 """
     _build_acflow_dict()
 """
