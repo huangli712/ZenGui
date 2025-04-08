@@ -333,11 +333,11 @@ end
 """
 function _struct_to_dict(s::ACFLOW_PNevanAC)
     return Dict{String,Any}(
-        "pick"    => true,
-        "hardy"   => true,
-        "hmax"    => 50,
-        "alpha"   => 1e-4,
-        "eta"     => 1e-2,        
+        "pick"    => s.pick,
+        "hardy"   => s.hardy,
+        "hmax"    => s.hmax,
+        "alpha"   => s.alpha,
+        "eta"     => s.eta,      
     )
 end
 
@@ -346,14 +346,14 @@ end
 """
 function _struct_to_dict(s::ACFLOW_PStochAC)
     return Dict{String,Any}(
-        "nfine"   => 10000,
-        "ngamm"   => 512,
-        "nwarm"   => 4000,
-        "nstep"   => 4000000,
-        "ndump"   => 40000,
-        "nalph"   => 20,
-        "alpha"   => 1.00,
-        "ratio"   => 1.20,        
+        "nfine"   => s.nfine,
+        "ngamm"   => s.ngamm,
+        "nwarm"   => s.nwarm,
+        "nstep"   => s.nstep,
+        "ndump"   => s.ndump,
+        "nalph"   => s.nalph,
+        "alpha"   => s.alpha,
+        "ratio"   => s.ratio,        
     )
 end
 
