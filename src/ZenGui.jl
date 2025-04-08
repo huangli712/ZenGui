@@ -11,7 +11,8 @@
     ZenGui
 
 ZenGui is a general-purpose graphic user interface for ab initio dynamical
-mean-field theory codes. It can be used to prepare necessary configuration
+mean-field theory codes, which have been developed at the China Academy of
+Engineeing Physics. It should be used to generate necessary configuration
 files for them. Now it supports the following codes:
 
 * All-in-one DFT + DMFT package (**Zen**)
@@ -19,9 +20,10 @@ files for them. Now it supports the following codes:
 * Analytic continuation tools (**ACFlow** and **ACTest**)
 * Dynamical mean-field theory engines (**Dyson** and **DFermion**)
 
-This code is under heavy development. **PLEASE USE IT AT YOUR OWN RISK**.
+More codes will be supported in the future. Now this code is under heavy
+development. **PLEASE USE IT AT YOUR OWN RISK**.
 
-For more details about how to obtain, install and use the ZenGui code,
+For more details about how to obtain, install and use this ZenGui app,
 please visit the following website:
 
 * `https://huangli712.github.io/projects/zengui/index.html`
@@ -42,6 +44,17 @@ using TOML
 ### *Using Third-Party Libraries*
 =#
 
+#=
+The ZenGui application relies on the **Dear ImGui library**, which is a
+C++ immediate mode graphic user interface library. Note that **CImGui**
+is a C-API wrapper for **Dear ImGui**, and **CImGui.jl** provides a Julia
+interface to **CImGui**. **GLFW** is an open source multi-platform library
+for OpenGL, OpenGL ES and Vulkan development on the desktop. It provides
+a simple API for creating windows, contexts and surfaces, receiving input
+and events. **ModernGL** is a OpenGL binding for Julia. Here, **GLFW**
+and **ModernGL** are backends for **Dear ImGui**.
+=#
+
 using CImGui
 using CImGui.lib
 using CImGui.CSyntax
@@ -57,7 +70,7 @@ import ModernGL as GL
 #=
 *Summary* :
 
-Define some type aliases and string constants for the ACFlow toolkit.
+Define some type aliases and string constants for the ZenGui app.
 
 *Members* :
 
