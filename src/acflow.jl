@@ -191,39 +191,53 @@ function _acflow_base_block()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(fwrite)$(PBASE.fwrite)")
 end
 
+"""
+    _acflow_solver_block()
+"""
 function _acflow_solver_block()
     # It should change upon the selection of analytic continuation solver.
     CImGui.Text("Analytic Continuation Solver: $(PBASE.solver)")
-    #
-    if PBASE.solver == "MaxEnt"
-        _acflow_maxent_block()
-    end
-    #
-    if PBASE.solver == "BarRat"
-        _acflow_barrat_block()
-    end
-    #
-    if PBASE.solver == "NevanAC"
-        _acflow_nevanac_block()
-    end
-    #
-    if PBASE.solver == "StochAC"
-        _acflow_stochac_block()
-    end
-    #
-    if PBASE.solver == "StochSK"
-        _acflow_stochsk_block()
-    end
-    #
-    if PBASE.solver == "StochOM"
-        _acflow_stochom_block()
-    end
-    #
-    if PBASE.solver == "StochPX"
-        _acflow_stochpx_block()
+
+    @cswitch PBASE.solver begin
+
+        @case "MaxEnt"
+            _acflow_maxent_block()
+            break
+        
+        @case "BarRat"
+            _acflow_barrat_block()
+            break
+
+        @case "NevanAC"
+            _acflow_nevanac_block()
+            break        
+    
+        @case "StochAC"
+            _acflow_stochac_block()
+            break
+
+        @case "StochSK"
+            _acflow_stochsk_block()
+            break
+
+        @case "StochOM"
+            _acflow_stochom_block()
+            break
+
+        @case "StochPX"
+            _acflow_stochpx_block()
+            break
+    
+        @default
+            sorry()
+            break
+
     end
 end
 
+"""
+    _acflow_bottom_block(p_open::Ref{Bool})
+"""
 function _acflow_bottom_block(p_open::Ref{Bool})
     # Define the default size for widgets
     widget_button_width = 80.0
