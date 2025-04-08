@@ -351,12 +351,9 @@ end
 function _struct_to_dict(s::ACFLOW_PStochPX)
 end
 
-function _dict_to_toml(d::Dict)
-    io = IOBuffer()
-    TOML.print(io,d)
-    return String(take!(io))
-end
-
+"""
+    _build_acflow_dict()
+"""
 function _build_acflow_dict()
     if PBASE.solver == "MaxEnt"
         return Dict(
@@ -364,4 +361,13 @@ function _build_acflow_dict()
             "MaxEnt" => _struct_to_dict(PMaxEnt)
         )
     end
+end
+
+"""
+    _dict_to_toml(d::Dict)
+"""
+function _dict_to_toml(d::Dict)
+    io = IOBuffer()
+    TOML.print(io,d)
+    return String(take!(io))
 end
