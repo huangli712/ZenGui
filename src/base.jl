@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/08
+# Last modified: 2025/04/09
 #
 
 function zeng_run()
@@ -113,6 +113,8 @@ function handle_menu_save()
             if FMENU.ACFLOW
                 @show "SAVE ACFLOW"
                 @c save_acflow(&FMENU._SAVE)
+            else
+                FMENU._SAVE = false
             end
             break
 
