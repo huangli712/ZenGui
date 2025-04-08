@@ -19,7 +19,6 @@ CWIN = CURRENT_WINDOW(
     MenuFlags
 """
 mutable struct MenuFlags
-    _OPEN     :: Bool
     _SAVE     :: Bool
     _EXIT     :: Bool
     #

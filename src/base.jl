@@ -32,7 +32,6 @@ function zeng_run()
     CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
         create_menu()
 
-        FMENU._OPEN     && handle_menu_open()
         FMENU._SAVE     && handle_menu_save()
         FMENU._EXIT     && return :imgui_exit_loop
         #
@@ -60,16 +59,12 @@ function zeng_run()
     end
 end
 
-function handle_menu_open()
-    @show "OPEN"
-    FMENU._OPEN = false
-end
-
+"""
+    handle_menu_save()
+"""
 function handle_menu_save()
-    @show "IN SAVE MEUN"
+    @show "IN SAVE MENU"
     FMENU._SAVE = false
-    #@show FMENU
-    #@show CWIN
 
     @cswitch CWIN.name begin
         
@@ -112,6 +107,7 @@ function handle_menu_save()
         @case "ACFLOW"
             if FMENU.ACFLOW
                 @show "SAVE ACFLOW"
+                
             end
             break
 

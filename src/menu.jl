@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/01
+# Last modified: 2025/04/08
 #
 
 """
@@ -30,8 +30,7 @@ Setup items in menu ``File''.
 """
 function set_menu_file()
     if CImGui.BeginMenu("File")
-        @c CImGui.MenuItem("Open...", C_NULL, &FMENU._OPEN)
-        @c CImGui.MenuItem("Save As", C_NULL, &FMENU._SAVE)
+        @c CImGui.MenuItem("Save", C_NULL, &FMENU._SAVE)
         #
         CImGui.Separator()
         #
