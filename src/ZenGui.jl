@@ -196,6 +196,14 @@ include("acflow.jl")
 #
 export create_app_acflow
 #
+export _acflow_base_block
+export _acflow_maxent_block
+export _acflow_barrat_block
+export _acflow_nevanac_block
+export _acflow_stochac_block
+export _acflow_stochsk_block
+export _acflow_stochom_block
+export _acflow_stochpx_block
 
 #
 include("actest.jl")
