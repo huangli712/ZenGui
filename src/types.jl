@@ -297,7 +297,7 @@ function _struct_to_dict(s::ACFLOW_PBASE)
         "wmin"    => s.wmin,
         "beta"    => s.beta,
         "offdiag" => s.offdiag,
-        "fwrite"  => s.fwrite
+        "fwrite"  => s.fwrite,
     )
 end
 
@@ -311,7 +311,7 @@ function _struct_to_dict(s::ACFLOW_PMaxEnt)
         "nalph"  => s.nalph,
         "alpha"  => s.alpha,
         "ratio"  => s.ratio,
-        "blur"   => s.blur
+        "blur"   => s.blur,
     )
 end
 
@@ -320,11 +320,11 @@ end
 """
 function _struct_to_dict(s::ACFLOW_PBarRat)
     return Dict{String,Any}(
-        "atype"   => "cont",
-        "denoise" => "prony",
-        "epsilon" => 1e-10,
-        "pcut"    => 1e-3,
-        "eta"     => 1e-2,
+        "atype"   => s.atype,
+        "denoise" => s.denoise,
+        "epsilon" => s.epsilon,
+        "pcut"    => s.pcut,
+        "eta"     => s.eta,
     )
 end
 
