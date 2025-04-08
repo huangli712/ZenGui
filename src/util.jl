@@ -89,7 +89,13 @@ end
 function setup_fonts()
     fonts_dir = "/Users/lihuang/Library/Fonts"
     fonts = unsafe_load(CImGui.GetIO().Fonts)
-    CImGui.AddFontFromFileTTF(fonts, joinpath(fonts_dir, "FiraCode-Regular.ttf"), 16)
+    CImGui.AddFontFromFileTTF(
+        fonts,
+        joinpath(fonts_dir, "FiraCode-Regular.ttf"),
+        16,
+        C_NULL,
+        CImGui.GetGlyphRangesGreek(fonts) # To display the Greek letters
+    )
 end
 
 function setup_window()
@@ -99,6 +105,10 @@ function setup_window()
     if unsafe_load(io.ConfigFlags) & ImGuiConfigFlags_ViewportsEnable == ImGuiConfigFlags_ViewportsEnable
         style.WindowRounding = 5.0f0
         col = CImGui.c_get(style.Colors, CImGui.ImGuiCol_WindowBg)
-        CImGui.c_set!(style.Colors, CImGui.ImGuiCol_WindowBg, ImVec4(col.x, col.y, col.z, 1.0f0))
+        CImGui.c_set!(
+            style.Colors,
+            CImGui.ImGuiCol_WindowBg,
+            ImVec4(col.x, col.y, col.z, 1.0f0)
+        )
     end
 end
