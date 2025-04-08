@@ -107,6 +107,7 @@ function handle_menu_save()
         @case "ACFLOW"
             if FMENU.ACFLOW
                 @show "SAVE ACFLOW"
+                save_acflow()
                 
             end
             break

@@ -69,7 +69,6 @@ FMENU = MenuFlags(
     false,
     false,
     false,
-    false,
     false
 )
 
