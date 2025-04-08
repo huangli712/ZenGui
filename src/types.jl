@@ -533,7 +533,66 @@ function _build_acflow_dict()
     end
 end
 
+"""
+    _build_actest_dict()
+"""
 function _build_actest_dict()
+    @cswitch PBASE.solver begin
+
+        @case "MaxEnt"
+            return Dict(
+                "BASE" => _struct_to_dict(PBASE),
+                "MaxEnt" => _struct_to_dict(PMaxEnt)
+            )
+            break
+
+        @case "BarRat"
+            return Dict(
+                "BASE" => _struct_to_dict(PBASE),
+                "BarRat" => _struct_to_dict(PBarRat)
+            )
+            break
+
+        @case "NevanAC"
+            return Dict(
+                "BASE" => _struct_to_dict(PBASE),
+                "NevanAC" => _struct_to_dict(PNevanAC)
+            )
+            break
+
+        @case "StochAC"
+            return Dict(
+                "BASE" => _struct_to_dict(PBASE),
+                "StochAC" => _struct_to_dict(PStochAC)
+            )
+            break
+
+        @case "StochSK"
+            return Dict(
+                "BASE" => _struct_to_dict(PBASE),
+                "StochSK" => _struct_to_dict(PStochSK)
+            )
+            break
+
+        @case "StochOM"
+            return Dict(
+                "BASE" => _struct_to_dict(PBASE),
+                "StochOM" => _struct_to_dict(PStochOM)
+            )
+            break
+
+        @case "StochPX"
+            return Dict(
+                "BASE" => _struct_to_dict(PBASE),
+                "StochPX" => _struct_to_dict(PStochPX)
+            )
+            break
+
+        @default
+            sorry()
+            break
+
+    end    
 end
 
 """
