@@ -280,6 +280,9 @@ PStochPX = ACFLOW_PStochPX(
     1e-4
 )
 
+"""
+    ACTEST_PTEST
+"""
 mutable struct ACTEST_PTEST
     solver  :: String
     ptype   :: String
@@ -299,6 +302,9 @@ mutable struct ACTEST_PTEST
     lpeak   :: Array
 end
 
+"""
+    PTEST
+"""
 PTEST = ACTEST_PTEST(
     "MaxEnt",
     "gauss",
