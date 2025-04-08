@@ -3,6 +3,7 @@
 *.out
 *.swp
 *.data
+*.toml
 .DS_Store
 imgui.ini
 docs/build
