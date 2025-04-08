@@ -280,6 +280,9 @@ PStochPX = ACFLOW_PStochPX(
     1e-4
 )
 
+"""
+    _struct_to_dict(s::ACFLOW_PBASE)
+"""
 function _struct_to_dict(s::ACFLOW_PBASE)
     return Dict{String,Any}(
         "finput"  => s.finput,
@@ -298,6 +301,9 @@ function _struct_to_dict(s::ACFLOW_PBASE)
     )
 end
 
+"""
+    _struct_to_dict(s::ACFLOW_PMaxEnt)
+"""
 function _struct_to_dict(s::ACFLOW_PMaxEnt)
     return Dict{String,Any}(
         "method" => s.method,
@@ -309,21 +315,39 @@ function _struct_to_dict(s::ACFLOW_PMaxEnt)
     )
 end
 
+"""
+    _struct_to_dict(s::ACFLOW_PBarRat)
+"""
 function _struct_to_dict(s::ACFLOW_PBarRat)
 end
 
+"""
+    _struct_to_dict(s::ACFLOW_PNevanAC)
+"""
 function _struct_to_dict(s::ACFLOW_PNevanAC)
 end
 
+"""
+    _struct_to_dict(s::ACFLOW_PStochAC)
+"""
 function _struct_to_dict(s::ACFLOW_PStochAC)
 end
 
+"""
+    _struct_to_dict(s::ACFLOW_PStochSK)
+"""
 function _struct_to_dict(s::ACFLOW_PStochSK)
 end
 
+"""
+    _struct_to_dict(s::ACFLOW_PStochOM)
+"""
 function _struct_to_dict(s::ACFLOW_PStochOM)
 end
 
+"""
+    _struct_to_dict(s::ACFLOW_PStochPX)
+"""
 function _struct_to_dict(s::ACFLOW_PStochPX)
 end
 
