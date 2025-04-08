@@ -364,6 +364,48 @@ function _build_acflow_dict()
             )
             break
 
+        @case "BarRat"
+            return Dict(
+                "BASE" => _struct_to_dict(PBASE),
+                "MaxEnt" => _struct_to_dict(PMaxEnt)
+            )
+            break
+
+        @case "NevanAC"
+            return Dict(
+                "BASE" => _struct_to_dict(PBASE),
+                "MaxEnt" => _struct_to_dict(PMaxEnt)
+            )
+            break
+
+        @case "StochAC"
+            return Dict(
+                "BASE" => _struct_to_dict(PBASE),
+                "MaxEnt" => _struct_to_dict(PMaxEnt)
+            )
+            break
+
+        @case "StochSK"
+            return Dict(
+                "BASE" => _struct_to_dict(PBASE),
+                "MaxEnt" => _struct_to_dict(PMaxEnt)
+            )
+            break
+
+        @case "StochOM"
+            return Dict(
+                "BASE" => _struct_to_dict(PBASE),
+                "MaxEnt" => _struct_to_dict(PMaxEnt)
+            )
+            break
+
+        @case "StochPX"
+            return Dict(
+                "BASE" => _struct_to_dict(PBASE),
+                "MaxEnt" => _struct_to_dict(PMaxEnt)
+            )
+            break
+
         @default
             sorry()
             break
