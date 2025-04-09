@@ -84,4 +84,24 @@ function _actest_test_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ktype)$(PTEST.ktype)")
+    #
+    # Input: grid
+    CImGui.SetNextItemWidth(widget_combo_width)
+    grid_list = ["ftime", "btime", "ffreq", "bfreq"]
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" Grid for correlation function", &id, grid_list)
+        PTEST.grid = grid_list[id + 1]
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(grid)$(PTEST.grid)")
+    #
+    # Input: mesh
+    CImGui.SetNextItemWidth(widget_combo_width)
+    mesh_list = ["linear", "tangent", "lorentz", "halflorentz"]
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" Mesh for spectral function", &id, mesh_list)
+        PTEST.mesh = mesh_list[id + 1]
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mesh)$(PTEST.mesh)")
 end
