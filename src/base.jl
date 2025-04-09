@@ -192,42 +192,82 @@ function handle_menu_light()
     FMENU._LIGHT = false
 end
 
+"""
+    handle_menu_zen()
+
+Respond the menu event: zen. Try to open documentation for the Zen package.
+"""
 function handle_menu_zen()
     url = "https://huangli712.github.io/projects/zen/index.html"
     _open_url(url)
     FMENU._ZEN = false
 end
 
+"""
+    handle_menu_dyson()
+
+Respond the menu event: dyson. Try to open documentation for the Dyson code.
+"""
 function handle_menu_dyson()
     url = "https://huangli712.github.io/projects/dyson/index.html"
     _open_url(url)    
     FMENU._DYSON = false
 end
 
+"""
+    handle_menu_dfermion()
+
+Respond the menu event: dfermion. Try to open documentation for the
+DFermion code.
+"""
 function handle_menu_dfermion()
     url = "https://huangli712.github.io/projects/dfermion/index.html"
     _open_url(url)
     FMENU._DFERMION = false
 end
 
+"""
+    handle_menu_iqist()
+
+Respond the menu event: iqist. Try to open documentation for the iQIST
+toolkit.
+"""
 function handle_menu_iqist()
     url = "https://huangli712.github.io/projects/iqist_new/index.html"
     _open_url(url)
     FMENU._IQIST = false
 end
 
+"""
+    handle_menu_acflow()
+
+Respond the menu event: acflow. Try to open documentation for the ACFlow
+toolkit.
+"""
 function handle_menu_acflow()
     url = "https://huangli712.github.io/projects/acflow/index.html"
     _open_url(url)
     FMENU._ACFLOW = false
 end
 
+"""
+    handle_menu_actest()
+
+Respond the menu event: actest. Try to open documentation for the ACTest
+toolkit.
+"""
 function handle_menu_actest()
     url = "https://huangli712.github.io/projects/actest/index.html"
     _open_url(url)
     FMENU._ACTEST = false
 end
 
+"""
+    handle_menu_zengui()
+
+Respond the menu event: zengui. Try to open documentation for the ZenGui
+application.
+"""
 function handle_menu_zengui()
     url = "https://huangli712.github.io/projects/zengui/index.html"
     _open_url(url)
