@@ -226,3 +226,22 @@ function handle_menu_zengui()
     @show "HELP ZENGUI"
     FMENU._ZENGUI = false
 end
+
+"""
+    _open_url(url::String)
+
+Invoke a web browser to open the given url.
+"""
+function _open_url(url::String)
+    using Base.Sys
+
+    if Sys.iswindows()
+        run(`start $url`)
+    elseif Sys.islinux()
+        run(`xdg-open $url`)
+    elseif Sys.isapple()
+        run(`open $url`)
+    else
+        sorry()
+    end
+end
