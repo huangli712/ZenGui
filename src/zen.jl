@@ -33,12 +33,23 @@ function create_app_zen(p_open::Ref{Bool})
 
     _zen_tabs()
 
+    # For the separator
+    CImGui.Spacing()
+    CImGui.Separator()
+    CImGui.Spacing()
+
     # End of this window
     CImGui.End()
 end
 
+"""
+    _zen_tabs()
+
+Setup the tab widgets for all the blocks in the case.toml.
+"""
 function _zen_tabs()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
+    #
     if CImGui.BeginTabBar("MyTabBar", tab_bar_flags)
         _zen_case_tab()
         _zen_dft_tab()
