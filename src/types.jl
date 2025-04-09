@@ -7,10 +7,16 @@
 # Last modified: 2025/04/10
 #
 
+"""
+    CURRENT_WINDOW
+"""
 mutable struct CURRENT_WINDOW
     name :: String
 end
 
+"""
+    CWIN
+"""
 CWIN = CURRENT_WINDOW(
     "nothing"
 )
@@ -72,10 +78,16 @@ FMENU = MenuFlags(
     false
 )
 
+"""
+    ZEN_PCASE
+"""
 mutable struct ZEN_PCASE
     case :: String
 end
 
+"""
+    ZEN_PDFT
+"""
 mutable struct ZEN_PDFT
     engine   :: String
     projtype :: String
@@ -91,6 +103,9 @@ mutable struct ZEN_PDFT
     window   :: Array
 end
 
+"""
+    ZEN_PDMFT
+"""
 mutable struct ZEN_PDMFT
     mode   :: I64
     axis   :: I64
@@ -106,6 +121,9 @@ mutable struct ZEN_PDMFT
     lfermi :: Bool
 end
 
+"""
+    ZEN_PIMP
+"""
 mutable struct ZEN_PIMP
     nsite :: I64
     atoms :: Array
@@ -118,16 +136,25 @@ mutable struct ZEN_PIMP
     lpara :: Array
 end
 
+"""
+    ZEN_PSOLVER
+"""
 mutable struct ZEN_PSOLVER
     engine :: String
     ncycle :: I64
     params :: Array
 end
 
+"""
+    PCASE
+"""
 PCASE = ZEN_PCASE(
     "SrVO3"
 )
 
+"""
+    PDFT
+"""
 PDFT = ZEN_PDFT(
     "vasp",
     "plo",
@@ -143,6 +170,9 @@ PDFT = ZEN_PDFT(
     [-1.4, 6.0]
 )
 
+"""
+    PDMFT
+"""
 PDMFT = ZEN_PDMFT(
     1,
     1,
@@ -158,6 +188,9 @@ PDMFT = ZEN_PDMFT(
     true
 )
 
+"""
+    PIMP
+"""
 PIMP = ZEN_PIMP(
     1,
     ["V : 2"],
@@ -170,6 +203,9 @@ PIMP = ZEN_PIMP(
     [0.0]
 )
 
+"""
+    PSOLVER
+"""
 PSOLVER = ZEN_PSOLVER(
     "ctseg",
     2,
