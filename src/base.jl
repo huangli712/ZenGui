@@ -7,31 +7,41 @@
 # Last modified: 2025/04/09
 #
 
+"""
+    zeng_run()
+
+Main function. It launchs the graphic user interface.
+"""
 function zeng_run()
+    # Setup backend for Dear ImGui
     CImGui.set_backend(:GlfwOpenGL3)
 
-    # setup Dear ImGui context
+    # Setup context for Dear ImGui
     ctx = CImGui.CreateContext()
 
-    # enable docking and multi-viewport
+    # Setup flags for Dear ImGui, enabling docking and multi-viewport.
     setup_flags()
 
-    # When viewports are enabled we tweak WindowRounding/WindowBg so platform
-    # windows can look identical to regular ones.
+    # Setup window's style
+    #
+    # When viewports are enabled, we tweak WindowRounding and WindowBg so
+    # platform windows can look identical to regular ones.
     setup_window()
 
-    # Load Fonts
+    # Load fonts
     setup_fonts()
 
-    # setup Dear ImGui style
+    # Setup style for Dear ImGui
     CImGui.StyleColorsDark()
 
-    clear_color = Cfloat[0.45, 0.55, 0.60, 1.00]
-    engine = nothing
+    # Setup background color
+    bgc = Cfloat[0.45, 0.55, 0.60, 1.00]
 
-    CImGui.render(ctx; engine, clear_color=Ref(clear_color), window_title = "ZenGui") do
+    CImGui.render(ctx; nothing, clear_color=Ref(bgc), window_title = "ZenGui") do
+        # Setup menu in the main window
         create_menu()
 
+        # Respond to events
         FMENU._SAVE     && handle_menu_save()
         FMENU._EXIT     && return :imgui_exit_loop
         #
@@ -61,6 +71,9 @@ end
 
 """
     handle_menu_save()
+
+Respond the menu event: save. Try to save configurtion files for various
+tools or codes.
 """
 function handle_menu_save()
     @show "IN SAVE MENU"
