@@ -159,16 +159,34 @@ function handle_menu_save()
     end
 end
 
+"""
+    handle_menu_classic()
+
+Respond the menu event: classic. Change the appearance of graphic user
+interface to classic style. 
+"""
 function handle_menu_classic()
     CImGui.StyleColorsClassic()
     FMENU._CLASSIC = false
 end
 
+"""
+    handle_menu_dark()
+
+Respond the menu event: dark. Change the appearance of graphic user
+interface to dark style. Note that the defalt style is dark. 
+"""
 function handle_menu_dark()
     CImGui.StyleColorsDark()
     FMENU._DARK = false
 end
 
+"""
+    handle_menu_light()
+
+Respond the menu event: light. Change the appearance of graphic user
+interface to light style. 
+"""
 function handle_menu_light()
     CImGui.StyleColorsLight()
     FMENU._LIGHT = false
