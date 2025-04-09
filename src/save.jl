@@ -7,26 +7,44 @@
 # Last modified: 2025/04/09
 #
 
+"""
+    save_zen(p_open::Ref{Bool})
+"""
 function save_zen(p_open::Ref{Bool})
 
 end
 
+"""
+    save_dyson(p_open::Ref{Bool})
+"""
 function save_dyson(p_open::Ref{Bool})
     
 end
 
+"""
+    save_dfermion(p_open::Ref{Bool})
+"""
 function save_dfermion(p_open::Ref{Bool})
     
 end
 
+"""
+    save_ctseg(p_open::Ref{Bool})
+"""
 function save_ctseg(p_open::Ref{Bool})
     
 end
 
+"""
+    save_cthyb(p_open::Ref{Bool})
+"""
 function save_cthyb(p_open::Ref{Bool})
     
 end
 
+"""
+    save_atomic(p_open::Ref{Bool})
+"""
 function save_atomic(p_open::Ref{Bool})
     
 end
@@ -57,6 +75,9 @@ function save_acflow(p_open::Ref{Bool})
     CImGui.End()
 end
 
+"""
+    save_actest(p_open::Ref{Bool})
+"""
 function save_actest(p_open::Ref{Bool})
     
 end
