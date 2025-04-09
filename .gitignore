@@ -4,6 +4,7 @@
 *.swp
 *.data
 *.toml
+solver.ctqmc.in
 .DS_Store
 imgui.ini
 docs/build
