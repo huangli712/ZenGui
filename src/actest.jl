@@ -184,5 +184,19 @@ function _actest_test_block()
         PTEST.noise = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(noise)$(PTEST.noise)") 
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(noise)$(PTEST.noise)")
+    #
+    # Input: offdiag
+    CImGui.SetNextItemWidth(widget_combo_width)
+    offdiag_list = ["Yes", "No"]
+    @cstatic id = Cint(1) begin
+        @c CImGui.Combo(" Is it the offdiagonal part in matrix-valued function", &id, offdiag_list)
+        if id == 0
+            PTEST.offdiag = true
+        else
+            PTEST.offdiag = false
+        end
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(offdiag)$(PTEST.offdiag)")
 end
