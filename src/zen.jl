@@ -14,7 +14,7 @@ Create an UI window for the Zen toolkit, which is an integrated package for
 ab initio dynamical mean-field theory calculations.
 """
 function create_app_zen(p_open::Ref{Bool})
-    # Create the Zen window, which is modal and can not be resized.
+    # Create the Zen window, which can not be resized.
     CImGui.Begin(
         "Zen",
         p_open,
@@ -27,28 +27,52 @@ function create_app_zen(p_open::Ref{Bool})
     end
 
     # Fix size of the window
-    window_width = 400.0
-    window_height = 300.0
+    window_width = 600.0
+    window_height = 400.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
-    tab_bar_flags = CImGui.ImGuiTabBarFlags_None
-    if CImGui.BeginTabBar("MyTabBar", tab_bar_flags)
-        if CImGui.BeginTabItem("Avocado")
-            CImGui.Text("This is the Avocado tab!\nblah blah blah blah blah")
-            CImGui.EndTabItem()
-        end
-        if CImGui.BeginTabItem("Broccoli")
-            CImGui.Text("This is the Broccoli tab!\nblah blah blah blah blah")
-            CImGui.EndTabItem()
-        end
-        if CImGui.BeginTabItem("Cucumber")
-            CImGui.Text("This is the Cucumber tab!\nblah blah blah blah blah")
-            CImGui.EndTabItem()
-        end
-        CImGui.EndTabBar()
-    end
-
+    _zen_tabs()
 
     # End of this window
     CImGui.End()
+end
+
+function _zen_tabs()
+    tab_bar_flags = CImGui.ImGuiTabBarFlags_None
+    if CImGui.BeginTabBar("MyTabBar", tab_bar_flags)
+        _zen_case_tab()
+        _zen_dft_tab()
+        _zen_dmft_tab()
+        _zen_imp_tab()
+        _zen_solver_tab()
+        #
+        CImGui.EndTabBar()
+    end
+end
+
+function _zen_case_tab()
+    if CImGui.BeginTabItem("Avocado")
+        CImGui.Text("This is the Avocado tab!\nblah blah blah blah blah")
+        CImGui.EndTabItem()
+    end
+end
+
+function _zen_dft_tab()
+    if CImGui.BeginTabItem("Broccoli")
+        CImGui.Text("This is the Broccoli tab!\nblah blah blah blah blah")
+        CImGui.EndTabItem()
+    end
+end
+
+function _zen_dmft_tab()
+    if CImGui.BeginTabItem("Cucumber")
+        CImGui.Text("This is the Cucumber tab!\nblah blah blah blah blah")
+        CImGui.EndTabItem()
+    end
+end
+
+function _zen_imp_tab()
+end
+
+function _zen_solver_tab()
 end
