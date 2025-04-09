@@ -4,9 +4,15 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/08
+# Last modified: 2025/04/09
 #
 
+"""
+    create_app_ctseg(p_open::Ref{Bool})
+
+Create an UI window for the CTSEG code, which is a continuous-time quantum
+impurity solver in the iQIST package.
+"""
 function create_app_ctseg(p_open::Ref{Bool})
     # Create the CTSEG window, which is modal and can not be resized.
     CImGui.Begin(
@@ -15,6 +21,7 @@ function create_app_ctseg(p_open::Ref{Bool})
         CImGui.ImGuiWindowFlags_NoResize
     )
 
+    # Setup the flag for active window
     if CImGui.IsWindowFocused()
         CWIN.name = "CTSEG"
     end
