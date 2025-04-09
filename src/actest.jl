@@ -47,6 +47,9 @@ function create_app_actest(p_open::Ref{Bool})
     CImGui.Separator()
     CImGui.Spacing()
 
+    # For the buttons in the bottom of this window
+    _actest_bottom_block(p_open)
+
     # End of this window
     CImGui.End()
 end
