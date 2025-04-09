@@ -148,5 +148,23 @@ function _actest_test_block()
         PTEST.wmin = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmin)$(PTEST.wmin)")     
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmin)$(PTEST.wmin)")
+    #
+    # Input: pmax
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(4.0) begin
+        @c CImGui.InputDouble(" Right boundary (maximum value) for possible peaks", &_f)
+        PTEST.pmax = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(pmax)$(PTEST.pmax)")
+    #
+    # Input: pmin
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(-4.0) begin
+        @c CImGui.InputDouble(" Left boundary (minimum value) for possible peaks", &_f)
+        PTEST.pmin = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmin)$(PTEST.pmin)")     
 end
