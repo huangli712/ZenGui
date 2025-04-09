@@ -53,6 +53,7 @@ end
     save_acflow(p_open::Ref{Bool})
 """
 function save_acflow(p_open::Ref{Bool})
+    # Create a popup window
     CImGui.Begin(
         "Save ACFlow",
         p_open,
@@ -63,6 +64,8 @@ function save_acflow(p_open::Ref{Bool})
     CImGui.Text("The configurtion file for ACFlow will be saved at:")
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
 
+    # If the button is pressed, then the ac.toml file is stored in the
+    # current directory.
     if CImGui.Button("Save It")
         p_open[] = false
         #
@@ -72,6 +75,7 @@ function save_acflow(p_open::Ref{Bool})
         end
     end
 
+    # Close the popup window
     CImGui.End()
 end
 
@@ -79,5 +83,28 @@ end
     save_actest(p_open::Ref{Bool})
 """
 function save_actest(p_open::Ref{Bool})
-    
+    # Create a popup window
+    CImGui.Begin(
+        "Save ACTest",
+        p_open,
+        CImGui.ImGuiWindowFlags_Modal | CImGui.ImGuiWindowFlags_NoResize
+    )
+
+    file = joinpath(pwd(), "act.toml")
+    CImGui.Text("The configurtion file for ACTest will be saved at:")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
+
+    # If the button is pressed, then the act.toml file is stored in the
+    # current directory.
+    if CImGui.Button("Save It")
+        p_open[] = false
+        #
+        D = _build_actest_dict()
+        open("act.toml", "w") do fout
+            TOML.print(fout, D)
+        end
+    end
+
+    # Close the popup window
+    CImGui.End()    
 end
