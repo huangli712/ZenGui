@@ -445,50 +445,6 @@ PStochPX = ACFLOW_PStochPX(
 )
 
 """
-    ACTEST_PTEST
-"""
-mutable struct ACTEST_PTEST
-    solver  :: String
-    ptype   :: String
-    ktype   :: String
-    grid    :: String
-    mesh    :: String
-    ngrid   :: I64
-    nmesh   :: I64
-    ntest   :: I64
-    wmax    :: F64
-    wmin    :: F64
-    pmax    :: F64
-    pmin    :: F64
-    beta    :: F64
-    noise   :: F64
-    offdiag :: Bool
-    lpeak   :: Array
-end
-
-"""
-    PTEST
-"""
-PTEST = ACTEST_PTEST(
-    "MaxEnt",
-    "gauss",
-    "fermi",
-    "ffreq",
-    "linear",
-    10,
-    501,
-    100,
-    5.0,
-    -5.0,
-    4.0,
-    -4.0,
-    10.0,
-    1.0e-6,
-    false,
-    [1,2,3]
-)
-
-"""
     _struct_to_dict(s::ACFLOW_PBASE)
 """
 function _struct_to_dict(s::ACFLOW_PBASE)
@@ -612,30 +568,6 @@ function _struct_to_dict(s::ACFLOW_PStochPX)
 end
 
 """
-    _struct_to_dict(s::ACTEST_PTEST)
-"""
-function _struct_to_dict(s::ACTEST_PTEST)
-    return Dict{String,Any}(
-        "solver"  => s.solver,
-        "ptype"   => s.ptype,
-        "ktype"   => s.ktype,
-        "grid"    => s.grid,
-        "mesh"    => s.mesh,
-        "ngrid"   => s.ngrid,
-        "nmesh"   => s.nmesh,
-        "ntest"   => s.ntest,
-        "wmax"    => s.wmax,
-        "wmin"    => s.wmin,
-        "pmax"    => s.pmax,
-        "pmin"    => s.pmin,
-        "beta"    => s.beta,
-        "noise"   => s.noise,
-        "offdiag" => s.offdiag,
-        "lpeak"   => s.lpeak,
-    )
-end
-
-"""
     _build_acflow_dict()
 """
 function _build_acflow_dict()
@@ -695,6 +627,74 @@ function _build_acflow_dict()
             break
 
     end
+end
+
+"""
+    ACTEST_PTEST
+"""
+mutable struct ACTEST_PTEST
+    solver  :: String
+    ptype   :: String
+    ktype   :: String
+    grid    :: String
+    mesh    :: String
+    ngrid   :: I64
+    nmesh   :: I64
+    ntest   :: I64
+    wmax    :: F64
+    wmin    :: F64
+    pmax    :: F64
+    pmin    :: F64
+    beta    :: F64
+    noise   :: F64
+    offdiag :: Bool
+    lpeak   :: Array
+end
+
+"""
+    PTEST
+"""
+PTEST = ACTEST_PTEST(
+    "MaxEnt",
+    "gauss",
+    "fermi",
+    "ffreq",
+    "linear",
+    10,
+    501,
+    100,
+    5.0,
+    -5.0,
+    4.0,
+    -4.0,
+    10.0,
+    1.0e-6,
+    false,
+    [1,2,3]
+)
+
+"""
+    _struct_to_dict(s::ACTEST_PTEST)
+"""
+function _struct_to_dict(s::ACTEST_PTEST)
+    return Dict{String,Any}(
+        "solver"  => s.solver,
+        "ptype"   => s.ptype,
+        "ktype"   => s.ktype,
+        "grid"    => s.grid,
+        "mesh"    => s.mesh,
+        "ngrid"   => s.ngrid,
+        "nmesh"   => s.nmesh,
+        "ntest"   => s.ntest,
+        "wmax"    => s.wmax,
+        "wmin"    => s.wmin,
+        "pmax"    => s.pmax,
+        "pmin"    => s.pmin,
+        "beta"    => s.beta,
+        "noise"   => s.noise,
+        "offdiag" => s.offdiag,
+        "lpeak"   => s.lpeak,
+    )
 end
 
 """
