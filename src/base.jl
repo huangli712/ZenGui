@@ -79,7 +79,7 @@ function handle_menu_save()
     @show "IN SAVE MENU"
 
     @cswitch CWIN.name begin
-        
+
         @case "ZEN"
             if FMENU.ZEN
                 @show "SAVE ZEN"
@@ -163,7 +163,7 @@ end
     handle_menu_classic()
 
 Respond the menu event: classic. Change the appearance of graphic user
-interface to classic style. 
+interface to classic style.
 """
 function handle_menu_classic()
     CImGui.StyleColorsClassic()
@@ -174,7 +174,7 @@ end
     handle_menu_dark()
 
 Respond the menu event: dark. Change the appearance of graphic user
-interface to dark style. Note that the defalt style is dark. 
+interface to dark style. Note that the defalt style is dark.
 """
 function handle_menu_dark()
     CImGui.StyleColorsDark()
@@ -185,7 +185,7 @@ end
     handle_menu_light()
 
 Respond the menu event: light. Change the appearance of graphic user
-interface to light style. 
+interface to light style.
 """
 function handle_menu_light()
     CImGui.StyleColorsLight()
@@ -210,7 +210,7 @@ Respond the menu event: dyson. Try to open documentation for the Dyson code.
 """
 function handle_menu_dyson()
     url = "https://huangli712.github.io/projects/dyson/index.html"
-    _open_url(url)    
+    _open_url(url)
     FMENU._DYSON = false
 end
 

@@ -18,35 +18,35 @@ end
     save_dyson(p_open::Ref{Bool})
 """
 function save_dyson(p_open::Ref{Bool})
-    
+
 end
 
 """
     save_dfermion(p_open::Ref{Bool})
 """
 function save_dfermion(p_open::Ref{Bool})
-    
+
 end
 
 """
     save_ctseg(p_open::Ref{Bool})
 """
 function save_ctseg(p_open::Ref{Bool})
-    
+
 end
 
 """
     save_cthyb(p_open::Ref{Bool})
 """
 function save_cthyb(p_open::Ref{Bool})
-    
+
 end
 
 """
     save_atomic(p_open::Ref{Bool})
 """
 function save_atomic(p_open::Ref{Bool})
-    
+
 end
 
 """
@@ -106,5 +106,5 @@ function save_actest(p_open::Ref{Bool})
     end
 
     # Close the popup window
-    CImGui.End()    
+    CImGui.End()
 end

@@ -8,7 +8,7 @@
 #
 
 mutable struct CURRENT_WINDOW
-    name :: String 
+    name :: String
 end
 
 CWIN = CURRENT_WINDOW(
@@ -598,7 +598,7 @@ function _build_actest_dict()
             sorry()
             break
 
-    end    
+    end
 end
 
 """
