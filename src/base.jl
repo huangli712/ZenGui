@@ -280,8 +280,6 @@ end
 Invoke a web browser to open the given url.
 """
 function _open_url(url::String)
-    using Base.Sys
-
     if Sys.iswindows()
         run(`start $url`)
     elseif Sys.islinux()
