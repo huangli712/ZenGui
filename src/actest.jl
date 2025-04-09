@@ -14,7 +14,7 @@ Create an UI window for the ACTest toolkit, which is used to benchmark the
 analytic continuation tools in the ACFlow package.
 """
 function create_app_actest(p_open::Ref{Bool})
-    # Create the ACTest window, which is modal and can not be resized.
+    # Create the ACTest window, which can not be resized.
     CImGui.Begin(
         "ACTest",
         p_open,
@@ -27,12 +27,21 @@ function create_app_actest(p_open::Ref{Bool})
     end
 
     # Fix size of the window
-    window_width = 400.0
-    window_height = 300.0
+    window_width = 600.0
+    window_height = 600.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
-    CImGui.Text("ACTest")
+    # For the [Test] block in the act.toml
+    _actest_test_block()
+
+    # For the separator
+    CImGui.Spacing()
+    CImGui.Separator()
+    CImGui.Spacing()
 
     # End of this window
     CImGui.End()
+end
+
+function _actest_test_block()
 end
