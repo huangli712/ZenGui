@@ -39,6 +39,14 @@ function create_app_actest(p_open::Ref{Bool})
     CImGui.Separator()
     CImGui.Spacing()
 
+    # For the [Solver] block in the act.toml
+    _actest_solver_block()
+
+    # For the separator
+    CImGui.Spacing()
+    CImGui.Separator()
+    CImGui.Spacing()
+
     # End of this window
     CImGui.End()
 end

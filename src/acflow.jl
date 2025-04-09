@@ -201,6 +201,8 @@ end
 
 """
     _acflow_solver_block()
+
+Setup widgets in the lower panel of the window for the ACFlow toolkit.
 """
 function _acflow_solver_block()
     # It should change upon the selection of analytic continuation solver.
@@ -245,6 +247,8 @@ end
 
 """
     _acflow_bottom_block(p_open::Ref{Bool})
+
+Setup widgets in the bottom of the window for the ACFlow toolkit.
 """
 function _acflow_bottom_block(p_open::Ref{Bool})
     # Define the default size for widgets
@@ -282,7 +286,7 @@ end
 """
     _acflow_maxent_block()
 
-Widgets for the [MaxEnt] block in the ac.toml.
+Setup widgets for the [MaxEnt] block in the ac.toml.
 """
 function _acflow_maxent_block()
     # Define the default size for widgets
@@ -349,7 +353,7 @@ end
 """
     _acflow_barrat_block()
 
-Widgets for the [BarRat] block in the ac.toml.
+Setup widgets for the [BarRat] block in the ac.toml.
 """
 function _acflow_barrat_block()
     # Define the default size for widgets
@@ -407,7 +411,7 @@ end
 """
     _acflow_nevanac_block()
 
-Widgets for the [NevanAC] block in the ac.toml.
+Setup widgets for the [NevanAC] block in the ac.toml.
 """
 function _acflow_nevanac_block()
     # Define the default size for widgets
@@ -473,7 +477,7 @@ end
 """
     _acflow_stochac_block()
 
-Widgets for the [StochAC] block in the ac.toml.
+Setup widgets for the [StochAC] block in the ac.toml.
 """
 function _acflow_stochac_block()
     # Define the default size for widgets
@@ -556,7 +560,7 @@ end
 """
     _acflow_stochsk_block()
 
-Widgets for the [StochSK] block in the ac.toml.
+Setup widgets for the [StochSK] block in the ac.toml.
 """
 function _acflow_stochsk_block()
     # Define the default size for widgets
@@ -649,7 +653,7 @@ end
 """
     _acflow_stochom_block()
 
-Widgets for the [StochOM] block in the ac.toml.
+Setup widgets for the [StochOM] block in the ac.toml.
 """
 function _acflow_stochom_block()
     # Define the default size for widgets
@@ -714,7 +718,7 @@ end
 """
     _acflow_stochpx_block()
 
-Widgets for the [StochPX] block in the ac.toml.
+Setup widgets for the [StochPX] block in the ac.toml.
 """
 function _acflow_stochpx_block()
     # Define the default size for widgets
