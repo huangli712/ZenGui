@@ -37,7 +37,7 @@ function zeng_run()
     # Setup background color
     bgc = Cfloat[0.45, 0.55, 0.60, 1.00]
 
-    CImGui.render(ctx; nothing, clear_color=Ref(bgc), window_title = "ZenGui") do
+    CImGui.render(ctx; clear_color=Ref(bgc), window_title = "ZenGui") do
         # Setup menu in the main window
         create_menu()
 
