@@ -92,9 +92,30 @@ mutable struct ZEN_PDFT
 end
 
 mutable struct ZEN_PDMFT
+    mode   :: I64
+    axis   :: I64
+    niter  :: I64
+    nmesh  :: I64
+    dcount :: String
+    beta   :: F64
+    mixer  :: F64
+    mc     :: F64
+    cc     :: F64
+    ec     :: F64
+    sc     :: F64
+    lfermi :: Bool
 end
 
 mutable struct ZEN_PIMP
+    nsite :: I64
+    atoms :: Array
+    equiv :: Array
+    shell :: Array
+    ising :: Array
+    occup :: Array
+    upara :: Array
+    jpara :: Array
+    lpara :: Array
 end
 
 mutable struct ZEN_PSOLVER
