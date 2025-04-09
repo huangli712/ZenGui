@@ -83,6 +83,8 @@ function handle_menu_save()
         @case "ZEN"
             if FMENU.ZEN
                 @show "SAVE ZEN"
+                @c save_zen(&FMENU._SAVE)
+            else
                 FMENU._SAVE = false
             end
             break
@@ -90,6 +92,8 @@ function handle_menu_save()
         @case "DYSON"
             if FMENU.DYSON
                 @show "SAVE DYSON"
+                @c save_dyson(&FMENU._SAVE)
+            else
                 FMENU._SAVE = false
             end
             break
@@ -97,6 +101,8 @@ function handle_menu_save()
         @case "DFERMION"
             if FMENU.DFERMION
                 @show "SAVE DFERMION"
+                @c save_dfermion(&FMENU._SAVE)
+            else
                 FMENU._SAVE = false
             end
             break
@@ -104,6 +110,8 @@ function handle_menu_save()
         @case "CTSEG"
             if FMENU.CTSEG
                 @show "SAVE CTSEG"
+                @c save_ctseg(&FMENU._SAVE)
+            else
                 FMENU._SAVE = false
             end
             break
@@ -111,6 +119,8 @@ function handle_menu_save()
         @case "CTHYB"
             if FMENU.CTHYB
                 @show "SAVE CTHYB"
+                @c save_cthyb(&FMENU._SAVE)
+            else
                 FMENU._SAVE = false
             end
             break
@@ -118,6 +128,8 @@ function handle_menu_save()
         @case "ATOMIC"
             if FMENU.ATOMIC
                 @show "SAVE ATOMIC"
+                @c save_atomic(&FMENU._SAVE)
+            else
                 FMENU._SAVE = false
             end
             break
@@ -134,6 +146,8 @@ function handle_menu_save()
         @case "ACTEST"
             if FMENU.ACTEST
                 @show "SAVE ACTEST"
+                @c save_actest(&FMENU._SAVE)
+            else
                 FMENU._SAVE = false
             end
             break
