@@ -59,19 +59,19 @@ function _actest_test_block()
     CImGui.SetNextItemWidth(widget_combo_width)
     solver_list = ["MaxEnt", "BarRat", "NevanAC", "StochAC", "StochSK", "StochOM", "StochPX"]
     @cstatic id = Cint(0) begin
-        @c CImGui.Combo(" Solver for the analytic continuation problem", &id, solver_list)
-        PBASE.solver = solver_list[id + 1]
+        @c CImGui.Combo(" Analytic continuation solver", &id, solver_list)
+        PTEST.solver = solver_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(solver)$(PBASE.solver)")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(solver)$(PTEST.solver)")
     #
     # Input: ktype
     CImGui.SetNextItemWidth(widget_combo_width)
     ktype_list = ["fermi", "boson", "bsymm"]
     @cstatic id = Cint(0) begin
         @c CImGui.Combo(" Type of kernel function", &id, ktype_list)
-        PBASE.ktype = ktype_list[id + 1]
+        PTEST.ktype = ktype_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ktype)$(PBASE.ktype)")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ktype)$(PTEST.ktype)")
 end
