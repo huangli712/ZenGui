@@ -258,6 +258,13 @@ end
     _build_zen_dict()
 """
 function _build_zen_dict()
+    return Dict(
+        "case" => _struct_to_dict(PCASE),
+        "dft" => _struct_to_dict(PDFT),
+        "dmft" => _struct_to_dict(PDMFT),
+        "impurity" => _struct_to_dict(PIMP),
+        "solver" => _struct_to_dict(PSOLVER)
+    )
 end
 
 #=
