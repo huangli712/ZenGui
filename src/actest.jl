@@ -175,5 +175,14 @@ function _actest_test_block()
         PTEST.beta = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PTEST.beta)")  
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PTEST.beta)")
+    #
+    # Input: noise
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(10.0) begin
+        @c CImGui.InputDouble(" Noise level", &_f)
+        PTEST.noise = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(noise)$(PTEST.noise)") 
 end
