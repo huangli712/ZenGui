@@ -215,8 +215,11 @@ function _actest_test_block()
     CImGui.SetNextItemWidth(widget_input_width)
     @cstatic buf = "1,2,3" * "\0"^60 begin
         CImGui.InputText(" Number of peaks in the spectrum", buf, length(buf))
-        buf = rstrip(buf,'\0')
-        PTEST.lpeak = map(x -> parse(I64, x), split(buf, ","))
+        _buf = split(rstrip(buf,'\0'), ",")   # Get rid of blanks
+        filter!(x -> length(x) > 0, _buf)     # Remove empty strings
+        lpeak = map(x -> parse(I64, x), _buf) # Convert strings to integers
+        unique!(lpeak) # Remove redundant numbers
+        PTEST.lpeak = lpeak
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lpeak)$(PTEST.lpeak)")
