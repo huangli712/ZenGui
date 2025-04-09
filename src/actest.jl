@@ -179,7 +179,7 @@ function _actest_test_block()
     #
     # Input: noise
     CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _f = Cdouble(10.0) begin
+    @cstatic _f = Cdouble(1.0e-6) begin
         @c CImGui.InputDouble(" Noise level", &_f)
         PTEST.noise = _f
     end
