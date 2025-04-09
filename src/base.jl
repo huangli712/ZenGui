@@ -193,37 +193,44 @@ function handle_menu_light()
 end
 
 function handle_menu_zen()
-    @show "HELP ZEN"
+    url = "https://huangli712.github.io/projects/zen/index.html"
+    _open_url(url)
     FMENU._ZEN = false
 end
 
 function handle_menu_dyson()
-    @show "HELP DYSON"
+    url = "https://huangli712.github.io/projects/dyson/index.html"
+    _open_url(url)    
     FMENU._DYSON = false
 end
 
 function handle_menu_dfermion()
-    @show "HELP DFERMION"
+    url = "https://huangli712.github.io/projects/dfermion/index.html"
+    _open_url(url)
     FMENU._DFERMION = false
 end
 
 function handle_menu_iqist()
-    @show "HELP IQIST"
+    url = "https://huangli712.github.io/projects/iqist_new/index.html"
+    _open_url(url)
     FMENU._IQIST = false
 end
 
 function handle_menu_acflow()
-    @show "HELP ACFLOW"
+    url = "https://huangli712.github.io/projects/acflow/index.html"
+    _open_url(url)
     FMENU._ACFLOW = false
 end
 
 function handle_menu_actest()
-    @show "HELP ACTEST"
+    url = "https://huangli712.github.io/projects/actest/index.html"
+    _open_url(url)
     FMENU._ACTEST = false
 end
 
 function handle_menu_zengui()
-    @show "HELP ZENGUI"
+    url = "https://huangli712.github.io/projects/zengui/index.html"
+    _open_url(url)
     FMENU._ZENGUI = false
 end
 
