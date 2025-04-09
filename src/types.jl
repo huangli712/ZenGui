@@ -124,6 +124,48 @@ mutable struct ZEN_PSOLVER
     params :: Array
 end
 
+PCASE = ZEN_PCASE(
+    "SrVO3"
+)
+
+PDFT = ZEN_PDFT(
+    "vasp",
+    "plo",
+    "tetra",
+    "medium",
+    "",
+    8,
+    false,
+    false,
+    false,
+    true,
+    "2 : d : Pr",
+    [-1.4, 6.0]
+)
+
+PDMFT = ZEN_PDMFT(
+    1,
+    1,
+    60,
+    8193,
+    "fll2",
+    40.0,
+    0.1,
+    1.0e-4,
+    1.0e-6,
+    1.0e-4,
+    1.0e-4,
+    true
+)
+
+PIMP = ZEN_PIMP(
+
+)
+
+PSOLVER = ZEN_PSOLVER(
+
+)
+
 """
     ACFLOW_PBASE
 """
