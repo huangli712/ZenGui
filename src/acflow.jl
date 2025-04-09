@@ -4,13 +4,14 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/08
+# Last modified: 2025/04/09
 #
 
 """
     create_app_acflow(p_open::Ref{Bool})
 
-Create an UI window for the ACFlow toolkit.
+Create an UI window for the ACFlow toolkit, which provides some analytic
+continuation tools.
 """
 function create_app_acflow(p_open::Ref{Bool})
     # Create the ACFlow window, which can not be resized.
@@ -20,6 +21,7 @@ function create_app_acflow(p_open::Ref{Bool})
         CImGui.ImGuiWindowFlags_NoResize
     )
 
+    # Setup the flag for active window
     if CImGui.IsWindowFocused()
         CWIN.name = "ACFLOW"
     end
