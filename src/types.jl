@@ -238,18 +238,18 @@ end
 """
 function _struct_to_dict(s::ZEN_PDFT)
     return Dict{String,Any}(
-        "engine"   => 
-        "projtype" => 
-        "smear"    => 
-        "kmesh"    => 
-        "magmom"   => 
-        "ncycle"   => 
-        "lsymm"    => 
-        "lspins"   => 
-        "lspinorb" => 
-        "lproj"    => 
-        "sproj"    => 
-        "window"   =>  
+        "engine"   => s.engine,
+        "projtype" => s.projtype,
+        "smear"    => s.smear,
+        "kmesh"    => s.kmesh,
+        "magmom"   => s.magmom,
+        "ncycle"   => s.ncycle,
+        "lsymm"    => s.lsymm,
+        "lspins"   => s.lspins,
+        "lspinorb" => s.lspinorb,
+        "lproj"    => s.lproj,
+        "sproj"    => s.sproj,
+        "window"   => s.window,
     )
 end
 
@@ -258,18 +258,18 @@ end
 """
 function _struct_to_dict(s::ZEN_PDMFT)
     return Dict{String,Any}(
-        "mode"     => 
-        "axis"     => 
-        "niter"    => 
-        "nmesh"    => 
-        "dcount"   => 
-        "beta"     => 
-        "mixer"    => 
-        "mc"       => 
-        "cc"       => 
-        "ec"       => 
-        "sc"       => 
-        "lfermi"   => 
+        "mode"     => s.mode,
+        "axis"     => s.axis,
+        "niter"    => s.niter,
+        "nmesh"    => s.nmesh,
+        "dcount"   => s.dcount,
+        "beta"     => s.beta,
+        "mixer"    => s.mixer,
+        "mc"       => s.mc,
+        "cc"       => s.cc,
+        "ec"       => s.ec,
+        "sc"       => s.sc,
+        "lfermi"   => s.lfermi,
     )
 end
 
@@ -278,15 +278,15 @@ end
 """
 function _struct_to_dict(s::ZEN_PIMP)
     return Dict{String,Any}(
-        "nsite"    => 
-        "atoms"    => 
-        "equiv"    => 
-        "shell"    => 
-        "ising"    => 
-        "occup"    => 
-        "upara"    => 
-        "jpara"    => 
-        "lpara"    => 
+        "nsite"    => s.nsite,
+        "atoms"    => s.atoms,
+        "equiv"    => s.equiv,
+        "shell"    => s.shell,
+        "ising"    => s.ising,
+        "occup"    => s.occup,
+        "upara"    => s.upara,
+        "jpara"    => s.jpara,
+        "lpara"    => s.lpara,
     )
 end
 
@@ -295,9 +295,9 @@ end
 """
 function _struct_to_dict(s::ZEN_PSOLVER)
     return Dict{String,Any}(
-        "engine"   => 
-        "ncycle"   => 
-        "params"   => 
+        "engine"   => s.engine,
+        "ncycle"   => s.ncycle,
+        "params"   => s.params,
     )
 end
 
