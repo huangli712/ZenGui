@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/08
+# Last modified: 2025/04/10
 #
 
 mutable struct CURRENT_WINDOW
@@ -71,6 +71,34 @@ FMENU = MenuFlags(
     false,
     false
 )
+
+mutable struct ZEN_PCASE
+    case :: String
+end
+
+mutable struct ZEN_PDFT
+    engine   :: String
+    projtype :: String
+    smear    :: String
+    kmesh    :: String
+    magmom   :: String
+    ncycle   :: I64
+    lsymm    :: Bool
+    lspins   :: Bool
+    lspinorb :: Bool
+    lproj    :: Bool
+    sproj    :: Array
+    window   :: Array
+end
+
+mutable struct ZEN_PDMFT
+end
+
+mutable struct ZEN_PIMP
+end
+
+mutable struct ZEN_PSOLVER
+end
 
 """
     ACFLOW_PBASE
