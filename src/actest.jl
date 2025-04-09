@@ -208,3 +208,49 @@ function _actest_test_block()
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(offdiag)$(PTEST.offdiag)")
 end
+
+"""
+    _actest_solver_block()
+
+Setup widgets in the lower panel of the window for the ACTest toolkit.
+"""
+function _actest_solver_block()
+    # It should change upon the selection of analytic continuation solver.
+    CImGui.Text("Analytic Continuation Solver: $(PTEST.solver)")
+
+    @cswitch PTEST.solver begin
+
+        @case "MaxEnt"
+            _acflow_maxent_block()
+            break
+        
+        @case "BarRat"
+            _acflow_barrat_block()
+            break
+
+        @case "NevanAC"
+            _acflow_nevanac_block()
+            break        
+    
+        @case "StochAC"
+            _acflow_stochac_block()
+            break
+
+        @case "StochSK"
+            _acflow_stochsk_block()
+            break
+
+        @case "StochOM"
+            _acflow_stochom_block()
+            break
+
+        @case "StochPX"
+            _acflow_stochpx_block()
+            break
+    
+        @default
+            sorry()
+            break
+
+    end
+end
