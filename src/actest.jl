@@ -43,5 +43,15 @@ function create_app_actest(p_open::Ref{Bool})
     CImGui.End()
 end
 
+"""
+    _actest_test_block()
+
+Setup widgets for the [Test] block in the act.toml.
+"""
 function _actest_test_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    CImGui.Text("Basic Configuration")
 end

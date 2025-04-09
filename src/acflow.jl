@@ -57,7 +57,7 @@ end
 """
     _acflow_base_block()
 
-Widgets for the [BASE] block in the ac.toml.
+Setup widgets for the [BASE] block in the ac.toml.
 """
 function _acflow_base_block()
     # Define the default size for widgets
