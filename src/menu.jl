@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/08
+# Last modified: 2025/04/09
 #
 
 """
@@ -26,7 +26,7 @@ end
 """
     set_menu_file()
 
-Setup items in menu ``File''.
+Setup menu items in ``File''.
 """
 function set_menu_file()
     if CImGui.BeginMenu("File")
@@ -43,7 +43,7 @@ end
 """
    set_menu_edit()
 
-Setup items in menu ``Edit''.
+Setup menu items in ``Edit''.
 """
 function set_menu_edit()
     if CImGui.BeginMenu("Edit")
@@ -53,7 +53,7 @@ function set_menu_edit()
             CImGui.EndMenu()
         end
         #
-        if CImGui.BeginMenu("Dynamical Mean-Field Theory")
+        if CImGui.BeginMenu("Quantum Many-Body Theory Engines")
             @c CImGui.MenuItem("Dyson", C_NULL, &FMENU.DYSON)
             @c CImGui.MenuItem("DFermion", C_NULL, &FMENU.DFERMION)
             #
@@ -68,7 +68,7 @@ function set_menu_edit()
             CImGui.EndMenu()
         end
         #
-        if CImGui.BeginMenu("Analytic Continuation")
+        if CImGui.BeginMenu("Analytic Continuation Tools")
             @c CImGui.MenuItem("ACFlow", C_NULL, &FMENU.ACFLOW)
             @c CImGui.MenuItem("ACTest", C_NULL, &FMENU.ACTEST)
             #
@@ -82,7 +82,7 @@ end
 """
    set_menu_style()
 
-Setup items in menu ``Style''.
+Setup menu items in ``Style''.
 """
 function set_menu_style()
     if CImGui.BeginMenu("Style")
@@ -97,7 +97,7 @@ end
 """
    set_menu_help()
 
-Setup items in menu ``Help''.
+Setup menu items in ``Help''.
 """
 function set_menu_help()
     if CImGui.BeginMenu("Help")
