@@ -210,6 +210,16 @@ function _actest_test_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(offdiag)$(PTEST.offdiag)")
+    #
+    # Input: lpeak
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic buf = "1,2,3" * "\0"^60 begin
+        CImGui.InputText(" Number of peaks in the spectrum", buf, length(buf))
+        buf = rstrip(buf,'\0')
+        PTEST.lpeak = map(x -> parse(I64, x), split(buf, ","))
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lpeak)$(PTEST.lpeak)")
 end
 
 """
