@@ -86,6 +86,10 @@ FMENU = MenuFlags(
     false
 )
 
+#=
+### *Customized Structs* : *Zen Package*
+=#
+
 """
     ZEN_PCASE
 """
@@ -237,6 +241,10 @@ end
 
 function _build_zen_dict()
 end
+
+#=
+### *Customized Structs* : *ACFlow Toolkit*
+=#
 
 """
     ACFLOW_PBASE
@@ -637,6 +645,10 @@ function _build_acflow_dict()
     end
 end
 
+#=
+### *Customized Structs* : *ACTest Toolkit*
+=#
+
 """
     ACTEST_PTEST
 """
@@ -766,6 +778,10 @@ function _build_actest_dict()
 
     end
 end
+
+#=
+### *Utility*
+=#
 
 """
     _dict_to_toml(d::Dict)
