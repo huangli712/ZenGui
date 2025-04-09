@@ -31,6 +31,7 @@ function create_app_zen(p_open::Ref{Bool})
     window_height = 400.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
+    # For all the blocks in the case.toml
     _zen_tabs()
 
     # For the separator
