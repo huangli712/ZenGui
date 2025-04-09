@@ -212,6 +212,24 @@ PSOLVER = ZEN_PSOLVER(
     ["isbnd = 2", "isort = 2", "nsweep = 100000000"]
 )
 
+function _struct_to_dict(s::ZEN_PCASE)
+end
+
+function _struct_to_dict(s::ZEN_PDFT)
+end
+
+function _struct_to_dict(s::ZEN_PDMFT)
+end
+
+function _struct_to_dict(s::ZEN_PIMP)
+end
+
+function _struct_to_dict(s::ZEN_PSOLVER)
+end
+
+function _build_zen_dict()
+end
+
 """
     ACFLOW_PBASE
 """
