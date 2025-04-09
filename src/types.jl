@@ -224,21 +224,39 @@ PSOLVER = ZEN_PSOLVER(
     ["isbnd = 2", "isort = 2", "nsweep = 100000000"]
 )
 
+"""
+    _struct_to_dict(s::ZEN_PCASE)
+"""
 function _struct_to_dict(s::ZEN_PCASE)
 end
 
+"""
+    _struct_to_dict(s::ZEN_PDFT)
+"""
 function _struct_to_dict(s::ZEN_PDFT)
 end
 
+"""
+    _struct_to_dict(s::ZEN_PDMFT)
+"""
 function _struct_to_dict(s::ZEN_PDMFT)
 end
 
+"""
+    _struct_to_dict(s::ZEN_PIMP)
+"""
 function _struct_to_dict(s::ZEN_PIMP)
 end
 
+"""
+    _struct_to_dict(s::ZEN_PSOLVER)
+"""
 function _struct_to_dict(s::ZEN_PSOLVER)
 end
 
+"""
+    _build_zen_dict()
+"""
 function _build_zen_dict()
 end
 
