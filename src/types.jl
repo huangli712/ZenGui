@@ -119,6 +119,9 @@ mutable struct ZEN_PIMP
 end
 
 mutable struct ZEN_PSOLVER
+    engine :: String
+    ncycle :: I64
+    params :: Array
 end
 
 """
