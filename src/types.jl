@@ -172,13 +172,13 @@ PDFT = ZEN_PDFT(
     "plo",
     "tetra",
     "medium",
-    "",
+    "1.0",
     8,
     false,
     false,
     false,
     true,
-    "2 : d : Pr",
+    ["2 : d : Pr"],
     [-1.4, 6.0]
 )
 
