@@ -104,4 +104,22 @@ function _actest_test_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mesh)$(PTEST.mesh)")
+    #
+    # Input: ngrid
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(10) begin
+        @c CImGui.InputInt(" Number of grid points", &_i)
+        PTEST.ngrid = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ngrid)$(PTEST.ngrid)")
+    #
+    # Input: nmesh
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(501) begin
+        @c CImGui.InputInt(" Number of mesh points", &_i)
+        PTEST.nmesh = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmesh)$(PTEST.nmesh)")    
 end
