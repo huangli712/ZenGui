@@ -10,11 +10,11 @@
 """
     create_app_ctseg(p_open::Ref{Bool})
 
-Create an UI window for the CTSEG code, which is a continuous-time quantum
+Create an UI window for the ctseg code, which is a continuous-time quantum
 impurity solver in the iQIST package.
 """
 function create_app_ctseg(p_open::Ref{Bool})
-    # Create the CTSEG window, which is modal and can not be resized.
+    # Create the ctseg window, which is modal and can not be resized.
     CImGui.Begin(
         "iQIST | CTSEG",
         p_open,

@@ -10,11 +10,11 @@
 """
     create_app_atomic(p_open::Ref{Bool})
 
-Create an UI window for the ATOMIC code, which is an atomic eigenvalue
+Create an UI window for the atomic code, which is an atomic eigenvalue
 problem solver in the iQIST package.
 """
 function create_app_atomic(p_open::Ref{Bool})
-    # Create the ATOMIC window, which is modal and can not be resized.
+    # Create the atomic window, which is modal and can not be resized.
     CImGui.Begin(
         "iQIST | ATOMIC",
         p_open,

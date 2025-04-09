@@ -10,11 +10,11 @@
 """
     create_app_cthyb(p_open::Ref{Bool})
 
-Create an UI window for the CTHYB code, which is a continuous-time quantum
+Create an UI window for the cthyb code, which is a continuous-time quantum
 impurity solver in the iQIST package.
 """
 function create_app_cthyb(p_open::Ref{Bool})
-    # Create the CTHYB window, which is modal and can not be resized.
+    # Create the cthyb window, which is modal and can not be resized.
     CImGui.Begin(
         "iQIST | CTHYB",
         p_open,
