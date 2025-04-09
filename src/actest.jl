@@ -166,5 +166,14 @@ function _actest_test_block()
         PTEST.pmin = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmin)$(PTEST.pmin)")     
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmin)$(PTEST.pmin)")
+    #
+    # Input: beta
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(10.0) begin
+        @c CImGui.InputDouble(" Inverse temperature", &_f)
+        PTEST.beta = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PTEST.beta)")  
 end
