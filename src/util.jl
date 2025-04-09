@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/08
+# Last modified: 2025/04/09
 #
 
 """
@@ -79,6 +79,11 @@ function sorry()
     error("Sorry, this feature has not been implemented")
 end
 
+"""
+    setup_flags()
+
+Setup configuration flags for the Dear ImGui library.
+"""
 function setup_flags()
     io = CImGui.GetIO()
     io.ConfigFlags = unsafe_load(io.ConfigFlags) | CImGui.ImGuiConfigFlags_DockingEnable
@@ -86,6 +91,11 @@ function setup_flags()
     io.IniFilename = C_NULL
 end
 
+"""
+    setup_fonts()
+
+Setup fonts for this graphic user interface.
+"""
 function setup_fonts()
     fonts_dir = "/Users/lihuang/Library/Fonts"
     fonts = unsafe_load(CImGui.GetIO().Fonts)
@@ -98,10 +108,16 @@ function setup_fonts()
     )
 end
 
+"""
+    setup_window()
+
+Tweak the window's style in this graphic user interface.
+"""
 function setup_window()
-    io = CImGui.GetIO()
     style = Ptr{ImGuiStyle}(CImGui.GetStyle())
     style.AntiAliasedLines = true
+    #
+    io = CImGui.GetIO()
     if unsafe_load(io.ConfigFlags) & ImGuiConfigFlags_ViewportsEnable == ImGuiConfigFlags_ViewportsEnable
         style.WindowRounding = 5.0f0
         col = CImGui.c_get(style.Colors, CImGui.ImGuiCol_WindowBg)
