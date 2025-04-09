@@ -7,6 +7,10 @@
 # Last modified: 2025/04/10
 #
 
+#=
+### *Customized Structs* : *Active Window*
+=#
+
 """
     CURRENT_WINDOW
 """
@@ -20,6 +24,10 @@ end
 CWIN = CURRENT_WINDOW(
     "nothing"
 )
+
+#=
+### *Customized Structs* : *Menu Flags*
+=#
 
 """
     MenuFlags
