@@ -228,37 +228,84 @@ PSOLVER = ZEN_PSOLVER(
     _struct_to_dict(s::ZEN_PCASE)
 """
 function _struct_to_dict(s::ZEN_PCASE)
+    return Dict{String,Any}(
+        "case" => s.case,
+    )
 end
 
 """
     _struct_to_dict(s::ZEN_PDFT)
 """
 function _struct_to_dict(s::ZEN_PDFT)
+    return Dict{String,Any}(
+        "engine"   => 
+        "projtype" => 
+        "smear"    => 
+        "kmesh"    => 
+        "magmom"   => 
+        "ncycle"   => 
+        "lsymm"    => 
+        "lspins"   => 
+        "lspinorb" => 
+        "lproj"    => 
+        "sproj"    => 
+        "window"   =>  
+    )
 end
 
 """
     _struct_to_dict(s::ZEN_PDMFT)
 """
 function _struct_to_dict(s::ZEN_PDMFT)
+    return Dict{String,Any}(
+        "mode"     => 
+        "axis"     => 
+        "niter"    => 
+        "nmesh"    => 
+        "dcount"   => 
+        "beta"     => 
+        "mixer"    => 
+        "mc"       => 
+        "cc"       => 
+        "ec"       => 
+        "sc"       => 
+        "lfermi"   => 
+    )
 end
 
 """
     _struct_to_dict(s::ZEN_PIMP)
 """
 function _struct_to_dict(s::ZEN_PIMP)
+    return Dict{String,Any}(
+        "nsite"    => 
+        "atoms"    => 
+        "equiv"    => 
+        "shell"    => 
+        "ising"    => 
+        "occup"    => 
+        "upara"    => 
+        "jpara"    => 
+        "lpara"    => 
+    )
 end
 
 """
     _struct_to_dict(s::ZEN_PSOLVER)
 """
 function _struct_to_dict(s::ZEN_PSOLVER)
+    return Dict{String,Any}(
+        "engine"   => 
+        "ncycle"   => 
+        "params"   => 
+    )
 end
 
 """
     _build_zen_dict()
 """
 function _build_zen_dict()
-    return Dict(
+    return Dict{String,Any}(
         "case" => _struct_to_dict(PCASE),
         "dft" => _struct_to_dict(PDFT),
         "dmft" => _struct_to_dict(PDMFT),
@@ -615,49 +662,49 @@ function _build_acflow_dict()
     @cswitch PBASE.solver begin
 
         @case "MaxEnt"
-            return Dict(
+            return Dict{String,Any}(
                 "BASE" => _struct_to_dict(PBASE),
                 "MaxEnt" => _struct_to_dict(PMaxEnt)
             )
             break
 
         @case "BarRat"
-            return Dict(
+            return Dict{String,Any}(
                 "BASE" => _struct_to_dict(PBASE),
                 "BarRat" => _struct_to_dict(PBarRat)
             )
             break
 
         @case "NevanAC"
-            return Dict(
+            return Dict{String,Any}(
                 "BASE" => _struct_to_dict(PBASE),
                 "NevanAC" => _struct_to_dict(PNevanAC)
             )
             break
 
         @case "StochAC"
-            return Dict(
+            return Dict{String,Any}(
                 "BASE" => _struct_to_dict(PBASE),
                 "StochAC" => _struct_to_dict(PStochAC)
             )
             break
 
         @case "StochSK"
-            return Dict(
+            return Dict{String,Any}(
                 "BASE" => _struct_to_dict(PBASE),
                 "StochSK" => _struct_to_dict(PStochSK)
             )
             break
 
         @case "StochOM"
-            return Dict(
+            return Dict{String,Any}(
                 "BASE" => _struct_to_dict(PBASE),
                 "StochOM" => _struct_to_dict(PStochOM)
             )
             break
 
         @case "StochPX"
-            return Dict(
+            return Dict{String,Any}(
                 "BASE" => _struct_to_dict(PBASE),
                 "StochPX" => _struct_to_dict(PStochPX)
             )
@@ -749,49 +796,49 @@ function _build_actest_dict()
     @cswitch PTEST.solver begin
 
         @case "MaxEnt"
-            return Dict(
+            return Dict{String,Any}(
                 "Test" => _struct_to_dict(PTEST),
                 "Solver" => _struct_to_dict(PMaxEnt)
             )
             break
 
         @case "BarRat"
-            return Dict(
+            return Dict{String,Any}(
                 "Test" => _struct_to_dict(PTEST),
                 "Solver" => _struct_to_dict(PBarRat)
             )
             break
 
         @case "NevanAC"
-            return Dict(
+            return Dict{String,Any}(
                 "Test" => _struct_to_dict(PTEST),
                 "Solver" => _struct_to_dict(PNevanAC)
             )
             break
 
         @case "StochAC"
-            return Dict(
+            return Dict{String,Any}(
                 "Test" => _struct_to_dict(PTEST),
                 "Solver" => _struct_to_dict(PStochAC)
             )
             break
 
         @case "StochSK"
-            return Dict(
+            return Dict{String,Any}(
                 "Test" => _struct_to_dict(PTEST),
                 "Solver" => _struct_to_dict(PStochSK)
             )
             break
 
         @case "StochOM"
-            return Dict(
+            return Dict{String,Any}(
                 "Test" => _struct_to_dict(PTEST),
                 "Solver" => _struct_to_dict(PStochOM)
             )
             break
 
         @case "StochPX"
-            return Dict(
+            return Dict{String,Any}(
                 "Test" => _struct_to_dict(PTEST),
                 "Solver" => _struct_to_dict(PStochPX)
             )
