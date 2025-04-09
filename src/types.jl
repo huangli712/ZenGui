@@ -159,11 +159,21 @@ PDMFT = ZEN_PDMFT(
 )
 
 PIMP = ZEN_PIMP(
-
+    1,
+    ["V : 2"],
+    [1],
+    ["d"],
+    ["ising"],
+    [1.0],
+    [4.0],
+    [0.7],
+    [0.0]
 )
 
 PSOLVER = ZEN_PSOLVER(
-
+    "ctseg",
+    2,
+    ["isbnd = 2", "isort = 2", "nsweep = 100000000"]
 )
 
 """
