@@ -121,5 +121,14 @@ function _actest_test_block()
         PTEST.nmesh = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmesh)$(PTEST.nmesh)")    
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmesh)$(PTEST.nmesh)")
+    #
+    # Input: ntest
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(100) begin
+        @c CImGui.InputInt(" Number of tests", &_i)
+        PTEST.ntest = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ntest)$(PTEST.ntest)")     
 end
