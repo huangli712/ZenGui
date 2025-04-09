@@ -130,5 +130,23 @@ function _actest_test_block()
         PTEST.ntest = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ntest)$(PTEST.ntest)")     
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ntest)$(PTEST.ntest)")
+    #
+    # Input: wmax
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(5.0) begin
+        @c CImGui.InputDouble(" Right boundary (maximum value) of real mesh", &_f)
+        PTEST.wmax = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmax)$(PTEST.wmax)")
+    #
+    # Input: wmin
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(-5.0) begin
+        @c CImGui.InputDouble(" Left boundary (minimum value) of real mesh", &_f)
+        PTEST.wmin = _f
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmin)$(PTEST.wmin)")     
 end
