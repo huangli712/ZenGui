@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/4/09
+# Last modified: 2025/4/10
 #
 
 """
@@ -51,7 +51,7 @@ Setup the tab widgets for all the blocks in the case.toml.
 function _zen_tabs()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
     #
-    if CImGui.BeginTabBar("MyTabBar", tab_bar_flags)
+    if CImGui.BeginTabBar("ZenTabBar", tab_bar_flags)
         _zen_case_tab()
         _zen_dft_tab()
         _zen_dmft_tab()
@@ -62,29 +62,52 @@ function _zen_tabs()
     end
 end
 
+"""
+    _zen_case_tab()
+"""
 function _zen_case_tab()
-    if CImGui.BeginTabItem("Avocado")
+    if CImGui.BeginTabItem("case")
         CImGui.Text("This is the Avocado tab!\nblah blah blah blah blah")
         CImGui.EndTabItem()
     end
 end
 
+"""
+    _zen_dft_tab()
+"""
 function _zen_dft_tab()
-    if CImGui.BeginTabItem("Broccoli")
+    if CImGui.BeginTabItem("dft")
         CImGui.Text("This is the Broccoli tab!\nblah blah blah blah blah")
         CImGui.EndTabItem()
     end
 end
 
+"""
+    _zen_dmft_tab()
+"""
 function _zen_dmft_tab()
-    if CImGui.BeginTabItem("Cucumber")
+    if CImGui.BeginTabItem("dmft")
         CImGui.Text("This is the Cucumber tab!\nblah blah blah blah blah")
         CImGui.EndTabItem()
     end
 end
 
+"""
+    _zen_imp_tab()
+"""
 function _zen_imp_tab()
+    if CImGui.BeginTabItem("impurity")
+        CImGui.Text("This is the Cucumber tab!\nblah blah blah blah blah")
+        CImGui.EndTabItem()
+    end
 end
 
+"""
+    _zen_solver_tab()
+"""
 function _zen_solver_tab()
+    if CImGui.BeginTabItem("solver")
+        CImGui.Text("This is the Cucumber tab!\nblah blah blah blah blah")
+        CImGui.EndTabItem()
+    end
 end
