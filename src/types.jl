@@ -306,7 +306,7 @@ end
 """
 function _build_zen_dict()
     return OrderedDict{String,Any}(
-        "case" => _struct_to_dict(PCASE),
+        "case" => _struct_to_dict(PCASE)["case"],
         "dft" => _struct_to_dict(PDFT),
         "dmft" => _struct_to_dict(PDMFT),
         "impurity" => _struct_to_dict(PIMP),

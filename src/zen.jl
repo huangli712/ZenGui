@@ -66,8 +66,22 @@ end
     _zen_case_tab()
 """
 function _zen_case_tab()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
     if CImGui.BeginTabItem("case")
-        CImGui.Text("This is the Avocado tab!\nblah blah blah blah blah")
+        CImGui.Text("Configure [case] block")
+
+        # Input: case
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic buf = "SrVO3" * "\0"^60 begin
+            CImGui.InputText(" System's name or seedname", buf, length(buf))
+            PCASE.case = rstrip(buf,'\0')
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(case)$(PCASE.case)")
+
         CImGui.EndTabItem()
     end
 end
