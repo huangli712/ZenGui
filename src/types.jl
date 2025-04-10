@@ -856,9 +856,9 @@ end
 =#
 
 """
-    _dict_to_toml(d::Dict)
+    _dict_to_toml(d::AbstractDict)
 """
-function _dict_to_toml(d::Dict)
+function _dict_to_toml(d::AbstractDict)
     io = IOBuffer()
     TOML.print(io,d)
     return String(take!(io))
