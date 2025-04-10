@@ -228,7 +228,7 @@ PSOLVER = ZEN_PSOLVER(
     _struct_to_dict(s::ZEN_PCASE)
 """
 function _struct_to_dict(s::ZEN_PCASE)
-    return Dict{String,Any}(
+    return OrderedDict{String,Any}(
         "case" => s.case,
     )
 end
@@ -237,7 +237,7 @@ end
     _struct_to_dict(s::ZEN_PDFT)
 """
 function _struct_to_dict(s::ZEN_PDFT)
-    return Dict{String,Any}(
+    return OrderedDict{String,Any}(
         "engine"   => s.engine,
         "projtype" => s.projtype,
         "smear"    => s.smear,
@@ -257,7 +257,7 @@ end
     _struct_to_dict(s::ZEN_PDMFT)
 """
 function _struct_to_dict(s::ZEN_PDMFT)
-    return Dict{String,Any}(
+    return OrderedDict{String,Any}(
         "mode"     => s.mode,
         "axis"     => s.axis,
         "niter"    => s.niter,
@@ -277,7 +277,7 @@ end
     _struct_to_dict(s::ZEN_PIMP)
 """
 function _struct_to_dict(s::ZEN_PIMP)
-    return Dict{String,Any}(
+    return OrderedDict{String,Any}(
         "nsite"    => s.nsite,
         "atoms"    => s.atoms,
         "equiv"    => s.equiv,
@@ -294,7 +294,7 @@ end
     _struct_to_dict(s::ZEN_PSOLVER)
 """
 function _struct_to_dict(s::ZEN_PSOLVER)
-    return Dict{String,Any}(
+    return OrderedDict{String,Any}(
         "engine"   => s.engine,
         "ncycle"   => s.ncycle,
         "params"   => s.params,
@@ -305,7 +305,7 @@ end
     _build_zen_dict()
 """
 function _build_zen_dict()
-    return Dict{String,Any}(
+    return OrderedDict{String,Any}(
         "case" => _struct_to_dict(PCASE),
         "dft" => _struct_to_dict(PDFT),
         "dmft" => _struct_to_dict(PDMFT),
@@ -536,7 +536,7 @@ PStochPX = ACFLOW_PStochPX(
     _struct_to_dict(s::ACFLOW_PBASE)
 """
 function _struct_to_dict(s::ACFLOW_PBASE)
-    return Dict{String,Any}(
+    return OrderedDict{String,Any}(
         "finput"  => s.finput,
         "solver"  => s.solver,
         "ktype"   => s.ktype,
@@ -584,7 +584,7 @@ end
     _struct_to_dict(s::ACFLOW_PNevanAC)
 """
 function _struct_to_dict(s::ACFLOW_PNevanAC)
-    return Dict{String,Any}(
+    return OrderedDict{String,Any}(
         "pick"    => s.pick,
         "hardy"   => s.hardy,
         "hmax"    => s.hmax,
@@ -597,7 +597,7 @@ end
     _struct_to_dict(s::ACFLOW_PStochAC)
 """
 function _struct_to_dict(s::ACFLOW_PStochAC)
-    return Dict{String,Any}(
+    return OrderedDict{String,Any}(
         "nfine"   => s.nfine,
         "ngamm"   => s.ngamm,
         "nwarm"   => s.nwarm,
@@ -613,7 +613,7 @@ end
     _struct_to_dict(s::ACFLOW_PStochSK)
 """
 function _struct_to_dict(s::ACFLOW_PStochSK)
-    return Dict{String,Any}(
+    return OrderedDict{String,Any}(
         "method"  => s.method,
         "nfine"   => s.nfine,
         "ngamm"   => s.ngamm,
@@ -630,7 +630,7 @@ end
     _struct_to_dict(s::ACFLOW_PStochOM)
 """
 function _struct_to_dict(s::ACFLOW_PStochOM)
-    return Dict{String,Any}(
+    return OrderedDict{String,Any}(
         "ntry"    => s.ntry,
         "nstep"   => s.nstep,
         "nbox"    => s.nbox,
@@ -644,7 +644,7 @@ end
     _struct_to_dict(s::ACFLOW_PStochPX)
 """
 function _struct_to_dict(s::ACFLOW_PStochPX)
-    return Dict{String,Any}(
+    return OrderedDict{String,Any}(
         "method"  => s.method,
         "nfine"   => s.nfine,
         "npole"   => s.npole,
@@ -662,49 +662,49 @@ function _build_acflow_dict()
     @cswitch PBASE.solver begin
 
         @case "MaxEnt"
-            return Dict{String,Any}(
+            return OrderedDict{String,Any}(
                 "BASE" => _struct_to_dict(PBASE),
                 "MaxEnt" => _struct_to_dict(PMaxEnt)
             )
             break
 
         @case "BarRat"
-            return Dict{String,Any}(
+            return OrderedDict{String,Any}(
                 "BASE" => _struct_to_dict(PBASE),
                 "BarRat" => _struct_to_dict(PBarRat)
             )
             break
 
         @case "NevanAC"
-            return Dict{String,Any}(
+            return OrderedDict{String,Any}(
                 "BASE" => _struct_to_dict(PBASE),
                 "NevanAC" => _struct_to_dict(PNevanAC)
             )
             break
 
         @case "StochAC"
-            return Dict{String,Any}(
+            return OrderedDict{String,Any}(
                 "BASE" => _struct_to_dict(PBASE),
                 "StochAC" => _struct_to_dict(PStochAC)
             )
             break
 
         @case "StochSK"
-            return Dict{String,Any}(
+            return OrderedDict{String,Any}(
                 "BASE" => _struct_to_dict(PBASE),
                 "StochSK" => _struct_to_dict(PStochSK)
             )
             break
 
         @case "StochOM"
-            return Dict{String,Any}(
+            return OrderedDict{String,Any}(
                 "BASE" => _struct_to_dict(PBASE),
                 "StochOM" => _struct_to_dict(PStochOM)
             )
             break
 
         @case "StochPX"
-            return Dict{String,Any}(
+            return OrderedDict{String,Any}(
                 "BASE" => _struct_to_dict(PBASE),
                 "StochPX" => _struct_to_dict(PStochPX)
             )
@@ -796,49 +796,49 @@ function _build_actest_dict()
     @cswitch PTEST.solver begin
 
         @case "MaxEnt"
-            return Dict{String,Any}(
+            return OrderedDict{String,Any}(
                 "Test" => _struct_to_dict(PTEST),
                 "Solver" => _struct_to_dict(PMaxEnt)
             )
             break
 
         @case "BarRat"
-            return Dict{String,Any}(
+            return OrderedDict{String,Any}(
                 "Test" => _struct_to_dict(PTEST),
                 "Solver" => _struct_to_dict(PBarRat)
             )
             break
 
         @case "NevanAC"
-            return Dict{String,Any}(
+            return OrderedDict{String,Any}(
                 "Test" => _struct_to_dict(PTEST),
                 "Solver" => _struct_to_dict(PNevanAC)
             )
             break
 
         @case "StochAC"
-            return Dict{String,Any}(
+            return OrderedDict{String,Any}(
                 "Test" => _struct_to_dict(PTEST),
                 "Solver" => _struct_to_dict(PStochAC)
             )
             break
 
         @case "StochSK"
-            return Dict{String,Any}(
+            return OrderedDict{String,Any}(
                 "Test" => _struct_to_dict(PTEST),
                 "Solver" => _struct_to_dict(PStochSK)
             )
             break
 
         @case "StochOM"
-            return Dict{String,Any}(
+            return OrderedDict{String,Any}(
                 "Test" => _struct_to_dict(PTEST),
                 "Solver" => _struct_to_dict(PStochOM)
             )
             break
 
         @case "StochPX"
-            return Dict{String,Any}(
+            return OrderedDict{String,Any}(
                 "Test" => _struct_to_dict(PTEST),
                 "Solver" => _struct_to_dict(PStochPX)
             )
