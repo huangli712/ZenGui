@@ -28,7 +28,7 @@ function create_app_zen(p_open::Ref{Bool})
 
     # Fix size of the window
     window_width = 600.0
-    window_height = 400.0
+    window_height = 600.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
     # For all the blocks in the case.toml
@@ -210,6 +210,35 @@ function _zen_dft_tab()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lproj)$(PDFT.lproj)")
+
+        # For the separator
+        CImGui.Spacing()
+        CImGui.Separator()
+        CImGui.Spacing()
+
+        # Input: nsite
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(1) begin
+            @c CImGui.InputInt(" Number of (correlated) impurity sites", &_i)
+            PIMP.nsite = _i
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(0.5,0.5,1.0,1.0), "(nsite)$(PIMP.nsite)")
+        #
+        # Input: sproj
+        @assert PIMP.nsite ≥ 1
+        empty!(PDFT.sproj)
+        for i = 1:PIMP.nsite
+            CImGui.SetNextItemWidth(widget_input_width)
+            @cstatic buf = "1 : d : Pr" * "\0"^60 begin
+                CImGui.InputText(" Specifications for generating projector", buf, length(buf))
+                push!(PDFT.sproj, rstrip(buf,'\0'))
+            end
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
+        end
+        #
+        # Input: window
 
         CImGui.EndTabItem()
     end
