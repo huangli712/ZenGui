@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/09
+# Last modified: 2025/04/10
 #
 
 """
@@ -46,6 +46,7 @@ using Base.Sys
 =#
 
 #=
+The OrderedCollections library provides support to the OrderedDict struct.
 The ZenGui application relies on the **Dear ImGui library**, which is a
 C++ immediate mode graphic user interface library. Note that **CImGui**
 is a C-API wrapper for **Dear ImGui**, and **CImGui.jl** provides a Julia
@@ -56,6 +57,8 @@ and events. **ModernGL** is a OpenGL binding for Julia. Here, **GLFW**
 and **ModernGL** are backends for **Dear ImGui**.
 =#
 
+using OrderedCollections
+
 using CImGui
 using CImGui.lib
 using CImGui.CSyntax
@@ -63,8 +66,6 @@ using CImGui.CSyntax.CStatic
 
 import GLFW
 import ModernGL as GL
-
-using OrderedCollections
 
 #=
 ### *Includes And Exports* : *global.jl*
