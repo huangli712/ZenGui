@@ -196,6 +196,20 @@ function _zen_dft_tab()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lspinorb)$(PDFT.lspinorb)")
+        #
+        # Input: lproj
+        CImGui.SetNextItemWidth(widget_combo_width)
+        lproj_list = ["Yes", "No"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Are the projectors generated or not", &id, lproj_list)
+            if id == 0
+                PDFT.lproj = true
+            else
+                PDFT.lproj = false
+            end
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lproj)$(PDFT.lproj)")
 
         CImGui.EndTabItem()
     end
