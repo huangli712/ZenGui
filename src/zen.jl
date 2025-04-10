@@ -154,6 +154,20 @@ function _zen_dft_tab()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ncycle)$(PDFT.ncycle)")
+        #
+        # Input: lsymm
+        CImGui.SetNextItemWidth(widget_combo_width)
+        lsymm_list = ["Yes", "No"]
+        @cstatic id = Cint(1) begin
+            @c CImGui.Combo(" Is the symmetry turned on or off", &id, lsymm_list)
+            if id == 0
+                PDFT.lsymm = true
+            else
+                PDFT.lsymm = false
+            end
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lsymm)$(PDFT.lsymm)")
 
         CImGui.EndTabItem()
     end
