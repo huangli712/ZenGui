@@ -153,7 +153,7 @@ function handle_menu_save()
             break
 
         @default
-            FMENU._SAVE = false
+            @c save_nothing(&FMENU._SAVE)
             break
 
     end

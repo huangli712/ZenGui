@@ -132,3 +132,25 @@ function save_actest(p_open::Ref{Bool})
     # Close the popup window
     CImGui.End()
 end
+
+"""
+    save_nothing(p_open::Ref{Bool})
+"""
+function save_nothing(p_open::Ref{Bool})
+    # Create a popup window
+    CImGui.Begin(
+        "Save Nothing",
+        p_open,
+        CImGui.ImGuiWindowFlags_Modal | CImGui.ImGuiWindowFlags_NoResize
+    )
+
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Nothing to be saved!")
+
+    # If the button is pressed, then close this window.
+    if CImGui.Button("Close")
+        p_open[] = false
+    end
+
+    # Close the popup window
+    CImGui.End()
+end
