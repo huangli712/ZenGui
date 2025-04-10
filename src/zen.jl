@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/4/10
+# Last modified: 2025/4/11
 #
 
 """
@@ -231,7 +231,7 @@ function _zen_dft_tab()
         for i = 1:PIMP.nsite
             CImGui.SetNextItemWidth(widget_input_width)
             @cstatic buf = "1 : d : Pr" * "\0"^60 begin
-                CImGui.InputText(" Specifications for generating projector", buf, length(buf))
+                CImGui.InputText(" Specifications for generating projector $i", buf, length(buf))
                 push!(PDFT.sproj, rstrip(buf,'\0'))
             end
             CImGui.SameLine()
@@ -239,6 +239,94 @@ function _zen_dft_tab()
         end
         #
         # Input: window
+        @assert 9 ≥ PIMP.nsite ≥ 1
+        empty!(PDFT.window)
+        for i = 1:PIMP.nsite
+            CImGui.SetNextItemWidth(widget_input_width * 2)
+            #
+            i == 1 && @cstatic _f1 = Cdouble[0.0,1.0] begin
+                CImGui.InputScalarN(
+                    " Energy window for normalizing projector $i",
+                    CImGui.ImGuiDataType_Double,
+                    _f1,
+                    2
+                )
+                push!(PDFT.window, _f1...)
+            end
+            i == 2 && @cstatic _f2 = Cdouble[0.0,1.0] begin
+                CImGui.InputScalarN(
+                    " Energy window for normalizing projector $i",
+                    CImGui.ImGuiDataType_Double,
+                    _f2,
+                    2
+                )                
+                push!(PDFT.window, _f2...)
+            end
+            i == 3 && @cstatic _f3 = Cdouble[0.0,1.0] begin
+                CImGui.InputScalarN(
+                    " Energy window for normalizing projector $i",
+                    CImGui.ImGuiDataType_Double,
+                    _f3,
+                    2
+                )                      
+                push!(PDFT.window, _f3...)
+            end
+            i == 4 && @cstatic _f4 = Cdouble[0.0,1.0] begin
+                CImGui.InputScalarN(
+                    " Energy window for normalizing projector $i",
+                    CImGui.ImGuiDataType_Double,
+                    _f4,
+                    2
+                )                      
+                push!(PDFT.window, _f4...)
+            end
+            i == 5 && @cstatic _f5 = Cdouble[0.0,1.0] begin
+                CImGui.InputScalarN(
+                    " Energy window for normalizing projector $i",
+                    CImGui.ImGuiDataType_Double,
+                    _f5,
+                    2
+                )                      
+                push!(PDFT.window, _f5...)
+            end
+            i == 6 && @cstatic _f6 = Cdouble[0.0,1.0] begin
+                CImGui.InputScalarN(
+                    " Energy window for normalizing projector $i",
+                    CImGui.ImGuiDataType_Double,
+                    _f6,
+                    2
+                )                      
+                push!(PDFT.window, _f6...)
+            end
+            i == 7 && @cstatic _f7 = Cdouble[0.0,1.0] begin
+                CImGui.InputScalarN(
+                    " Energy window for normalizing projector $i",
+                    CImGui.ImGuiDataType_Double,
+                    _f7,
+                    2
+                )                      
+                push!(PDFT.window, _f7...)
+            end
+            i == 8 && @cstatic _f8 = Cdouble[0.0,1.0] begin
+                CImGui.InputScalarN(
+                    " Energy window for normalizing projector $i",
+                    CImGui.ImGuiDataType_Double,
+                    _f8,
+                    2
+                )                      
+                push!(PDFT.window, _f8...)
+            end
+            i == 9 && @cstatic _f9 = Cdouble[0.0,1.0] begin
+                CImGui.InputScalarN(
+                    " Energy window for normalizing projector $i",
+                    CImGui.ImGuiDataType_Double,
+                    _f9,
+                    2
+                )                      
+                push!(PDFT.window, _f9...)
+            end
+        end
+        @show PDFT.window
 
         CImGui.EndTabItem()
     end
