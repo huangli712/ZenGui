@@ -226,16 +226,65 @@ function _zen_dft_tab()
         CImGui.TextColored(ImVec4(0.5,0.5,1.0,1.0), "(nsite)$(PIMP.nsite)")
         #
         # Input: sproj
-        @assert PIMP.nsite ≥ 1
+        @assert 9 ≥ PIMP.nsite ≥ 1
         empty!(PDFT.sproj)
         for i = 1:PIMP.nsite
             CImGui.SetNextItemWidth(widget_input_width)
-            @cstatic buf = "1 : d : Pr" * "\0"^60 begin
-                CImGui.InputText(" Specifications for generating projector $i", buf, length(buf))
-                push!(PDFT.sproj, rstrip(buf,'\0'))
+            #
+            i == 1 && @cstatic buf1 = "1 : d : Pr" * "\0"^60 begin
+                CImGui.InputText(" Specifications for generating projector $i", buf1, length(buf1))
+                push!(PDFT.sproj, rstrip(buf1,'\0'))
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
             end
-            CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
+            i == 2 && @cstatic buf2 = "1 : d : Pr" * "\0"^60 begin
+                CImGui.InputText(" Specifications for generating projector $i", buf2, length(buf2))
+                push!(PDFT.sproj, rstrip(buf2,'\0'))
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
+            end
+            i == 3 && @cstatic buf3 = "1 : d : Pr" * "\0"^60 begin
+                CImGui.InputText(" Specifications for generating projector $i", buf3, length(buf3))
+                push!(PDFT.sproj, rstrip(buf3,'\0'))
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
+            end
+            i == 4 && @cstatic buf4 = "1 : d : Pr" * "\0"^60 begin
+                CImGui.InputText(" Specifications for generating projector $i", buf4, length(buf4))
+                push!(PDFT.sproj, rstrip(buf4,'\0'))
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
+            end
+            i == 5 && @cstatic buf5 = "1 : d : Pr" * "\0"^60 begin
+                CImGui.InputText(" Specifications for generating projector $i", buf5, length(buf5))
+                push!(PDFT.sproj, rstrip(buf5,'\0'))
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
+            end
+            i == 6 && @cstatic buf6 = "1 : d : Pr" * "\0"^60 begin
+                CImGui.InputText(" Specifications for generating projector $i", buf6, length(buf6))
+                push!(PDFT.sproj, rstrip(buf6,'\0'))
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
+            end
+            i == 7 && @cstatic buf7 = "1 : d : Pr" * "\0"^60 begin
+                CImGui.InputText(" Specifications for generating projector $i", buf7, length(buf7))
+                push!(PDFT.sproj, rstrip(buf7,'\0'))
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
+            end
+            i == 8 && @cstatic buf8 = "1 : d : Pr" * "\0"^60 begin
+                CImGui.InputText(" Specifications for generating projector $i", buf8, length(buf8))
+                push!(PDFT.sproj, rstrip(buf8,'\0'))
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
+            end
+            i == 9 && @cstatic buf9 = "1 : d : Pr" * "\0"^60 begin
+                CImGui.InputText(" Specifications for generating projector $i", buf9, length(buf9))
+                push!(PDFT.sproj, rstrip(buf9,'\0'))
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
+            end
         end
         #
         # Input: window
@@ -326,7 +375,6 @@ function _zen_dft_tab()
                 push!(PDFT.window, _f9...)
             end
         end
-        @show PDFT.window
 
         CImGui.EndTabItem()
     end
