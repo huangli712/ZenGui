@@ -106,7 +106,16 @@ function _zen_dft_tab()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(engine)$(PDFT.engine)")
-
+        #
+        # Input: projtype
+        CImGui.SetNextItemWidth(widget_combo_width)
+        projtype_list = ["plo", "wannier"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Types of projectors", &id, projtype_list)
+            PDFT.projtype = projtype_list[id + 1]
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(projtype)$(PDFT.projtype)")
         CImGui.EndTabItem()
     end
 end
