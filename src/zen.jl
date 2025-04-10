@@ -90,8 +90,23 @@ end
     _zen_dft_tab()
 """
 function _zen_dft_tab()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
     if CImGui.BeginTabItem("dft")
-        CImGui.Text("This is the Broccoli tab!\nblah blah blah blah blah")
+        CImGui.Text("Configure [dft] block")
+
+        # Input: engine
+        CImGui.SetNextItemWidth(widget_combo_width)
+        engine_list = ["vasp", "qe"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Engine for density functional theory calculations", &id, engine_list)
+            PDFT.engine = engine_list[id + 1]
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(engine)$(PDFT.engine)")
+
         CImGui.EndTabItem()
     end
 end

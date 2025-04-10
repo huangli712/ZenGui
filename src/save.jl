@@ -28,7 +28,6 @@ function save_zen(p_open::Ref{Bool})
         p_open[] = false
         #
         D = _build_zen_dict()
-        @show D
         open("case.toml", "w") do fout
             TOML.print(fout, D)
         end
