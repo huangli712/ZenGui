@@ -182,6 +182,21 @@ function _zen_dft_tab()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lspins)$(PDFT.lspins)")
+        #
+        # Input: lspinorb
+        CImGui.SetNextItemWidth(widget_combo_width)
+        lspinorb_list = ["Yes", "No"]
+        @cstatic id = Cint(1) begin
+            @c CImGui.Combo(" Is the spin-orbit coupling considered or not", &id, lspinorb_list)
+            if id == 0
+                PDFT.lspinorb = true
+            else
+                PDFT.lspinorb = false
+            end
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lspinorb)$(PDFT.lspinorb)")
+
         CImGui.EndTabItem()
     end
 end
