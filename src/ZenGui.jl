@@ -64,6 +64,8 @@ using CImGui.CSyntax.CStatic
 import GLFW
 import ModernGL as GL
 
+using OrderedCollections
+
 #=
 ### *Includes And Exports* : *global.jl*
 =#

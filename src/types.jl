@@ -557,7 +557,7 @@ end
     _struct_to_dict(s::ACFLOW_PMaxEnt)
 """
 function _struct_to_dict(s::ACFLOW_PMaxEnt)
-    return Dict{String,Any}(
+    return OrderedDict{String,Any}(
         "method" => s.method,
         "stype"  => s.stype,
         "nalph"  => s.nalph,
@@ -571,7 +571,7 @@ end
     _struct_to_dict(s::ACFLOW_PBarRat)
 """
 function _struct_to_dict(s::ACFLOW_PBarRat)
-    return Dict{String,Any}(
+    return OrderedDict{String,Any}(
         "atype"   => s.atype,
         "denoise" => s.denoise,
         "epsilon" => s.epsilon,
@@ -769,7 +769,7 @@ PTEST = ACTEST_PTEST(
     _struct_to_dict(s::ACTEST_PTEST)
 """
 function _struct_to_dict(s::ACTEST_PTEST)
-    return Dict{String,Any}(
+    return OrderedDict{String,Any}(
         "solver"  => s.solver,
         "ptype"   => s.ptype,
         "ktype"   => s.ktype,
