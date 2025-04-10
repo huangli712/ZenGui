@@ -116,6 +116,36 @@ function _zen_dft_tab()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(projtype)$(PDFT.projtype)")
+        #
+        # Input: smear
+        CImGui.SetNextItemWidth(widget_combo_width)
+        smear_list = ["mp2", "mp1", "gauss", "tetra"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Scheme for smearing", &id, smear_list)
+            PDFT.smear = smear_list[id + 1]
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(smear)$(PDFT.smear)")
+        #
+        # Input: kmesh
+        CImGui.SetNextItemWidth(widget_combo_width)
+        kmesh_list = ["accurate", "medium", "coarse", "file"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" K-mesh for brillouin zone sampling / integration", &id, kmesh_list)
+            PDFT.kmesh = kmesh_list[id + 1]
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(kmesh)$(PDFT.kmesh)")
+        #
+        # Input: magmom
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic buf = "0.0" * "\0"^60 begin
+            CImGui.InputText(" Initial magnetic moments", buf, length(buf))
+            PDFT.magmom = rstrip(buf,'\0')
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(magmom)$(PDFT.magmom)")
+
         CImGui.EndTabItem()
     end
 end
