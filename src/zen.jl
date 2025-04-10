@@ -312,6 +312,8 @@ function _zen_dft_tab()
                     2
                 )
                 push!(PDFT.window, _f2...)
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
             end
             i == 3 && @cstatic _f3 = Cdouble[0.0,1.0] begin
                 CImGui.InputScalarN(
@@ -321,6 +323,8 @@ function _zen_dft_tab()
                     2
                 )
                 push!(PDFT.window, _f3...)
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
             end
             i == 4 && @cstatic _f4 = Cdouble[0.0,1.0] begin
                 CImGui.InputScalarN(
@@ -330,6 +334,8 @@ function _zen_dft_tab()
                     2
                 )
                 push!(PDFT.window, _f4...)
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
             end
             i == 5 && @cstatic _f5 = Cdouble[0.0,1.0] begin
                 CImGui.InputScalarN(
@@ -339,6 +345,8 @@ function _zen_dft_tab()
                     2
                 )
                 push!(PDFT.window, _f5...)
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
             end
             i == 6 && @cstatic _f6 = Cdouble[0.0,1.0] begin
                 CImGui.InputScalarN(
@@ -348,6 +356,8 @@ function _zen_dft_tab()
                     2
                 )
                 push!(PDFT.window, _f6...)
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
             end
             i == 7 && @cstatic _f7 = Cdouble[0.0,1.0] begin
                 CImGui.InputScalarN(
@@ -357,6 +367,8 @@ function _zen_dft_tab()
                     2
                 )
                 push!(PDFT.window, _f7...)
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
             end
             i == 8 && @cstatic _f8 = Cdouble[0.0,1.0] begin
                 CImGui.InputScalarN(
@@ -366,6 +378,8 @@ function _zen_dft_tab()
                     2
                 )
                 push!(PDFT.window, _f8...)
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
             end
             i == 9 && @cstatic _f9 = Cdouble[0.0,1.0] begin
                 CImGui.InputScalarN(
@@ -375,6 +389,8 @@ function _zen_dft_tab()
                     2
                 )
                 push!(PDFT.window, _f9...)
+                CImGui.SameLine()
+                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
             end
         end
 
