@@ -168,7 +168,20 @@ function _zen_dft_tab()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lsymm)$(PDFT.lsymm)")
-
+        #
+        # Input: lspins
+        CImGui.SetNextItemWidth(widget_combo_width)
+        lspins_list = ["Yes", "No"]
+        @cstatic id = Cint(1) begin
+            @c CImGui.Combo(" Are the spin orientations polarized or not", &id, lspins_list)
+            if id == 0
+                PDFT.lspins = true
+            else
+                PDFT.lspins = false
+            end
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lspins)$(PDFT.lspins)")
         CImGui.EndTabItem()
     end
 end
