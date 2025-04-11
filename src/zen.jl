@@ -606,6 +606,16 @@ macro _widgets_generator(x)
             CImGui.SameLine()
             CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(shell_$i)")
         end
+        #
+        # Input: ising
+        @cstatic id = Cint(0) begin
+            CImGui.SetNextItemWidth(widget_combo_width)
+            ising_list = ["ising", "full"]
+            @c CImGui.Combo(" Interaction types of correlated orbital $i", &id, ising_list)
+            push!(PIMP.ising, ising_list[id + 1])
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ising_$i)")
+        end
     end
 
     return :( $(esc(ex)) )
