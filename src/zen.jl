@@ -63,7 +63,7 @@ macro _widgets_generator_dft(x)
         end
         #
         # Input: window
-        @cstatic vec = Cdouble[0.0,1.0] begin
+        @cstatic vec = Cdouble[-1.4,6.0] begin
             CImGui.SetNextItemWidth(widget_input_width * 2)
             CImGui.InputScalarN(
                 " Band window for normalizing projector $i",
@@ -380,10 +380,8 @@ function _zen_dft_block()
         # Input: nsite
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(1) begin
-            @c CImGui.InputInt(" Number of (correlated) impurity sites", &_i)
+            @c CImGui.SliderInt(" Number of (correlated) impurity sites", &_i, 1, 9)
             PIMP.nsite = _i
-            #
-            @assert 9 ≥ PIMP.nsite ≥ 1
             #
             resize!(PDFT.sproj, PIMP.nsite)
             fill!(PDFT.sproj, PDFT.sproj[1])
