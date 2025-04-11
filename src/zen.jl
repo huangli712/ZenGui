@@ -54,7 +54,7 @@ macro _widgets_generator_dft(x)
         @cstatic buf = "1 : d : Pr" * "\0"^60 begin
             CImGui.SetNextItemWidth(widget_input_width)
             CImGui.InputText(" Specifications for generating projector $i", buf, length(buf))
-            push!(PDFT.sproj, rstrip(buf1,'\0'))
+            push!(PDFT.sproj, rstrip(buf,'\0'))
             CImGui.SameLine()
             CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)$(last(PDFT.sproj))")
         end
@@ -378,6 +378,11 @@ function _zen_dft_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(0.5,0.5,1.0,1.0), "(nsite)$(PIMP.nsite)")
+
+        # For the separator
+        CImGui.Spacing()
+        CImGui.Separator()
+        CImGui.Spacing()
 
         # Input: sproj and window
         @assert 9 ≥ PIMP.nsite ≥ 1
