@@ -596,6 +596,16 @@ macro _widgets_generator(x)
             CImGui.SameLine()
             CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(equiv_$i)")
         end
+        #
+        # Input: shell
+        @cstatic id = Cint(0) begin
+            CImGui.SetNextItemWidth(widget_combo_width)
+            shell_list = ["s", "p", "d", "f", "d_t2g", "d_eg"]
+            @c CImGui.Combo(" Angular momenta of correlated orbital $i", &id, shell_list)
+            push!(PIMP.shell, shell_list[id + 1])
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(shell_$i)")
+        end
     end
 
     return :( $(esc(ex)) )
