@@ -520,6 +520,42 @@ function _zen_dmft_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mixer)$(PDMFT.mixer)")
+        #
+        # Input: mc
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(0.0001) begin
+            @c CImGui.InputDouble(" Convergence criterion of chemical potential", &_f)
+            PDMFT.mc = _f
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mc)$(PDMFT.mc)")
+        #
+        # Input: cc
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(1.0e-6) begin
+            @c CImGui.InputDouble(" Convergence criterion of charge", &_f)
+            PDMFT.cc = _f
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(cc)$(PDMFT.cc)")
+        #
+        # Input: ec
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(0.0001) begin
+            @c CImGui.InputDouble(" Convergence criterion of total energy", &_f)
+            PDMFT.ec = _f
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ec)$(PDMFT.ec)")
+        #
+        # Input: sc
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(0.0001) begin
+            @c CImGui.InputDouble(" Convergence criterion of self-energy function", &_f)
+            PDMFT.sc = _f
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sc)$(PDMFT.sc)")
 
         CImGui.EndTabItem()
     end
