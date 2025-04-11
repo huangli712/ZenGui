@@ -487,6 +487,16 @@ function _zen_dmft_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmesh)$(PDMFT.nmesh)")
+        #
+        # Input: dcount
+        CImGui.SetNextItemWidth(widget_combo_width)
+        dcount_list = ["fll1", "fll2", "amf", "held", "exact"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Scheme of double counting term", &id, dcount_list)
+            PDMFT.dcount = dcount_list[id + 1]
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(dcount)$(PDMFT.dcount)")
 
         CImGui.EndTabItem()
     end
