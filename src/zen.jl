@@ -616,6 +616,15 @@ macro _widgets_generator(x)
             CImGui.SameLine()
             CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ising_$i)")
         end
+        #
+        # Input: occup
+        @cstatic _f = Cdouble(1.0) begin
+            CImGui.SetNextItemWidth(widget_input_width)
+            @c CImGui.InputDouble(" Nominal impurity occupancy $i", &_f)
+            push!(PIMP.occup, _f)
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(occup_$i)")
+        end
     end
 
     return :( $(esc(ex)) )
