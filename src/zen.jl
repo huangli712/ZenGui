@@ -581,13 +581,12 @@ macro _widgets_generator(x)
 
         # Input: atoms
         @cstatic buf = "V : 2" * "\0"^60 begin
+            CImGui.SetNextItemWidth(widget_input_width)
             CImGui.InputText(" Chemical symbols of impurity atom $i", buf, length(buf))
             push!(PIMP.atoms, rstrip(buf,'\0'))
             CImGui.SameLine()
             CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(atoms_$i)")
         end
-        #
-        #
     end
 
     return :( $(esc(ex)) )
@@ -604,23 +603,21 @@ function _zen_imp_block()
     empty!(PIMP.atoms)
     if CImGui.BeginTabItem("impurity")
         CImGui.Text("Configure [impurity] block")
-
+        #
         for i = 1:PIMP.nsite
-
-            CImGui.SetNextItemWidth(widget_input_width)
-
-            i == 1 && @_widgets_generator 1
-            i == 2 && @_widgets_generator 2
-            i == 3 && @_widgets_generator 3
-            i == 4 && @_widgets_generator 4
-            i == 5 && @_widgets_generator 5
-            i == 6 && @_widgets_generator 6
-            i == 7 && @_widgets_generator 7
-            i == 8 && @_widgets_generator 8
-            i == 9 && @_widgets_generator 9
-
+            if CImGui.CollapsingHeader("impurity $i")
+                i == 1 && @_widgets_generator 1
+                i == 2 && @_widgets_generator 2
+                i == 3 && @_widgets_generator 3
+                i == 4 && @_widgets_generator 4
+                i == 5 && @_widgets_generator 5
+                i == 6 && @_widgets_generator 6
+                i == 7 && @_widgets_generator 7
+                i == 8 && @_widgets_generator 8
+                i == 9 && @_widgets_generator 9
+            end
         end
-        
+        #
         @show PIMP.atoms
         CImGui.EndTabItem()
     end
