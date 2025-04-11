@@ -266,174 +266,15 @@ function _zen_dft_block()
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(0.5,0.5,1.0,1.0), "(nsite)$(PIMP.nsite)")
         #
-        # Input: sproj
+        
         @assert 9 ≥ PIMP.nsite ≥ 1
         empty!(PDFT.sproj)
-        for i = 1:PIMP.nsite
-            CImGui.SetNextItemWidth(widget_input_width)
-            #
-            i == 1 && @cstatic buf1 = "1 : d : Pr" * "\0"^60 begin
-                CImGui.InputText(" Specifications for generating projector $i", buf1, length(buf1))
-                push!(PDFT.sproj, rstrip(buf1,'\0'))
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
-            end
-            i == 2 && @cstatic buf2 = "1 : d : Pr" * "\0"^60 begin
-                CImGui.InputText(" Specifications for generating projector $i", buf2, length(buf2))
-                push!(PDFT.sproj, rstrip(buf2,'\0'))
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
-            end
-            i == 3 && @cstatic buf3 = "1 : d : Pr" * "\0"^60 begin
-                CImGui.InputText(" Specifications for generating projector $i", buf3, length(buf3))
-                push!(PDFT.sproj, rstrip(buf3,'\0'))
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
-            end
-            i == 4 && @cstatic buf4 = "1 : d : Pr" * "\0"^60 begin
-                CImGui.InputText(" Specifications for generating projector $i", buf4, length(buf4))
-                push!(PDFT.sproj, rstrip(buf4,'\0'))
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
-            end
-            i == 5 && @cstatic buf5 = "1 : d : Pr" * "\0"^60 begin
-                CImGui.InputText(" Specifications for generating projector $i", buf5, length(buf5))
-                push!(PDFT.sproj, rstrip(buf5,'\0'))
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
-            end
-            i == 6 && @cstatic buf6 = "1 : d : Pr" * "\0"^60 begin
-                CImGui.InputText(" Specifications for generating projector $i", buf6, length(buf6))
-                push!(PDFT.sproj, rstrip(buf6,'\0'))
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
-            end
-            i == 7 && @cstatic buf7 = "1 : d : Pr" * "\0"^60 begin
-                CImGui.InputText(" Specifications for generating projector $i", buf7, length(buf7))
-                push!(PDFT.sproj, rstrip(buf7,'\0'))
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
-            end
-            i == 8 && @cstatic buf8 = "1 : d : Pr" * "\0"^60 begin
-                CImGui.InputText(" Specifications for generating projector $i", buf8, length(buf8))
-                push!(PDFT.sproj, rstrip(buf8,'\0'))
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
-            end
-            i == 9 && @cstatic buf9 = "1 : d : Pr" * "\0"^60 begin
-                CImGui.InputText(" Specifications for generating projector $i", buf9, length(buf9))
-                push!(PDFT.sproj, rstrip(buf9,'\0'))
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
-            end
-        end
-        #
-        # Input: window
-        @assert 9 ≥ PIMP.nsite ≥ 1
         empty!(PDFT.window)
         for i = 1:PIMP.nsite
-            CImGui.SetNextItemWidth(widget_input_width * 2)
-            #
-            i == 1 && @cstatic _f1 = Cdouble[0.0,1.0] begin
-                CImGui.InputScalarN(
-                    " Band window for normalizing projector $i",
-                    CImGui.ImGuiDataType_Double,
-                    _f1,
-                    2
-                )
-                push!(PDFT.window, _f1...)
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
-            end
-            i == 2 && @cstatic _f2 = Cdouble[0.0,1.0] begin
-                CImGui.InputScalarN(
-                    " Band window for normalizing projector $i",
-                    CImGui.ImGuiDataType_Double,
-                    _f2,
-                    2
-                )
-                push!(PDFT.window, _f2...)
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
-            end
-            i == 3 && @cstatic _f3 = Cdouble[0.0,1.0] begin
-                CImGui.InputScalarN(
-                    " Band window for normalizing projector $i",
-                    CImGui.ImGuiDataType_Double,
-                    _f3,
-                    2
-                )
-                push!(PDFT.window, _f3...)
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
-            end
-            i == 4 && @cstatic _f4 = Cdouble[0.0,1.0] begin
-                CImGui.InputScalarN(
-                    " Band window for normalizing projector $i",
-                    CImGui.ImGuiDataType_Double,
-                    _f4,
-                    2
-                )
-                push!(PDFT.window, _f4...)
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
-            end
-            i == 5 && @cstatic _f5 = Cdouble[0.0,1.0] begin
-                CImGui.InputScalarN(
-                    " Band window for normalizing projector $i",
-                    CImGui.ImGuiDataType_Double,
-                    _f5,
-                    2
-                )
-                push!(PDFT.window, _f5...)
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
-            end
-            i == 6 && @cstatic _f6 = Cdouble[0.0,1.0] begin
-                CImGui.InputScalarN(
-                    " Band window for normalizing projector $i",
-                    CImGui.ImGuiDataType_Double,
-                    _f6,
-                    2
-                )
-                push!(PDFT.window, _f6...)
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
-            end
-            i == 7 && @cstatic _f7 = Cdouble[0.0,1.0] begin
-                CImGui.InputScalarN(
-                    " Band window for normalizing projector $i",
-                    CImGui.ImGuiDataType_Double,
-                    _f7,
-                    2
-                )
-                push!(PDFT.window, _f7...)
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
-            end
-            i == 8 && @cstatic _f8 = Cdouble[0.0,1.0] begin
-                CImGui.InputScalarN(
-                    " Band window for normalizing projector $i",
-                    CImGui.ImGuiDataType_Double,
-                    _f8,
-                    2
-                )
-                push!(PDFT.window, _f8...)
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
-            end
-            i == 9 && @cstatic _f9 = Cdouble[0.0,1.0] begin
-                CImGui.InputScalarN(
-                    " Band window for normalizing projector $i",
-                    CImGui.ImGuiDataType_Double,
-                    _f9,
-                    2
-                )
-                push!(PDFT.window, _f9...)
-                CImGui.SameLine()
-                CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
-            end
         end
+        #
+        
+
 
         CImGui.EndTabItem()
     end
@@ -626,6 +467,32 @@ end
 macro _widgets_generator_dft(x)
     ex = quote
         i = $x
+
+        # Input: sproj
+        CImGui.SetNextItemWidth(widget_input_width)
+        #
+        i == 1 && @cstatic buf1 = "1 : d : Pr" * "\0"^60 begin
+            CImGui.InputText(" Specifications for generating projector $i", buf1, length(buf1))
+            push!(PDFT.sproj, rstrip(buf1,'\0'))
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)")
+        end
+
+        # Input: window
+        CImGui.SetNextItemWidth(widget_input_width * 2)
+        #
+        i == 1 && @cstatic _f1 = Cdouble[0.0,1.0] begin
+            CImGui.InputScalarN(
+                " Band window for normalizing projector $i",
+                CImGui.ImGuiDataType_Double,
+                _f1,
+                2
+            )
+            push!(PDFT.window, _f1...)
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)")
+        end
+
     end
 
     return :( $(esc(ex)) )
