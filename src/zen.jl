@@ -625,6 +625,24 @@ macro _widgets_generator(x)
             CImGui.SameLine()
             CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(occup_$i)")
         end
+        #
+        # Input: upara
+        @cstatic _f = Cdouble(4.0) begin
+            CImGui.SetNextItemWidth(widget_input_width)
+            @c CImGui.InputDouble(" Coulomb interaction parameter $i", &_f)
+            push!(PIMP.upara, _f)
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(upara_$i)")
+        end
+        #
+        # Input: jpara
+        @cstatic _f = Cdouble(0.7) begin
+            CImGui.SetNextItemWidth(widget_input_width)
+            @c CImGui.InputDouble(" Hund's coupling parameter $i", &_f)
+            push!(PIMP.jpara, _f)
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(jpara_$i)")
+        end
     end
 
     return :( $(esc(ex)) )
