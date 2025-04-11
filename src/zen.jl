@@ -478,6 +478,15 @@ function _zen_dmft_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(niter)$(PDMFT.niter)")
+        #
+        # Input: nmesh
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(8193) begin
+            @c CImGui.SliderInt(" Number of frequency points", &_i, 2^7+1, 2^14+1)
+            PDMFT.nmesh = _i
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmesh)$(PDMFT.nmesh)")
 
         CImGui.EndTabItem()
     end
