@@ -265,16 +265,25 @@ function _zen_dft_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(0.5,0.5,1.0,1.0), "(nsite)$(PIMP.nsite)")
-        #
-        
+
+        # Input: sproj and window
         @assert 9 ≥ PIMP.nsite ≥ 1
         empty!(PDFT.sproj)
         empty!(PDFT.window)
-        for i = 1:PIMP.nsite
-        end
         #
-        
-
+        for i = 1:PIMP.nsite
+            if CImGui.CollapsingHeader("impurity $i")
+                i == 1 && @_widgets_generator_dft 1
+                i == 2 && @_widgets_generator_dft 2
+                i == 3 && @_widgets_generator_dft 3
+                i == 4 && @_widgets_generator_dft 4
+                i == 5 && @_widgets_generator_dft 5
+                i == 6 && @_widgets_generator_dft 6
+                i == 7 && @_widgets_generator_dft 7
+                i == 8 && @_widgets_generator_dft 8
+                i == 9 && @_widgets_generator_dft 9
+            end
+        end
 
         CImGui.EndTabItem()
     end
