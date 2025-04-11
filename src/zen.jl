@@ -46,6 +46,119 @@ function create_app_zen(p_open::Ref{Bool})
     CImGui.End()
 end
 
+macro _widgets_generator_dft(x)
+    ex = quote
+        i = $x
+
+        # Input: sproj
+        @cstatic buf = "1 : d : Pr" * "\0"^60 begin
+            CImGui.SetNextItemWidth(widget_input_width)
+            CImGui.InputText(" Specifications for generating projector $i", buf, length(buf))
+            push!(PDFT.sproj, rstrip(buf1,'\0'))
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)$(last(PDFT.sproj))")
+        end
+        #
+        # Input: window
+        @cstatic vec = Cdouble[0.0,1.0] begin
+            CImGui.SetNextItemWidth(widget_input_width * 2)
+            CImGui.InputScalarN(
+                " Band window for normalizing projector $i",
+                CImGui.ImGuiDataType_Double,
+                vec,
+                2
+            )
+            push!(PDFT.window, vec...)
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)$(last(PDFT.window))")
+        end
+    end
+
+    return :( $(esc(ex)) )
+end
+
+macro _widgets_generator_imp(x)
+    ex = quote
+        i = $x
+
+        # Input: atoms
+        @cstatic buf = "V : 2" * "\0"^60 begin
+            CImGui.SetNextItemWidth(widget_input_width)
+            CImGui.InputText(" Chemical symbols of impurity atom $i", buf, length(buf))
+            push!(PIMP.atoms, rstrip(buf,'\0'))
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(atoms_$i)$(last(PIMP.atoms))")
+        end
+        #
+        # Input: equiv
+        @cstatic _i = Cint(1) begin
+            CImGui.SetNextItemWidth(widget_input_width)
+            @c CImGui.InputInt(" Equivalency of quantum impurity atom $i", &_i)
+            push!(PIMP.equiv, _i)
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(equiv_$i)$(last(PIMP.equiv))")
+        end
+        #
+        # Input: shell
+        @cstatic id = Cint(0) begin
+            CImGui.SetNextItemWidth(widget_combo_width)
+            shell_list = ["s", "p", "d", "f", "d_t2g", "d_eg"]
+            @c CImGui.Combo(" Angular momenta of correlated orbital $i", &id, shell_list)
+            push!(PIMP.shell, shell_list[id + 1])
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(shell_$i)$(last(PIMP.shell))")
+        end
+        #
+        # Input: ising
+        @cstatic id = Cint(0) begin
+            CImGui.SetNextItemWidth(widget_combo_width)
+            ising_list = ["ising", "full"]
+            @c CImGui.Combo(" Interaction types of correlated orbital $i", &id, ising_list)
+            push!(PIMP.ising, ising_list[id + 1])
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ising_$i)$(last(PIMP.ising))")
+        end
+        #
+        # Input: occup
+        @cstatic _f = Cdouble(1.0) begin
+            CImGui.SetNextItemWidth(widget_input_width)
+            @c CImGui.InputDouble(" Nominal impurity occupancy $i", &_f)
+            push!(PIMP.occup, _f)
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(occup_$i)$(last(PIMP.occup))")
+        end
+        #
+        # Input: upara
+        @cstatic _f = Cdouble(4.0) begin
+            CImGui.SetNextItemWidth(widget_input_width)
+            @c CImGui.InputDouble(" Coulomb interaction parameter $i", &_f)
+            push!(PIMP.upara, _f)
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(upara_$i)$(last(PIMP.upara))")
+        end
+        #
+        # Input: jpara
+        @cstatic _f = Cdouble(0.7) begin
+            CImGui.SetNextItemWidth(widget_input_width)
+            @c CImGui.InputDouble(" Hund's coupling parameter $i", &_f)
+            push!(PIMP.jpara, _f)
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(jpara_$i)$(last(PIMP.jpara))")
+        end
+        #
+        # Input: lpara
+        @cstatic _f = Cdouble(0.0) begin
+            CImGui.SetNextItemWidth(widget_input_width)
+            @c CImGui.InputDouble(" Spin-orbit coupling parameter $i", &_f)
+            push!(PIMP.lpara, _f)
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lpara_$i)$(last(PIMP.lpara))")
+        end
+    end
+
+    return :( $(esc(ex)) )
+end
+
 """
     _zen_tabs_block()
 
@@ -471,117 +584,4 @@ function _zen_solver_block()
         CImGui.Text("This is the Cucumber tab!\nblah blah blah blah blah")
         CImGui.EndTabItem()
     end
-end
-
-macro _widgets_generator_dft(x)
-    ex = quote
-        i = $x
-
-        # Input: sproj
-        @cstatic buf = "1 : d : Pr" * "\0"^60 begin
-            CImGui.SetNextItemWidth(widget_input_width)
-            CImGui.InputText(" Specifications for generating projector $i", buf, length(buf))
-            push!(PDFT.sproj, rstrip(buf1,'\0'))
-            CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)$(last(PDFT.sproj))")
-        end
-        #
-        # Input: window
-        @cstatic vec = Cdouble[0.0,1.0] begin
-            CImGui.SetNextItemWidth(widget_input_width * 2)
-            CImGui.InputScalarN(
-                " Band window for normalizing projector $i",
-                CImGui.ImGuiDataType_Double,
-                vec,
-                2
-            )
-            push!(PDFT.window, vec...)
-            CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)$(last(PDFT.window))")
-        end
-    end
-
-    return :( $(esc(ex)) )
-end
-
-macro _widgets_generator_imp(x)
-    ex = quote
-        i = $x
-
-        # Input: atoms
-        @cstatic buf = "V : 2" * "\0"^60 begin
-            CImGui.SetNextItemWidth(widget_input_width)
-            CImGui.InputText(" Chemical symbols of impurity atom $i", buf, length(buf))
-            push!(PIMP.atoms, rstrip(buf,'\0'))
-            CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(atoms_$i)$(last(PIMP.atoms))")
-        end
-        #
-        # Input: equiv
-        @cstatic _i = Cint(1) begin
-            CImGui.SetNextItemWidth(widget_input_width)
-            @c CImGui.InputInt(" Equivalency of quantum impurity atom $i", &_i)
-            push!(PIMP.equiv, _i)
-            CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(equiv_$i)$(last(PIMP.equiv))")
-        end
-        #
-        # Input: shell
-        @cstatic id = Cint(0) begin
-            CImGui.SetNextItemWidth(widget_combo_width)
-            shell_list = ["s", "p", "d", "f", "d_t2g", "d_eg"]
-            @c CImGui.Combo(" Angular momenta of correlated orbital $i", &id, shell_list)
-            push!(PIMP.shell, shell_list[id + 1])
-            CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(shell_$i)$(last(PIMP.shell))")
-        end
-        #
-        # Input: ising
-        @cstatic id = Cint(0) begin
-            CImGui.SetNextItemWidth(widget_combo_width)
-            ising_list = ["ising", "full"]
-            @c CImGui.Combo(" Interaction types of correlated orbital $i", &id, ising_list)
-            push!(PIMP.ising, ising_list[id + 1])
-            CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ising_$i)$(last(PIMP.ising))")
-        end
-        #
-        # Input: occup
-        @cstatic _f = Cdouble(1.0) begin
-            CImGui.SetNextItemWidth(widget_input_width)
-            @c CImGui.InputDouble(" Nominal impurity occupancy $i", &_f)
-            push!(PIMP.occup, _f)
-            CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(occup_$i)$(last(PIMP.occup))")
-        end
-        #
-        # Input: upara
-        @cstatic _f = Cdouble(4.0) begin
-            CImGui.SetNextItemWidth(widget_input_width)
-            @c CImGui.InputDouble(" Coulomb interaction parameter $i", &_f)
-            push!(PIMP.upara, _f)
-            CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(upara_$i)$(last(PIMP.upara))")
-        end
-        #
-        # Input: jpara
-        @cstatic _f = Cdouble(0.7) begin
-            CImGui.SetNextItemWidth(widget_input_width)
-            @c CImGui.InputDouble(" Hund's coupling parameter $i", &_f)
-            push!(PIMP.jpara, _f)
-            CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(jpara_$i)$(last(PIMP.jpara))")
-        end
-        #
-        # Input: lpara
-        @cstatic _f = Cdouble(0.0) begin
-            CImGui.SetNextItemWidth(widget_input_width)
-            @c CImGui.InputDouble(" Spin-orbit coupling parameter $i", &_f)
-            push!(PIMP.lpara, _f)
-            CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lpara_$i)$(last(PIMP.lpara))")
-        end
-    end
-
-    return :( $(esc(ex)) )
 end
