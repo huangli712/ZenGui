@@ -386,7 +386,7 @@ function _zen_dft_block()
             @assert 9 ≥ PIMP.nsite ≥ 1
             #
             resize!(PDFT.sproj, PIMP.nsite)
-            resize!(PDFT.window, PIMP.nsite)
+            resize!(PDFT.window, PIMP.nsite * 2)
             #
             resize!(PIMP.atoms, PIMP.nsite)
             resize!(PIMP.equiv, PIMP.nsite)
