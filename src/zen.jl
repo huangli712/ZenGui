@@ -556,6 +556,20 @@ function _zen_dmft_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sc)$(PDMFT.sc)")
+        #
+        # Input: lfermi
+        CImGui.SetNextItemWidth(widget_combo_width)
+        lfermi_list = ["Yes", "No"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Whether chemical potential should be updated", &id, lfermi_list)
+            if id == 0
+                PDMFT.lfermi = true
+            else
+                PDMFT.lfermi = false
+            end
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lfermi)$(PDMFT.lfermi)")        
 
         CImGui.EndTabItem()
     end
