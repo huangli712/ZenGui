@@ -450,7 +450,25 @@ function _zen_dmft_block()
     if CImGui.BeginTabItem("dmft")
         CImGui.Text("Configure [dmft] block")
 
-
+        # Input: mode
+        CImGui.SetNextItemWidth(widget_combo_width)
+        mode_list = ["1:one-shot", "2:self-consistent"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Scheme of dynamical mean-field theory calculations", &id, mode_list)
+            PDMFT.mode = id + 1
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mode)$(PDMFT.mode)")
+        #
+        # Input: axis
+        CImGui.SetNextItemWidth(widget_combo_width)
+        axis_list = ["1:imaginary", "2:real"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Imaginary-time axis or real-frequency axis", &id, axis_list)
+            PDMFT.axis = id + 1
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(axis)$(PDMFT.axis)")
 
         CImGui.EndTabItem()
     end
