@@ -32,40 +32,81 @@ function create_app_zen(p_open::Ref{Bool})
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
     # For all the blocks in the case.toml
-    _zen_tabs()
+    _zen_tabs_block()
 
     # For the separator
     CImGui.Spacing()
     CImGui.Separator()
     CImGui.Spacing()
 
+    # For the buttons in the bottom of this window
+    _zen_bottom_block(p_open)
+
     # End of this window
     CImGui.End()
 end
 
 """
-    _zen_tabs()
+    _zen_tabs_block()
 
 Setup the tab widgets for all the blocks in the case.toml.
 """
-function _zen_tabs()
+function _zen_tabs_block()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
     #
     if CImGui.BeginTabBar("ZenTabBar", tab_bar_flags)
-        _zen_case_tab()
-        _zen_dft_tab()
-        _zen_dmft_tab()
-        _zen_imp_tab()
-        _zen_solver_tab()
+        _zen_case_block()
+        _zen_dft_block()
+        _zen_dmft_block()
+        _zen_imp_block()
+        _zen_solver_block()
         #
         CImGui.EndTabBar()
     end
 end
 
 """
-    _zen_case_tab()
+    _zen_bottom_block(p_open::Ref{Bool})
+
+Setup widgets in the bottom of the window for the Zen package.
 """
-function _zen_case_tab()
+function _zen_bottom_block(p_open::Ref{Bool})
+    # Define the default size for widgets
+    widget_button_width = 80.0
+    widget_button_height = 25.0
+
+    # For the buttons
+    if CImGui.Button("View", ImVec2(widget_button_width, widget_button_height))
+        CImGui.OpenPopup("View")
+    end
+    #
+    if CImGui.BeginPopupModal("View", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
+        @cstatic read_only=false text="Hello World!" begin
+            text = _dict_to_toml(_build_zen_dict())
+            @c CImGui.Checkbox("Read-only", &read_only)
+            flags = read_only ? CImGui.ImGuiInputTextFlags_ReadOnly : 0
+            flags = CImGui.ImGuiInputTextFlags_AllowTabInput | flags
+            CImGui.InputTextMultiline("##source", text, 10000, ImVec2(400, 600), flags)
+        end
+        #
+        if CImGui.Button("OK", ImVec2(widget_button_width, widget_button_height))
+            CImGui.CloseCurrentPopup()
+        end
+        #
+        CImGui.EndPopup()
+    end
+    #
+    CImGui.SameLine()
+    #
+    if CImGui.Button("Close", ImVec2(widget_button_width, widget_button_height))
+        p_open[] = false
+    end
+end
+
+"""
+    _zen_case_block()
+"""
+function _zen_case_block()
     # Define the default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
@@ -87,9 +128,9 @@ function _zen_case_tab()
 end
 
 """
-    _zen_dft_tab()
+    _zen_dft_block()
 """
-function _zen_dft_tab()
+function _zen_dft_block()
     # Define the default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
@@ -399,9 +440,9 @@ function _zen_dft_tab()
 end
 
 """
-    _zen_dmft_tab()
+    _zen_dmft_block()
 """
-function _zen_dmft_tab()
+function _zen_dmft_block()
     if CImGui.BeginTabItem("dmft")
         CImGui.Text("This is the Cucumber tab!\nblah blah blah blah blah")
         CImGui.EndTabItem()
@@ -409,9 +450,9 @@ function _zen_dmft_tab()
 end
 
 """
-    _zen_imp_tab()
+    _zen_imp_block()
 """
-function _zen_imp_tab()
+function _zen_imp_block()
     if CImGui.BeginTabItem("impurity")
         CImGui.Text("This is the Cucumber tab!\nblah blah blah blah blah")
         CImGui.EndTabItem()
@@ -419,9 +460,9 @@ function _zen_imp_tab()
 end
 
 """
-    _zen_solver_tab()
+    _zen_solver_block()
 """
-function _zen_solver_tab()
+function _zen_solver_block()
     if CImGui.BeginTabItem("solver")
         CImGui.Text("This is the Cucumber tab!\nblah blah blah blah blah")
         CImGui.EndTabItem()
