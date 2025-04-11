@@ -509,13 +509,8 @@ function _zen_dmft_block()
         #
         # Input: mixer
         CImGui.SetNextItemWidth(widget_input_width)
-        @cstatic _f = Cdouble(0.1) begin
-            @c CImGui.SliderScalar(
-                " Mixing factor",
-                CImGui.ImGuiDataType_Double,
-                &_f,
-                0.0, 1.0
-            )
+        @cstatic _f = Cfloat(0.1) begin
+            @c CImGui.SliderFloat(" Mixing factor", &_f, 0.0, 1.0)
             PDMFT.mixer = _f
         end
         CImGui.SameLine()
