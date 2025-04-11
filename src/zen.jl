@@ -585,7 +585,7 @@ macro _widgets_generator(x)
             CImGui.InputText(" Chemical symbols of impurity atom $i", buf, length(buf))
             push!(PIMP.atoms, rstrip(buf,'\0'))
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(atoms_$i)")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(atoms_$i)$(last(PIMP.atoms))")
         end
         #
         # Input: equiv
@@ -594,7 +594,7 @@ macro _widgets_generator(x)
             @c CImGui.InputInt(" Equivalency of quantum impurity atom $i", &_i)
             push!(PIMP.equiv, _i)
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(equiv_$i)")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(equiv_$i)$(last(PIMP.equiv))")
         end
         #
         # Input: shell
@@ -604,7 +604,7 @@ macro _widgets_generator(x)
             @c CImGui.Combo(" Angular momenta of correlated orbital $i", &id, shell_list)
             push!(PIMP.shell, shell_list[id + 1])
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(shell_$i)")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(shell_$i)$(last(PIMP.shell))")
         end
         #
         # Input: ising
@@ -614,7 +614,7 @@ macro _widgets_generator(x)
             @c CImGui.Combo(" Interaction types of correlated orbital $i", &id, ising_list)
             push!(PIMP.ising, ising_list[id + 1])
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ising_$i)")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ising_$i)$(last(PIMP.ising))")
         end
         #
         # Input: occup
@@ -623,7 +623,7 @@ macro _widgets_generator(x)
             @c CImGui.InputDouble(" Nominal impurity occupancy $i", &_f)
             push!(PIMP.occup, _f)
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(occup_$i)")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(occup_$i)$(last(PIMP.occup))")
         end
         #
         # Input: upara
@@ -632,7 +632,7 @@ macro _widgets_generator(x)
             @c CImGui.InputDouble(" Coulomb interaction parameter $i", &_f)
             push!(PIMP.upara, _f)
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(upara_$i)")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(upara_$i)$(last(PIMP.upara))")
         end
         #
         # Input: jpara
@@ -641,7 +641,7 @@ macro _widgets_generator(x)
             @c CImGui.InputDouble(" Hund's coupling parameter $i", &_f)
             push!(PIMP.jpara, _f)
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(jpara_$i)")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(jpara_$i)$(last(PIMP.jpara))")
         end
         #
         # Input: lpara
@@ -650,7 +650,7 @@ macro _widgets_generator(x)
             @c CImGui.InputDouble(" Spin-orbit coupling parameter $i", &_f)
             push!(PIMP.lpara, _f)
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lpara_$i)")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lpara_$i)$(last(PIMP.lpara))")
         end
     end
 
