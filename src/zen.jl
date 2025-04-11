@@ -384,17 +384,17 @@ function _zen_dft_block()
             #
             @assert 9 ≥ PIMP.nsite ≥ 1
             #
-            empty!(PDFT.sproj)
-            empty!(PDFT.window)
+            resize!(PDFT.sproj, PIMP.nsite)
+            resize!(PDFT.window, PIMP.nsite)
             #
-            empty!(PIMP.atoms)
-            empty!(PIMP.equiv)
-            empty!(PIMP.shell)
-            empty!(PIMP.ising)
-            empty!(PIMP.occup)
-            empty!(PIMP.upara)
-            empty!(PIMP.jpara)
-            empty!(PIMP.lpara)
+            resize!(PIMP.atoms, PIMP.nsite)
+            resize!(PIMP.equiv, PIMP.nsite)
+            resize!(PIMP.shell, PIMP.nsite)
+            resize!(PIMP.ising, PIMP.nsite)
+            resize!(PIMP.occup, PIMP.nsite)
+            resize!(PIMP.upara, PIMP.nsite)
+            resize!(PIMP.jpara, PIMP.nsite)
+            rezize!(PIMP.lpara, PIMP.nsite)
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(0.5,0.5,1.0,1.0), "(nsite)$(PIMP.nsite)")
