@@ -643,6 +643,15 @@ macro _widgets_generator(x)
             CImGui.SameLine()
             CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(jpara_$i)")
         end
+        #
+        # Input: lpara
+        @cstatic _f = Cdouble(0.0) begin
+            CImGui.SetNextItemWidth(widget_input_width)
+            @c CImGui.InputDouble(" Spin-orbit coupling parameter $i", &_f)
+            push!(PIMP.lpara, _f)
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lpara_$i)")
+        end
     end
 
     return :( $(esc(ex)) )
