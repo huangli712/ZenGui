@@ -443,8 +443,15 @@ end
     _zen_dmft_block()
 """
 function _zen_dmft_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
     if CImGui.BeginTabItem("dmft")
-        CImGui.Text("This is the Cucumber tab!\nblah blah blah blah blah")
+        CImGui.Text("Configure [dmft] block")
+
+
+
         CImGui.EndTabItem()
     end
 end
