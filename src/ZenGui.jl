@@ -67,8 +67,8 @@ using CImGui.lib
 using CImGui.CSyntax
 using CImGui.CSyntax.CStatic
 
-import GLFW
-import ModernGL as GL
+using GLFW
+using ModernGL
 
 #=
 ### *Includes And Exports* : *global.jl*
