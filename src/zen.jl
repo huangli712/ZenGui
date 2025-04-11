@@ -575,6 +575,24 @@ function _zen_dmft_block()
     end
 end
 
+macro _widgets_generator(x)
+    ex = quote
+        i = $x
+
+        # Input: atoms
+        @cstatic buf = "V : 2" * "\0"^60 begin
+            CImGui.InputText(" Chemical symbols of impurity atom $i", buf, length(buf))
+            push!(PIMP.atoms, rstrip(buf,'\0'))
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(atoms_$i)")
+        end
+        #
+        #
+    end
+
+    return :( $(esc(ex)) )
+end
+
 """
     _zen_imp_block()
 """
@@ -583,9 +601,17 @@ function _zen_imp_block()
     widget_input_width = 100
     widget_combo_width = 100
 
+    empty!(PIMP.atoms)
     if CImGui.BeginTabItem("impurity")
         CImGui.Text("Configure [impurity] block")
 
+        for i = 1:PIMP.nsite
+
+            i == 1 && @_widgets_generator 1
+            i == 2 && @_widgets_generator 2
+
+        end
+        @show PIMP.atoms
         CImGui.EndTabItem()
     end
 end
