@@ -575,6 +575,54 @@ function _zen_dmft_block()
     end
 end
 
+"""
+    _zen_imp_block()
+"""
+function _zen_imp_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    empty!(PIMP.atoms)
+    empty!(PIMP.equiv)
+    empty!(PIMP.shell)
+    empty!(PIMP.ising)
+    empty!(PIMP.occup)
+    empty!(PIMP.upara)
+    empty!(PIMP.jpara)
+    empty!(PIMP.lpara)
+
+    if CImGui.BeginTabItem("impurity")
+        CImGui.Text("Configure [impurity] block")
+        #
+        for i = 1:PIMP.nsite
+            if CImGui.CollapsingHeader("impurity $i")
+                i == 1 && @_widgets_generator 1
+                i == 2 && @_widgets_generator 2
+                i == 3 && @_widgets_generator 3
+                i == 4 && @_widgets_generator 4
+                i == 5 && @_widgets_generator 5
+                i == 6 && @_widgets_generator 6
+                i == 7 && @_widgets_generator 7
+                i == 8 && @_widgets_generator 8
+                i == 9 && @_widgets_generator 9
+            end
+        end
+        #
+        CImGui.EndTabItem()
+    end
+end
+
+"""
+    _zen_solver_block()
+"""
+function _zen_solver_block()
+    if CImGui.BeginTabItem("solver")
+        CImGui.Text("This is the Cucumber tab!\nblah blah blah blah blah")
+        CImGui.EndTabItem()
+    end
+end
+
 macro _widgets_generator(x)
     ex = quote
         i = $x
@@ -655,52 +703,4 @@ macro _widgets_generator(x)
     end
 
     return :( $(esc(ex)) )
-end
-
-"""
-    _zen_imp_block()
-"""
-function _zen_imp_block()
-    # Define the default size for widgets
-    widget_input_width = 100
-    widget_combo_width = 100
-
-    empty!(PIMP.atoms)
-    empty!(PIMP.equiv)
-    empty!(PIMP.shell)
-    empty!(PIMP.ising)
-    empty!(PIMP.occup)
-    empty!(PIMP.upara)
-    empty!(PIMP.jpara)
-    empty!(PIMP.lpara)
-
-    if CImGui.BeginTabItem("impurity")
-        CImGui.Text("Configure [impurity] block")
-        #
-        for i = 1:PIMP.nsite
-            if CImGui.CollapsingHeader("impurity $i")
-                i == 1 && @_widgets_generator 1
-                i == 2 && @_widgets_generator 2
-                i == 3 && @_widgets_generator 3
-                i == 4 && @_widgets_generator 4
-                i == 5 && @_widgets_generator 5
-                i == 6 && @_widgets_generator 6
-                i == 7 && @_widgets_generator 7
-                i == 8 && @_widgets_generator 8
-                i == 9 && @_widgets_generator 9
-            end
-        end
-        #
-        CImGui.EndTabItem()
-    end
-end
-
-"""
-    _zen_solver_block()
-"""
-function _zen_solver_block()
-    if CImGui.BeginTabItem("solver")
-        CImGui.Text("This is the Cucumber tab!\nblah blah blah blah blah")
-        CImGui.EndTabItem()
-    end
 end
