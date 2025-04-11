@@ -587,6 +587,15 @@ macro _widgets_generator(x)
             CImGui.SameLine()
             CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(atoms_$i)")
         end
+        #
+        # Input: equiv
+        @cstatic _i = Cint(1) begin
+            CImGui.SetNextItemWidth(widget_input_width)
+            @c CImGui.InputInt(" Equivalency of quantum impurity atom $i", &_i)
+            push!(PIMP.equiv, _i)
+            CImGui.SameLine()
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(equiv_$i)")
+        end
     end
 
     return :( $(esc(ex)) )
