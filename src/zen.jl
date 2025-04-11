@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/4/11
+# Last modified: 2025/4/12
 #
 
 """
@@ -46,6 +46,9 @@ function create_app_zen(p_open::Ref{Bool})
     CImGui.End()
 end
 
+"""
+    @_widgets_generator_dft
+"""
 macro _widgets_generator_dft(x)
     ex = quote
         i = $x
@@ -77,6 +80,9 @@ macro _widgets_generator_dft(x)
     return :( $(esc(ex)) )
 end
 
+"""
+    @_widgets_generator_imp
+"""
 macro _widgets_generator_imp(x)
     ex = quote
         i = $x
@@ -375,6 +381,20 @@ function _zen_dft_block()
         @cstatic _i = Cint(1) begin
             @c CImGui.InputInt(" Number of (correlated) impurity sites", &_i)
             PIMP.nsite = _i
+            #
+            @assert 9 ≥ PIMP.nsite ≥ 1
+            #
+            empty!(PDFT.sproj)
+            empty!(PDFT.window)
+            #
+            empty!(PIMP.atoms)
+            empty!(PIMP.equiv)
+            empty!(PIMP.shell)
+            empty!(PIMP.ising)
+            empty!(PIMP.occup)
+            empty!(PIMP.upara)
+            empty!(PIMP.jpara)
+            empty!(PIMP.lpara)
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(0.5,0.5,1.0,1.0), "(nsite)$(PIMP.nsite)")
@@ -385,10 +405,6 @@ function _zen_dft_block()
         CImGui.Spacing()
 
         # Input: sproj and window
-        @assert 9 ≥ PIMP.nsite ≥ 1
-        empty!(PDFT.sproj)
-        empty!(PDFT.window)
-        #
         for i = 1:PIMP.nsite
             if CImGui.CollapsingHeader("impurity $i")
                 i == 1 && @_widgets_generator_dft 1
@@ -550,15 +566,6 @@ function _zen_imp_block()
     # Define the default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
-
-    empty!(PIMP.atoms)
-    empty!(PIMP.equiv)
-    empty!(PIMP.shell)
-    empty!(PIMP.ising)
-    empty!(PIMP.occup)
-    empty!(PIMP.upara)
-    empty!(PIMP.jpara)
-    empty!(PIMP.lpara)
 
     if CImGui.BeginTabItem("impurity")
         CImGui.Text("Configure [impurity] block")
