@@ -579,8 +579,13 @@ end
     _zen_imp_block()
 """
 function _zen_imp_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
     if CImGui.BeginTabItem("impurity")
-        CImGui.Text("This is the Cucumber tab!\nblah blah blah blah blah")
+        CImGui.Text("Configure [impurity] block")
+
         CImGui.EndTabItem()
     end
 end
