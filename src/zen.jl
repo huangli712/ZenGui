@@ -601,6 +601,14 @@ function _zen_imp_block()
     widget_combo_width = 100
 
     empty!(PIMP.atoms)
+    empty!(PIMP.equiv)
+    empty!(PIMP.shell)
+    empty!(PIMP.ising)
+    empty!(PIMP.occup)
+    empty!(PIMP.upara)
+    empty!(PIMP.jpara)
+    empty!(PIMP.lpara)
+
     if CImGui.BeginTabItem("impurity")
         CImGui.Text("Configure [impurity] block")
         #
@@ -618,7 +626,6 @@ function _zen_imp_block()
             end
         end
         #
-        @show PIMP.atoms
         CImGui.EndTabItem()
     end
 end
