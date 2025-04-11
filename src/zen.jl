@@ -506,6 +506,20 @@ function _zen_dmft_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PDMFT.beta)")
+        #
+        # Input: mixer
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(0.1) begin
+            @c CImGui.SliderScalar(
+                " Mixing factor",
+                CImGui.ImGuiDataType_Double,
+                &_f,
+                0.0, 1.0
+            )
+            PDMFT.mixer = _f
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mixer)$(PDMFT.mixer)")
 
         CImGui.EndTabItem()
     end
