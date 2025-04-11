@@ -597,15 +597,15 @@ function _zen_imp_block()
         #
         for i = 1:PIMP.nsite
             if CImGui.CollapsingHeader("impurity $i")
-                i == 1 && @_widgets_generator 1
-                i == 2 && @_widgets_generator 2
-                i == 3 && @_widgets_generator 3
-                i == 4 && @_widgets_generator 4
-                i == 5 && @_widgets_generator 5
-                i == 6 && @_widgets_generator 6
-                i == 7 && @_widgets_generator 7
-                i == 8 && @_widgets_generator 8
-                i == 9 && @_widgets_generator 9
+                i == 1 && @_widgets_generator_imp 1
+                i == 2 && @_widgets_generator_imp 2
+                i == 3 && @_widgets_generator_imp 3
+                i == 4 && @_widgets_generator_imp 4
+                i == 5 && @_widgets_generator_imp 5
+                i == 6 && @_widgets_generator_imp 6
+                i == 7 && @_widgets_generator_imp 7
+                i == 8 && @_widgets_generator_imp 8
+                i == 9 && @_widgets_generator_imp 9
             end
         end
         #
@@ -623,7 +623,15 @@ function _zen_solver_block()
     end
 end
 
-macro _widgets_generator(x)
+macro _widgets_generator_dft(x)
+    ex = quote
+        i = $x
+    end
+
+    return :( $(esc(ex)) )
+end
+
+macro _widgets_generator_imp(x)
     ex = quote
         i = $x
 
