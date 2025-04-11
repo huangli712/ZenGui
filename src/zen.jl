@@ -469,6 +469,15 @@ function _zen_dmft_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(axis)$(PDMFT.axis)")
+        #
+        # Input: niter
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(60) begin
+            @c CImGui.SliderInt(" Maximum allowed number of DFT + DMFT iterations", &_i, 1, 100)
+            PDMFT.niter = _i
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(niter)$(PDMFT.niter)")
 
         CImGui.EndTabItem()
     end
