@@ -395,7 +395,7 @@ function _zen_dft_block()
             resize!(PIMP.occup, PIMP.nsite)
             resize!(PIMP.upara, PIMP.nsite)
             resize!(PIMP.jpara, PIMP.nsite)
-            rezize!(PIMP.lpara, PIMP.nsite)
+            resize!(PIMP.lpara, PIMP.nsite)
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(0.5,0.5,1.0,1.0), "(nsite)$(PIMP.nsite)")
