@@ -497,6 +497,15 @@ function _zen_dmft_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(dcount)$(PDMFT.dcount)")
+        #
+        # Input: beta
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(40.0) begin
+            @c CImGui.InputDouble(" Inverse system temperature", &_f)
+            PDMFT.beta = _f
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PDMFT.beta)")
 
         CImGui.EndTabItem()
     end
