@@ -604,8 +604,23 @@ end
     _zen_solver_block()
 """
 function _zen_solver_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
     if CImGui.BeginTabItem("solver")
-        CImGui.Text("This is the Cucumber tab!\nblah blah blah blah blah")
+        CImGui.Text("Configure [solver] block")
+
+        # Input: engine
+        CImGui.SetNextItemWidth(widget_combo_width)
+        engine_list = ["ctseg", "cthyb", "hia", "norg"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Name of quantum impurity solver", &id, engine_list)
+            PSOLVER.engine = engine_list[id + 1]
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(engine)$(PSOLVER.engine)")
+
         CImGui.EndTabItem()
     end
 end
