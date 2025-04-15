@@ -158,9 +158,19 @@ function _ctseg_model_block()
             _i == 2 && delete!(_CTSEG, "norbs")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(norbs)$(PCTSEG.norbs)")    
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(norbs)$(PCTSEG.norbs)")
         #    
         # Input: ncfgs
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(4) begin
+            @c CImGui.InputInt(" Number of atomic eigenstates", &_i)
+            _i = Cint(2 ^ PCTSEG.norbs)
+            PCTSEG.ncfgs = _i
+            _i != 4 && push!(_CTSEG, "ncfgs")
+            _i == 4 && delete!(_CTSEG, "ncfgs")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ncfgs)$(PCTSEG.ncfgs)")     
         # Input: Uc
         # Input: Jz
         # Input: lc
