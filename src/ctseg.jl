@@ -207,7 +207,15 @@ function _ctseg_cycle_block()
         CImGui.Text("Configure [cycle] Part")
 
         # Input: isscf
-
+        CImGui.SetNextItemWidth(widget_combo_width)
+        isscf_list = ["1:one-shot", "2:self-consistent"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Scheme of dynamical mean-field theory calculations", &id, isscf_list)
+            PCTSEG.isscf = id + 1
+            id != 0 && push!(_CTSEG, "isscf")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isscf)$(PCTSEG.isscf)")
         #
         # Input: niter
         CImGui.SetNextItemWidth(widget_input_width)
