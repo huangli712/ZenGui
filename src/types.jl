@@ -455,6 +455,35 @@ function _struct_to_dict(s::IQIST_PCTSEG)
     )
 end
 
+"""
+    _build_iqist_dict()
+"""
+function _build_iqist_dict(solver::String)
+    @cswitch solver begin
+
+        @case "ctseg"
+            return _struct_to_dict(PCTSEG)
+            break
+
+        @case "cthyb"
+            return _struct_to_dict(PCTHYB)
+            break
+
+        @case "hia"
+            return _struct_to_dict(PHIA)
+            break
+
+        @case "norg"
+            return _struct_to_dict(PNORG)
+            break
+
+        @default
+            sorry()
+            break
+
+    end
+end
+
 #=
 ### *Customized Structs* : *ACFlow Toolkit*
 =#
