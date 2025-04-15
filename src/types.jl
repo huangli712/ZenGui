@@ -370,15 +370,9 @@ mutable struct IQIST_PCTHYB
 end
 
 """
-    IQIST_PHIA
+    IQIST_PATOMIC
 """
-mutable struct IQIST_PHIA
-end
-
-"""
-    IQIST_PNORG
-"""
-mutable struct IQIST_PNORG
+mutable struct IQIST_PATOMIC
 end
 
 """
@@ -432,14 +426,9 @@ PCTSEG = IQIST_PCTSEG(
 PCTHYB = IQIST_PCTHYB()
 
 """
-    PHIA
+    PATOMIC
 """
-PHIA = IQIST_PHIA()
-
-"""
-    PNORG
-"""
-PNORG = IQIST_PNORG()
+PATOMIC = IQIST_PATOMIC()
 
 """
     _struct_to_dict(s::IQIST_PCTSEG)
@@ -495,15 +484,9 @@ function _struct_to_dict(s::IQIST_PCTHYB)
 end
 
 """
-    _struct_to_dict(s::IQIST_PHIA)
+    _struct_to_dict(s::IQIST_PATOMIC)
 """
-function _struct_to_dict(s::IQIST_PHIA)
-end
-
-"""
-    _struct_to_dict(s::IQIST_PNORG)
-"""
-function _struct_to_dict(s::IQIST_PNORG)
+function _struct_to_dict(s::IQIST_PATOMIC)
 end
 
 """
@@ -520,12 +503,8 @@ function _build_iqist_dict(solver::String)
             return _struct_to_dict(PCTHYB)
             break
 
-        @case "hia"
-            return _struct_to_dict(PHIA)
-            break
-
-        @case "norg"
-            return _struct_to_dict(PNORG)
+        @case "atomic"
+            return _struct_to_dict(PATOMIC)
             break
 
         @default
