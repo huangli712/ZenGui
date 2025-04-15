@@ -170,7 +170,8 @@ function _ctseg_model_block()
             _i == 4 && delete!(_CTSEG, "ncfgs")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ncfgs)$(PCTSEG.ncfgs)")     
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ncfgs)$(PCTSEG.ncfgs)")
+        #
         # Input: Uc
         # Input: Jz
         # Input: lc
@@ -178,6 +179,7 @@ function _ctseg_model_block()
         # Input: mune
         # Input: beta
         # Input: part
+        @show _CTSEG
 
         CImGui.EndTabItem()
     end
