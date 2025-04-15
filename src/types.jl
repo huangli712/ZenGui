@@ -481,12 +481,18 @@ end
     _struct_to_dict(s::IQIST_PCTHYB)
 """
 function _struct_to_dict(s::IQIST_PCTHYB)
+    return OrderedDict{String,Any}(
+        "key" => "value",
+    )
 end
 
 """
     _struct_to_dict(s::IQIST_PATOMIC)
 """
 function _struct_to_dict(s::IQIST_PATOMIC)
+    return OrderedDict{String,Any}(
+        "key" => "value",
+    )
 end
 
 """
