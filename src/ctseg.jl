@@ -28,7 +28,7 @@ function create_app_ctseg(p_open::Ref{Bool})
 
     # Fix size of the window
     window_width = 600.0
-    window_height = 300.0
+    window_height = 600.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
     # For all the blocks in the solver.ctqmc.in
