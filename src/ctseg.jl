@@ -213,6 +213,7 @@ function _ctseg_cycle_block()
             @c CImGui.Combo(" Scheme of dynamical mean-field theory calculations", &id, isscf_list)
             PCTSEG.isscf = id + 1
             id != 0 && push!(_CTSEG, "isscf")
+            id == 0 && delete!(_CTSEG, "isscf")
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isscf)$(PCTSEG.isscf)")
@@ -223,6 +224,7 @@ function _ctseg_cycle_block()
             @c CImGui.SliderInt(" Number of self-consistent iterations", &_i, 1, 100)
             PCTSEG.niter = _i
             _i != 20 && push!(_CTSEG, "niter")
+            _i == 20 && delete!(_CTSEG, "niter")
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(niter)$(PCTSEG.niter)")
@@ -238,6 +240,7 @@ function _ctseg_cycle_block()
             )
             PCTSEG.alpha = _f
             _f != 0.7 && push!(_CTSEG, "alpha")
+            _f == 0.7 && delete!(_CTSEG, "alpha")
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(alpha)$(PCTSEG.alpha)")
