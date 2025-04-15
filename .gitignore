@@ -5,6 +5,7 @@
 *.data
 *.toml
 solver.ctqmc.in
+solver.atomic.in
 .DS_Store
 imgui.ini
 docs/build
