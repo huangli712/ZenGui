@@ -55,11 +55,14 @@ function _ctseg_tabs_block()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
     #
     if CImGui.BeginTabBar("ctsegTabBar", tab_bar_flags)
-        #_ctseg_case_block()
-        #_ctseg_dft_block()
-        #_ctseg_dmft_block()
-        #_ctseg_imp_block()
-        #_ctseg_solver_block()
+        _ctseg_model_block()
+        _ctseg_int_block()
+        _ctseg_dim_block()
+        _ctseg_symm_block()
+        _ctseg_repr_block()
+        _ctseg_mc_block()
+        _ctseg_meas_block()
+        _ctseg_cycle_block()
         #
         CImGui.EndTabBar()
     end

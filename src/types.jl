@@ -324,8 +324,8 @@ end
 mutable struct IQIST_PCTSEG
     isscf  :: I64 # Cycle
     isscr  :: I64 # Interaction
-    isbnd  :: I64 # Measurement
-    isspn  :: I64 # Measurement
+    isbnd  :: I64 # Symmetry
+    isspn  :: I64 # Symmetry
     iswor  :: I64 # Monte Carlo
     isort  :: I64 # Representation
     isobs  :: I64 # Measurement
@@ -341,11 +341,11 @@ mutable struct IQIST_PCTSEG
     svmax  :: I64 # Representation
     svgrd  :: I64 # Representation
     mkink  :: I64 # Monte Carlo
-    mfreq  :: I64 # Measurement
-    nffrq  :: I64 # Measurement
-    nbfrq  :: I64 # Measurement
-    nfreq  :: I64 # Measurement
-    ntime  :: I64 # Measurement
+    mfreq  :: I64 # Dimension
+    nffrq  :: I64 # Dimension
+    nbfrq  :: I64 # Dimension
+    nfreq  :: I64 # Dimension
+    ntime  :: I64 # Dimension
     nflip  :: I64 # Monte Carlo
     ntherm :: I64 # Monte Carlo
     nsweep :: I64 # Monte Carlo
@@ -374,6 +374,10 @@ end
 """
 mutable struct IQIST_PATOMIC
 end
+
+_CTSEG = Set{String}()
+_CTHYB = Set{String}()
+_ATOMIC = Set{String}()
 
 """
     PCTSEG
