@@ -140,7 +140,26 @@ function _ctseg_model_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nband)$(PCTSEG.nband)")
         #
         # Input: nspin
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(2) begin
+            @c CImGui.InputInt(" Number of spin projections", &_i)
+            _i = Cint(PCTSEG.nspin) # This parameter should not be changed.
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nspin)$(PCTSEG.nspin)")
+        #
         # Input: norbs
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(2) begin
+            @c CImGui.InputInt(" Number of spin projections", &_i)
+            _i = Cint(PCTSEG.nspin * PCTSEG.nband)
+            PCTSEG.norbs = _i
+            _i != 2 && push!(_CTSEG, "norbs")
+            _i == 2 && delete!(_CTSEG, "norbs")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nspin)$(PCTSEG.nspin)")    
+        #    
         # Input: ncfgs
         # Input: Uc
         # Input: Jz
