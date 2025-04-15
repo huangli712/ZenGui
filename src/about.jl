@@ -52,7 +52,7 @@ function create_app_about(p_open::Ref{Bool})
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Version:")
     CImGui.SameLine()
-    CImGui.Text(__VERSION__)
+    CImGui.Text("v$(__VERSION__)")
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "License:")
     CImGui.SameLine()
