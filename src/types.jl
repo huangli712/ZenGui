@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/10
+# Last modified: 2025/04/15
 #
 
 #=
@@ -313,6 +313,100 @@ function _build_zen_dict()
         "solver" => _struct_to_dict(PSOLVER)
     )
 end
+
+#=
+### *Customized Structs* : *iQIST Package*
+=#
+
+"""
+    IQIST_PCTSEG
+"""
+mutable struct IQIST_PCTSEG
+    isscf  :: I64 # Cycle
+    isscr  :: I64 # Interaction
+    isbnd  :: I64 # Measurement
+    isspn  :: I64 # Measurement
+    iswor  :: I64 # Monte Carlo
+    isort  :: I64 # Representation
+    isobs  :: I64 # Measurement
+    issus  :: I64 # Measurement
+    isvrt  :: I64 # Measurement
+    nband  :: I64 # Model
+    nspin  :: I64 # Model
+    norbs  :: I64 # Model
+    ncfgs  :: I64 # Model
+    niter  :: I64 # Cycle
+    lemax  :: I64 # Representation
+    legrd  :: I64 # Representation
+    svmax  :: I64 # Representation
+    svgrd  :: I64 # Representation
+    mkink  :: I64 # Monte Carlo
+    mfreq  :: I64 # Measurement
+    nffrq  :: I64 # Measurement
+    nbfrq  :: I64 # Measurement
+    nfreq  :: I64 # Measurement
+    ntime  :: I64 # Measurement
+    nflip  :: I64 # Monte Carlo
+    ntherm :: I64 # Monte Carlo
+    nsweep :: I64 # Monte Carlo
+    nwrite :: I64 # Monte Carlo
+    nclean :: I64 # Monte Carlo
+    nmonte :: I64 # Monte Carlo
+    ncarlo :: I64 # Monte Carlo
+    Uc     :: F64 # Interaction
+    Jz     :: F64 # Interaction
+    lc     :: F64 # Interaction
+    wc     :: F64 # Interaction
+    mune   :: F64 # Model
+    beta   :: F64 # Model
+    part   :: F64 # Model
+    alpha  :: F64 # Cycle
+end
+
+"""
+    PCTSEG
+"""
+PCTSEG = IQIST_PCTSEG(
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    4,
+    20,
+    32,
+    20001,
+    32,
+    2001,
+    1024,
+    8193,
+    32,
+    8,
+    128,
+    1024,
+    20000,
+    200000,
+    20000000,
+    2000000,
+    100000,
+    10,
+    10,
+    4.0,
+    0.0,
+    1.0,
+    1.0,
+    2.0,
+    8.0,
+    0.5,
+    0.7
+)
 
 #=
 ### *Customized Structs* : *ACFlow Toolkit*
