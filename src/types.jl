@@ -417,8 +417,19 @@ PCTSEG = IQIST_PCTSEG(
     0.7
 )
 
+"""
+    PCTHYB
+"""
 PCTHYB = IQIST_PCTHYB()
+
+"""
+    PHIA
+"""
 PHIA = IQIST_PHIA()
+
+"""
+    PNORG
+"""
 PNORG = IQIST_PNORG()
 
 """
