@@ -116,6 +116,19 @@ function _ctseg_model_block()
     if CImGui.BeginTabItem("model")
         CImGui.Text("Configure [model] Part")
 
+        # Input: isscr
+        # Input: nband
+        # Input: nspin
+        # Input: norbs
+        # Input: ncfgs
+        # Input: Uc
+        # Input: Jz
+        # Input: lc
+        # Input: wc
+        # Input: mune
+        # Input: beta
+        # Input: part
+
         CImGui.EndTabItem()
     end
 end
@@ -244,7 +257,6 @@ function _ctseg_cycle_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(alpha)$(PCTSEG.alpha)")
-        @show _CTSEG
 
         CImGui.EndTabItem()
     end

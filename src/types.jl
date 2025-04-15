@@ -323,7 +323,7 @@ end
 """
 mutable struct IQIST_PCTSEG
     isscf  :: I64 # Cycle
-    isscr  :: I64 # Interaction
+    isscr  :: I64 # Model
     isbnd  :: I64 # Symmetry
     isspn  :: I64 # Symmetry
     iswor  :: I64 # Monte Carlo
