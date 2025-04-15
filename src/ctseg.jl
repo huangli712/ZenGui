@@ -120,7 +120,7 @@ function _ctseg_model_block()
         CImGui.SetNextItemWidth(widget_combo_width)
         isscr_list = ["static", "plasmon pole", "ohmic", "realistic"]
         @cstatic id = Cint(0) begin
-            @c CImGui.Combo(" ", &id, isscr_list)
+            @c CImGui.Combo(" Whether the Coulomb interaction U is dynamic", &id, isscr_list)
             PCTSEG.isscr = id + 1
             id != 0 && push!(_CTSEG, "isscr")
             id == 0 && delete!(_CTSEG, "isscr")
