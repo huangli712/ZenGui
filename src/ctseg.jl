@@ -151,14 +151,14 @@ function _ctseg_model_block()
         # Input: norbs
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(2) begin
-            @c CImGui.InputInt(" Number of spin projections", &_i)
+            @c CImGui.InputInt(" Number of correlated orbitals", &_i)
             _i = Cint(PCTSEG.nspin * PCTSEG.nband)
             PCTSEG.norbs = _i
             _i != 2 && push!(_CTSEG, "norbs")
             _i == 2 && delete!(_CTSEG, "norbs")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nspin)$(PCTSEG.nspin)")    
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(norbs)$(PCTSEG.norbs)")    
         #    
         # Input: ncfgs
         # Input: Uc
