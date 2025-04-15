@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/10
+# Last modified: 2025/04/15
 #
 
 """
@@ -44,15 +44,15 @@ function create_app_about(p_open::Ref{Bool})
 
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Author :")
     CImGui.SameLine()
-    CImGui.Text("Li Huang")
+    CImGui.Text(__AUTHORS__[1].name)
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Contact:")
     CImGui.SameLine()
-    CImGui.Text("huangli at caep.cn")
+    CImGui.Text(__AUTHORS__[1].email)
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Version:")
     CImGui.SameLine()
-    CImGui.Text("v0.7.0-devel.250410")
+    CImGui.Text(__VERSION__)
     #
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "License:")
     CImGui.SameLine()
