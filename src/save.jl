@@ -87,7 +87,32 @@ end
     save_cthyb(p_open::Ref{Bool})
 """
 function save_cthyb(p_open::Ref{Bool})
+    # Create a popup window
+    CImGui.Begin(
+        "Save iQIST | cthyb",
+        p_open,
+        CImGui.ImGuiWindowFlags_Modal | CImGui.ImGuiWindowFlags_NoResize
+    )
 
+    file = joinpath(pwd(), "solver.ctqmc.in")
+    CImGui.Text("The configurtion file for iQIST/cthyb will be saved at:")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
+
+    # If the button is pressed, then the solver.ctqmc.in file is stored
+    # in the current directory.
+    if CImGui.Button("Save It")
+        p_open[] = false
+        #
+        D = _build_iqist_dict("cthyb")
+        open("solver.ctqmc.in", "w") do fout
+            for (key, value) in D
+                println(fout, "$key = $value")
+            end            
+        end
+    end
+
+    # Close the popup window
+    CImGui.End()
 end
 
 """
