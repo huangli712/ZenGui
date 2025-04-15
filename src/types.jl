@@ -363,6 +363,15 @@ mutable struct IQIST_PCTSEG
     alpha  :: F64 # Cycle
 end
 
+mutable struct IQIST_PCTHYB
+end
+
+mutable struct IQIST_PHIA
+end
+
+mutable struct IQIST_PNORG
+end
+
 """
     PCTSEG
 """
@@ -407,6 +416,10 @@ PCTSEG = IQIST_PCTSEG(
     0.5,
     0.7
 )
+
+PCTHYB = IQIST_PCTHYB()
+PHIA = IQIST_PHIA()
+PNORG = IQIST_PNORG()
 
 """
     _struct_to_dict(s::IQIST_PCTSEG)
@@ -453,6 +466,24 @@ function _struct_to_dict(s::IQIST_PCTSEG)
         "part"   => s.part,
         "alpha"  => s.alpha,
     )
+end
+
+"""
+    _struct_to_dict(s::IQIST_PCTHYB)
+"""
+function _struct_to_dict(s::IQIST_PCTHYB)
+end
+
+"""
+    _struct_to_dict(s::IQIST_PHIA)
+"""
+function _struct_to_dict(s::IQIST_PHIA)
+end
+
+"""
+    _struct_to_dict(s::IQIST_PNORG)
+"""
+function _struct_to_dict(s::IQIST_PNORG)
 end
 
 """
