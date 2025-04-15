@@ -206,6 +206,23 @@ function _ctseg_cycle_block()
     if CImGui.BeginTabItem("cycle")
         CImGui.Text("Configure [cycle] Part")
 
+        # Input: isscf
+        # Input: niter
+        # Input: alpha
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(0.7) vmin = Cdouble(0.0) vmax = Cdouble(1.0) begin
+            @c CImGui.SliderScalar(
+                " Mixing factor for self-consistent engine",
+                CImGui.ImGuiDataType_Double,
+                &_f,
+                &vmin, &vmax
+            )
+            PCTSEG.alpha = _f
+            push!(_CTSEG, "alpha")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(alpha)$(PCTSEG.alpha)")
+
         CImGui.EndTabItem()
     end
 end
