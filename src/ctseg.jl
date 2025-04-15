@@ -214,7 +214,7 @@ function _ctseg_cycle_block()
         @cstatic _i = Cint(20) begin
             @c CImGui.SliderInt(" Number of self-consistent iterations", &_i, 1, 100)
             PCTSEG.niter = _i
-            push!(_CTSEG, "niter")
+            _i != 20 && push!(_CTSEG, "niter")
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(niter)$(PCTSEG.niter)")
@@ -229,10 +229,11 @@ function _ctseg_cycle_block()
                 &vmin, &vmax
             )
             PCTSEG.alpha = _f
-            push!(_CTSEG, "alpha")
+            _f != 0.7 && push!(_CTSEG, "alpha")
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(alpha)$(PCTSEG.alpha)")
+        @show _CTSEG
 
         CImGui.EndTabItem()
     end
