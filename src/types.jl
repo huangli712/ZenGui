@@ -363,12 +363,21 @@ mutable struct IQIST_PCTSEG
     alpha  :: F64 # Cycle
 end
 
+"""
+    IQIST_PCTHYB
+"""
 mutable struct IQIST_PCTHYB
 end
 
+"""
+    IQIST_PHIA
+"""
 mutable struct IQIST_PHIA
 end
 
+"""
+    IQIST_PNORG
+"""
 mutable struct IQIST_PNORG
 end
 
