@@ -60,7 +60,7 @@ function _ctseg_tabs_block()
         _ctseg_symm_block()
         _ctseg_repr_block()
         _ctseg_mc_block()
-        #_ctseg_meas_block()
+        _ctseg_meas_block()
         #_ctseg_cycle_block()
         #
         CImGui.EndTabBar()
@@ -175,6 +175,21 @@ function _ctseg_mc_block()
 
     if CImGui.BeginTabItem("monte carlo")
         CImGui.Text("Configure [monte carlo] Part")
+
+        CImGui.EndTabItem()
+    end
+end
+
+"""
+    _ctseg_meas_block()
+"""
+function _ctseg_meas_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    if CImGui.BeginTabItem("measure")
+        CImGui.Text("Configure [measure] Part")
 
         CImGui.EndTabItem()
     end
