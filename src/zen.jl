@@ -565,7 +565,7 @@ function _zen_dmft_block()
             end
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lfermi)$(PDMFT.lfermi)")        
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lfermi)$(PDMFT.lfermi)")
 
         CImGui.EndTabItem()
     end
