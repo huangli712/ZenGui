@@ -120,3 +120,18 @@ function _ctseg_model_block()
         CImGui.EndTabItem()
     end
 end
+
+"""
+    _ctseg_int_block()
+"""
+function _ctseg_int_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    if CImGui.BeginTabItem("interaction")
+        CImGui.Text("Configure [interaction] Part")
+
+        CImGui.EndTabItem()
+    end
+end
