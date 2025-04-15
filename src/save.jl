@@ -55,7 +55,32 @@ end
     save_ctseg(p_open::Ref{Bool})
 """
 function save_ctseg(p_open::Ref{Bool})
+    # Create a popup window
+    CImGui.Begin(
+        "Save iQIST | ctseg",
+        p_open,
+        CImGui.ImGuiWindowFlags_Modal | CImGui.ImGuiWindowFlags_NoResize
+    )
 
+    file = joinpath(pwd(), "solver.ctqmc.in")
+    CImGui.Text("The configurtion file for iQIST/ctseg will be saved at:")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
+
+    # If the button is pressed, then the solver.ctqmc.in file is stored
+    # in the current directory.
+    if CImGui.Button("Save It")
+        p_open[] = false
+        #
+        D = _build_iqist_dict("ctseg")
+        open("solver.ctqmc.in", "w") do fout
+            for (key, value) in D
+                println(fout, "$key = $value")
+            end            
+        end
+    end
+
+    # Close the popup window
+    CImGui.End()
 end
 
 """
