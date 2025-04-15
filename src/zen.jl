@@ -232,7 +232,7 @@ function _zen_case_block()
     widget_combo_width = 100
 
     if CImGui.BeginTabItem("case")
-        CImGui.Text("Configure [case] block")
+        CImGui.Text("Configure [case] Block")
 
         # Input: case
         CImGui.SetNextItemWidth(widget_input_width)
@@ -256,7 +256,7 @@ function _zen_dft_block()
     widget_combo_width = 100
 
     if CImGui.BeginTabItem("dft")
-        CImGui.Text("Configure [dft] block")
+        CImGui.Text("Configure [dft] Block")
 
         # Input: engine
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -444,7 +444,7 @@ function _zen_dmft_block()
     widget_combo_width = 100
 
     if CImGui.BeginTabItem("dmft")
-        CImGui.Text("Configure [dmft] block")
+        CImGui.Text("Configure [dmft] Block")
 
         # Input: mode
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -580,7 +580,7 @@ function _zen_imp_block()
     widget_combo_width = 100
 
     if CImGui.BeginTabItem("impurity")
-        CImGui.Text("Configure [impurity] block")
+        CImGui.Text("Configure [impurity] Block")
         #
         for i = 1:PIMP.nsite
             if CImGui.CollapsingHeader("impurity $i")
@@ -604,12 +604,39 @@ end
     _zen_solver_block()
 """
 function _zen_solver_block()
+    function _layout_ctseg()
+        empty!(PSOLVER.params)
+
+        # Input: isscr
+        CImGui.SetNextItemWidth(widget_combo_width)
+        isscr_list = ["static", "plasmon pole", "ohmic", "realistic"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" whether the Coulomb interaction U is dynamic", &id, isscr_list)
+            push!(PSOLVER.params, "isscr = $(id + 1)")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isscr)$(last(PSOLVER.params))")
+        #
+        # Input: isort
+        CImGui.SetNextItemWidth(widget_combo_width)
+        isort_list = ["standard", "legendre", "intermediate"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Which basis will be used to do the measurement", &id, isort_list)
+            push!(PSOLVER.params, "isort = $(id + 1)")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isort)$(last(PSOLVER.params))")
+    end
+
+    function _layout_cthyb()
+    end
+
     # Define the default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
     if CImGui.BeginTabItem("solver")
-        CImGui.Text("Configure [solver] block")
+        CImGui.Text("Configure [solver] Block")
 
         # Input: engine
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -641,9 +668,11 @@ function _zen_solver_block()
         @cswitch PSOLVER.engine begin
             
             @case "ctseg"
+                _layout_ctseg()
                 break
             
             @case "cthyb"
+                _layout_cthyb()
                 break
             
             @case "hia"
