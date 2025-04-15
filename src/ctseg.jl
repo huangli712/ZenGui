@@ -56,13 +56,13 @@ function _ctseg_tabs_block()
     #
     if CImGui.BeginTabBar("ctsegTabBar", tab_bar_flags)
         _ctseg_model_block()
-        _ctseg_int_block()
-        _ctseg_dim_block()
-        _ctseg_symm_block()
-        _ctseg_repr_block()
-        _ctseg_mc_block()
-        _ctseg_meas_block()
-        _ctseg_cycle_block()
+        #_ctseg_int_block()
+        #_ctseg_dim_block()
+        #_ctseg_symm_block()
+        #_ctseg_repr_block()
+        #_ctseg_mc_block()
+        #_ctseg_meas_block()
+        #_ctseg_cycle_block()
         #
         CImGui.EndTabBar()
     end
@@ -103,5 +103,20 @@ function _ctseg_bottom_block(p_open::Ref{Bool})
     #
     if CImGui.Button("Close", ImVec2(widget_button_width, widget_button_height))
         p_open[] = false
+    end
+end
+
+"""
+    _ctseg_model_block()
+"""
+function _ctseg_model_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    if CImGui.BeginTabItem("model")
+        CImGui.Text("Configure [model] Part")
+
+        CImGui.EndTabItem()
     end
 end
