@@ -630,6 +630,33 @@ function _zen_solver_block()
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ncycle)$(PSOLVER.ncycle)")
 
+        # For the separator
+        CImGui.Spacing()
+        CImGui.Separator()
+        CImGui.Spacing()
+
+        # It should change upon the selection of quantum impurity solver.
+        CImGui.Text("Quantum Impurity Solver: $(PSOLVER.engine)")
+
+        @cswitch PSOLVER.engine begin
+            
+            @case "ctseg"
+                break
+            
+            @case "cthyb"
+                break
+            
+            @case "hia"
+                break
+            
+            @case "norg"
+                break
+            
+            @default
+                break
+
+        end
+
         CImGui.EndTabItem()
     end
 end
