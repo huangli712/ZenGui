@@ -207,7 +207,18 @@ function _ctseg_cycle_block()
         CImGui.Text("Configure [cycle] Part")
 
         # Input: isscf
+
+        #
         # Input: niter
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(20) begin
+            @c CImGui.SliderInt(" Number of self-consistent iterations", &_i, 1, 100)
+            PCTSEG.niter = _i
+            push!(_CTSEG, "niter")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(niter)$(PCTSEG.niter)")
+        #
         # Input: alpha
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _f = Cdouble(0.7) vmin = Cdouble(0.0) vmax = Cdouble(1.0) begin
