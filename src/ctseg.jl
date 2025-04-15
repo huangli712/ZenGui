@@ -56,11 +56,10 @@ function _ctseg_tabs_block()
     #
     if CImGui.BeginTabBar("ctsegTabBar", tab_bar_flags)
         _ctseg_model_block()
-        _ctseg_int_block()
         _ctseg_dim_block()
         _ctseg_symm_block()
         _ctseg_repr_block()
-        #_ctseg_mc_block()
+        _ctseg_mc_block()
         #_ctseg_meas_block()
         #_ctseg_cycle_block()
         #
@@ -122,21 +121,6 @@ function _ctseg_model_block()
 end
 
 """
-    _ctseg_int_block()
-"""
-function _ctseg_int_block()
-    # Define the default size for widgets
-    widget_input_width = 100
-    widget_combo_width = 100
-
-    if CImGui.BeginTabItem("interaction")
-        CImGui.Text("Configure [interaction] Part")
-
-        CImGui.EndTabItem()
-    end
-end
-
-"""
     _ctseg_dim_block()
 """
 function _ctseg_dim_block()
@@ -176,6 +160,21 @@ function _ctseg_repr_block()
 
     if CImGui.BeginTabItem("representation")
         CImGui.Text("Configure [representation] Part")
+
+        CImGui.EndTabItem()
+    end
+end
+
+"""
+    _ctseg_mc_block()
+"""
+function _ctseg_mc_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    if CImGui.BeginTabItem("monte carlo")
+        CImGui.Text("Configure [monte carlo] Part")
 
         CImGui.EndTabItem()
     end

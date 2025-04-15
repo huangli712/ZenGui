@@ -353,10 +353,10 @@ mutable struct IQIST_PCTSEG
     nclean :: I64 # Monte Carlo
     nmonte :: I64 # Monte Carlo
     ncarlo :: I64 # Monte Carlo
-    Uc     :: F64 # Interaction
-    Jz     :: F64 # Interaction
-    lc     :: F64 # Interaction
-    wc     :: F64 # Interaction
+    Uc     :: F64 # Model
+    Jz     :: F64 # Model
+    lc     :: F64 # Model
+    wc     :: F64 # Model
     mune   :: F64 # Model
     beta   :: F64 # Model
     part   :: F64 # Model
