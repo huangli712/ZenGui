@@ -620,6 +620,15 @@ function _zen_solver_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(engine)$(PSOLVER.engine)")
+        #
+        # Input: ncycle
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(8) begin
+            @c CImGui.InputInt(" Number of solver iterations per DFT + DMFT cycle", &_i)
+            PIMP.ncycle = _i
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ncycle)$(PIMP.ncycle)")
 
         CImGui.EndTabItem()
     end
