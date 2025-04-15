@@ -117,7 +117,17 @@ function _ctseg_model_block()
         CImGui.Text("Configure [model] Part")
 
         # Input: isscr
-
+        CImGui.SetNextItemWidth(widget_combo_width)
+        isscr_list = ["static", "plasmon pole", "ohmic", "realistic"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" ", &id, isscr_list)
+            PCTSEG.isscr = id + 1
+            id != 0 && push!(_CTSEG, "isscr")
+            id == 0 && delete!(_CTSEG, "isscr")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isscr)$(PCTSEG.isscr)")
+        #
         # Input: nband
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(1) begin
