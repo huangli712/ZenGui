@@ -408,6 +408,53 @@ PCTSEG = IQIST_PCTSEG(
     0.7
 )
 
+"""
+    _struct_to_dict(s::IQIST_PCTSEG)
+"""
+function _struct_to_dict(s::IQIST_PCTSEG)
+    return OrderedDict{String,Any}(
+        "isscf"  => s.isscf,
+        "isscr"  => s.isscr,
+        "isbnd"  => s.isbnd,
+        "isspn"  => s.isspn,
+        "iswor"  => s.iswor,
+        "isort"  => s.isort,
+        "isobs"  => s.isobs,
+        "issus"  => s.issus,
+        "isvrt"  => s.isvrt,
+        "nband"  => s.nband,
+        "nspin"  => s.nspin,
+        "norbs"  => s.norbs,
+        "ncfgs"  => s.ncfgs,
+        "niter"  => s.niter,
+        "lemax"  => s.lemax,
+        "legrd"  => s.legrd,
+        "svmax"  => s.svmax,
+        "svgrd"  => s.svgrd,
+        "mkink"  => s.mkink,
+        "mfreq"  => s.mfreq,
+        "nffrq"  => s.nffrq,
+        "nbfrq"  => s.nbfrq,
+        "nfreq"  => s.nfreq,
+        "ntime"  => s.ntime,
+        "nflip"  => s.nflip,
+        "ntherm" => s.ntherm,
+        "nsweep" => s.nsweep,
+        "nwrite" => s.nwrite,
+        "nclean" => s.nclean,
+        "nmonte" => s.nmonte,
+        "ncarlo" => s.ncarlo,
+        "Uc"     => s.Uc,
+        "Jz"     => s.Jz,
+        "lc"     => s.lc,
+        "wc"     => s.wc,
+        "mune"   => s.mune,
+        "beta"   => s.beta,
+        "part"   => s.part,
+        "alpha"  => s.alpha,
+    )
+end
+
 #=
 ### *Customized Structs* : *ACFlow Toolkit*
 =#
