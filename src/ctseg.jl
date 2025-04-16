@@ -588,6 +588,20 @@ function _ctseg_meas_block()
         #
         # Input: isvrt
         if CImGui.CollapsingHeader("Calculate two-particle Green's functions")
+            @cstatic p1 = Cint(0) p2 = Cint(0) begin
+                @c CImGui.RadioButton("Block: AABB / Channel: particle-hole", &p1, 1)
+                @c CImGui.RadioButton("Block: ABBA / Channel: particle-hole", &p1, 2)
+                @c CImGui.RadioButton("Block: AABB / Channel: particle-particle", &p2, 1)
+                @c CImGui.RadioButton("Block: ABBA / Channel: particle-particle", &p2, 2)
+                isvrt = 1
+                p1 == 1 && isvrt = isvrt + 2^1
+                p1 == 2 && isvrt = isvrt + 2^2
+                p2 == 1 && isvrt = isvrt + 2^3
+                p2 == 2 && isvrt = isvrt + 2^4
+                PCTSEG.isvrt = isvrt
+                isvrt != 1 && push!(_CTSEG, "isvrt")
+                isvrt == 1 && delete!(_CTSEG, "isvrt")
+            end  
         end
 
         CImGui.EndTabItem()
