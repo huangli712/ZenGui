@@ -207,7 +207,27 @@ function _atomic_interaction_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Jz)$(PATOMIC.Jz)")
         #
         # Input: Js
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(0.0) begin
+            @c CImGui.InputDouble(" Spin-flip interaction", &_f)
+            PATOMIC.Js = _f
+            _f != 0.0 && push!(_ATOMIC, "Js")
+            _f == 0.0 && delete!(_ATOMIC, "Js")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Js)$(PATOMIC.Js)")
+        #
         # Input: Jp
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(0.0) begin
+            @c CImGui.InputDouble(" Pair-hopping interaction", &_f)
+            PATOMIC.Jp = _f
+            _f != 0.0 && push!(_ATOMIC, "Jp")
+            _f == 0.0 && delete!(_ATOMIC, "Jp")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Jp)$(PATOMIC.Jp)")
+        #
         # Input: Ud
         # Input: Jh
 
