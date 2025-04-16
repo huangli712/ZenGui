@@ -217,8 +217,38 @@ function _ctseg_model_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wc)$(PCTSEG.wc)")
         #
         # Input: mune
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(2.0) begin
+            @c CImGui.InputDouble(" Chemical potential or fermi level", &_f)
+            PCTSEG.mune = _f
+            _f != 2.0 && push!(_CTSEG, "mune")
+            _f == 2.0 && delete!(_CTSEG, "mune")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mune)$(PCTSEG.mune)")
+        #        
         # Input: beta
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(8.0) begin
+            @c CImGui.InputDouble(" Inversion of temperature", &_f)
+            PCTSEG.beta = _f
+            _f != 8.0 && push!(_CTSEG, "beta")
+            _f == 8.0 && delete!(_CTSEG, "beta")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PCTSEG.beta)")
+        #
         # Input: part
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(0.5) begin
+            @c CImGui.InputDouble(" Hopping parameter t for Hubbard model", &_f)
+            PCTSEG.part = _f
+            _f != 0.5 && push!(_CTSEG, "part")
+            _f == 0.5 && delete!(_CTSEG, "part")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(part)$(PCTSEG.part)")
+
         @show _CTSEG
 
         CImGui.EndTabItem()
