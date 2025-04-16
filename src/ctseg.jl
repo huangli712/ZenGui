@@ -574,6 +574,16 @@ function _ctseg_meas_block()
         #
         # Input: issus
         if CImGui.CollapsingHeader("Calculate susceptibilities")
+            @cstatic st = false ct = false sf = false cf = false begin
+                @c CImGui.Checkbox("Spin-spin correlation function (time space)", &st)
+                @c CImGui.Checkbox("Charge-charge correlation function (time space)", &ct)
+                @c CImGui.Checkbox("Spin-spin correlation function (frequency space)", &sf)
+                @c CImGui.Checkbox("Charge-charge correlation function (frequency space)", &cf)
+                issus = 1 + Int(st) * 2^1 + Int(ct) * 2^2 + Int(sf) * 2^3 + Int(cf) * 2^4
+                PCTSEG.issus = issus
+                issus != 1 && push!(_CTSEG, "issus")
+                issus == 1 && delete!(_CTSEG, "issus")
+            end            
         end
         #
         # Input: isvrt
