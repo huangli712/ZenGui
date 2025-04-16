@@ -373,7 +373,6 @@ function _ctseg_symm_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isspn)$(PCTSEG.isspn)")
-        @show _CTSEG
 
         CImGui.EndTabItem()
     end
@@ -389,6 +388,12 @@ function _ctseg_repr_block()
 
     if CImGui.BeginTabItem("representation")
         CImGui.Text("Configure [representation] Part")
+
+        # Input: isort
+        # Input: lemax
+        # Input: legrd
+        # Input: svmax
+        # Input: svgrd
 
         CImGui.EndTabItem()
     end
