@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/15
+# Last modified: 2025/04/16
 #
 
 """
@@ -159,7 +159,7 @@ function _ctseg_model_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(norbs)$(PCTSEG.norbs)")
-        #    
+        #
         # Input: ncfgs
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(4) begin
@@ -182,7 +182,7 @@ function _ctseg_model_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Uc)$(PCTSEG.Uc)")
-        #        
+        #
         # Input: Jz
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _f = Cdouble(0.0) begin
@@ -226,7 +226,7 @@ function _ctseg_model_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mune)$(PCTSEG.mune)")
-        #        
+        #
         # Input: beta
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _f = Cdouble(8.0) begin
@@ -249,8 +249,6 @@ function _ctseg_model_block()
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(part)$(PCTSEG.part)")
 
-        @show _CTSEG
-
         CImGui.EndTabItem()
     end
 end
@@ -265,6 +263,26 @@ function _ctseg_dim_block()
 
     if CImGui.BeginTabItem("dimension")
         CImGui.Text("Configure [dimension] Part")
+
+        # Input: mfreq
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(8193) begin
+            @c CImGui.SliderInt(" Number of correlated bands", &_i, 2^10+1, 2^14+1)
+            PCTSEG.mfreq = _i
+            _i != 8193 && push!(_CTSEG, "mfreq")
+            _i == 8193 && delete!(_CTSEG, "mfreq")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mfreq)$(PCTSEG.mfreq)")
+        #
+        # Input: nffrq
+        #
+        # Input: nbfrq
+        #
+        # Input: nfreq
+        #
+        # Input: ntime
+        @show _CTSEG
 
         CImGui.EndTabItem()
     end
