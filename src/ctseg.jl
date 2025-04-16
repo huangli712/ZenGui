@@ -351,6 +351,17 @@ function _ctseg_symm_block()
         CImGui.Text("Configure [symmetry] Part")
 
         # Input: isbnd
+        CImGui.SetNextItemWidth(widget_combo_width)
+        isbnd_list = ["No", "Yes"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Symmetry of the impurity model (band part)", &id, isbnd_list)
+            PCTSEG.isbnd = id + 1
+            id != 0 && push!(_CTSEG, "isbnd")
+            id == 0 && delete!(_CTSEG, "isbnd")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isbnd)$(PCTSEG.isbnd)")
+        #
         # Input: isspn
 
         @show _CTSEG
