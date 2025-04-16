@@ -276,8 +276,34 @@ function _ctseg_dim_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mfreq)$(PCTSEG.mfreq)")
         #
         # Input: nffrq
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(32) begin
+            @c CImGui.SliderInt(
+                " Number of fermionic frequencies for the two-particle green's function",
+                &_i,
+                8, 1024
+            )
+            PCTSEG.nffrq = _i
+            _i != 32 && push!(_CTSEG, "nffrq")
+            _i == 32 && delete!(_CTSEG, "nffrq")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nffrq)$(PCTSEG.nffrq)")
         #
         # Input: nbfrq
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(8) begin
+            @c CImGui.SliderInt(
+                " Number of bosonic frequncies for the two-particle green's function",
+                &_i,
+                4, 512
+            )
+            PCTSEG.nbfrq = _i
+            _i != 8 && push!(_CTSEG, "nbfrq")
+            _i == 8 && delete!(_CTSEG, "nbfrq")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nbfrq)$(PCTSEG.nbfrq)")
         #
         # Input: nfreq
         #
