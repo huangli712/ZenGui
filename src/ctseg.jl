@@ -515,7 +515,7 @@ function _ctseg_mc_block()
         # Input: nmonte
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(10) begin
-            @c CImGui.InputInt(" How often to sample the physical observables", &_i)
+            @c CImGui.InputInt(" How often to sample the physical observables 1", &_i)
             PCTSEG.nmonte = _i
             _i != 10 && push!(_CTSEG, "nmonte")
             _i == 10 && delete!(_CTSEG, "nmonte")
@@ -526,7 +526,7 @@ function _ctseg_mc_block()
         # Input: ncarlo
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(10) begin
-            @c CImGui.InputInt(" How often to sample the physical observables", &_i)
+            @c CImGui.InputInt(" How often to sample the physical observables 2", &_i)
             PCTSEG.ncarlo = _i
             _i != 10 && push!(_CTSEG, "ncarlo")
             _i == 10 && delete!(_CTSEG, "ncarlo")
