@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/15
+# Last modified: 2025/04/16
 #
 
 #=
@@ -438,47 +438,49 @@ PATOMIC = IQIST_PATOMIC()
     _struct_to_dict(s::IQIST_PCTSEG)
 """
 function _struct_to_dict(s::IQIST_PCTSEG)
-    return OrderedDict{String,Any}(
-        "isscf"  => s.isscf,
-        "isscr"  => s.isscr,
-        "isbnd"  => s.isbnd,
-        "isspn"  => s.isspn,
-        "iswor"  => s.iswor,
-        "isort"  => s.isort,
-        "isobs"  => s.isobs,
-        "issus"  => s.issus,
-        "isvrt"  => s.isvrt,
-        "nband"  => s.nband,
-        "nspin"  => s.nspin,
-        "norbs"  => s.norbs,
-        "ncfgs"  => s.ncfgs,
-        "niter"  => s.niter,
-        "lemax"  => s.lemax,
-        "legrd"  => s.legrd,
-        "svmax"  => s.svmax,
-        "svgrd"  => s.svgrd,
-        "mkink"  => s.mkink,
-        "mfreq"  => s.mfreq,
-        "nffrq"  => s.nffrq,
-        "nbfrq"  => s.nbfrq,
-        "nfreq"  => s.nfreq,
-        "ntime"  => s.ntime,
-        "nflip"  => s.nflip,
-        "ntherm" => s.ntherm,
-        "nsweep" => s.nsweep,
-        "nwrite" => s.nwrite,
-        "nclean" => s.nclean,
-        "nmonte" => s.nmonte,
-        "ncarlo" => s.ncarlo,
-        "Uc"     => s.Uc,
-        "Jz"     => s.Jz,
-        "lc"     => s.lc,
-        "wc"     => s.wc,
-        "mune"   => s.mune,
-        "beta"   => s.beta,
-        "part"   => s.part,
-        "alpha"  => s.alpha,
-    )
+    OD = OrderedDict{String,Any}()
+    #
+    "isscf"  ∈ _CTSEG && ( OD["isscf"]  = s.isscf  )
+    "isscr"  ∈ _CTSEG && ( OD["isscr"]  = s.isscr  )
+    "isbnd"  ∈ _CTSEG && ( OD["isbnd"]  = s.isbnd  )
+    "isspn"  ∈ _CTSEG && ( OD["isspn"]  = s.isspn  )
+    "iswor"  ∈ _CTSEG && ( OD["iswor"]  = s.iswor  )
+    "isort"  ∈ _CTSEG && ( OD["isort"]  = s.isort  )
+    "isobs"  ∈ _CTSEG && ( OD["isobs"]  = s.isobs  )
+    "issus"  ∈ _CTSEG && ( OD["issus"]  = s.issus  )
+    "isvrt"  ∈ _CTSEG && ( OD["isvrt"]  = s.isvrt  )
+    "nband"  ∈ _CTSEG && ( OD["nband"]  = s.nband  )
+    "nspin"  ∈ _CTSEG && ( OD["nspin"]  = s.nspin  )
+    "norbs"  ∈ _CTSEG && ( OD["norbs"]  = s.norbs  )
+    "ncfgs"  ∈ _CTSEG && ( OD["ncfgs"]  = s.ncfgs  )
+    "niter"  ∈ _CTSEG && ( OD["niter"]  = s.niter  )
+    "lemax"  ∈ _CTSEG && ( OD["lemax"]  = s.lemax  )
+    "legrd"  ∈ _CTSEG && ( OD["legrd"]  = s.legrd  )
+    "svmax"  ∈ _CTSEG && ( OD["svmax"]  = s.svmax  )
+    "svgrd"  ∈ _CTSEG && ( OD["svgrd"]  = s.svgrd  )
+    "mkink"  ∈ _CTSEG && ( OD["mkink"]  = s.mkink  )
+    "mfreq"  ∈ _CTSEG && ( OD["mfreq"]  = s.mfreq  )
+    "nffrq"  ∈ _CTSEG && ( OD["nffrq"]  = s.nffrq  )
+    "nbfrq"  ∈ _CTSEG && ( OD["nbfrq"]  = s.nbfrq  )
+    "nfreq"  ∈ _CTSEG && ( OD["nfreq"]  = s.nfreq  )
+    "ntime"  ∈ _CTSEG && ( OD["ntime"]  = s.ntime  )
+    "nflip"  ∈ _CTSEG && ( OD["nflip"]  = s.nflip  )
+    "ntherm" ∈ _CTSEG && ( OD["ntherm"] = s.ntherm )
+    "nsweep" ∈ _CTSEG && ( OD["nsweep"] = s.nsweep )
+    "nwrite" ∈ _CTSEG && ( OD["nwrite"] = s.nwrite )
+    "nclean" ∈ _CTSEG && ( OD["nclean"] = s.nclean )
+    "nmonte" ∈ _CTSEG && ( OD["nmonte"] = s.nmonte )
+    "ncarlo" ∈ _CTSEG && ( OD["ncarlo"] = s.ncarlo )
+    "Uc"     ∈ _CTSEG && ( OD["Uc"]     = s.Uc     )
+    "Jz"     ∈ _CTSEG && ( OD["Jz"]     = s.Jz     )
+    "lc"     ∈ _CTSEG && ( OD["lc"]     = s.lc     )
+    "wc"     ∈ _CTSEG && ( OD["wc"]     = s.wc     )
+    "mune"   ∈ _CTSEG && ( OD["mune"]   = s.mune   )
+    "beta"   ∈ _CTSEG && ( OD["beta"]   = s.beta   )
+    "part"   ∈ _CTSEG && ( OD["part"]   = s.part   )
+    "alpha"  ∈ _CTSEG && ( OD["alpha"]  = s.alpha  )
+    #
+    return OD
 end
 
 """

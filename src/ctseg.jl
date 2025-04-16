@@ -583,7 +583,7 @@ function _ctseg_meas_block()
                 PCTSEG.issus = issus
                 issus != 1 && push!(_CTSEG, "issus")
                 issus == 1 && delete!(_CTSEG, "issus")
-            end            
+            end
         end
         #
         # Input: isvrt
@@ -601,7 +601,7 @@ function _ctseg_meas_block()
                 PCTSEG.isvrt = isvrt
                 isvrt != 1 && push!(_CTSEG, "isvrt")
                 isvrt == 1 && delete!(_CTSEG, "isvrt")
-            end  
+            end
         end
 
         CImGui.EndTabItem()
