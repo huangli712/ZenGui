@@ -550,7 +550,26 @@ end
 function _struct_to_dict(s::IQIST_PATOMIC)
     OD = OrderedDict{String,Any}()
     #
-
+    "ibasis" ∈ _ATOMIC && ( OD["ibasis"] = s.ibasis )
+    "ictqmc" ∈ _ATOMIC && ( OD["ictqmc"] = s.ictqmc )
+    "icu"    ∈ _ATOMIC && ( OD["icu"]    = s.icu    )
+    "icf"    ∈ _ATOMIC && ( OD["icf"]    = s.icf    )
+    "isoc"   ∈ _ATOMIC && ( OD["isoc"]   = s.isoc   )
+    "nband"  ∈ _ATOMIC && ( OD["nband"]  = s.nband  )
+    "nspin"  ∈ _ATOMIC && ( OD["nspin"]  = s.nspin  )
+    "norbs"  ∈ _ATOMIC && ( OD["norbs"]  = s.norbs  )
+    "ncfgs"  ∈ _ATOMIC && ( OD["ncfgs"]  = s.ncfgs  )
+    "nmini"  ∈ _ATOMIC && ( OD["nmini"]  = s.nmini  )
+    "nmaxi"  ∈ _ATOMIC && ( OD["nmaxi"]  = s.nmaxi  )
+    "Uc"     ∈ _ATOMIC && ( OD["Uc"]     = s.Uc     )
+    "Uv"     ∈ _ATOMIC && ( OD["Uv"]     = s.Uv     )
+    "Jz"     ∈ _ATOMIC && ( OD["Jz"]     = s.Jz     )
+    "Js"     ∈ _ATOMIC && ( OD["Js"]     = s.Js     )
+    "Jp"     ∈ _ATOMIC && ( OD["Jp"]     = s.Jp     )
+    "Ud"     ∈ _ATOMIC && ( OD["Ud"]     = s.Ud     )
+    "Jh"     ∈ _ATOMIC && ( OD["Jh"]     = s.Jh     )
+    "mune"   ∈ _ATOMIC && ( OD["mune"]   = s.mune   )
+    "lambda" ∈ _ATOMIC && ( OD["lambda"] = s.lambda )
     #
     return OD
 end
