@@ -560,10 +560,16 @@ function _ctseg_meas_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(iswor)$(PCTSEG.iswor)")
         #
         # Input: isobs
+        if CImGui.CollapsingHeader("Calculate physical observables")
+        end
         #
         # Input: issus
+        if CImGui.CollapsingHeader("Calculate susceptibilities")
+        end
         #
         # Input: isvrt
+        if CImGui.CollapsingHeader("Calculate two-particle Green's functions")
+        end
 
         CImGui.EndTabItem()
     end
