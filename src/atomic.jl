@@ -291,6 +291,16 @@ function _atomic_algorithm_block()
     if CImGui.BeginTabItem("algorithm")
         CImGui.Text("Configure [algorithm] Part")
 
+        # Input: ibasis
+        #
+        # Input: icf
+        #
+        # Input: isoc
+        #
+        # Input: mune
+        #
+        # Input: lambda
+
         CImGui.EndTabItem()
     end
 end
