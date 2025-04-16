@@ -374,6 +374,17 @@ function _ctseg_repr_block()
         CImGui.Text("Configure [representation] Part")
 
         # Input: isort
+        CImGui.SetNextItemWidth(widget_combo_width)
+        isort_list = ["standard", "legendre", "intermediate"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Which basis will be used to do the measurement", &id, isort_list)
+            PCTSEG.isort = id + 1
+            id != 0 && push!(_CTSEG, "isort")
+            id == 0 && delete!(_CTSEG, "isort")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isort)$(PCTSEG.isort)")
+        #
         # Input: lemax
         # Input: legrd
         # Input: svmax
