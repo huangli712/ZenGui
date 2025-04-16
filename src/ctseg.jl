@@ -395,8 +395,20 @@ function _ctseg_repr_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lemax)$(PCTSEG.lemax)")
+        #
         # Input: legrd
+        #
         # Input: svmax
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(32) begin
+            @c CImGui.InputInt(" Maximum expansion order for svd polynomial", &_i)
+            PCTSEG.svmax = _i
+            _i != 32 && push!(_CTSEG, "svmax")
+            _i == 32 && delete!(_CTSEG, "svmax")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(svmax)$(PCTSEG.svmax)")
+        #
         # Input: svgrd
 
         CImGui.EndTabItem()
