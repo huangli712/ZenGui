@@ -174,8 +174,28 @@ function _atomic_interaction_block()
 
         # Input: icu
         # Input: Uc
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(2.0) begin
+            @c CImGui.InputDouble(" Intra-orbital Coulomb interaction", &_f)
+            PATOMIC.Uc = _f
+            _f != 2.0 && push!(_ATOMIC, "Uc")
+            _f == 2.0 && delete!(_ATOMIC, "Uc")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Uc)$(PATOMIC.Uc)")
+        #
         # Input: Uv
         # Input: Jz
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(0.0) begin
+            @c CImGui.InputDouble(" Hund's exchange interaction in z axis", &_f)
+            PATOMIC.Jz = _f
+            _f != 0.0 && push!(_ATOMIC, "Jz")
+            _f == 0.0 && delete!(_ATOMIC, "Jz")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Jz)$(PATOMIC.Jz)")
+        #
         # Input: Js
         # Input: Jp
         # Input: Ud
