@@ -278,11 +278,7 @@ function _ctseg_dim_block()
         # Input: nffrq
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(32) begin
-            @c CImGui.SliderInt(
-                " Number of fermionic frequencies for two-particle function",
-                &_i,
-                8, 1024
-            )
+            @c CImGui.SliderInt(" Number of fermionic frequencies for 2P function", &_i, 8, 1024)
             PCTSEG.nffrq = _i
             _i != 32 && push!(_CTSEG, "nffrq")
             _i == 32 && delete!(_CTSEG, "nffrq")
@@ -293,11 +289,7 @@ function _ctseg_dim_block()
         # Input: nbfrq
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(8) begin
-            @c CImGui.SliderInt(
-                " Number of bosonic frequncies for two-particle function",
-                &_i,
-                4, 512
-            )
+            @c CImGui.SliderInt(" Number of bosonic frequncies for 2P function", &_i, 4, 512)
             PCTSEG.nbfrq = _i
             _i != 8 && push!(_CTSEG, "nbfrq")
             _i == 8 && delete!(_CTSEG, "nbfrq")
@@ -308,11 +300,7 @@ function _ctseg_dim_block()
         # Input: nfreq
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(128) begin
-            @c CImGui.SliderInt(
-                " Number of matsubara frequencies sampled by ctseg impurity solver",
-                &_i,
-                64, 1024
-            )
+            @c CImGui.SliderInt(" Number of matsubara frequencies sampled by solver", &_i, 64, 1024)
             PCTSEG.nfreq = _i
             _i != 128 && push!(_CTSEG, "nfreq")
             _i == 128 && delete!(_CTSEG, "nfreq")
@@ -323,11 +311,7 @@ function _ctseg_dim_block()
         # Input: ntime
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(1024) begin
-            @c CImGui.SliderInt(
-                " Number of imaginary time slices sampled by ctseg impurity solver",
-                &_i,
-                256, 10240
-            )
+            @c CImGui.SliderInt(" Number of imaginary time slices sampled by solver", &_i, 256, 10240)
             PCTSEG.ntime = _i
             _i != 1024 && push!(_CTSEG, "ntime")
             _i == 1024 && delete!(_CTSEG, "ntime")
