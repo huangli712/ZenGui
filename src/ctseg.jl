@@ -444,18 +444,6 @@ function _ctseg_mc_block()
     if CImGui.BeginTabItem("monte carlo")
         CImGui.Text("Configure [monte carlo] Part")
 
-        # Input: iswor
-        CImGui.SetNextItemWidth(widget_combo_width)
-        iswor_list = ["standard", "worm"]
-        @cstatic id = Cint(0) begin
-            @c CImGui.Combo(" Which algorithm will be used to do the measurement", &id, iswor_list)
-            PCTSEG.iswor = id + 1
-            id != 0 && push!(_CTSEG, "iswor")
-            id == 0 && delete!(_CTSEG, "iswor")
-        end
-        CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(iswor)$(PCTSEG.iswor)")
-        #
         # Input: mkink
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(1024) begin
@@ -558,6 +546,19 @@ function _ctseg_meas_block()
 
     if CImGui.BeginTabItem("measure")
         CImGui.Text("Configure [measure] Part")
+
+        # Input: iswor
+        CImGui.SetNextItemWidth(widget_combo_width)
+        iswor_list = ["standard", "worm"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Which algorithm will be used to do the measurement", &id, iswor_list)
+            PCTSEG.iswor = id + 1
+            id != 0 && push!(_CTSEG, "iswor")
+            id == 0 && delete!(_CTSEG, "iswor")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(iswor)$(PCTSEG.iswor)")
+        #
 
         CImGui.EndTabItem()
     end

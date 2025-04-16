@@ -326,7 +326,7 @@ mutable struct IQIST_PCTSEG
     isscr  :: I64 # Model
     isbnd  :: I64 # Symmetry
     isspn  :: I64 # Symmetry
-    iswor  :: I64 # Monte Carlo
+    iswor  :: I64 # Measurement
     isort  :: I64 # Representation
     isobs  :: I64 # Measurement
     issus  :: I64 # Measurement
