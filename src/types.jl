@@ -373,6 +373,26 @@ end
     IQIST_PATOMIC
 """
 mutable struct IQIST_PATOMIC
+    ibasis :: I64
+    ictqmc :: I64
+    icu    :: I64
+    icf    :: I64
+    isoc   :: I64
+    nband  :: I64
+    nspin  :: I64
+    norbs  :: I64
+    ncfgs  :: I64
+    nmini  :: I64
+    nmaxi  :: I64
+    Uc     :: F64
+    Uv     :: F64
+    Jz     :: F64
+    Js     :: F64
+    Jp     :: F64
+    Ud     :: F64
+    Jh     :: F64
+    mune   :: F64
+    lambda :: F64
 end
 
 _CTSEG = Set{String}()
