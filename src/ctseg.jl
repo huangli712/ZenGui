@@ -335,8 +335,6 @@ function _ctseg_dim_block()
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ntime)$(PCTSEG.ntime)")
 
-        @show _CTSEG
-
         CImGui.EndTabItem()
     end
 end
@@ -351,6 +349,11 @@ function _ctseg_symm_block()
 
     if CImGui.BeginTabItem("symmetry")
         CImGui.Text("Configure [symmetry] Part")
+
+        # Input: isbnd
+        # Input: isspn
+
+        @show _CTSEG
 
         CImGui.EndTabItem()
     end
