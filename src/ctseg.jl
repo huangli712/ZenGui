@@ -594,10 +594,10 @@ function _ctseg_meas_block()
                 @c CImGui.RadioButton("Block: AABB / Channel: particle-particle", &p2, 1)
                 @c CImGui.RadioButton("Block: ABBA / Channel: particle-particle", &p2, 2)
                 isvrt = 1
-                p1 == 1 && isvrt = isvrt + 2^1
-                p1 == 2 && isvrt = isvrt + 2^2
-                p2 == 1 && isvrt = isvrt + 2^3
-                p2 == 2 && isvrt = isvrt + 2^4
+                p1 == 1 && (isvrt = isvrt + 2^1)
+                p1 == 2 && (isvrt = isvrt + 2^2)
+                p2 == 1 && (isvrt = isvrt + 2^3)
+                p2 == 2 && (isvrt = isvrt + 2^4)
                 PCTSEG.isvrt = isvrt
                 isvrt != 1 && push!(_CTSEG, "isvrt")
                 isvrt == 1 && delete!(_CTSEG, "isvrt")
