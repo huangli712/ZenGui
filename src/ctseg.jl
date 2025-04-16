@@ -173,6 +173,16 @@ function _ctseg_model_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ncfgs)$(PCTSEG.ncfgs)")
         #
         # Input: Uc
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(4.0) begin
+            @c CImGui.InputDouble(" Intra-orbital Coulomb interaction", &_f)
+            PCTSEG.Uc = _f
+            _f != 4.0 && push!(_CTSEG, "Uc")
+            _f == 4.0 && delete!(_CTSEG, "Uc")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Uc)$(PCTSEG.Uc)")
+        #        
         # Input: Jz
         # Input: lc
         # Input: wc
