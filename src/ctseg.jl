@@ -491,9 +491,48 @@ function _ctseg_mc_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nsweep)$(PCTSEG.nsweep)")
         #
         # Input: nwrite
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(2000000) begin
+            @c CImGui.InputInt(" Output period for quantum impurity solver", &_i)
+            PCTSEG.nwrite = _i
+            _i != 2000000 && push!(_CTSEG, "nwrite")
+            _i == 2000000 && delete!(_CTSEG, "nwrite")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nwrite)$(PCTSEG.nwrite)")
+        #
         # Input: nclean
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(100000) begin
+            @c CImGui.InputInt(" Clean update period for quantum impurity solver", &_i)
+            PCTSEG.nclean = _i
+            _i != 100000 && push!(_CTSEG, "nclean")
+            _i == 100000 && delete!(_CTSEG, "nclean")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nclean)$(PCTSEG.nclean)")
+        #
         # Input: nmonte
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(10) begin
+            @c CImGui.InputInt(" How often to sample the physical observables", &_i)
+            PCTSEG.nmonte = _i
+            _i != 10 && push!(_CTSEG, "nmonte")
+            _i == 10 && delete!(_CTSEG, "nmonte")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmonte)$(PCTSEG.nmonte)")
+        #
         # Input: ncarlo
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(10) begin
+            @c CImGui.InputInt(" How often to sample the physical observables", &_i)
+            PCTSEG.ncarlo = _i
+            _i != 10 && push!(_CTSEG, "ncarlo")
+            _i == 10 && delete!(_CTSEG, "ncarlo")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ncarlo)$(PCTSEG.ncarlo)")
 
         CImGui.EndTabItem()
     end
