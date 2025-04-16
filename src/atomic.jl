@@ -292,10 +292,40 @@ function _atomic_algorithm_block()
         CImGui.Text("Configure [algorithm] Part")
 
         # Input: ibasis
+        CImGui.SetNextItemWidth(widget_combo_width)
+        icu_list = ["kanamori", "slater-cordon"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Type of Coulomb interaction matrix", &id, icu_list)
+            PATOMIC.icu = id + 1
+            id != 0 && push!(_ATOMIC, "icu")
+            id == 0 && delete!(_ATOMIC, "icu")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(icu)$(PATOMIC.icu)")
         #
         # Input: icf
+        CImGui.SetNextItemWidth(widget_combo_width)
+        icu_list = ["kanamori", "slater-cordon"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Type of Coulomb interaction matrix", &id, icu_list)
+            PATOMIC.icu = id + 1
+            id != 0 && push!(_ATOMIC, "icu")
+            id == 0 && delete!(_ATOMIC, "icu")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(icu)$(PATOMIC.icu)")
         #
         # Input: isoc
+        CImGui.SetNextItemWidth(widget_combo_width)
+        icu_list = ["kanamori", "slater-cordon"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Type of Coulomb interaction matrix", &id, icu_list)
+            PATOMIC.icu = id + 1
+            id != 0 && push!(_ATOMIC, "icu")
+            id == 0 && delete!(_ATOMIC, "icu")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(icu)$(PATOMIC.icu)")
         #
         # Input: mune
         #
