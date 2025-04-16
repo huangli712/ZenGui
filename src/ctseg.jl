@@ -279,7 +279,7 @@ function _ctseg_dim_block()
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(32) begin
             @c CImGui.SliderInt(
-                " Number of fermionic frequencies for the two-particle green's function",
+                " Number of fermionic frequencies for two-particle function",
                 &_i,
                 8, 1024
             )
@@ -294,7 +294,7 @@ function _ctseg_dim_block()
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(8) begin
             @c CImGui.SliderInt(
-                " Number of bosonic frequncies for the two-particle green's function",
+                " Number of bosonic frequncies for two-particle function",
                 &_i,
                 4, 512
             )
