@@ -45,3 +45,59 @@ function create_app_atomic(p_open::Ref{Bool})
     # End of this window
     CImGui.End()
 end
+
+"""
+    _atomic_tabs_block()
+
+Setup the tab widgets for all the blocks in the solver.atomic.in.
+"""
+function _atomic_tabs_block()
+    tab_bar_flags = CImGui.ImGuiTabBarFlags_None
+    #
+    if CImGui.BeginTabBar("atomicTabBar", tab_bar_flags)
+        _atomic_model_block()
+        _atomic_interaction_block()
+        _atomic_natural_block()
+        _atomic_algorithm_block()
+        #
+        CImGui.EndTabBar()
+    end
+end
+
+"""
+    _atomic_bottom_block(p_open::Ref{Bool})
+
+Setup widgets in the bottom of the window for the iQIST/atomic code.
+"""
+function _atomic_bottom_block(p_open::Ref{Bool})
+    # Define the default size for widgets
+    widget_button_width = 80.0
+    widget_button_height = 25.0
+
+    # For the buttons
+    if CImGui.Button("View", ImVec2(widget_button_width, widget_button_height))
+        CImGui.OpenPopup("View")
+    end
+    #
+    if CImGui.BeginPopupModal("View", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
+        @cstatic read_only=false text="Hello World!" begin
+            text = _dict_to_toml(_build_iqist_dict("atomic"))
+            @c CImGui.Checkbox("Read-only", &read_only)
+            flags = read_only ? CImGui.ImGuiInputTextFlags_ReadOnly : 0
+            flags = CImGui.ImGuiInputTextFlags_AllowTabInput | flags
+            CImGui.InputTextMultiline("##source", text, 10000, ImVec2(400, 600), flags)
+        end
+        #
+        if CImGui.Button("OK", ImVec2(widget_button_width, widget_button_height))
+            CImGui.CloseCurrentPopup()
+        end
+        #
+        CImGui.EndPopup()
+    end
+    #
+    CImGui.SameLine()
+    #
+    if CImGui.Button("Close", ImVec2(widget_button_width, widget_button_height))
+        p_open[] = false
+    end
+end
