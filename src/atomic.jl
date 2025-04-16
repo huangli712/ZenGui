@@ -185,6 +185,16 @@ function _atomic_interaction_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Uc)$(PATOMIC.Uc)")
         #
         # Input: Uv
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(2.0) begin
+            @c CImGui.InputDouble(" Inter-orbital Coulomb interaction", &_f)
+            PATOMIC.Uv = _f
+            _f != 2.0 && push!(_ATOMIC, "Uv")
+            _f == 2.0 && delete!(_ATOMIC, "Uv")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Uv)$(PATOMIC.Uv)")
+        #
         # Input: Jz
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _f = Cdouble(0.0) begin
