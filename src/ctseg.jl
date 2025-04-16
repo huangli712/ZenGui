@@ -336,7 +336,7 @@ function _ctseg_symm_block()
 
         # Input: isbnd
         CImGui.SetNextItemWidth(widget_combo_width)
-        isbnd_list = ["No", "Yes"]
+        isbnd_list = ["no", "yes"]
         @cstatic id = Cint(0) begin
             @c CImGui.Combo(" Symmetry of the impurity model (band part)", &id, isbnd_list)
             PCTSEG.isbnd = id + 1
@@ -348,7 +348,7 @@ function _ctseg_symm_block()
         #
         # Input: isspn
         CImGui.SetNextItemWidth(widget_combo_width)
-        isspn_list = ["No", "Yes"]
+        isspn_list = ["no", "yes"]
         @cstatic id = Cint(0) begin
             @c CImGui.Combo(" Symmetry of the impurity model (spin part)", &id, isspn_list)
             PCTSEG.isspn = id + 1
@@ -445,6 +445,16 @@ function _ctseg_mc_block()
         CImGui.Text("Configure [monte carlo] Part")
 
         # Input: iswor
+        CImGui.SetNextItemWidth(widget_combo_width)
+        iswor_list = ["standard", "worm"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Which algorithm will be used to do the measurement", &id, iswor_list)
+            PCTSEG.iswor = id + 1
+            id != 0 && push!(_CTSEG, "iswor")
+            id == 0 && delete!(_CTSEG, "iswor")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(iswor)$(PCTSEG.iswor)")
         #
         # Input: mkink
         CImGui.SetNextItemWidth(widget_input_width)
