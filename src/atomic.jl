@@ -276,21 +276,6 @@ function _atomic_natural_block()
     if CImGui.BeginTabItem("natural eigenbasis")
         CImGui.Text("Configure [natural eigenbasis] Part")
 
-        CImGui.EndTabItem()
-    end
-end
-
-"""
-    _atomic_algorithm_block()
-"""
-function _atomic_algorithm_block()
-    # Define the default size for widgets
-    widget_input_width = 100
-    widget_combo_width = 100
-
-    if CImGui.BeginTabItem("algorithm")
-        CImGui.Text("Configure [algorithm] Part")
-
         # Input: ibasis
         CImGui.SetNextItemWidth(widget_combo_width)
         ibasis_list = ["builtin", "external"]
@@ -330,6 +315,21 @@ function _atomic_algorithm_block()
         # Input: mune
         #
         # Input: lambda
+
+        CImGui.EndTabItem()
+    end
+end
+
+"""
+    _atomic_algorithm_block()
+"""
+function _atomic_algorithm_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    if CImGui.BeginTabItem("algorithm")
+        CImGui.Text("Configure [algorithm] Part")
 
         CImGui.EndTabItem()
     end
