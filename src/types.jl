@@ -373,30 +373,41 @@ end
     IQIST_PATOMIC
 """
 mutable struct IQIST_PATOMIC
-    ibasis :: I64
-    ictqmc :: I64
-    icu    :: I64
-    icf    :: I64
-    isoc   :: I64
-    nband  :: I64
-    nspin  :: I64
-    norbs  :: I64
-    ncfgs  :: I64
-    nmini  :: I64
-    nmaxi  :: I64
-    Uc     :: F64
-    Uv     :: F64
-    Jz     :: F64
-    Js     :: F64
-    Jp     :: F64
-    Ud     :: F64
-    Jh     :: F64
-    mune   :: F64
-    lambda :: F64
+    ibasis :: I64 # Natural basis
+    ictqmc :: I64 # Algorithm
+    icu    :: I64 # Interaction
+    icf    :: I64 # Natural basis
+    isoc   :: I64 # Natural basis
+    nband  :: I64 # Model
+    nspin  :: I64 # Model
+    norbs  :: I64 # Model
+    ncfgs  :: I64 # Model
+    nmini  :: I64 # Algorithm
+    nmaxi  :: I64 # Algorithm
+    Uc     :: F64 # Interaction
+    Uv     :: F64 # Interaction
+    Jz     :: F64 # Interaction
+    Js     :: F64 # Interaction
+    Jp     :: F64 # Interaction
+    Ud     :: F64 # Interaction
+    Jh     :: F64 # Interaction
+    mune   :: F64 # Natural basis
+    lambda :: F64 # Natural basis
 end
 
+"""
+    _CTSEG
+"""
 _CTSEG = Set{String}()
+
+"""
+    _CTHYB
+"""
 _CTHYB = Set{String}()
+
+"""
+    _ATOMIC
+"""
 _ATOMIC = Set{String}()
 
 """
@@ -537,9 +548,11 @@ end
     _struct_to_dict(s::IQIST_PATOMIC)
 """
 function _struct_to_dict(s::IQIST_PATOMIC)
-    return OrderedDict{String,Any}(
-        "key" => "value",
-    )
+    OD = OrderedDict{String,Any}()
+    #
+
+    #
+    return OD
 end
 
 """
