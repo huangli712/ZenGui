@@ -241,6 +241,15 @@ function _atomic_interaction_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Ud)$(PATOMIC.Ud)")
         #
         # Input: Jh
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(0.0) begin
+            @c CImGui.InputDouble(" Hund's exchange parameter (Slater type)", &_f)
+            PATOMIC.Jh = _f
+            _f != 0.0 && push!(_ATOMIC, "Jh")
+            _f == 0.0 && delete!(_ATOMIC, "Jh")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Jh)$(PATOMIC.Jh)")
 
         CImGui.EndTabItem()
     end
