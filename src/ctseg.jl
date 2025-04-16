@@ -444,6 +444,16 @@ function _ctseg_mc_block()
     if CImGui.BeginTabItem("monte carlo")
         CImGui.Text("Configure [monte carlo] Part")
 
+        # Input: iswor
+        # Input: mkink
+        # Input: nflip
+        # Input: ntherm
+        # Input: nsweep
+        # Input: nwrite
+        # Input: nclean
+        # Input: nmonte
+        # Input: ncarlo
+
         CImGui.EndTabItem()
     end
 end
