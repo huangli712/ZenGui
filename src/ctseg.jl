@@ -561,13 +561,15 @@ function _ctseg_meas_block()
         #
         # Input: isobs
         if CImGui.CollapsingHeader("Calculate physical observables")
-            kinetic = false
-            fidelity = false
-            magnetic = false
-            @c CImGui.Checkbox("kinetic energy fluctuation", &kinetic)
-            @c CImGui.Checkbox("Fidelity susceptibility", &fidelity)
-            @c CImGui.Checkbox("Powers of local magnetization", &magnetic)
-            @show kinetic, fidelity, magnetic
+            @cstatic kin = false fid = false mag = false begin
+                @c CImGui.Checkbox("kinetic energy fluctuation", &kin)
+                @c CImGui.Checkbox("Fidelity susceptibility", &fid)
+                @c CImGui.Checkbox("Powers of local magnetization", &mag)
+                isobs = 1 + Int(kin) * 2^1 + Int(fid) * 2^2 + Int(mag) * 2^3
+                PCTSEG.isobs = isobs
+                isobs != 1 && push!(_CTSEG, "isobs")
+                isobs == 1 && delete!(_CTSEG, "isobs")
+            end
         end
         #
         # Input: issus
