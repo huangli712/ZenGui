@@ -405,7 +405,7 @@ function _ctseg_repr_block()
             _i == 20001 && delete!(_CTSEG, "legrd")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(legrd)$(PCTSEG.legrd)")        
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(legrd)$(PCTSEG.legrd)")
         #
         # Input: svmax
         CImGui.SetNextItemWidth(widget_input_width)
@@ -427,7 +427,7 @@ function _ctseg_repr_block()
             _i == 2001 && delete!(_CTSEG, "svgrd")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(svgrd)$(PCTSEG.svgrd)")    
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(svgrd)$(PCTSEG.svgrd)")
 
         CImGui.EndTabItem()
     end
