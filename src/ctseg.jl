@@ -363,7 +363,16 @@ function _ctseg_symm_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isbnd)$(PCTSEG.isbnd)")
         #
         # Input: isspn
-
+        CImGui.SetNextItemWidth(widget_combo_width)
+        isspn_list = ["No", "Yes"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" Symmetry of the impurity model (spin part)", &id, isspn_list)
+            PCTSEG.isspn = id + 1
+            id != 0 && push!(_CTSEG, "isspn")
+            id == 0 && delete!(_CTSEG, "isspn")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isspn)$(PCTSEG.isspn)")
         @show _CTSEG
 
         CImGui.EndTabItem()
