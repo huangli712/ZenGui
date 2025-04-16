@@ -101,3 +101,63 @@ function _atomic_bottom_block(p_open::Ref{Bool})
         p_open[] = false
     end
 end
+
+"""
+    _atomic_model_block()
+"""
+function _atomic_model_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    if CImGui.BeginTabItem("model")
+        CImGui.Text("Configure [model] Part")
+
+        CImGui.EndTabItem()
+    end
+end
+
+"""
+    _atomic_interaction_block()
+"""
+function _atomic_model_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    if CImGui.BeginTabItem("interaction")
+        CImGui.Text("Configure [interaction] Part")
+
+        CImGui.EndTabItem()
+    end
+end
+
+"""
+    _atomic_natural_block()
+"""
+function _atomic_natural_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    if CImGui.BeginTabItem("natural eigenbasis")
+        CImGui.Text("Configure [natural eigenbasis] Part")
+
+        CImGui.EndTabItem()
+    end
+end
+
+"""
+    _atomic_algorithm_block()
+"""
+function _atomic_algorithm_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    if CImGui.BeginTabItem("algorithm")
+        CImGui.Text("Configure [algorithm] Part")
+
+        CImGui.EndTabItem()
+    end
+end
