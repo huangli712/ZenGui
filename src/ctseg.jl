@@ -577,7 +577,7 @@ function _ctseg_cycle_block()
 
         # Input: isscf
         CImGui.SetNextItemWidth(widget_combo_width)
-        isscf_list = ["1:one-shot", "2:self-consistent"]
+        isscf_list = ["one-shot", "self-consistent"]
         @cstatic id = Cint(0) begin
             @c CImGui.Combo(" Scheme of dynamical mean-field theory calculations", &id, isscf_list)
             PCTSEG.isscf = id + 1
