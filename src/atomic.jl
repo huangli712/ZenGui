@@ -313,8 +313,26 @@ function _atomic_natural_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isoc)$(PATOMIC.isoc)")
         #
         # Input: mune
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(0.0) begin
+            @c CImGui.InputDouble(" Chemical potential or fermi level", &_f)
+            PATOMIC.mune = _f
+            _f != 0.0 && push!(_ATOMIC, "mune")
+            _f == 0.0 && delete!(_ATOMIC, "mune")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mune)$(PATOMIC.mune)")
         #
         # Input: lambda
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(0.0) begin
+            @c CImGui.InputDouble(" Strength of spin-orbit coupling", &_f)
+            PATOMIC.lambda = _f
+            _f != 0.0 && push!(_ATOMIC, "lambda")
+            _f == 0.0 && delete!(_ATOMIC, "lambda")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lambda)$(PATOMIC.lambda)")
 
         CImGui.EndTabItem()
     end
