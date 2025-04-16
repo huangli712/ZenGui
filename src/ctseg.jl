@@ -184,8 +184,38 @@ function _ctseg_model_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Uc)$(PCTSEG.Uc)")
         #        
         # Input: Jz
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(0.0) begin
+            @c CImGui.InputDouble(" Hund's exchange interaction in z axis", &_f)
+            PCTSEG.Jz = _f
+            _f != 0.0 && push!(_CTSEG, "Jz")
+            _f == 0.0 && delete!(_CTSEG, "Jz")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Jz)$(PCTSEG.Jz)")
+        #
         # Input: lc
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(1.0) begin
+            @c CImGui.InputDouble(" Strength of dynamical screening effect", &_f)
+            PCTSEG.lc = _f
+            _f != 1.0 && push!(_CTSEG, "lc")
+            _f == 1.0 && delete!(_CTSEG, "lc")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lc)$(PCTSEG.lc)")
+        #
         # Input: wc
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(1.0) begin
+            @c CImGui.InputDouble(" Screening frequency", &_f)
+            PCTSEG.wc = _f
+            _f != 1.0 && push!(_CTSEG, "wc")
+            _f == 1.0 && delete!(_CTSEG, "wc")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wc)$(PCTSEG.wc)")
+        #
         # Input: mune
         # Input: beta
         # Input: part
