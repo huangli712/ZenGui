@@ -293,39 +293,39 @@ function _atomic_algorithm_block()
 
         # Input: ibasis
         CImGui.SetNextItemWidth(widget_combo_width)
-        icu_list = ["kanamori", "slater-cordon"]
+        ibasis_list = ["builtin", "external"]
         @cstatic id = Cint(0) begin
-            @c CImGui.Combo(" Type of Coulomb interaction matrix", &id, icu_list)
-            PATOMIC.icu = id + 1
-            id != 0 && push!(_ATOMIC, "icu")
-            id == 0 && delete!(_ATOMIC, "icu")
+            @c CImGui.Combo(" How to build the natural eigenbasis", &id, ibasis_list)
+            PATOMIC.ibasis = id + 1
+            id != 0 && push!(_ATOMIC, "ibasis")
+            id == 0 && delete!(_ATOMIC, "ibasis")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(icu)$(PATOMIC.icu)")
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ibasis)$(PATOMIC.ibasis)")
         #
         # Input: icf
         CImGui.SetNextItemWidth(widget_combo_width)
-        icu_list = ["kanamori", "slater-cordon"]
+        icf_list = ["none", "diagonal", "off-diagonal"]
         @cstatic id = Cint(0) begin
-            @c CImGui.Combo(" Type of Coulomb interaction matrix", &id, icu_list)
-            PATOMIC.icu = id + 1
-            id != 0 && push!(_ATOMIC, "icu")
-            id == 0 && delete!(_ATOMIC, "icu")
+            @c CImGui.Combo(" Type of crystal field splitting", &id, icf_list)
+            PATOMIC.icf = id
+            id != 0 && push!(_ATOMIC, "icf")
+            id == 0 && delete!(_ATOMIC, "icf")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(icu)$(PATOMIC.icu)")
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(icf)$(PATOMIC.icf)")
         #
         # Input: isoc
         CImGui.SetNextItemWidth(widget_combo_width)
-        icu_list = ["kanamori", "slater-cordon"]
+        isoc_list = ["none", "onsite"]
         @cstatic id = Cint(0) begin
-            @c CImGui.Combo(" Type of Coulomb interaction matrix", &id, icu_list)
-            PATOMIC.icu = id + 1
-            id != 0 && push!(_ATOMIC, "icu")
-            id == 0 && delete!(_ATOMIC, "icu")
+            @c CImGui.Combo(" Type of spin-orbit coupling", &id, isoc_list)
+            PATOMIC.isoc = id
+            id != 0 && push!(_ATOMIC, "isoc")
+            id == 0 && delete!(_ATOMIC, "isoc")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(icu)$(PATOMIC.icu)")
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isoc)$(PATOMIC.isoc)")
         #
         # Input: mune
         #
