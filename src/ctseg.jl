@@ -386,6 +386,15 @@ function _ctseg_repr_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isort)$(PCTSEG.isort)")
         #
         # Input: lemax
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(32) begin
+            @c CImGui.InputInt(" Maximum expansion order for legendre polynomial", &_i)
+            PCTSEG.lemax = _i
+            _i != 32 && push!(_CTSEG, "lemax")
+            _i == 32 && delete!(_CTSEG, "lemax")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lemax)$(PCTSEG.lemax)")
         # Input: legrd
         # Input: svmax
         # Input: svgrd
