@@ -445,10 +445,51 @@ function _ctseg_mc_block()
         CImGui.Text("Configure [monte carlo] Part")
 
         # Input: iswor
+        #
         # Input: mkink
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(1024) begin
+            @c CImGui.InputInt(" Maximum perturbation expansion order", &_i)
+            PCTSEG.mkink = _i
+            _i != 1024 && push!(_CTSEG, "mkink")
+            _i == 1024 && delete!(_CTSEG, "mkink")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mkink)$(PCTSEG.mkink)")
+        #
         # Input: nflip
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(20000) begin
+            @c CImGui.InputInt(" Flip period for spin up and spin down states", &_i)
+            PCTSEG.nflip = _i
+            _i != 20000 && push!(_CTSEG, "nflip")
+            _i == 20000 && delete!(_CTSEG, "nflip")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nflip)$(PCTSEG.nflip)")
+        #
         # Input: ntherm
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(200000) begin
+            @c CImGui.InputInt(" Number of thermalization steps", &_i)
+            PCTSEG.ntherm = _i
+            _i != 200000 && push!(_CTSEG, "ntherm")
+            _i == 200000 && delete!(_CTSEG, "ntherm")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ntherm)$(PCTSEG.ntherm)")
+        #
         # Input: nsweep
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(20000000) begin
+            @c CImGui.InputInt(" Number of Monte Carlo sweeping steps", &_i)
+            PCTSEG.nsweep = _i
+            _i != 20000000 && push!(_CTSEG, "nsweep")
+            _i == 20000000 && delete!(_CTSEG, "nsweep")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nsweep)$(PCTSEG.nsweep)")
+        #
         # Input: nwrite
         # Input: nclean
         # Input: nmonte
