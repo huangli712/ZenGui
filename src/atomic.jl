@@ -125,10 +125,37 @@ function _atomic_model_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nband)$(PATOMIC.nband)")
         #
         # Input: nspin
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(2) begin
+            @c CImGui.InputInt(" Number of spin projections", &_i)
+            _i = Cint(PATOMIC.nspin) # This parameter should not be changed.
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nspin)$(PATOMIC.nspin)")
         #
         # Input: norbs
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(2) begin
+            @c CImGui.InputInt(" Number of correlated orbitals", &_i)
+            _i = Cint(PATOMIC.nspin * PATOMIC.nband)
+            PATOMIC.norbs = _i
+            _i != 2 && push!(_ATOMIC, "norbs")
+            _i == 2 && delete!(_ATOMIC, "norbs")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(norbs)$(PATOMIC.norbs)")
         #
         # Input: ncfgs
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(4) begin
+            @c CImGui.InputInt(" Number of many-body configurations", &_i)
+            _i = Cint(2 ^ PATOMIC.norbs)
+            PATOMIC.ncfgs = _i
+            _i != 4 && push!(_ATOMIC, "ncfgs")
+            _i == 4 && delete!(_ATOMIC, "ncfgs")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ncfgs)$(PATOMIC.ncfgs)")
 
         CImGui.EndTabItem()
     end
