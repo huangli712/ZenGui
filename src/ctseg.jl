@@ -306,8 +306,35 @@ function _ctseg_dim_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nbfrq)$(PCTSEG.nbfrq)")
         #
         # Input: nfreq
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(128) begin
+            @c CImGui.SliderInt(
+                " Number of matsubara frequencies sampled by ctseg impurity solver",
+                &_i,
+                64, 1024
+            )
+            PCTSEG.nfreq = _i
+            _i != 128 && push!(_CTSEG, "nfreq")
+            _i == 128 && delete!(_CTSEG, "nfreq")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nfreq)$(PCTSEG.nfreq)")
         #
         # Input: ntime
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(1024) begin
+            @c CImGui.SliderInt(
+                " Number of imaginary time slices sampled by ctseg impurity solver",
+                &_i,
+                256, 10240
+            )
+            PCTSEG.ntime = _i
+            _i != 1024 && push!(_CTSEG, "ntime")
+            _i == 1024 && delete!(_CTSEG, "ntime")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ntime)$(PCTSEG.ntime)")
+
         @show _CTSEG
 
         CImGui.EndTabItem()
