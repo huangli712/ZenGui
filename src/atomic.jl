@@ -172,6 +172,15 @@ function _atomic_interaction_block()
     if CImGui.BeginTabItem("interaction")
         CImGui.Text("Configure [interaction] Part")
 
+        # Input: icu
+        # Input: Uc
+        # Input: Uv
+        # Input: Jz
+        # Input: Js
+        # Input: Jp
+        # Input: Ud
+        # Input: Jh
+
         CImGui.EndTabItem()
     end
 end
