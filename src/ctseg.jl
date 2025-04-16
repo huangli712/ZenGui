@@ -559,6 +559,11 @@ function _ctseg_meas_block()
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(iswor)$(PCTSEG.iswor)")
         #
+        # Input: isobs
+        #
+        # Input: issus
+        #
+        # Input: isvrt
 
         CImGui.EndTabItem()
     end
