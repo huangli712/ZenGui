@@ -173,6 +173,7 @@ function _atomic_interaction_block()
         CImGui.Text("Configure [interaction] Part")
 
         # Input: icu
+        #
         # Input: Uc
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _f = Cdouble(2.0) begin
@@ -229,6 +230,16 @@ function _atomic_interaction_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Jp)$(PATOMIC.Jp)")
         #
         # Input: Ud
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(2.0) begin
+            @c CImGui.InputDouble(" Coulomb interaction parameter (Slater type)", &_f)
+            PATOMIC.Ud = _f
+            _f != 2.0 && push!(_ATOMIC, "Ud")
+            _f == 2.0 && delete!(_ATOMIC, "Ud")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Ud)$(PATOMIC.Ud)")
+        #
         # Input: Jh
 
         CImGui.EndTabItem()
