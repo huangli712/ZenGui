@@ -113,6 +113,23 @@ function _atomic_model_block()
     if CImGui.BeginTabItem("model")
         CImGui.Text("Configure [model] Part")
 
+        # Input: nband
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(1) begin
+            @c CImGui.SliderInt(" Number of correlated bands", &_i, 1, 7)
+            PATOMIC.nband = _i
+            _i != 1 && push!(_ATOMIC, "nband")
+            _i == 1 && delete!(_ATOMIC, "nband")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nband)$(PATOMIC.nband)")
+        #
+        # Input: nspin
+        #
+        # Input: norbs
+        #
+        # Input: ncfgs
+
         CImGui.EndTabItem()
     end
 end
