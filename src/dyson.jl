@@ -56,15 +56,15 @@ function _dyson_main_block()
     widget_input_width = 100
     widget_combo_width = 100
 
-    # Input: method
-    #CImGui.SetNextItemWidth(widget_combo_width)
-    #method_list = ["historic", "classic", "bryan", "chi2kink"]
-    #@cstatic id = Cint(0) begin
-    #    @c CImGui.Combo(" How to determine the optimized α parameter", &id, method_list)
-    #    PMaxEnt.method = method_list[id + 1]
-    #end
-    #CImGui.SameLine()
-    #CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(method)$(PMaxEnt.method)")
+    # Input: task
+    CImGui.SetNextItemWidth(widget_combo_width)
+    task_list = ["dmft1", "dmft2", "fermi level", "impurity level", "eigenvalues", "spectral", "density of states", "to be done"]
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" Running mode of the code", &id, task_list)
+        PDYSON.task = id + 1
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(task)$(PDYSON.task)")
 end
 
 """
