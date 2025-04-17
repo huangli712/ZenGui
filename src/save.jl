@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/15
+# Last modified: 2025/04/17
 #
 
 """
@@ -41,7 +41,32 @@ end
     save_dyson(p_open::Ref{Bool})
 """
 function save_dyson(p_open::Ref{Bool})
+    # Create a popup window
+    CImGui.Begin(
+        "Save Dyson",
+        p_open,
+        CImGui.ImGuiWindowFlags_Modal | CImGui.ImGuiWindowFlags_NoResize
+    )
 
+    file = joinpath(pwd(), "dmft.in")
+    CImGui.Text("The configurtion file for Dyson will be saved at:")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
+
+    # If the button is pressed, then the dmft.in file is stored
+    # in the current directory.
+    if CImGui.Button("Save It")
+        p_open[] = false
+        #
+        D = _build_dyson_dict()
+        open("dmft.in", "w") do fout
+            for (key, value) in D
+                println(fout, "$key = $value")
+            end            
+        end
+    end
+
+    # Close the popup window
+    CImGui.End()
 end
 
 """
