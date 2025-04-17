@@ -14,7 +14,7 @@ Create an UI window for the Dyson code, which is a dynamical mean-field
 theory engine.
 """
 function create_app_dyson(p_open::Ref{Bool})
-    # Create the Dyson window, which is modal and can not be resized.
+    # Create the Dyson window, which can not be resized.
     CImGui.Begin(
         "Dyson",
         p_open,
@@ -27,11 +27,20 @@ function create_app_dyson(p_open::Ref{Bool})
     end
 
     # Fix size of the window
-    window_width = 400.0
-    window_height = 300.0
+    window_width = 600.0
+    window_height = 600.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
-    CImGui.Text("Dyson")
+    # For all the blocks in the dmft.in
+    _dyson_tabs_block()
+
+    # For the separator
+    CImGui.Spacing()
+    CImGui.Separator()
+    CImGui.Spacing()
+
+    # For the buttons in the bottom of this window
+    _dyson_bottom_block(p_open)
 
     # End of this window
     CImGui.End()
