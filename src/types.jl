@@ -318,6 +318,9 @@ end
 ### *Customized Structs* : *Dyson Code*
 =#
 
+"""
+    DMFT_PDYSON
+"""
 mutable struct DMFT_PDYSON
     task   :: I64
     axis   :: I64
@@ -327,8 +330,14 @@ mutable struct DMFT_PDYSON
     ltetra :: Bool
 end
 
+"""
+    _DYSON
+"""
 _DYSON = Set{String}()
 
+"""
+    PDYSON
+"""
 PDYSON = DMFT_PDYSON(
     1,
     1,
@@ -337,6 +346,22 @@ PDYSON = DMFT_PDYSON(
     true,
     true
 )
+
+"""
+    _struct_to_dict(s::DMFT_PDYSON)
+"""
+function _struct_to_dict(s::DMFT_PDYSON)
+    OD = OrderedDict{String,Any}()
+    #
+    "task"   ∈ _DYSON && ( OD["task"]   = s.task   )
+    "axis"   ∈ _DYSON && ( OD["axis"]   = s.axis   )
+    "beta"   ∈ _DYSON && ( OD["beta"]   = s.beta   )
+    "mc"     ∈ _DYSON && ( OD["mc"]     = s.mc     )
+    "lfermi" ∈ _DYSON && ( OD["lfermi"] = s.lfermi )
+    "ltetra" ∈ _DYSON && ( OD["ltetra"] = s.ltetra )
+    #
+    return OD
+end
 
 #=
 ### *Customized Structs* : *DFermion Code*
