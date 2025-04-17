@@ -32,7 +32,7 @@ function create_app_dyson(p_open::Ref{Bool})
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
     # For all the blocks in the dmft.in
-    _dyson_tabs_block()
+    _dyson_main_block()
 
     # For the separator
     CImGui.Spacing()
@@ -44,6 +44,27 @@ function create_app_dyson(p_open::Ref{Bool})
 
     # End of this window
     CImGui.End()
+end
+
+"""
+    _dyson_main_block()
+
+Setup widgets for the parameters in the dmft.in.
+"""
+function _dyson_main_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    # Input: method
+    #CImGui.SetNextItemWidth(widget_combo_width)
+    #method_list = ["historic", "classic", "bryan", "chi2kink"]
+    #@cstatic id = Cint(0) begin
+    #    @c CImGui.Combo(" How to determine the optimized α parameter", &id, method_list)
+    #    PMaxEnt.method = method_list[id + 1]
+    #end
+    #CImGui.SameLine()
+    #CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(method)$(PMaxEnt.method)")
 end
 
 """
