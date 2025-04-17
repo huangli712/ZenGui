@@ -373,11 +373,11 @@ end
     IQIST_PATOMIC
 """
 mutable struct IQIST_PATOMIC
-    ibasis :: I64 # Natural basis
+    ibasis :: I64 # Natural eigenbasis
     ictqmc :: I64 # Algorithm
     icu    :: I64 # Interaction
-    icf    :: I64 # Natural basis
-    isoc   :: I64 # Natural basis
+    icf    :: I64 # Natural eigenbasis
+    isoc   :: I64 # Natural eigenbasis
     nband  :: I64 # Model
     nspin  :: I64 # Model
     norbs  :: I64 # Model
@@ -391,8 +391,8 @@ mutable struct IQIST_PATOMIC
     Jp     :: F64 # Interaction
     Ud     :: F64 # Interaction
     Jh     :: F64 # Interaction
-    mune   :: F64 # Natural basis
-    lambda :: F64 # Natural basis
+    mune   :: F64 # Natural eigenbasis
+    lambda :: F64 # Natural eigenbasis
 end
 
 """
