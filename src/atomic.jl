@@ -362,11 +362,11 @@ function _atomic_algorithm_block()
         #
         # Input: nmaxi
         CImGui.SetNextItemWidth(widget_input_width)
-        @cstatic _i = Cint(0) begin
+        @cstatic _i = Cint(2) begin
             @c CImGui.SliderInt(" Upper boundary of occupancy N", &_i, 1, 14)
             PATOMIC.nmaxi = _i
-            _i != 0 && push!(_ATOMIC, "nmaxi")
-            _i == 0 && delete!(_ATOMIC, "nmaxi")
+            _i != 2 && push!(_ATOMIC, "nmaxi")
+            _i == 2 && delete!(_ATOMIC, "nmaxi")
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmaxi)$(PATOMIC.nmaxi)")
