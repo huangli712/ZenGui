@@ -73,7 +73,32 @@ end
     save_dfermion(p_open::Ref{Bool})
 """
 function save_dfermion(p_open::Ref{Bool})
+    # Create a popup window
+    CImGui.Begin(
+        "Save DFermion",
+        p_open,
+        CImGui.ImGuiWindowFlags_Modal | CImGui.ImGuiWindowFlags_NoResize
+    )
 
+    file = joinpath(pwd(), "dfa.in")
+    CImGui.Text("The configurtion file for DFermion will be saved at:")
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
+
+    # If the button is pressed, then the dfa.in file is stored
+    # in the current directory.
+    if CImGui.Button("Save It")
+        p_open[] = false
+        #
+        D = _build_dfermion_dict()
+        open("dfa.in", "w") do fout
+            for (key, value) in D
+                println(fout, "$key = $value")
+            end            
+        end
+    end
+
+    # Close the popup window
+    CImGui.End()
 end
 
 """
