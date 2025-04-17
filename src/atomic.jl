@@ -349,6 +349,18 @@ function _atomic_algorithm_block()
     if CImGui.BeginTabItem("algorithm")
         CImGui.Text("Configure [algorithm] Part")
 
+        # Input: ictqmc
+        CImGui.SetNextItemWidth(widget_combo_width)
+        ictqmc_list = ["direct", "GQN (N)", "GQN (N+Sz)", "GQN (N+Sz+PS)", "GQN (N+Jz)", "auto"]
+        @cstatic id = Cint(0) begin
+            @c CImGui.Combo(" How to diagonalize the atomic Hamiltonian matrix", &id, ictqmc_list)
+            PATOMIC.ictqmc = id + 1
+            id != 0 && push!(_ATOMIC, "ictqmc")
+            id == 0 && delete!(_ATOMIC, "ictqmc")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ictqmc)$(PATOMIC.ictqmc)")
+        #
         # Input: nmini
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(0) begin
