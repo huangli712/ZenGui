@@ -374,6 +374,41 @@ end
 ### *Customized Structs* : *DFermion Code*
 =#
 
+"""
+    DFERMION_PDFERMION
+"""
+mutable struct DFERMION_PDFERMION
+end
+
+"""
+    _DFERMION
+"""
+_DFERMION = Set{String}()
+
+"""
+    PDFERMION
+"""
+PDFERMION = DFERMION_PDFERMION(
+
+)
+
+"""
+    _struct_to_dict(s::DFERMION_PDFERMION)
+"""
+function _struct_to_dict(s::DFERMION_PDFERMION)
+    OD = OrderedDict{String,Any}()
+    #
+    #
+    return OD
+end
+
+"""
+    _build_dfermion_dict()
+"""
+function _build_dfermion_dict()
+    return _struct_to_dict(PDFERMION)
+end
+
 #=
 ### *Customized Structs* : *iQIST Package*
 =#
