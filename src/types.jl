@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/16
+# Last modified: 2025/04/17
 #
 
 #=
@@ -313,6 +313,34 @@ function _build_zen_dict()
         "solver" => _struct_to_dict(PSOLVER)
     )
 end
+
+#=
+### *Customized Structs* : *Dyson Code*
+=#
+
+mutable struct DMFT_PDYSON
+    task   :: I64
+    axis   :: I64
+    beta   :: F64
+    mc     :: F64
+    lfermi :: Bool
+    ltetra :: Bool
+end
+
+_DYSON = Set{String}()
+
+PDYSON = DMFT_PDYSON(
+    1,
+    1,
+    8.0,
+    0.0001,
+    true,
+    true
+)
+
+#=
+### *Customized Structs* : *DFermion Code*
+=#
 
 #=
 ### *Customized Structs* : *iQIST Package*
