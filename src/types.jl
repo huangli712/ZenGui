@@ -319,9 +319,9 @@ end
 =#
 
 """
-    DMFT_PDYSON
+    DYSON_PDYSON
 """
-mutable struct DMFT_PDYSON
+mutable struct DYSON_PDYSON
     task   :: I64
     axis   :: I64
     beta   :: F64
@@ -338,7 +338,7 @@ _DYSON = Set{String}()
 """
     PDYSON
 """
-PDYSON = DMFT_PDYSON(
+PDYSON = DYSON_PDYSON(
     1,
     1,
     8.0,
@@ -348,9 +348,9 @@ PDYSON = DMFT_PDYSON(
 )
 
 """
-    _struct_to_dict(s::DMFT_PDYSON)
+    _struct_to_dict(s::DYSON_PDYSON)
 """
-function _struct_to_dict(s::DMFT_PDYSON)
+function _struct_to_dict(s::DYSON_PDYSON)
     OD = OrderedDict{String,Any}()
     #
     "task"   ∈ _DYSON && ( OD["task"]   = s.task   )
@@ -361,6 +361,13 @@ function _struct_to_dict(s::DMFT_PDYSON)
     "ltetra" ∈ _DYSON && ( OD["ltetra"] = s.ltetra )
     #
     return OD
+end
+
+"""
+    _build_dyson_dict()
+"""
+function _build_dyson_dict()
+    return _struct_to_dict(PDYSON)
 end
 
 #=
