@@ -352,7 +352,7 @@ function _atomic_algorithm_block()
         # Input: nmini
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(0) begin
-            @c CImGui.SliderInt(" Lower boundary of occupancy N", &_i, 1, 17)
+            @c CImGui.SliderInt(" Lower boundary of occupancy N", &_i, 1, 14)
             PATOMIC.nmini = _i
             _i != 0 && push!(_ATOMIC, "nmini")
             _i == 0 && delete!(_ATOMIC, "nmini")
@@ -360,6 +360,16 @@ function _atomic_algorithm_block()
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmini)$(PATOMIC.nmini)")
         #
+        # Input: nmaxi
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(0) begin
+            @c CImGui.SliderInt(" Upper boundary of occupancy N", &_i, 1, 14)
+            PATOMIC.nmaxi = _i
+            _i != 0 && push!(_ATOMIC, "nmaxi")
+            _i == 0 && delete!(_ATOMIC, "nmaxi")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmaxi)$(PATOMIC.nmaxi)")
 
         CImGui.EndTabItem()
     end
