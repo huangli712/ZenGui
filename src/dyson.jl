@@ -96,7 +96,7 @@ function _dyson_main_block()
         _f == 8.0 && delete!(_DYSON, "beta")
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PDYSON.beta)")    
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PDYSON.beta)")
     #
     # Input: mc
     CImGui.SetNextItemWidth(widget_input_width)
@@ -107,7 +107,7 @@ function _dyson_main_block()
         _f == 0.0001 && delete!(_DYSON, "mc")
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mc)$(PDYSON.mc)")  
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mc)$(PDYSON.mc)")
     #
     # Input: lfermi
     CImGui.SetNextItemWidth(widget_combo_width)
