@@ -7,6 +7,10 @@
 # Last modified: 2025/04/18
 #
 
+#=
+### *Basic Macros*
+=#
+
 """
     @cswitch(constexpr, body)
 
@@ -63,6 +67,10 @@ macro cswitch(constexpr, body)
 
     return esc(Expr(:block, jumptable, flow))
 end
+
+#=
+### *Error Handler*
+=#
 
 """
     sorry()
