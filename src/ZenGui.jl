@@ -120,28 +120,14 @@ export authors
 #=
 *Summary* :
 
-To provide some useful utility macros and functions. They can be used
-to colorize the output strings, query the environments, and parse the
-input strings, etc.
+To provide some useful utility macros and functions.
 
 *Members* :
 
 ```text
-@cswitch      -> C-style switch.
-@time_call    -> Evaluate a function call and print the elapsed time.
-@pcs          -> Print colorful strings.
+@cswitch -> C-style switch.
 #
-require       -> Check julia envirnoment.
-setup_args    -> Setup ARGS manually.
-query_args    -> Query program's arguments.
-trace_error   -> Write exceptions or errors to terminal or external file.
-catch_error   -> Catch the thrown exceptions or errors.
-welcome       -> Print welcome message.
-overview      -> Print runtime information of ACFlow.
-goodbye       -> Say goodbye.
-sorry         -> Say sorry.
-prompt        -> Print some messages or logs to the output devices.
-line_to_array -> Convert a line to a string array.
+sorry    -> Say sorry.
 ```
 =#
 
@@ -149,6 +135,7 @@ line_to_array -> Convert a line to a string array.
 include("util.jl")
 #
 export @cswitch
+#
 export sorry
 
 #
