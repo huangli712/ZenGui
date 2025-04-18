@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/11
+# Last modified: 2025/04/18
 #
 
 """
@@ -162,6 +162,27 @@ _dict_to_toml
 include("save.jl")
 #
 export save_acflow
+
+#=
+### *Includes And Exports* : *menu.jl*
+=#
+
+#=
+*Summary* :
+
+Setup global menu for the ZenGui app.
+
+*Members* :
+
+```text
+create_menu    -> Create all the menu.
+#
+set_menu_file  -> Create the menu items in ``File''.
+set_menu_edit  -> Create the menu items in ``Edit''.
+set_menu_style -> Create the menu items in ``Style''.
+set_menu_help  -> Create the menu items in ``Help''.
+```
+=#
 
 #
 include("menu.jl")
