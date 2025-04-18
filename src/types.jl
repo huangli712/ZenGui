@@ -1293,3 +1293,11 @@ function _dict_to_toml(d::AbstractDict)
     TOML.print(io,d)
     return String(take!(io))
 end
+
+function _dict_to_string(d::AbstractDict)
+    io = IOBuffer
+    for (key, value) in d
+        println(io, "$key = $value")
+    end    
+    return String(take!(io))
+end

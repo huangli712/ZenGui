@@ -114,7 +114,7 @@ function _dyson_main_block()
     lfermi_list = [".true.", ".false."]
     @cstatic id = Cint(0) begin
         @c CImGui.Combo(" Whether the fermi level should be updated", &id, lfermi_list)
-        PDYSON.lfermi = lfermi_list[id]
+        PDYSON.lfermi = lfermi_list[id+1]
         id != 0 && push!(_DYSON, "lfermi")
         id == 0 && delete!(_DYSON, "lfermi")
     end
@@ -142,7 +142,7 @@ function _dyson_bottom_block(p_open::Ref{Bool})
     #
     if CImGui.BeginPopupModal("View", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
         @cstatic read_only=false text="Hello World!" begin
-            text = _dict_to_toml(_build_dyson_dict())
+            text = _dict_to_string(_build_dyson_dict())
             @c CImGui.Checkbox("Read-only", &read_only)
             flags = read_only ? CImGui.ImGuiInputTextFlags_ReadOnly : 0
             flags = CImGui.ImGuiInputTextFlags_AllowTabInput | flags
