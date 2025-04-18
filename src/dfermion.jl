@@ -323,6 +323,37 @@ function _dfermion_cycle_block()
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nbsit)$(PDFERMION.nbsit)")
     #
+        # Input: dfmix
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(1.0) vmin = Cdouble(0.0) vmax = Cdouble(1.0) begin
+            @c CImGui.SliderScalar(
+                " Mixing parameter for dual fermion iteration",
+                CImGui.ImGuiDataType_Double,
+                &_f,
+                &vmin, &vmax
+            )
+            PDFERMION.dfmix = _f
+            _f != 1.0 && push!(_DFERMION, "dfmix")
+            _f == 1.0 && delete!(_DFERMION, "dfmix")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(dfmix)$(PDFERMION.dfmix)")
+        #
+        # Input: bsmix
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(0.7) vmin = Cdouble(0.0) vmax = Cdouble(1.0) begin
+            @c CImGui.SliderScalar(
+                " Mixing parameter for solving the BSE",
+                CImGui.ImGuiDataType_Double,
+                &_f,
+                &vmin, &vmax
+            )
+            PDFERMION.bsmix = _f
+            _f != 0.7 && push!(_DFERMION, "bsmix")
+            _f == 0.7 && delete!(_DFERMION, "bsmix")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(bsmix)$(PDFERMION.bsmix)")
 
         CImGui.EndTabItem()
     end
