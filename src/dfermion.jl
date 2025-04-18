@@ -101,3 +101,18 @@ function _dfermion_bottom_block(p_open::Ref{Bool})
         p_open[] = false
     end
 end
+
+"""
+    _dfermion_cycle_block()
+"""
+function _dfermion_cycle_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    if CImGui.BeginTabItem("cycle")
+        CImGui.Text("Configure [cycle] Part")
+
+        CImGui.EndTabItem()
+    end
+end
