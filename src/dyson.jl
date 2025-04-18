@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/17
+# Last modified: 2025/04/18
 #
 
 """
@@ -58,7 +58,14 @@ function _dyson_main_block()
 
     # Input: task
     CImGui.SetNextItemWidth(widget_combo_width)
-    task_list = ["dmft1", "dmft2", "fermi level", "impurity level", "eigenvalues", "spectral", "density of states", "to be done"]
+    task_list = ["calc. hybridization",
+                 "calc. density matrix",
+                 "calc. fermi level",
+                 "calc. impurity level",
+                 "calc. eigenvalues",
+                 "calc. spectrum",
+                 "calc. density of states",
+                "to be done"]
     @cstatic id = Cint(0) begin
         @c CImGui.Combo(" Running mode of the code", &id, task_list)
         PDYSON.task = id + 1
