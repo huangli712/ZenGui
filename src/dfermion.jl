@@ -300,6 +300,20 @@ function _dfermion_cycle_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isdia)$(PDFERMION.isdia)")
+    #
+    # Input: ndfit
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(10) begin
+        @c CImGui.SliderInt(" Number of dual fermion iterations", &_i, 1, 100)
+        PDFERMION.ndfit = _i
+        _i != 10 && push!(_DFERMION, "ndfit")
+        _i == 10 && delete!(_DFERMION, "ndfit")
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ndfit)$(PDFERMION.ndfit)")
+    #
+    # Input: nbsit
+    #
 
         CImGui.EndTabItem()
     end
