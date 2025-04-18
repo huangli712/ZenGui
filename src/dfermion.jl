@@ -31,6 +31,17 @@ function create_app_dfermion(p_open::Ref{Bool})
     window_height = 600.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
+    # For all the blocks in the dfa.in
+    _dfermion_tabs_block()
+
+    # For the separator
+    CImGui.Spacing()
+    CImGui.Separator()
+    CImGui.Spacing()
+
+    # For the buttons in the bottom of this window
+    _dfermion_bottom_block(p_open)
+
     # End of this window
     CImGui.End()
 end
