@@ -99,6 +99,15 @@ function _dyson_main_block()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PDYSON.beta)")    
     #
     # Input: mc
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(0.0001) begin
+        @c CImGui.InputDouble(" Convergence criterion for fermi level search", &_f)
+        PDYSON.mc = _f
+        _f != 0.0001 && push!(_DYSON, "mc")
+        _f == 0.0001 && delete!(_DYSON, "mc")
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mc)$(PDYSON.mc)")  
     #
     # Input: lfermi
     #
