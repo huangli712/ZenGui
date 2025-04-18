@@ -230,6 +230,17 @@ function _dfermion_kmesh_block()
     if CImGui.BeginTabItem("k-mesh")
         CImGui.Text("Configure [k-mesh] Part")
 
+        # Input: nkpts
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(64) begin
+            @c CImGui.InputInt(" Number of k-points (totally)", &_i)
+            PDFERMION.nkpts = _i
+            _i != 64 && push!(_DFERMION, "nkpts")
+            _i == 64 && delete!(_DFERMION, "nkpts")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nkpts)$(PDFERMION.nkpts)")
+
         CImGui.EndTabItem()
     end
 end
