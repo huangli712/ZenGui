@@ -10,7 +10,10 @@
 """
     create_menu()
 
-Generate menu items in the main window.
+Generate all menu items in the main window. Note that the FMENU struct
+should be modified here.
+
+See also: [`FMENU`](@ref).
 """
 function create_menu()
     if CImGui.BeginMainMenuBar()
@@ -26,7 +29,7 @@ end
 """
     set_menu_file()
 
-Setup menu items in ``File''. There are two items: Save and Exit.
+Setup menu items in ``File''. There are only two items: Save and Exit.
 """
 function set_menu_file()
     if CImGui.BeginMenu("File")
@@ -44,7 +47,8 @@ end
    set_menu_edit()
 
 Setup menu items in ``Edit''. They are related to the apps developed by
-myself.
+myself. Now only the Zen, Dyson, DFermion, iQIST, ACFlow, and ACTest codes
+are supported.
 """
 function set_menu_edit()
     if CImGui.BeginMenu("Edit")
@@ -83,7 +87,8 @@ end
 """
    set_menu_style()
 
-Setup menu items in ``Style''.
+Setup menu items in ``Style''. They are used to change the appearance of
+this window-based application.
 """
 function set_menu_style()
     if CImGui.BeginMenu("Style")
@@ -98,7 +103,8 @@ end
 """
    set_menu_help()
 
-Setup menu items in ``Help''.
+Setup menu items in ``Help''. They are related to the documentation and
+user guides of all the apps.
 """
 function set_menu_help()
     if CImGui.BeginMenu("Help")
