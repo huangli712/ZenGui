@@ -74,6 +74,19 @@ function _dyson_main_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(task)$(PDYSON.task)")
+    #
+    # Input: axis
+    CImGui.SetNextItemWidth(widget_combo_width)
+    axis_list = ["imaginary axis", "real axis"]
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" Axis for brillouin zone integration", &id, axis_list)
+        PDYSON.axis = id + 1
+        id != 0 && push!(_DYSON, "axis")
+        id == 0 && delete!(_DYSON, "axis")
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(axis)$(PDYSON.axis)")
+    
 end
 
 """
