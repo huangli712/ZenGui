@@ -128,6 +128,28 @@ function _dfermion_dim_block()
     if CImGui.BeginTabItem("dimension")
         CImGui.Text("Configure [dimension] Part")
 
+        # Input: nffrq
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(16) begin
+            @c CImGui.SliderInt(" Number of fermionic frequencies for 2P function", &_i, 8, 1024)
+            PDFERMION.nffrq = _i
+            _i != 16 && push!(_DFERMION, "nffrq")
+            _i == 16 && delete!(_DFERMION, "nffrq")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nffrq)$(PDFERMION.nffrq)")
+        #
+        # Input: nbfrq
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(7) begin
+            @c CImGui.SliderInt(" Number of bosonic frequncies for 2P function", &_i, 4, 512)
+            PDFERMION.nbfrq = _i
+            _i != 7 && push!(_DFERMION, "nbfrq")
+            _i == 7 && delete!(_DFERMION, "nbfrq")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nbfrq)$(PDFERMION.nbfrq)")
+
         CImGui.EndTabItem()
     end
 end
