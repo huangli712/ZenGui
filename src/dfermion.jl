@@ -313,6 +313,15 @@ function _dfermion_cycle_block()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ndfit)$(PDFERMION.ndfit)")
     #
     # Input: nbsit
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(10) begin
+        @c CImGui.SliderInt(" ", &_i, 1, 100)
+        PDFERMION.nbsit = _i
+        _i != 10 && push!(_DFERMION, "nbsit")
+        _i == 10 && delete!(_DFERMION, "nbsit")
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nbsit)$(PDFERMION.nbsit)")
     #
 
         CImGui.EndTabItem()
