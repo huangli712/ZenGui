@@ -289,6 +289,18 @@ function _dfermion_cycle_block()
     if CImGui.BeginTabItem("cycle")
         CImGui.Text("Configure [cycle] Part")
 
+    # Input: isdia
+    CImGui.SetNextItemWidth(widget_combo_width)
+    isdia_list = ["second order", "ladder", "to be done"]
+    @cstatic id = Cint(1) begin
+        @c CImGui.Combo(" Running scheme of the code", &id, isdia_list)
+        PDFERMION.isdia = id + 1
+        id != 1 && push!(_DFERMION, "isdia")
+        id == 1 && delete!(_DFERMION, "isdia")
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isdia)$(PDFERMION.isdia)")
+
         CImGui.EndTabItem()
     end
 end
