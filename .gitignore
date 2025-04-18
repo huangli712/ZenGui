@@ -6,6 +6,8 @@
 *.toml
 solver.ctqmc.in
 solver.atomic.in
+dmft.in
+dfa.in
 .DS_Store
 imgui.ini
 docs/build
