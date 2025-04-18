@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/10
+# Last modified: 2025/04/18
 #
 
 """
@@ -66,6 +66,56 @@ function zeng_run()
         FMENU._ACTEST   && handle_menu_actest()
         FMENU._ZENGUI   && handle_menu_zengui()
         FMENU._ABOUT    && @c create_app_about(&FMENU._ABOUT)
+    end
+end
+
+"""
+    setup_flags()
+
+Setup configuration flags for the Dear ImGui library.
+"""
+function setup_flags()
+    io = CImGui.GetIO()
+    io.ConfigFlags = unsafe_load(io.ConfigFlags) | CImGui.ImGuiConfigFlags_DockingEnable
+    io.ConfigFlags = unsafe_load(io.ConfigFlags) | CImGui.ImGuiConfigFlags_ViewportsEnable
+    io.IniFilename = C_NULL
+end
+
+"""
+    setup_fonts()
+
+Setup fonts for this graphic user interface.
+"""
+function setup_fonts()
+    fonts_dir = "/Users/lihuang/Library/Fonts"
+    fonts = unsafe_load(CImGui.GetIO().Fonts)
+    CImGui.AddFontFromFileTTF(
+        fonts,
+        joinpath(fonts_dir, "FiraCode-Regular.ttf"),
+        16,
+        C_NULL,
+        CImGui.GetGlyphRangesGreek(fonts) # To display the Greek letters
+    )
+end
+
+"""
+    setup_window()
+
+Tweak the window's style in this graphic user interface.
+"""
+function setup_window()
+    style = Ptr{ImGuiStyle}(CImGui.GetStyle())
+    style.AntiAliasedLines = true
+    #
+    io = CImGui.GetIO()
+    if unsafe_load(io.ConfigFlags) & ImGuiConfigFlags_ViewportsEnable == ImGuiConfigFlags_ViewportsEnable
+        style.WindowRounding = 5.0f0
+        col = CImGui.c_get(style.Colors, CImGui.ImGuiCol_WindowBg)
+        CImGui.c_set!(
+            style.Colors,
+            CImGui.ImGuiCol_WindowBg,
+            ImVec4(col.x, col.y, col.z, 1.0f0)
+        )
     end
 end
 
