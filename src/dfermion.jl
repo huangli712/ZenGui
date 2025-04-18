@@ -113,6 +113,38 @@ function _dfermion_model_block()
     if CImGui.BeginTabItem("model")
         CImGui.Text("Configure [model] Part")
 
+        # Input: nband
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(1) begin
+            @c CImGui.SliderInt(" Number of correlated bands", &_i, 1, 7)
+            PDFERMION.nband = _i
+            _i != 1 && push!(_DFERMION, "nband")
+            _i == 1 && delete!(_DFERMION, "nband")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nband)$(PDFERMION.nband)")
+        #
+        # Input: nspin
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(2) begin
+            @c CImGui.InputInt(" Number of spin projections", &_i)
+            _i = Cint(PDFERMION.nspin) # This parameter should not be changed.
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nspin)$(PDFERMION.nspin)")
+        #
+        # Input: norbs
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(2) begin
+            @c CImGui.InputInt(" Number of correlated orbitals", &_i)
+            _i = Cint(PDFERMION.nspin * PDFERMION.nband)
+            PDFERMION.norbs = _i
+            _i != 2 && push!(_DFERMION, "norbs")
+            _i == 2 && delete!(_DFERMION, "norbs")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(norbs)$(PDFERMION.norbs)")
+
         CImGui.EndTabItem()
     end
 end
