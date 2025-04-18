@@ -406,7 +406,23 @@ _DFERMION = Set{String}()
     PDFERMION
 """
 PDFERMION = DFERMION_PDFERMION(
-
+    2,
+    1,
+    2,
+    2,
+    16,
+    7,
+    64,
+    8,
+    8,
+    8,
+    10,
+    10,
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    0.7
 )
 
 """
