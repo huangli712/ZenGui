@@ -69,6 +69,8 @@ function _dyson_main_block()
     @cstatic id = Cint(0) begin
         @c CImGui.Combo(" Running mode of the code", &id, task_list)
         PDYSON.task = id + 1
+        id != 0 && push!(_DYSON, "task")
+        id == 0 && delete!(_DYSON, "task")
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(task)$(PDYSON.task)")
