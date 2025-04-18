@@ -1301,6 +1301,6 @@ function _dict_to_string(d::AbstractDict)
     io = IOBuffer()
     for (key, value) in d
         println(io, "$key = $value")
-    end    
+    end
     return String(take!(io))
 end

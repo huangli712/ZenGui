@@ -666,21 +666,21 @@ function _zen_solver_block()
         CImGui.Text("Quantum Impurity Solver: $(PSOLVER.engine)")
 
         @cswitch PSOLVER.engine begin
-            
+
             @case "ctseg"
                 _layout_ctseg()
                 break
-            
+
             @case "cthyb"
                 _layout_cthyb()
                 break
-            
+
             @case "hia"
                 break
-            
+
             @case "norg"
                 break
-            
+
             @default
                 break
 
