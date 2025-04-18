@@ -144,6 +144,39 @@ function _dfermion_model_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(norbs)$(PDFERMION.norbs)")
+        #
+        # Input: mune
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(0.0) begin
+            @c CImGui.InputDouble(" Chemical potential or fermi level", &_f)
+            PDFERMION.mune = _f
+            _f != 0.0 && push!(_DFERMION, "mune")
+            _f == 0.0 && delete!(_DFERMION, "mune")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mune)$(PDFERMION.mune)")
+        #
+        # Input: beta
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(1.0) begin
+            @c CImGui.InputDouble(" Inversion of temperature", &_f)
+            PDFERMION.beta = _f
+            _f != 1.0 && push!(_DFERMION, "beta")
+            _f == 1.0 && delete!(_DFERMION, "beta")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PDFERMION.beta)")
+        #
+        # Input: part
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _f = Cdouble(1.0) begin
+            @c CImGui.InputDouble(" Hopping parameter t for Hubbard model", &_f)
+            PDFERMION.part = _f
+            _f != 1.0 && push!(_DFERMION, "part")
+            _f == 1.0 && delete!(_DFERMION, "part")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(part)$(PDFERMION.part)")
 
         CImGui.EndTabItem()
     end
