@@ -251,6 +251,28 @@ function _dfermion_kmesh_block()
         end
         CImGui.SameLine()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nkp_x)$(PDFERMION.nkp_x)")
+        #
+        # Input: nkp_y
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(8) begin
+            @c CImGui.InputInt(" Number of k-points (along y-axis)", &_i)
+            PDFERMION.nkp_y = _i
+            _i != 8 && push!(_DFERMION, "nkp_y")
+            _i == 8 && delete!(_DFERMION, "nkp_y")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nkp_y)$(PDFERMION.nkp_y)")
+        #
+        # Input: nkp_z
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(8) begin
+            @c CImGui.InputInt(" Number of k-points (along z-axis)", &_i)
+            PDFERMION.nkp_z = _i
+            _i != 8 && push!(_DFERMION, "nkp_z")
+            _i == 8 && delete!(_DFERMION, "nkp_z")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nkp_z)$(PDFERMION.nkp_z)")
 
         CImGui.EndTabItem()
     end
