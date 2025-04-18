@@ -378,23 +378,23 @@ end
     DFERMION_PDFERMION
 """
 mutable struct DFERMION_PDFERMION
-    isdia :: I64
-    nband :: I64
-    nspin :: I64
-    norbs :: I64
-    nffrq :: I64
-    nbfrq :: I64
-    nkpts :: I64
-    nkp_x :: I64
-    nkp_y :: I64
-    nkp_z :: I64
-    ndfit :: I64
-    nbsit :: I64
-    mune  :: F64
-    beta  :: F64
-    part  :: F64
-    dfmix :: F64
-    bsmix :: F64
+    isdia :: I64 # Cycle
+    nband :: I64 # Model
+    nspin :: I64 # Model
+    norbs :: I64 # Model
+    nffrq :: I64 # Dimension
+    nbfrq :: I64 # Dimension
+    nkpts :: I64 # K-mesh
+    nkp_x :: I64 # K-mesh
+    nkp_y :: I64 # K-mesh
+    nkp_z :: I64 # K-mesh
+    ndfit :: I64 # Cycle
+    nbsit :: I64 # Cycle
+    mune  :: F64 # Model
+    beta  :: F64 # Model
+    part  :: F64 # Model
+    dfmix :: F64 # Cycle
+    bsmix :: F64 # Cycle
 end
 
 """
