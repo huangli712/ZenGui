@@ -103,6 +103,51 @@ function _dfermion_bottom_block(p_open::Ref{Bool})
 end
 
 """
+    _dfermion_model_block()
+"""
+function _dfermion_model_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    if CImGui.BeginTabItem("model")
+        CImGui.Text("Configure [model] Part")
+
+        CImGui.EndTabItem()
+    end
+end
+
+"""
+    _dfermion_dim_block()
+"""
+function _dfermion_dim_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    if CImGui.BeginTabItem("dimension")
+        CImGui.Text("Configure [dimension] Part")
+
+        CImGui.EndTabItem()
+    end
+end
+
+"""
+    _dfermion_kmesh_block()
+"""
+function _dfermion_kmesh_block()
+    # Define the default size for widgets
+    widget_input_width = 100
+    widget_combo_width = 100
+
+    if CImGui.BeginTabItem("k-mesh")
+        CImGui.Text("Configure [k-mesh] Part")
+
+        CImGui.EndTabItem()
+    end
+end
+
+"""
     _dfermion_cycle_block()
 """
 function _dfermion_cycle_block()
