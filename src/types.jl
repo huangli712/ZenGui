@@ -431,6 +431,23 @@ PDFERMION = DFERMION_PDFERMION(
 function _struct_to_dict(s::DFERMION_PDFERMION)
     OD = OrderedDict{String,Any}()
     #
+    "isdia" ∈ _DFERMION && ( OD["isdia"] = s.isdia )
+    "nband" ∈ _DFERMION && ( OD["nband"] = s.nband )
+    "nspin" ∈ _DFERMION && ( OD["nspin"] = s.nspin )
+    "norbs" ∈ _DFERMION && ( OD["norbs"] = s.norbs )
+    "nffrq" ∈ _DFERMION && ( OD["nffrq"] = s.nffrq )
+    "nbfrq" ∈ _DFERMION && ( OD["nbfrq"] = s.nbfrq )
+    "nkpts" ∈ _DFERMION && ( OD["nkpts"] = s.nkpts )
+    "nkp_x" ∈ _DFERMION && ( OD["nkp_x"] = s.nkp_x )
+    "nkp_y" ∈ _DFERMION && ( OD["nkp_y"] = s.nkp_y )
+    "nkp_z" ∈ _DFERMION && ( OD["nkp_z"] = s.nkp_z )
+    "ndfit" ∈ _DFERMION && ( OD["ndfit"] = s.ndfit )
+    "nbsit" ∈ _DFERMION && ( OD["nbsit"] = s.nbsit )
+    "mune"  ∈ _DFERMION && ( OD["mune"]  = s.mune  )
+    "beta"  ∈ _DFERMION && ( OD["beta"]  = s.beta  )
+    "part"  ∈ _DFERMION && ( OD["part"]  = s.part  )
+    "dfmix" ∈ _DFERMION && ( OD["dfmix"] = s.dfmix )
+    "bsmix" ∈ _DFERMION && ( OD["bsmix"] = s.bsmix )
     #
     return OD
 end
