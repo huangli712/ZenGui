@@ -1294,6 +1294,9 @@ function _dict_to_toml(d::AbstractDict)
     return String(take!(io))
 end
 
+"""
+    _dict_to_string(d::AbstractDict)
+"""
 function _dict_to_string(d::AbstractDict)
     io = IOBuffer()
     for (key, value) in d

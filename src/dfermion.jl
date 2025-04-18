@@ -45,3 +45,21 @@ function create_app_dfermion(p_open::Ref{Bool})
     # End of this window
     CImGui.End()
 end
+
+"""
+    _dfermion_tabs_block()
+
+Setup the tab widgets for all the blocks in the dfa.in.
+"""
+function _dfermion_tabs_block()
+    tab_bar_flags = CImGui.ImGuiTabBarFlags_None
+    #
+    if CImGui.BeginTabBar("dfermionTabBar", tab_bar_flags)
+        _dfermion_model_block()
+        _dfermion_dim_block()
+        _dfermion_kmesh_block()
+        _dfermion_cycle_block()
+        #
+        CImGui.EndTabBar()
+    end
+end
