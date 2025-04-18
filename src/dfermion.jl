@@ -315,7 +315,7 @@ function _dfermion_cycle_block()
     # Input: nbsit
     CImGui.SetNextItemWidth(widget_input_width)
     @cstatic _i = Cint(10) begin
-        @c CImGui.SliderInt(" ", &_i, 1, 100)
+        @c CImGui.SliderInt(" Number of iterations for solving the BSE", &_i, 1, 100)
         PDFERMION.nbsit = _i
         _i != 10 && push!(_DFERMION, "nbsit")
         _i == 10 && delete!(_DFERMION, "nbsit")
