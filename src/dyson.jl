@@ -122,7 +122,16 @@ function _dyson_main_block()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lfermi)$(PDYSON.lfermi)")
     #
     # Input: ltetra
-    
+    CImGui.SetNextItemWidth(widget_combo_width)
+    ltetra_list = [".true.", ".false."]
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" Whether the analytical tetrahedron method is used", &id, ltetra_list)
+        PDYSON.ltetra = ltetra_list[id+1]
+        id != 0 && push!(_DYSON, "ltetra")
+        id == 0 && delete!(_DYSON, "ltetra")
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ltetra)$(PDYSON.ltetra)")
 end
 
 """
