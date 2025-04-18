@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/17
+# Last modified: 2025/04/18
 #
 
 """
@@ -61,7 +61,7 @@ function save_dyson(p_open::Ref{Bool})
         open("dmft.in", "w") do fout
             for (key, value) in D
                 println(fout, "$key = $value")
-            end            
+            end
         end
     end
 
@@ -93,7 +93,7 @@ function save_dfermion(p_open::Ref{Bool})
         open("dfa.in", "w") do fout
             for (key, value) in D
                 println(fout, "$key = $value")
-            end            
+            end
         end
     end
 
@@ -125,7 +125,7 @@ function save_ctseg(p_open::Ref{Bool})
         open("solver.ctqmc.in", "w") do fout
             for (key, value) in D
                 println(fout, "$key = $value")
-            end            
+            end
         end
     end
 
@@ -157,7 +157,7 @@ function save_cthyb(p_open::Ref{Bool})
         open("solver.ctqmc.in", "w") do fout
             for (key, value) in D
                 println(fout, "$key = $value")
-            end            
+            end
         end
     end
 
@@ -189,7 +189,7 @@ function save_atomic(p_open::Ref{Bool})
         open("solver.atomic.in", "w") do fout
             for (key, value) in D
                 println(fout, "$key = $value")
-            end            
+            end
         end
     end
 

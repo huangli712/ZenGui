@@ -1295,7 +1295,7 @@ function _dict_to_toml(d::AbstractDict)
 end
 
 function _dict_to_string(d::AbstractDict)
-    io = IOBuffer
+    io = IOBuffer()
     for (key, value) in d
         println(io, "$key = $value")
     end    
