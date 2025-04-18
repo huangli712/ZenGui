@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/15
+# Last modified: 2025/04/18
 #
 
 """
@@ -14,10 +14,10 @@ Generate menu items in the main window.
 """
 function create_menu()
     if CImGui.BeginMainMenuBar()
-        set_menu_file()
-        set_menu_edit()
-        set_menu_style()
-        set_menu_help()
+        set_menu_file()  # For the ``File'' menu
+        set_menu_edit()  # For the ``Edit'' menu
+        set_menu_style() # For the ``Style'' menu
+        set_menu_help()  # For the ``Help'' menu
         #
         CImGui.EndMainMenuBar()
     end
@@ -26,7 +26,7 @@ end
 """
     set_menu_file()
 
-Setup menu items in ``File''.
+Setup menu items in ``File''. There are two items: Save and Exit.
 """
 function set_menu_file()
     if CImGui.BeginMenu("File")
@@ -43,7 +43,8 @@ end
 """
    set_menu_edit()
 
-Setup menu items in ``Edit''.
+Setup menu items in ``Edit''. They are related to the apps developed by
+myself.
 """
 function set_menu_edit()
     if CImGui.BeginMenu("Edit")
