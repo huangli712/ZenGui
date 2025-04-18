@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/17
+# Last modified: 2025/04/18
 #
 
 #=
@@ -378,6 +378,23 @@ end
     DFERMION_PDFERMION
 """
 mutable struct DFERMION_PDFERMION
+    isdia :: I64
+    nband :: I64
+    nspin :: I64
+    norbs :: I64
+    nffrq :: I64
+    nbfrq :: I64
+    nkpts :: I64
+    nkp_x :: I64
+    nkp_y :: I64
+    nkp_z :: I64
+    ndfit :: I64
+    nbsit :: I64
+    mune  :: F64
+    beta  :: F64
+    part  :: F64
+    dfmix :: F64
+    bsmix :: F64
 end
 
 """
