@@ -86,6 +86,23 @@ function _dyson_main_block()
     end
     CImGui.SameLine()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(axis)$(PDYSON.axis)")
+    #
+    # Input: beta
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _f = Cdouble(8.0) begin
+        @c CImGui.InputDouble(" Inverse temperature", &_f)
+        PDYSON.beta = _f
+        _f != 8.0 && push!(_DYSON, "beta")
+        _f == 8.0 && delete!(_DYSON, "beta")
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PDYSON.beta)")    
+    #
+    # Input: mc
+    #
+    # Input: lfermi
+    #
+    # Input: ltetra
     
 end
 
