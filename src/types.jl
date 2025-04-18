@@ -326,8 +326,8 @@ mutable struct DYSON_PDYSON
     axis   :: I64
     beta   :: F64
     mc     :: F64
-    lfermi :: Bool
-    ltetra :: Bool
+    lfermi :: String
+    ltetra :: String
 end
 
 """
@@ -343,8 +343,8 @@ PDYSON = DYSON_PDYSON(
     1,
     8.0,
     0.0001,
-    true,
-    true
+    ".true.",
+    ".true."
 )
 
 """

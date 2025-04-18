@@ -110,6 +110,16 @@ function _dyson_main_block()
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mc)$(PDYSON.mc)")  
     #
     # Input: lfermi
+    CImGui.SetNextItemWidth(widget_combo_width)
+    lfermi_list = [".true.", ".false."]
+    @cstatic id = Cint(0) begin
+        @c CImGui.Combo(" Whether the fermi level should be updated", &id, lfermi_list)
+        PDYSON.lfermi = lfermi_list[id]
+        id != 0 && push!(_DYSON, "lfermi")
+        id == 0 && delete!(_DYSON, "lfermi")
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lfermi)$(PDYSON.lfermi)")
     #
     # Input: ltetra
     
