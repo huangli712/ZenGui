@@ -289,40 +289,40 @@ function _dfermion_cycle_block()
     if CImGui.BeginTabItem("cycle")
         CImGui.Text("Configure [cycle] Part")
 
-    # Input: isdia
-    CImGui.SetNextItemWidth(widget_combo_width)
-    isdia_list = ["second order", "ladder", "to be done"]
-    @cstatic id = Cint(1) begin
-        @c CImGui.Combo(" Running scheme of the code", &id, isdia_list)
-        PDFERMION.isdia = id + 1
-        id != 1 && push!(_DFERMION, "isdia")
-        id == 1 && delete!(_DFERMION, "isdia")
-    end
-    CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isdia)$(PDFERMION.isdia)")
-    #
-    # Input: ndfit
-    CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _i = Cint(10) begin
-        @c CImGui.SliderInt(" Number of dual fermion iterations", &_i, 1, 100)
-        PDFERMION.ndfit = _i
-        _i != 10 && push!(_DFERMION, "ndfit")
-        _i == 10 && delete!(_DFERMION, "ndfit")
-    end
-    CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ndfit)$(PDFERMION.ndfit)")
-    #
-    # Input: nbsit
-    CImGui.SetNextItemWidth(widget_input_width)
-    @cstatic _i = Cint(10) begin
-        @c CImGui.SliderInt(" Number of iterations for solving the BSE", &_i, 1, 100)
-        PDFERMION.nbsit = _i
-        _i != 10 && push!(_DFERMION, "nbsit")
-        _i == 10 && delete!(_DFERMION, "nbsit")
-    end
-    CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nbsit)$(PDFERMION.nbsit)")
-    #
+        # Input: isdia
+        CImGui.SetNextItemWidth(widget_combo_width)
+        isdia_list = ["second order", "ladder", "to be done"]
+        @cstatic id = Cint(1) begin
+            @c CImGui.Combo(" Running scheme of the code", &id, isdia_list)
+            PDFERMION.isdia = id + 1
+            id != 1 && push!(_DFERMION, "isdia")
+            id == 1 && delete!(_DFERMION, "isdia")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isdia)$(PDFERMION.isdia)")
+        #
+        # Input: ndfit
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(10) begin
+            @c CImGui.SliderInt(" Number of dual fermion iterations", &_i, 1, 100)
+            PDFERMION.ndfit = _i
+            _i != 10 && push!(_DFERMION, "ndfit")
+            _i == 10 && delete!(_DFERMION, "ndfit")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ndfit)$(PDFERMION.ndfit)")
+        #
+        # Input: nbsit
+        CImGui.SetNextItemWidth(widget_input_width)
+        @cstatic _i = Cint(10) begin
+            @c CImGui.SliderInt(" Number of iterations for solving the BSE", &_i, 1, 100)
+            PDFERMION.nbsit = _i
+            _i != 10 && push!(_DFERMION, "nbsit")
+            _i == 10 && delete!(_DFERMION, "nbsit")
+        end
+        CImGui.SameLine()
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nbsit)$(PDFERMION.nbsit)")
+        #
         # Input: dfmix
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _f = Cdouble(1.0) vmin = Cdouble(0.0) vmax = Cdouble(1.0) begin
