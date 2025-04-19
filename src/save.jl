@@ -4,11 +4,13 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/18
+# Last modified: 2025/04/19
 #
 
 """
     save_zen(p_open::Ref{Bool})
+
+Save configuration file (`case.toml`) for the `Zen` package.
 """
 function save_zen(p_open::Ref{Bool})
     # Create a popup window
@@ -22,8 +24,8 @@ function save_zen(p_open::Ref{Bool})
     CImGui.Text("The configurtion file for Zen will be saved at:")
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
 
-    # If the button is pressed, then the ac.toml file is stored in the
-    # current directory.
+    # If the button is pressed, then the case.toml file will be stored
+    # in the current directory.
     if CImGui.Button("Save It")
         p_open[] = false
         #
@@ -39,6 +41,8 @@ end
 
 """
     save_dyson(p_open::Ref{Bool})
+
+Save configuration file (`dmft.in`) for the `Dyson` code.
 """
 function save_dyson(p_open::Ref{Bool})
     # Create a popup window
@@ -52,7 +56,7 @@ function save_dyson(p_open::Ref{Bool})
     CImGui.Text("The configurtion file for Dyson will be saved at:")
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
 
-    # If the button is pressed, then the dmft.in file is stored
+    # If the button is pressed, then the dmft.in file will be stored
     # in the current directory.
     if CImGui.Button("Save It")
         p_open[] = false
@@ -71,6 +75,8 @@ end
 
 """
     save_dfermion(p_open::Ref{Bool})
+
+Save configuration file (`dfa.in`) for the `DFermion` code.
 """
 function save_dfermion(p_open::Ref{Bool})
     # Create a popup window
@@ -84,7 +90,7 @@ function save_dfermion(p_open::Ref{Bool})
     CImGui.Text("The configurtion file for DFermion will be saved at:")
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
 
-    # If the button is pressed, then the dfa.in file is stored
+    # If the button is pressed, then the dfa.in file will be stored
     # in the current directory.
     if CImGui.Button("Save It")
         p_open[] = false
@@ -103,6 +109,8 @@ end
 
 """
     save_ctseg(p_open::Ref{Bool})
+
+Save configuration file (`solver.ctqmc.in`) for the `iQIST/ctseg` code.
 """
 function save_ctseg(p_open::Ref{Bool})
     # Create a popup window
@@ -116,8 +124,8 @@ function save_ctseg(p_open::Ref{Bool})
     CImGui.Text("The configurtion file for iQIST/ctseg will be saved at:")
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
 
-    # If the button is pressed, then the solver.ctqmc.in file is stored
-    # in the current directory.
+    # If the button is pressed, then the solver.ctqmc.in file will be
+    # stored in the current directory.
     if CImGui.Button("Save It")
         p_open[] = false
         #
@@ -135,6 +143,8 @@ end
 
 """
     save_cthyb(p_open::Ref{Bool})
+
+Save configuration file (`solver.ctqmc.in`) for the `iQIST/cthyb` code.
 """
 function save_cthyb(p_open::Ref{Bool})
     # Create a popup window
@@ -148,8 +158,8 @@ function save_cthyb(p_open::Ref{Bool})
     CImGui.Text("The configurtion file for iQIST/cthyb will be saved at:")
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
 
-    # If the button is pressed, then the solver.ctqmc.in file is stored
-    # in the current directory.
+    # If the button is pressed, then the solver.ctqmc.in file will be
+    # stored in the current directory.
     if CImGui.Button("Save It")
         p_open[] = false
         #
@@ -167,6 +177,8 @@ end
 
 """
     save_atomic(p_open::Ref{Bool})
+
+Save configuration file (`solver.atomic.in`) for the `iQIST/atomic` code.
 """
 function save_atomic(p_open::Ref{Bool})
     # Create a popup window
@@ -180,8 +192,8 @@ function save_atomic(p_open::Ref{Bool})
     CImGui.Text("The configurtion file for iQIST/atomic will be saved at:")
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
 
-    # If the button is pressed, then the solver.atomic.in file is stored
-    # in the current directory.
+    # If the button is pressed, then the solver.atomic.in file will be
+    # stored in the current directory.
     if CImGui.Button("Save It")
         p_open[] = false
         #
@@ -199,6 +211,8 @@ end
 
 """
     save_acflow(p_open::Ref{Bool})
+
+Save configuration file (`ac.toml`) for the `ACFlow` toolkit.
 """
 function save_acflow(p_open::Ref{Bool})
     # Create a popup window
@@ -212,8 +226,8 @@ function save_acflow(p_open::Ref{Bool})
     CImGui.Text("The configurtion file for ACFlow will be saved at:")
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
 
-    # If the button is pressed, then the ac.toml file is stored in the
-    # current directory.
+    # If the button is pressed, then the ac.toml file will be stored in
+    # the current directory.
     if CImGui.Button("Save It")
         p_open[] = false
         #
@@ -229,6 +243,8 @@ end
 
 """
     save_actest(p_open::Ref{Bool})
+
+Save configuration file (`act.toml`) for the `ACTest` toolkit.
 """
 function save_actest(p_open::Ref{Bool})
     # Create a popup window
@@ -242,8 +258,8 @@ function save_actest(p_open::Ref{Bool})
     CImGui.Text("The configurtion file for ACTest will be saved at:")
     CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
 
-    # If the button is pressed, then the act.toml file is stored in the
-    # current directory.
+    # If the button is pressed, then the act.toml file will be stored in
+    # the current directory.
     if CImGui.Button("Save It")
         p_open[] = false
         #
@@ -259,6 +275,8 @@ end
 
 """
     save_nothing(p_open::Ref{Bool})
+
+This function will create an empty window and do nothing.
 """
 function save_nothing(p_open::Ref{Bool})
     # Create a popup window
