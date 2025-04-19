@@ -293,6 +293,22 @@ include("actest.jl")
 #
 export create_app_actest
 
+#=
+### *Includes And Exports* : *about.jl*
+=#
+
+#=
+*Summary* :
+
+Create and display the `About` window for the ZenGui app.
+
+*Members* :
+
+```text
+create_app_about -> Create and display the `About` window.
+```
+=#
+
 #
 include("about.jl")
 #
