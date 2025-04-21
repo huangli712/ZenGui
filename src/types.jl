@@ -49,27 +49,27 @@ should respond the mouse events according to this struct.
 The meun items are created at `src/menu.jl`.
 
 ### Members
-* _SAVE
-* _EXIT
-* ZEN
-* DYSON
-* DFERMION
-* CTSEG
-* CTHYB
-* ATOMIC
-* ACFLOW
-* ACTEST
-* _CLASSIC
-* _DARK
-* _LIGHT
-* _ZEN
-* _DYSON
-* _DFERMION
-* _IQIST
-* _ACFLOW
-* _ACTEST
-* _ZENGUI
-* _ABOUT
+* F_SAVE
+* F_EXIT
+* E_ZEN
+* E_DYSON
+* E_DFERMION
+* E_CTSEG
+* E_CTHYB
+* E_ATOMIC
+* E_ACFLOW
+* E_ACTEST
+* S_CLASSIC
+* S_DARK
+* S_LIGHT
+* H_ZEN
+* H_DYSON
+* H_DFERMION
+* H_IQIST
+* H_ACFLOW
+* H_ACTEST
+* H_ZENGUI
+* H_ABOUT
 
 See also: [`FMENU`](@ref).
 """
