@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/18
+# Last modified: 2025/04/21
 #
 
 #=
@@ -13,6 +13,13 @@
 
 """
     CURRENT_WINDOW
+
+A struct used to keep the name of the current (activate) window.
+
+### Members
+* name -> Name of the current window.
+
+See also: [`CWIN`](@ref).
 """
 mutable struct CURRENT_WINDOW
     name :: String
@@ -20,6 +27,10 @@ end
 
 """
     CWIN
+
+An instance for the `CURRENT_WINDOW` struct.
+
+See also: [`CURRENT_WINDOW`](@ref).
 """
 CWIN = CURRENT_WINDOW(
     "nothing"
@@ -31,6 +42,36 @@ CWIN = CURRENT_WINDOW(
 
 """
     MenuFlags
+
+A struct used to track the status of all the menu items. The renderloop
+should respond the mouse events according to this struct.
+
+The meun items are created at `src/menu.jl`.
+
+### Members
+* _SAVE
+* _EXIT
+* ZEN
+* DYSON
+* DFERMION
+* CTSEG
+* CTHYB
+* ATOMIC
+* ACFLOW
+* ACTEST
+* _CLASSIC
+* _DARK
+* _LIGHT
+* _ZEN
+* _DYSON
+* _DFERMION
+* _IQIST
+* _ACFLOW
+* _ACTEST
+* _ZENGUI
+* _ABOUT
+
+See also: [`FMENU`](@ref).
 """
 mutable struct MenuFlags
     _SAVE     :: Bool
