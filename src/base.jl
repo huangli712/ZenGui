@@ -42,30 +42,30 @@ function zeng_run()
         create_menu()
 
         # Respond to events
-        FMENU._SAVE     && handle_menu_save()
-        FMENU._EXIT     && return :imgui_exit_loop
+        FMENU.F_SAVE     && handle_menu_save()
+        FMENU.F_EXIT     && return :imgui_exit_loop
         #
-        FMENU.ZEN       && @c create_app_zen(&FMENU.ZEN)
-        FMENU.DYSON     && @c create_app_dyson(&FMENU.DYSON)
-        FMENU.DFERMION  && @c create_app_dfermion(&FMENU.DFERMION)
-        FMENU.CTSEG     && @c create_app_ctseg(&FMENU.CTSEG)
-        FMENU.CTHYB     && @c create_app_cthyb(&FMENU.CTHYB)
-        FMENU.ATOMIC    && @c create_app_atomic(&FMENU.ATOMIC)
-        FMENU.ACFLOW    && @c create_app_acflow(&FMENU.ACFLOW)
-        FMENU.ACTEST    && @c create_app_actest(&FMENU.ACTEST)
+        FMENU.E_ZEN       && @c create_app_zen(&FMENU.E_ZEN)
+        FMENU.E_DYSON     && @c create_app_dyson(&FMENU.E_DYSON)
+        FMENU.E_DFERMION  && @c create_app_dfermion(&FMENU.E_DFERMION)
+        FMENU.E_CTSEG     && @c create_app_ctseg(&FMENU.E_CTSEG)
+        FMENU.E_CTHYB     && @c create_app_cthyb(&FMENU.E_CTHYB)
+        FMENU.E_ATOMIC    && @c create_app_atomic(&FMENU.E_ATOMIC)
+        FMENU.E_ACFLOW    && @c create_app_acflow(&FMENU.E_ACFLOW)
+        FMENU.E_ACTEST    && @c create_app_actest(&FMENU.E_ACTEST)
         #
-        FMENU._CLASSIC  && handle_menu_classic()
-        FMENU._DARK     && handle_menu_dark()
-        FMENU._LIGHT    && handle_menu_light()
+        FMENU.S_CLASSIC  && handle_menu_classic()
+        FMENU.S_DARK     && handle_menu_dark()
+        FMENU.S_LIGHT    && handle_menu_light()
         #
-        FMENU._ZEN      && handle_menu_zen()
-        FMENU._DYSON    && handle_menu_dyson()
-        FMENU._DFERMION && handle_menu_dfermion()
-        FMENU._IQIST    && handle_menu_iqist()
-        FMENU._ACFLOW   && handle_menu_acflow()
-        FMENU._ACTEST   && handle_menu_actest()
-        FMENU._ZENGUI   && handle_menu_zengui()
-        FMENU._ABOUT    && @c create_app_about(&FMENU._ABOUT)
+        FMENU.H_ZEN      && handle_menu_zen()
+        FMENU.H_DYSON    && handle_menu_dyson()
+        FMENU.H_DFERMION && handle_menu_dfermion()
+        FMENU.H_IQIST    && handle_menu_iqist()
+        FMENU.H_ACFLOW   && handle_menu_acflow()
+        FMENU.H_ACTEST   && handle_menu_actest()
+        FMENU.H_ZENGUI   && handle_menu_zengui()
+        FMENU.H_ABOUT    && @c create_app_about(&FMENU.H_ABOUT)
     end
 end
 
@@ -131,79 +131,79 @@ function handle_menu_save()
     @cswitch CWIN.name begin
 
         @case "ZEN"
-            if FMENU.ZEN
+            if FMENU.E_ZEN
                 @show "SAVE ZEN"
-                @c save_zen(&FMENU._SAVE)
+                @c save_zen(&FMENU.F_SAVE)
             else
-                FMENU._SAVE = false
+                FMENU.F_SAVE = false
             end
             break
 
         @case "DYSON"
-            if FMENU.DYSON
+            if FMENU.E_DYSON
                 @show "SAVE DYSON"
-                @c save_dyson(&FMENU._SAVE)
+                @c save_dyson(&FMENU.F_SAVE)
             else
-                FMENU._SAVE = false
+                FMENU.F_SAVE = false
             end
             break
 
         @case "DFERMION"
-            if FMENU.DFERMION
+            if FMENU.E_DFERMION
                 @show "SAVE DFERMION"
-                @c save_dfermion(&FMENU._SAVE)
+                @c save_dfermion(&FMENU.F_SAVE)
             else
-                FMENU._SAVE = false
+                FMENU.F_SAVE = false
             end
             break
 
         @case "CTSEG"
-            if FMENU.CTSEG
+            if FMENU.E_CTSEG
                 @show "SAVE CTSEG"
-                @c save_ctseg(&FMENU._SAVE)
+                @c save_ctseg(&FMENU.F_SAVE)
             else
-                FMENU._SAVE = false
+                FMENU.F_SAVE = false
             end
             break
 
         @case "CTHYB"
-            if FMENU.CTHYB
+            if FMENU.E_CTHYB
                 @show "SAVE CTHYB"
-                @c save_cthyb(&FMENU._SAVE)
+                @c save_cthyb(&FMENU.F_SAVE)
             else
-                FMENU._SAVE = false
+                FMENU.F_SAVE = false
             end
             break
 
         @case "ATOMIC"
-            if FMENU.ATOMIC
+            if FMENU.E_ATOMIC
                 @show "SAVE ATOMIC"
-                @c save_atomic(&FMENU._SAVE)
+                @c save_atomic(&FMENU.F_SAVE)
             else
-                FMENU._SAVE = false
+                FMENU.F_SAVE = false
             end
             break
 
         @case "ACFLOW"
-            if FMENU.ACFLOW
+            if FMENU.E_ACFLOW
                 @show "SAVE ACFLOW"
-                @c save_acflow(&FMENU._SAVE)
+                @c save_acflow(&FMENU.F_SAVE)
             else
-                FMENU._SAVE = false
+                FMENU.F_SAVE = false
             end
             break
 
         @case "ACTEST"
-            if FMENU.ACTEST
+            if FMENU.E_ACTEST
                 @show "SAVE ACTEST"
-                @c save_actest(&FMENU._SAVE)
+                @c save_actest(&FMENU.F_SAVE)
             else
-                FMENU._SAVE = false
+                FMENU.F_SAVE = false
             end
             break
 
         @default
-            @c save_nothing(&FMENU._SAVE)
+            @c save_nothing(&FMENU.F_SAVE)
             break
 
     end
@@ -217,7 +217,7 @@ interface to classic style.
 """
 function handle_menu_classic()
     CImGui.StyleColorsClassic()
-    FMENU._CLASSIC = false
+    FMENU.S_CLASSIC = false
 end
 
 """
@@ -228,7 +228,7 @@ interface to dark style. Note that the defalt style is dark.
 """
 function handle_menu_dark()
     CImGui.StyleColorsDark()
-    FMENU._DARK = false
+    FMENU.S_DARK = false
 end
 
 """
@@ -239,7 +239,7 @@ interface to light style.
 """
 function handle_menu_light()
     CImGui.StyleColorsLight()
-    FMENU._LIGHT = false
+    FMENU.S_LIGHT = false
 end
 
 """
@@ -250,7 +250,7 @@ Respond the menu event: zen. Try to open documentation for the Zen package.
 function handle_menu_zen()
     url = "https://huangli712.github.io/projects/zen/index.html"
     _open_url(url)
-    FMENU._ZEN = false
+    FMENU.H_ZEN = false
 end
 
 """
@@ -261,7 +261,7 @@ Respond the menu event: dyson. Try to open documentation for the Dyson code.
 function handle_menu_dyson()
     url = "https://huangli712.github.io/projects/dyson/index.html"
     _open_url(url)
-    FMENU._DYSON = false
+    FMENU.H_DYSON = false
 end
 
 """
@@ -273,7 +273,7 @@ DFermion code.
 function handle_menu_dfermion()
     url = "https://huangli712.github.io/projects/dfermion/index.html"
     _open_url(url)
-    FMENU._DFERMION = false
+    FMENU.H_DFERMION = false
 end
 
 """
@@ -285,7 +285,7 @@ toolkit.
 function handle_menu_iqist()
     url = "https://huangli712.github.io/projects/iqist_new/index.html"
     _open_url(url)
-    FMENU._IQIST = false
+    FMENU.H_IQIST = false
 end
 
 """
@@ -297,7 +297,7 @@ toolkit.
 function handle_menu_acflow()
     url = "https://huangli712.github.io/projects/acflow/index.html"
     _open_url(url)
-    FMENU._ACFLOW = false
+    FMENU.H_ACFLOW = false
 end
 
 """
@@ -309,7 +309,7 @@ toolkit.
 function handle_menu_actest()
     url = "https://huangli712.github.io/projects/actest/index.html"
     _open_url(url)
-    FMENU._ACTEST = false
+    FMENU.H_ACTEST = false
 end
 
 """
@@ -321,7 +321,7 @@ application.
 function handle_menu_zengui()
     url = "https://huangli712.github.io/projects/zengui/index.html"
     _open_url(url)
-    FMENU._ZENGUI = false
+    FMENU.H_ZENGUI = false
 end
 
 """
