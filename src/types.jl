@@ -74,30 +74,30 @@ The meun items are created at `src/menu.jl`.
 See also: [`FMENU`](@ref).
 """
 mutable struct MenuFlags
-    _SAVE     :: Bool
-    _EXIT     :: Bool
+    F_SAVE     :: Bool
+    F_EXIT     :: Bool
     #
-    ZEN       :: Bool
-    DYSON     :: Bool
-    DFERMION  :: Bool
-    CTSEG     :: Bool
-    CTHYB     :: Bool
-    ATOMIC    :: Bool
-    ACFLOW    :: Bool
-    ACTEST    :: Bool
+    E_ZEN      :: Bool
+    E_DYSON    :: Bool
+    E_DFERMION :: Bool
+    E_CTSEG    :: Bool
+    E_CTHYB    :: Bool
+    E_ATOMIC   :: Bool
+    E_ACFLOW   :: Bool
+    E_ACTEST   :: Bool
     #
-    _CLASSIC  :: Bool
-    _DARK     :: Bool
-    _LIGHT    :: Bool
+    S_CLASSIC  :: Bool
+    S_DARK     :: Bool
+    S_LIGHT    :: Bool
     #
-    _ZEN      :: Bool
-    _DYSON    :: Bool
-    _DFERMION :: Bool
-    _IQIST    :: Bool
-    _ACFLOW   :: Bool
-    _ACTEST   :: Bool
-    _ZENGUI   :: Bool
-    _ABOUT    :: Bool
+    H_ZEN      :: Bool
+    H_DYSON    :: Bool
+    H_DFERMION :: Bool
+    H_IQIST    :: Bool
+    H_ACFLOW   :: Bool
+    H_ACTEST   :: Bool
+    H_ZENGUI   :: Bool
+    H_ABOUT    :: Bool
 end
 
 """
