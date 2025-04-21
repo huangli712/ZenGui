@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/19
+# Last modified: 2025/04/21
 #
 
 """
@@ -260,6 +260,22 @@ export create_app_dfermion
 include("ctseg.jl")
 #
 export create_app_ctseg
+
+#=
+### *Includes And Exports* : *cthyb.jl*
+=#
+
+#=
+*Summary* :
+
+Create and display the `cthyb` window for the iQIST/cthyb code.
+
+*Members* :
+
+```text
+create_app_cthyb -> Create and display the `cthyb` window.
+```
+=#
 
 #
 include("cthyb.jl")
