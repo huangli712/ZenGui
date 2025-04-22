@@ -228,7 +228,7 @@ An instance for the `ZEN_PCASE` struct.
 See also: [`ZEN_PCASE`](@ref).
 """
 PCASE = ZEN_PCASE(
-    "SrVO3"
+    "SrVO3" # case
 )
 
 """
@@ -239,18 +239,18 @@ An instance for the `ZEN_PDFT` struct.
 See also: [`ZEN_PDFT`](@ref).
 """
 PDFT = ZEN_PDFT(
-    "vasp",
-    "plo",
-    "tetra",
-    "medium",
-    "1.0",
-    8,
-    false,
-    false,
-    false,
-    true,
-    ["2 : d : Pr"],
-    [-1.4, 6.0]
+    "vasp",         # engine
+    "plo",          # projtype
+    "tetra",        # smear
+    "medium",       # kmesh
+    "1.0",          # magmom
+    8,              # ncycle
+    false,          # lsymm
+    false,          # lspins
+    false,          # lspinorb
+    true,           # lproj
+    ["2 : d : Pr"], # sproj
+    [-1.4, 6.0]     # window
 )
 
 """
