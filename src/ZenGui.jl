@@ -182,15 +182,15 @@ DFERMION_PDFERMION
 _DFERMION
 PDFERMION
 #
-IQIST_PCTSEG
-IQIST_PCTHYB
-IQIST_PATOMIC
-_CTSEG
-_CTHYB
-_ATOMIC
-PCTSEG
-PCTHYB
-PATOMIC
+IQIST_PCTSEG  -> It contains the parameters in the `solver.ctqmc.in` file.
+IQIST_PCTHYB  -> It contains the parameters in the `solver.ctqmc.in` file.
+IQIST_PATOMIC -> It contains the parameters in the `solver.atomic.in` file.
+_CTSEG  -> It records the names of modified parameters for the ctseg code.
+_CTHYB  -> It records the names of modified parameters for the cthyb code.
+_ATOMIC -> It records the names of modified parameters for the atomic code.
+PCTSEG  -> An instance for the `IQIST_PCTSEG` struct.
+PCTHYB  -> An instance for the `IQIST_PCTHYB` struct.
+PATOMIC -> An instance for the `IQIST_PATOMIC` struct.
 #
 ACFLOW_PBASE    -> It represents the `[BASE]` block in the `ac.toml` file.
 ACFLOW_PMaxEnt  -> It represents the `[MaxEnt]` block in the `ac.toml` file.
