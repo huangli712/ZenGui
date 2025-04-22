@@ -4,14 +4,13 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/18
+# Last modified: 2025/04/22
 #
 
 """
     create_app_dfermion(p_open::Ref{Bool})
 
-Create an UI window for the DFermion code, which is a dual fermion theory
-engine.
+Create an UI window for the DFermion code, which is a dual fermion engine.
 """
 function create_app_dfermion(p_open::Ref{Bool})
     # Create the DFermion window, which can not be resized.
@@ -31,15 +30,23 @@ function create_app_dfermion(p_open::Ref{Bool})
     window_height = 600.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
-    # For all the blocks in the dfa.in
-    _dfermion_tabs_block()
+    # For the widgets in the top of this window
+    _dfermion_top_block()
 
     # For the separator
     CImGui.Spacing()
     CImGui.Separator()
     CImGui.Spacing()
 
-    # For the buttons in the bottom of this window
+    # For all the blocks in the dfa.in file
+    _dfermion_main_block()
+
+    # For the separator
+    CImGui.Spacing()
+    CImGui.Separator()
+    CImGui.Spacing()
+
+    # For the widgets in the bottom of this window
     _dfermion_bottom_block(p_open)
 
     # End of this window
@@ -47,11 +54,11 @@ function create_app_dfermion(p_open::Ref{Bool})
 end
 
 """
-    _dfermion_tabs_block()
+    _dfermion_main_block()
 
 Setup the tab widgets for all the blocks in the dfa.in.
 """
-function _dfermion_tabs_block()
+function _dfermion_main_block()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
     #
     if CImGui.BeginTabBar("dfermionTabBar", tab_bar_flags)
