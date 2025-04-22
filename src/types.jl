@@ -261,18 +261,18 @@ An instance for the `ZEN_PDMFT` struct.
 See also: [`ZEN_PDMFT`](@ref).
 """
 PDMFT = ZEN_PDMFT(
-    1,
-    1,
-    60,
-    8193,
-    "fll2",
-    40.0,
-    0.1,
-    1.0e-4,
-    1.0e-6,
-    1.0e-4,
-    1.0e-4,
-    true
+    1,      # mode
+    1,      # axis
+    60,     # niter
+    8193,   # nmesh
+    "fll2", # dcount
+    40.0,   # beta
+    0.1,    # mixer
+    1.0e-4, # mc
+    1.0e-6, # cc
+    1.0e-4, # ec
+    1.0e-4, # sc
+    true    # lfermi
 )
 
 """
@@ -283,15 +283,15 @@ An instance for the `ZEN_PIMPURITY` struct.
 See also: [`ZEN_PIMPURITY`](@ref).
 """
 PIMPURITY = ZEN_PIMPURITY(
-    1,
-    ["V : 2"],
-    [1],
-    ["d"],
-    ["ising"],
-    [1.0],
-    [4.0],
-    [0.7],
-    [0.0]
+    1,         # nsite
+    ["V : 2"], # atoms
+    [1],       # equiv
+    ["d"],     # shell
+    ["ising"], # ising
+    [1.0],     # occup
+    [4.0],     # upara
+    [0.7],     # jpara
+    [0.0]      # lpara
 )
 
 """
@@ -302,9 +302,9 @@ An instance for the `ZEN_PSOLVER` struct.
 See also: [`ZEN_PSOLVER`](@ref).
 """
 PSOLVER = ZEN_PSOLVER(
-    "ctseg",
-    2,
-    ["isbnd = 2", "isort = 2", "nsweep = 100000000"]
+    "ctseg", # engine
+    2,       # ncycle
+    ["isbnd = 2", "isort = 2", "nsweep = 100000000"] # params
 )
 
 """
