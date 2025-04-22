@@ -55,11 +55,20 @@ function create_app_atomic(p_open::Ref{Bool})
 end
 
 """
-    _atomic_tabs_block()
+    _atomic_top_block()
 
-Setup the tab widgets for all the blocks in the solver.atomic.in.
+Setup widgets in the top of the window for the DFermion code.
 """
-function _atomic_tabs_block()
+function _atomic_top_block()
+    CImGui.Text("atomic: An atomic eigenvalue problem solver")
+end
+
+"""
+    _atomic_main_block()
+
+Setup widgets associated with the parameters in the `solver.atomic.in` file.
+"""
+function _atomic_main_block()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
     #
     if CImGui.BeginTabBar("atomicTabBar", tab_bar_flags)
