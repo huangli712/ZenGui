@@ -147,8 +147,40 @@ export _dict_to_string
 #
 include("types.jl")
 #
+export CURRENT_WINDOW
+export CWIN
+#
 export MenuFlags
 export FMENU
+#
+export ZEN_PCASE
+export ZEN_PDFT
+export ZEN_PDMFT
+export ZEN_PIMPURITY
+export ZEN_PSOLVER
+export PCASE
+export PDFT
+export PDMFT
+export PIMPURITY
+export PSOLVER
+#
+export DYSON_PDYSON
+export _DYSON
+export PDYSON
+#
+export DFERMION_PDFERMION
+export _DFERMION
+export PDFERMION
+#
+export IQIST_PCTSEG
+export IQIST_PCTHYB
+export IQIST_PATOMIC
+export _CTSEG
+export _CTHYB
+export _ATOMIC
+export PCTSEG
+export PCTHYB
+export PATOMIC
 #
 export ACFLOW_PBASE
 export ACFLOW_PMaxEnt
@@ -158,7 +190,6 @@ export ACFLOW_PStochAC
 export ACFLOW_PStochSK
 export ACFLOW_PStochOM
 export ACFLOW_PStochPX
-#
 export PBASE
 export PMaxEnt
 export PBarRat
@@ -169,13 +200,16 @@ export PStochOM
 export PStochPX
 #
 export ACTEST_PTEST
-#
 export PTEST
 #
-_struct_to_dict
+export _struct_to_dict
 #
-_build_acflow_dict
-_build_actest_dict
+export _build_zen_dict
+export _build_dyson_dict
+export _build_dfermion_dict
+export _build_iqist_dict
+export _build_acflow_dict
+export _build_actest_dict
 
 #=
 ### *Includes And Exports* : *save.jl*
