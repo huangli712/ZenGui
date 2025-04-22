@@ -1114,19 +1114,19 @@ An instance for the `ACFLOW_PBASE` struct.
 See also: [`ACFLOW_PBASE`](@ref).
 """
 PBASE = ACFLOW_PBASE(
-    "giw.data",
-    "MaxEnt",
-    "fermi",
-    "flat",
-    "ffreq",
-    "linear",
-    10,
-    501,
-    5.0,
-    -5.0,
-    10.0,
-    false,
-    true
+    "giw.data", # finput
+    "MaxEnt",   # solver
+    "fermi",    # ktype
+    "flat",     # mtype
+    "ffreq",    # grid
+    "linear",   # mesh
+    10,         # ngrid
+    501,        # nmesh
+    5.0,        # wmax
+    -5.0,       # wmin
+    10.0,       # beta
+    false,      # offdiag
+    true        # fwrite
 )
 
 """
