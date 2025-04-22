@@ -463,6 +463,18 @@ _ctseg_cycle_block     -> Setup widgets for the `cycle` tab.
 include("ctseg.jl")
 #
 export create_app_ctseg
+#
+export _ctseg_top_block
+export _ctseg_main_block
+export _ctseg_bottom_block
+#
+export _ctseg_model_block
+export _ctseg_dimension_block
+export _ctseg_symmetry_block
+export _ctseg_represent_block
+export _ctseg_monte_block
+export _ctseg_measure_block
+export _ctseg_cycle_block
 
 #=
 ### *Includes And Exports* : *cthyb.jl*
