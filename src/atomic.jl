@@ -302,6 +302,8 @@ end
 
 """
     _atomic_natural_block()
+
+Setup widgets for the `natural eigenbasis` tab.
 """
 function _atomic_natural_block()
     # Define default size for widgets
@@ -375,6 +377,8 @@ end
 
 """
     _atomic_algorithm_block()
+
+Setup widgets for the `algorithm` tab.
 """
 function _atomic_algorithm_block()
     # Define default size for widgets
