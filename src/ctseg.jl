@@ -79,27 +79,27 @@ function _ctseg_main_block()
         #
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.9,0.0,1.0,1.0))
         CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.9,0.0,1.0,1.0))
-        _ctseg_dim_block()
+        _ctseg_dimension_block()
         CImGui.PopStyleColor(2)
         #
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.8,0.0,1.0,1.0))
         CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.8,0.0,1.0,1.0))
-        _ctseg_symm_block()
+        _ctseg_symmetry_block()
         CImGui.PopStyleColor(2)
         #
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.7,0.0,1.0,1.0))
         CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.7,0.0,1.0,1.0))
-        _ctseg_repr_block()
+        _ctseg_represent_block()
         CImGui.PopStyleColor(2)
         #
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.6,0.0,1.0,1.0))
         CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.6,0.0,1.0,1.0))
-        _ctseg_mc_block()
+        _ctseg_monte_block()
         CImGui.PopStyleColor(2)
         #
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.5,0.0,1.0,1.0))
         CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.5,0.0,1.0,1.0))
-        _ctseg_meas_block()
+        _ctseg_measure_block()
         CImGui.PopStyleColor(2)
         #
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.4,0.0,1.0,1.0))
@@ -150,6 +150,8 @@ end
 
 """
     _ctseg_model_block()
+
+Setup widgets for the `model` tab.
 """
 function _ctseg_model_block()
     # Define default size for widgets
@@ -297,9 +299,11 @@ function _ctseg_model_block()
 end
 
 """
-    _ctseg_dim_block()
+    _ctseg_dimension_block()
+
+Setup widgets for the `dimension` tab.
 """
-function _ctseg_dim_block()
+function _ctseg_dimension_block()
     # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
@@ -367,9 +371,11 @@ function _ctseg_dim_block()
 end
 
 """
-    _ctseg_symm_block()
+    _ctseg_symmetry_block()
+
+Setup widgets for the `symmetry` tab.
 """
-function _ctseg_symm_block()
+function _ctseg_symmetry_block()
     # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
@@ -406,9 +412,11 @@ function _ctseg_symm_block()
 end
 
 """
-    _ctseg_repr_block()
+    _ctseg_represent_block()
+
+Setup widgets for the `representation` tab.
 """
-function _ctseg_repr_block()
+function _ctseg_represent_block()
     # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
@@ -477,9 +485,11 @@ function _ctseg_repr_block()
 end
 
 """
-    _ctseg_mc_block()
+    _ctseg_monte_block()
+
+Setup widgets for the `monte carlo` tab.
 """
-function _ctseg_mc_block()
+function _ctseg_monte_block()
     # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
@@ -580,9 +590,11 @@ function _ctseg_mc_block()
 end
 
 """
-    _ctseg_meas_block()
+    _ctseg_measure_block()
+
+Setup widgets for the `measure` tab.
 """
-function _ctseg_meas_block()
+function _ctseg_measure_block()
     # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
@@ -653,6 +665,8 @@ end
 
 """
     _ctseg_cycle_block()
+
+Setup widgets for the `cycle` tab.
 """
 function _ctseg_cycle_block()
     # Define default size for widgets
