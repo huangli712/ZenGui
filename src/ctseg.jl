@@ -55,21 +55,57 @@ function create_app_ctseg(p_open::Ref{Bool})
 end
 
 """
-    _ctseg_tabs_block()
+    _ctseg_top_block()
 
-Setup the tab widgets for all the blocks in the solver.ctqmc.in.
+Setup widgets in the top of the window for the iQIST/ctseg code.
 """
-function _ctseg_tabs_block()
+function _atomic_top_block()
+    CImGui.Text("ctseg: A continuous-time quantum impurity solver")
+end
+
+"""
+    _ctseg_main_block()
+
+Setup widgets associated with the parameters in the `solver.ctqmc.in` file.
+"""
+function _ctseg_main_block()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
     #
     if CImGui.BeginTabBar("ctsegTabBar", tab_bar_flags)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(1.0,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(1.0,0.0,1.0,1.0))
         _ctseg_model_block()
+        CImGui.PopStyleColor(2)
+        #
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.9,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.9,0.0,1.0,1.0))
         _ctseg_dim_block()
+        CImGui.PopStyleColor(2)
+        #
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.8,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.8,0.0,1.0,1.0))
         _ctseg_symm_block()
+        CImGui.PopStyleColor(2)
+        #
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.7,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.7,0.0,1.0,1.0))
         _ctseg_repr_block()
+        CImGui.PopStyleColor(2)
+        #
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.6,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.6,0.0,1.0,1.0))
         _ctseg_mc_block()
+        CImGui.PopStyleColor(2)
+        #
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.5,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.5,0.0,1.0,1.0))
         _ctseg_meas_block()
+        CImGui.PopStyleColor(2)
+        #
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.4,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.4,0.0,1.0,1.0))
         _ctseg_cycle_block()
+        CImGui.PopStyleColor(2)
         #
         CImGui.EndTabBar()
     end

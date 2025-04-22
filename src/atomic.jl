@@ -57,7 +57,7 @@ end
 """
     _atomic_top_block()
 
-Setup widgets in the top of the window for the DFermion code.
+Setup widgets in the top of the window for the iQIST/atomic code.
 """
 function _atomic_top_block()
     CImGui.Text("atomic: An atomic eigenvalue problem solver")
