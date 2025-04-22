@@ -31,6 +31,7 @@ function create_app_dyson(p_open::Ref{Bool})
     window_height = 600.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
+    # For the widgets in the top of this window
     _dyson_top_block()
 
     # For the separator
@@ -46,7 +47,7 @@ function create_app_dyson(p_open::Ref{Bool})
     CImGui.Separator()
     CImGui.Spacing()
 
-    # For the buttons in the bottom of this window
+    # For the widgets in the bottom of this window
     _dyson_bottom_block(p_open)
 
     # End of this window
@@ -95,7 +96,7 @@ function _dyson_main_block()
     CImGui.SetNextItemWidth(widget_combo_width)
     axis_list = ["imaginary axis", "real axis"]
     @cstatic id = Cint(0) begin
-        @c CImGui.Combo(" Axis for brillouin zone integration", &id, axis_list)
+        @c CImGui.Combo(" Axis for Brillouin zone integration", &id, axis_list)
         PDYSON.axis = id + 1
         id != 0 && push!(_DYSON, "axis")
         id == 0 && delete!(_DYSON, "axis")
@@ -166,10 +167,9 @@ function _dyson_bottom_block(p_open::Ref{Bool})
     end
     #
     if CImGui.BeginPopupModal("View", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
-        @cstatic read_only=false text="Hello World!" begin
+        @cstatic text="Hello World!" begin
             text = _dict_to_string(_build_dyson_dict())
-            @c CImGui.Checkbox("Read-only", &read_only)
-            flags = read_only ? CImGui.ImGuiInputTextFlags_ReadOnly : 0
+            flags = CImGui.ImGuiInputTextFlags_ReadOnly
             flags = CImGui.ImGuiInputTextFlags_AllowTabInput | flags
             CImGui.InputTextMultiline("##source", text, 10000, ImVec2(400, 600), flags)
         end
