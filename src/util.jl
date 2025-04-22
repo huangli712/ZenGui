@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/18
+# Last modified: 2025/04/22
 #
 
 #=
@@ -85,4 +85,32 @@ N/A
 """
 function sorry()
     error("Sorry, this feature has not been implemented")
+end
+
+#=
+### *Dictionary Utility*
+=#
+
+"""
+    _dict_to_toml(d::AbstractDict)
+
+Convert an ordered dictionary to toml file.
+"""
+function _dict_to_toml(d::AbstractDict)
+    io = IOBuffer()
+    TOML.print(io,d)
+    return String(take!(io))
+end
+
+"""
+    _dict_to_string(d::AbstractDict)
+
+Convert an ordered dictionary to string.
+"""
+function _dict_to_string(d::AbstractDict)
+    io = IOBuffer()
+    for (key, value) in d
+        println(io, "$key = $value")
+    end
+    return String(take!(io))
 end

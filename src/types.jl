@@ -1618,27 +1618,3 @@ function _build_actest_dict()
 
     end
 end
-
-#=
-### *Utility*
-=#
-
-"""
-    _dict_to_toml(d::AbstractDict)
-"""
-function _dict_to_toml(d::AbstractDict)
-    io = IOBuffer()
-    TOML.print(io,d)
-    return String(take!(io))
-end
-
-"""
-    _dict_to_string(d::AbstractDict)
-"""
-function _dict_to_string(d::AbstractDict)
-    io = IOBuffer()
-    for (key, value) in d
-        println(io, "$key = $value")
-    end
-    return String(take!(io))
-end
