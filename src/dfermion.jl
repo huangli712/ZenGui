@@ -231,7 +231,7 @@ function _dfermion_dimension_block()
         # Input: nffrq
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(16) begin
-            @c CImGui.SliderInt(" Number of fermionic frequencies for 2P function", &_i, 8, 1024)
+            @c CImGui.SliderInt(" Number of fermionic frequencies for 2P GF", &_i, 8, 1024)
             PDFERMION.nffrq = _i
             _i != 16 && push!(_DFERMION, "nffrq")
             _i == 16 && delete!(_DFERMION, "nffrq")
@@ -242,7 +242,7 @@ function _dfermion_dimension_block()
         # Input: nbfrq
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(7) begin
-            @c CImGui.SliderInt(" Number of bosonic frequncies for 2P function", &_i, 4, 512)
+            @c CImGui.SliderInt(" Number of bosonic frequncies for 2P GF", &_i, 4, 512)
             PDFERMION.nbfrq = _i
             _i != 7 && push!(_DFERMION, "nbfrq")
             _i == 7 && delete!(_DFERMION, "nbfrq")
