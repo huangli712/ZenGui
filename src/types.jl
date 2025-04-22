@@ -1402,6 +1402,9 @@ end
 
 """
     _build_acflow_dict()
+
+Assemble the ordered dictionary, which is then converted into `ac.toml`,
+for the ACFlow toolkit.
 """
 function _build_acflow_dict()
     @cswitch PBASE.solver begin
