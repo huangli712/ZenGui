@@ -424,6 +424,13 @@ end
 ### *Customized Structs* : *Dyson Code*
 =#
 
+#=
+*Remarks* :
+
+The official configuration file for the Dyson code is `dfa.in`, which is
+actually a ini-like file.
+=#
+
 """
     DYSON_PDYSON
 """
