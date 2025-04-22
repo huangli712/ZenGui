@@ -192,14 +192,14 @@ PCTSEG
 PCTHYB
 PATOMIC
 #
-ACFLOW_PBASE
-ACFLOW_PMaxEnt
-ACFLOW_PBarRat
-ACFLOW_PNevanAC
-ACFLOW_PStochAC
-ACFLOW_PStochSK
-ACFLOW_PStochOM
-ACFLOW_PStochPX
+ACFLOW_PBASE    -> It represents the `[BASE]` block in the `ac.toml` file.
+ACFLOW_PMaxEnt  -> It represents the `[MaxEnt]` block in the `ac.toml` file.
+ACFLOW_PBarRat  -> It represents the `[BarRat]` block in the `ac.toml` file.
+ACFLOW_PNevanAC -> It represents the `[NevanAC]` block in the `ac.toml` file.
+ACFLOW_PStochAC -> It represents the `[StochAC]` block in the `ac.toml` file.
+ACFLOW_PStochSK -> It represents the `[StochSK]` block in the `ac.toml` file.
+ACFLOW_PStochOM -> It represents the `[StochOM]` block in the `ac.toml` file.
+ACFLOW_PStochPX -> It represents the `[StochPX]` block in the `ac.toml` file.
 PBASE
 PMaxEnt
 PBarRat
@@ -209,7 +209,7 @@ PStochSK
 PStochOM
 PStochPX
 #
-ACTEST_PTEST -> It represents the `[Test]` block in the `act.toml` file
+ACTEST_PTEST -> It represents the `[Test]` block in the `act.toml` file.
 PTEST        -> An instance for the `ACTEST_PTEST` struct.
 #
 _struct_to_dict      -> Convert a struct to an ordered dictionary.
