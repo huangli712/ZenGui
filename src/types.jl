@@ -433,6 +433,10 @@ actually a ini-like file.
 
 """
     DYSON_PDYSON
+
+This struct encapsulates the parameters in the `dfa.in` file.
+
+See also: [`PDYSON`](@ref).
 """
 mutable struct DYSON_PDYSON
     task   :: I64
@@ -445,19 +449,28 @@ end
 
 """
     _DYSON
+
+This set records the names of modified parameters, which will be presented
+in the `dfa.in` file.
+
+See also: [`DYSON_PDYSON`](@ref).
 """
 _DYSON = Set{String}()
 
 """
     PDYSON
+
+An instance for the `DYSON_PDYSON` struct.
+
+See also: [`DYSON_PDYSON`](@ref).
 """
 PDYSON = DYSON_PDYSON(
-    1,
-    1,
-    8.0,
-    0.0001,
-    ".true.",
-    ".true."
+    1,        # task
+    1,        # axis
+    8.0,      # beta
+    0.0001,   # mc
+    ".true.", # lfermi
+    ".true."  # ltetra
 )
 
 """
