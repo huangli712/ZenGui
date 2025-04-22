@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/18
+# Last modified: 2025/04/22
 #
 
 """
@@ -31,7 +31,14 @@ function create_app_dyson(p_open::Ref{Bool})
     window_height = 600.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
-    # For all the blocks in the dmft.in
+    _dyson_top_block()
+
+    # For the separator
+    CImGui.Spacing()
+    CImGui.Separator()
+    CImGui.Spacing()
+
+    # For all the blocks in the dmft.in file
     _dyson_main_block()
 
     # For the separator
@@ -47,12 +54,21 @@ function create_app_dyson(p_open::Ref{Bool})
 end
 
 """
+    _dyson_top_block()
+
+Setup widgets in the top of the window for the Dyson code.
+"""
+function _dyson_top_block()
+    CImGui.Text("Dyson: Dyson's equation solver for the Zen computation framework")
+end
+
+"""
     _dyson_main_block()
 
 Setup widgets for the parameters in the dmft.in.
 """
 function _dyson_main_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
