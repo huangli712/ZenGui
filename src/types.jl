@@ -57,19 +57,19 @@ The meun items are created at `src/menu.jl`.
 * E_CTSEG    -> Edit | Quantum Impurity Solvers | iQIST | ctseg.
 * E_CTHYB    -> Edit | Quantum Impurity Solvers | iQIST | cthyb.
 * E_ATOMIC   -> Edit | Quantum Impurity Solvers | iQIST | atomic.
-* E_ACFLOW   ->
-* E_ACTEST   ->
-* S_CLASSIC  ->
-* S_DARK     ->
-* S_LIGHT    ->
-* H_ZEN      ->
-* H_DYSON    ->
-* H_DFERMION ->
-* H_IQIST    ->
-* H_ACFLOW   ->
-* H_ACTEST   ->
-* H_ZENGUI   ->
-* H_ABOUT    ->
+* E_ACFLOW   -> Edit | Analytic Continuation Tools | ACFlow.
+* E_ACTEST   -> Edit | Analytic Continuation Tools | ACTest.
+* S_CLASSIC  -> Style | Classic.
+* S_DARK     -> Style | Dark.
+* S_LIGHT    -> Style | Light.
+* H_ZEN      -> Help | Documentation | Zen.
+* H_DYSON    -> Help | Documentation | Dyson.
+* H_DFERMION -> Help | Documentation | DFermion.
+* H_IQIST    -> Help | Documentation | iQIST.
+* H_ACFLOW   -> Help | Documentation | ACFlow.
+* H_ACTEST   -> Help | Documentation | ACTest.
+* H_ZENGUI   -> Help | User's manual.
+* H_ABOUT    -> Help | About ZenGui.
 
 See also: [`FMENU`](@ref), [`zen_run`](@ref).
 """
