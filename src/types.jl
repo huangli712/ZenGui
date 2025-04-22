@@ -985,6 +985,8 @@ includes `[BASE]`, `[MaxEnt]`, `[BarRat]`, `[NevanAC]`, `[StochAC]`,
 
 """
     ACFLOW_PBASE
+
+This struct represents the `[BASE]` block in the `ac.toml` file.
 """
 mutable struct ACFLOW_PBASE
     finput  :: String
@@ -1004,6 +1006,8 @@ end
 
 """
     ACFLOW_PMaxEnt
+
+This struct represents the `[MaxEnt]` block in the `ac.toml` file.
 """
 mutable struct ACFLOW_PMaxEnt
     method :: String
@@ -1016,6 +1020,8 @@ end
 
 """
     ACFLOW_PBarRat
+
+This struct represents the `[BarRat]` block in the `ac.toml` file.
 """
 mutable struct ACFLOW_PBarRat
     atype   :: String
@@ -1027,6 +1033,8 @@ end
 
 """
     ACFLOW_PNevanAC
+
+This struct represents the `[NevanAC]` block in the `ac.toml` file.
 """
 mutable struct ACFLOW_PNevanAC
     pick  :: Bool
@@ -1038,6 +1046,8 @@ end
 
 """
     ACFLOW_PStochAC
+
+This struct represents the `[StochAC]` block in the `ac.toml` file.
 """
 mutable struct ACFLOW_PStochAC
     nfine :: I64
@@ -1052,6 +1062,8 @@ end
 
 """
     ACFLOW_PStochSK
+
+This struct represents the `[StochSK]` block in the `ac.toml` file.
 """
 mutable struct ACFLOW_PStochSK
     method :: String
@@ -1067,6 +1079,8 @@ end
 
 """
     ACFLOW_PStochOM
+
+This struct represents the `[StochOM]` block in the `ac.toml` file.
 """
 mutable struct ACFLOW_PStochOM
     ntry  :: I64
@@ -1079,6 +1093,8 @@ end
 
 """
     ACFLOW_PStochPX
+
+This struct represents the `[StochPX]` block in the `ac.toml` file.
 """
 mutable struct ACFLOW_PStochPX
     method :: String
