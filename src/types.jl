@@ -762,45 +762,45 @@ An instance for the `IQIST_PCTSEG` struct.
 See also: [`IQIST_PCTSEG`](@ref).
 """
 PCTSEG = IQIST_PCTSEG(
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    2,
-    2,
-    4,
-    20,
-    32,
-    20001,
-    32,
-    2001,
-    1024,
-    8193,
-    32,
-    8,
-    128,
-    1024,
-    20000,
-    200000,
-    20000000,
-    2000000,
-    100000,
-    10,
-    10,
-    4.0,
-    0.0,
-    1.0,
-    1.0,
-    2.0,
-    8.0,
-    0.5,
-    0.7
+    1,        # isscf
+    1,        # isscr
+    1,        # isbnd
+    1,        # isspn
+    1,        # iswor
+    1,        # isort
+    1,        # isobs
+    1,        # issus
+    1,        # isvrt
+    1,        # nband
+    2,        # nspin
+    2,        # norbs
+    4,        # ncfgs
+    20,       # niter
+    32,       # lemax
+    20001,    # legrd
+    32,       # svmax
+    2001,     # svgrd
+    1024,     # mkink
+    8193,     # mfreq
+    32,       # nffrq
+    8,        # nbfrq
+    128,      # nfreq
+    1024,     # ntime
+    20000,    # nflip
+    200000,   # ntherm
+    20000000, # nsweep
+    2000000,  # nwrite
+    100000,   # nclean
+    10,       # nmonte
+    10,       # ncarlo
+    4.0,      # Uc
+    0.0,      # Jz
+    1.0,      # lc
+    1.0,      # wc
+    2.0,      # mune
+    8.0,      # beta
+    0.5,      # part
+    0.7       # alpha
 )
 
 """
