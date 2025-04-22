@@ -756,6 +756,10 @@ _ATOMIC = Set{String}()
 
 """
     PCTSEG
+
+An instance for the `IQIST_PCTSEG` struct.
+
+See also: [`IQIST_PCTSEG`](@ref).
 """
 PCTSEG = IQIST_PCTSEG(
     1,
@@ -801,11 +805,19 @@ PCTSEG = IQIST_PCTSEG(
 
 """
     PCTHYB
+
+An instance for the `IQIST_PCTHYB` struct.
+
+See also: [`IQIST_PCTHYB`](@ref).
 """
 PCTHYB = IQIST_PCTHYB()
 
 """
     PATOMIC
+
+An instance for the `IQIST_PATOMIC` struct.
+
+See also: [`IQIST_PATOMIC`](@ref).
 """
 PATOMIC = IQIST_PATOMIC(
     1,
