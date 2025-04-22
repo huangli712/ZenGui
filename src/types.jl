@@ -1137,12 +1137,12 @@ An instance for the `ACFLOW_PMaxEnt` struct.
 See also: [`ACFLOW_PMaxEnt`](@ref).
 """
 PMaxEnt = ACFLOW_PMaxEnt(
-    "chi2kink",
-    "sj",
-    12,
-    1e9,
-    10.0,
-    -1.0
+    "chi2kink", # method
+    "sj",       # stype
+    12,         # nalph
+    1e9,        # alpha
+    10.0,       # ratio
+    -1.0        # blur
 )
 
 """
@@ -1153,11 +1153,11 @@ An instance for the `ACFLOW_PBarRat` struct.
 See also: [`ACFLOW_PBarRat`](@ref).
 """
 PBarRat = ACFLOW_PBarRat(
-    "cont",
-    "prony",
-    1e-10,
-    1e-3,
-    1e-2
+    "cont",  # atype
+    "prony", # denoise
+    1e-10,   # epsilon
+    1e-3,    # pcut
+    1e-2     # eta
 )
 
 """
@@ -1168,11 +1168,11 @@ An instance for the `ACFLOW_PNevanAC` struct.
 See also: [`ACFLOW_PNevanAC`](@ref).
 """
 PNevanAC = ACFLOW_PNevanAC(
-    true,
-    true,
-    50,
-    1e-4,
-    1e-2
+    true, # pick
+    true, # hardy
+    50,   # hmax
+    1e-4, # alpha
+    1e-2  # eta
 )
 
 """
@@ -1183,14 +1183,14 @@ An instance for the `ACFLOW_PStochAC` struct.
 See also: [`ACFLOW_PStochAC`](@ref).
 """
 PStochAC = ACFLOW_PStochAC(
-    10000,
-    512,
-    4000,
-    4000000,
-    40000,
-    20,
-    1.00,
-    1.20
+    10000,   # nfine
+    512,     # ngamm
+    4000,    # nwarm
+    4000000, # nstep
+    40000,   # ndump
+    20,      # nalph
+    1.00,    # alpha
+    1.20     # ratio
 )
 
 """
@@ -1201,15 +1201,15 @@ An instance for the `ACFLOW_PStochSK` struct.
 See also: [`ACFLOW_PStochSK`](@ref).
 """
 PStochSK = ACFLOW_PStochSK(
-    "chi2min",
-    100000,
-    1000,
-    1000,
-    20000,
-    200,
-    10,
-    1e+6,
-    0.90
+    "chi2min", # method
+    100000,    # nfine
+    1000,      # ngamm
+    1000,      # nwarm
+    20000,     # nstep
+    200,       # ndump
+    10,        # retry
+    1e+6,      # theta
+    0.90       # ratio
 )
 
 """
