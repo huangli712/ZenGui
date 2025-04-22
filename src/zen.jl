@@ -191,7 +191,7 @@ end
 Setup widgets in the bottom of the window for the Zen package.
 """
 function _zen_bottom_block(p_open::Ref{Bool})
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_button_width = 80.0
     widget_button_height = 25.0
 
@@ -227,7 +227,7 @@ end
     _zen_case_block()
 """
 function _zen_case_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -251,7 +251,7 @@ end
     _zen_dft_block()
 """
 function _zen_dft_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -439,7 +439,7 @@ end
     _zen_dmft_block()
 """
 function _zen_dmft_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -575,7 +575,7 @@ end
     _zen_imp_block()
 """
 function _zen_imp_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -631,7 +631,7 @@ function _zen_solver_block()
     function _layout_cthyb()
     end
 
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 

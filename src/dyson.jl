@@ -157,7 +157,7 @@ end
 Setup widgets in the bottom of the window for the Dyson code.
 """
 function _dyson_bottom_block(p_open::Ref{Bool})
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_button_width = 80.0
     widget_button_height = 25.0
 

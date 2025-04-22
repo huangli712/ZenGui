@@ -60,7 +60,7 @@ end
 Setup widgets for the [BASE] block in the ac.toml.
 """
 function _acflow_base_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -251,7 +251,7 @@ end
 Setup widgets in the bottom of the window for the ACFlow toolkit.
 """
 function _acflow_bottom_block(p_open::Ref{Bool})
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_button_width = 80.0
     widget_button_height = 25.0
 
@@ -289,7 +289,7 @@ end
 Setup widgets for the [MaxEnt] block in the ac.toml.
 """
 function _acflow_maxent_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -356,7 +356,7 @@ end
 Setup widgets for the [BarRat] block in the ac.toml.
 """
 function _acflow_barrat_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -414,7 +414,7 @@ end
 Setup widgets for the [NevanAC] block in the ac.toml.
 """
 function _acflow_nevanac_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -480,7 +480,7 @@ end
 Setup widgets for the [StochAC] block in the ac.toml.
 """
 function _acflow_stochac_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -563,7 +563,7 @@ end
 Setup widgets for the [StochSK] block in the ac.toml.
 """
 function _acflow_stochsk_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -656,7 +656,7 @@ end
 Setup widgets for the [StochOM] block in the ac.toml.
 """
 function _acflow_stochom_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -721,7 +721,7 @@ end
 Setup widgets for the [StochPX] block in the ac.toml.
 """
 function _acflow_stochpx_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 

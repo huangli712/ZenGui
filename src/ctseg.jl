@@ -73,7 +73,7 @@ end
 Setup widgets in the bottom of the window for the iQIST/ctseg code.
 """
 function _ctseg_bottom_block(p_open::Ref{Bool})
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_button_width = 80.0
     widget_button_height = 25.0
 
@@ -109,7 +109,7 @@ end
     _ctseg_model_block()
 """
 function _ctseg_model_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -257,7 +257,7 @@ end
     _ctseg_dim_block()
 """
 function _ctseg_dim_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -327,7 +327,7 @@ end
     _ctseg_symm_block()
 """
 function _ctseg_symm_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -366,7 +366,7 @@ end
     _ctseg_repr_block()
 """
 function _ctseg_repr_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -437,7 +437,7 @@ end
     _ctseg_mc_block()
 """
 function _ctseg_mc_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -540,7 +540,7 @@ end
     _ctseg_meas_block()
 """
 function _ctseg_meas_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -612,7 +612,7 @@ end
     _ctseg_cycle_block()
 """
 function _ctseg_cycle_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 

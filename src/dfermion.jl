@@ -101,7 +101,7 @@ end
 Setup widgets in the bottom of the window for the DFermion code.
 """
 function _dfermion_bottom_block(p_open::Ref{Bool})
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_button_width = 80.0
     widget_button_height = 25.0
 
@@ -136,7 +136,7 @@ end
     _dfermion_model_block()
 """
 function _dfermion_model_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -216,7 +216,7 @@ end
     _dfermion_dim_block()
 """
 function _dfermion_dim_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -253,7 +253,7 @@ end
     _dfermion_kmesh_block()
 """
 function _dfermion_kmesh_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -312,7 +312,7 @@ end
     _dfermion_cycle_block()
 """
 function _dfermion_cycle_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 

@@ -60,7 +60,7 @@ end
 Setup widgets for the [Test] block in the act.toml.
 """
 function _actest_test_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -277,7 +277,7 @@ end
 Setup widgets in the bottom of the window for the ACTest toolkit.
 """
 function _actest_bottom_block(p_open::Ref{Bool})
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_button_width = 80.0
     widget_button_height = 25.0
 

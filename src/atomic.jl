@@ -70,7 +70,7 @@ end
 Setup widgets in the bottom of the window for the iQIST/atomic code.
 """
 function _atomic_bottom_block(p_open::Ref{Bool})
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_button_width = 80.0
     widget_button_height = 25.0
 
@@ -106,7 +106,7 @@ end
     _atomic_model_block()
 """
 function _atomic_model_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -165,7 +165,7 @@ end
     _atomic_interaction_block()
 """
 function _atomic_interaction_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -269,7 +269,7 @@ end
     _atomic_natural_block()
 """
 function _atomic_natural_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
@@ -342,7 +342,7 @@ end
     _atomic_algorithm_block()
 """
 function _atomic_algorithm_block()
-    # Define the default size for widgets
+    # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
