@@ -475,6 +475,10 @@ PDYSON = DYSON_PDYSON(
 
 """
     _struct_to_dict(s::DYSON_PDYSON)
+
+Convert a struct to an ordered dictionary (for DYSON_PDYSON).
+
+See [`DYSON_PDYSON`](@ref).
 """
 function _struct_to_dict(s::DYSON_PDYSON)
     OD = OrderedDict{String,Any}()
@@ -491,6 +495,10 @@ end
 
 """
     _build_dyson_dict()
+
+
+Assemble the ordered dictionary, which is then converted into `dfa.in`,
+for the Dyson code.
 """
 function _build_dyson_dict()
     return _struct_to_dict(PDYSON)
