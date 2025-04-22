@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/21
+# Last modified: 2025/04/22
 #
 
 """
@@ -128,6 +128,9 @@ To provide some useful utility macros and functions.
 @cswitch -> C-style switch.
 #
 sorry    -> Say sorry.
+#
+_dict_to_toml -> Convert dictionary to toml.
+_dict_to_string -> Convert dictionary to string.
 ```
 =#
 
@@ -137,6 +140,9 @@ include("util.jl")
 export @cswitch
 #
 export sorry
+#
+export _dict_to_toml
+export _dict_to_string
 
 #
 include("types.jl")
@@ -170,8 +176,6 @@ _struct_to_dict
 #
 _build_acflow_dict
 _build_actest_dict
-#
-_dict_to_toml
 
 #=
 ### *Includes And Exports* : *save.jl*
