@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/21
+# Last modified: 2025/04/22
 #
 
 """
@@ -66,9 +66,13 @@ function set_menu_edit()
         end
         #
         if CImGui.BeginMenu("Quantum Impurity Solvers")
-            @c CImGui.MenuItem("iQIST | ctseg", C_NULL, &FMENU.E_CTSEG)
-            @c CImGui.MenuItem("iQIST | cthyb", C_NULL, &FMENU.E_CTHYB)
-            @c CImGui.MenuItem("iQIST | atomic", C_NULL, &FMENU.E_ATOMIC)
+            if CImGui.BeginMenu("iQIST")
+                @c CImGui.MenuItem("ctseg", C_NULL, &FMENU.E_CTSEG)
+                @c CImGui.MenuItem("cthyb", C_NULL, &FMENU.E_CTHYB)
+                @c CImGui.MenuItem("atomic", C_NULL, &FMENU.E_ATOMIC)
+                #
+                CImGui.EndMenu()
+            end
             #
             CImGui.EndMenu()
         end

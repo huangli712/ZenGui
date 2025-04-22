@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/21
+# Last modified: 2025/04/22
 #
 
 #=
@@ -49,14 +49,14 @@ should respond the mouse events according to this struct.
 The meun items are created at `src/menu.jl`.
 
 ### Members
-* F_SAVE     ->
-* F_EXIT     ->
-* E_ZEN      ->
-* E_DYSON    ->
-* E_DFERMION ->
-* E_CTSEG    ->
-* E_CTHYB    ->
-* E_ATOMIC   ->
+* F_SAVE     -> File | Save.
+* F_EXIT     -> File | Exit.
+* E_ZEN      -> Edit | Integrated Package | Zen.
+* E_DYSON    -> Edit | Quantum Many-Body Theory Engines | Dyson.
+* E_DFERMION -> Edit | Quantum Many-Body Theory Engines | DFermion.
+* E_CTSEG    -> Edit | Quantum Impurity Solvers | iQIST | ctseg.
+* E_CTHYB    -> Edit | Quantum Impurity Solvers | iQIST | cthyb.
+* E_ATOMIC   -> Edit | Quantum Impurity Solvers | iQIST | atomic.
 * E_ACFLOW   ->
 * E_ACTEST   ->
 * S_CLASSIC  ->
@@ -71,7 +71,7 @@ The meun items are created at `src/menu.jl`.
 * H_ZENGUI   ->
 * H_ABOUT    ->
 
-See also: [`FMENU`](@ref).
+See also: [`FMENU`](@ref), [`zen_run`](@ref).
 """
 mutable struct MenuFlags
     F_SAVE     :: Bool
