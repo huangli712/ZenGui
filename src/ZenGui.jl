@@ -178,9 +178,9 @@ DYSON_PDYSON
 _DYSON
 PDYSON
 #
-DFERMION_PDFERMION
-_DFERMION
-PDFERMION
+DFERMION_PDFERMION -> It contains the parameters in the `dfa.in` file.
+_DFERMION -> It records the names of modified parameters for the DFermion code. 
+PDFERMION -> An instance for the `DFERMION_PDFERMION` struct.
 #
 IQIST_PCTSEG  -> It contains the parameters in the `solver.ctqmc.in` file.
 IQIST_PCTHYB  -> It contains the parameters in the `solver.ctqmc.in` file.
