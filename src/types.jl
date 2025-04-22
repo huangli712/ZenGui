@@ -102,29 +102,34 @@ end
 
 """
     FMENU
+
+An instance for the `MenuFlags` struct. Initially, all members are set
+to be false.
+
+See also: [`MenuFlags`](@ref).
 """
 FMENU = MenuFlags(
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false
+    false, # F_SAVE
+    false, # F_EXIT
+    false, # E_ZEN
+    false, # E_DYSON
+    false, # E_DFERMION
+    false, # E_CTSEG
+    false, # E_CTHYB
+    false, # E_ATOMIC
+    false, # E_ACFLOW
+    false, # E_ACTEST
+    false, # S_CLASSIC
+    false, # S_DARK
+    false, # S_LIGHT
+    false, # H_ZEN
+    false, # H_DYSON
+    false, # H_DFERMION
+    false, # H_IQIST
+    false, # H_ACFLOW
+    false, # H_ACTEST
+    false, # H_ZENGUI
+    false  # H_ABOUT
 )
 
 #=
