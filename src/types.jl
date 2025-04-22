@@ -427,14 +427,14 @@ end
 #=
 *Remarks* :
 
-The official configuration file for the Dyson code is `dfa.in`, which is
+The official configuration file for the Dyson code is `dmft.in`, which is
 actually a ini-like file.
 =#
 
 """
     DYSON_PDYSON
 
-This struct encapsulates the parameters in the `dfa.in` file.
+This struct encapsulates the parameters in the `dmft.in` file.
 
 See also: [`PDYSON`](@ref).
 """
@@ -451,7 +451,7 @@ end
     _DYSON
 
 This set records the names of modified parameters, which will be presented
-in the `dfa.in` file.
+in the `dmft.in` file.
 
 See also: [`DYSON_PDYSON`](@ref).
 """
@@ -497,7 +497,7 @@ end
     _build_dyson_dict()
 
 
-Assemble the ordered dictionary, which is then converted into `dfa.in`,
+Assemble the ordered dictionary, which is then converted into `dmft.in`,
 for the Dyson code.
 """
 function _build_dyson_dict()
@@ -506,6 +506,13 @@ end
 
 #=
 ### *Customized Structs* : *DFermion Code*
+=#
+
+#=
+*Remarks* :
+
+The official configuration file for the DFermion code is `dfa.in`, which
+is actually a ini-like file.
 =#
 
 """
