@@ -1556,6 +1556,9 @@ end
 
 """
     _build_actest_dict()
+
+Assemble the ordered dictionary, which is then converted into `act.toml`,
+for the ACTest toolkit.
 """
 function _build_actest_dict()
     @cswitch PTEST.solver begin
