@@ -309,6 +309,10 @@ PSOLVER = ZEN_PSOLVER(
 
 """
     _struct_to_dict(s::ZEN_PCASE)
+
+Convert a struct to an ordered dictionary (for `ZEN_PCASE`).
+
+See [`ZEN_PCASE`](@ref).
 """
 function _struct_to_dict(s::ZEN_PCASE)
     return OrderedDict{String,Any}(
@@ -318,6 +322,10 @@ end
 
 """
     _struct_to_dict(s::ZEN_PDFT)
+
+Convert a struct to an ordered dictionary (for `ZEN_PDFT`).
+
+See [`ZEN_PDFT`](@ref).
 """
 function _struct_to_dict(s::ZEN_PDFT)
     return OrderedDict{String,Any}(
@@ -338,6 +346,10 @@ end
 
 """
     _struct_to_dict(s::ZEN_PDMFT)
+
+Convert a struct to an ordered dictionary (for `ZEN_PDMFT`).
+
+See [`ZEN_PDMFT`](@ref).
 """
 function _struct_to_dict(s::ZEN_PDMFT)
     return OrderedDict{String,Any}(
