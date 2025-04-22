@@ -438,21 +438,24 @@ export _dfermion_cycle_block
 #=
 *Summary* :
 
-Create and display the `atomic` window for the iQIST/atomic code.
+Create and display the `ctseg` window for the iQIST/ctseg code.
 
 *Members* :
 
 ```text
-create_app_atomic    -> Create and display the `atomic` window.
+create_app_ctseg       -> Create and display the `ctseg` window.
 #
-_atomic_top_block    -> Setup widgets in the top of the window.
-_atomic_main_block   -> Setup widgets associated with the parameters.
-_atomic_bottom_block -> Setup widgets in the bottom of the window.
+_ctseg_top_block       -> Setup widgets in the top of the window.
+_ctseg_main_block      -> Setup widgets associated with the parameters.
+_ctseg_bottom_block    -> Setup widgets in the bottom of the window.
 #
-_atomic_model_block  -> Setup widgets for the `model` tab.
-_atomic_interaction_block -> Setup widgets for the `interaction` tab.
-_atomic_natural_block  -> Setup widgets for the `natural eigenbasis` tab.
-_atomic_algorithm_block  -> Setup widgets for the `algorithm` tab.
+_ctseg_model_block     -> Setup widgets for the `model` tab.
+_ctseg_dimension_block -> Setup widgets for the `dimension` tab.
+_ctseg_symmetry_block  -> Setup widgets for the `symmetry` tab.
+_ctseg_represent_block -> Setup widgets for the `representation` tab.
+_ctseg_monte_block     -> Setup widgets for the `monte carlo` tab.
+_ctseg_measure_block   -> Setup widgets for the `measurement` tab.
+_ctseg_cycle_block     -> Setup widgets for the `cycle` tab.
 ```
 =#
 
