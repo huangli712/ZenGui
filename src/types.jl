@@ -1247,6 +1247,10 @@ PStochPX = ACFLOW_PStochPX(
 
 """
     _struct_to_dict(s::ACFLOW_PBASE)
+
+Convert a struct to an ordered dictionary (for `ACFLOW_PBASE`).
+
+See [`ACFLOW_PBASE`](@ref).
 """
 function _struct_to_dict(s::ACFLOW_PBASE)
     return OrderedDict{String,Any}(
@@ -1268,6 +1272,10 @@ end
 
 """
     _struct_to_dict(s::ACFLOW_PMaxEnt)
+
+Convert a struct to an ordered dictionary (for `ACFLOW_PMaxEnt`).
+
+See [`ACFLOW_PMaxEnt`](@ref).
 """
 function _struct_to_dict(s::ACFLOW_PMaxEnt)
     return OrderedDict{String,Any}(
@@ -1282,6 +1290,10 @@ end
 
 """
     _struct_to_dict(s::ACFLOW_PBarRat)
+
+Convert a struct to an ordered dictionary (for `ACFLOW_PBarRat`).
+
+See [`ACFLOW_PBarRat`](@ref).
 """
 function _struct_to_dict(s::ACFLOW_PBarRat)
     return OrderedDict{String,Any}(
