@@ -174,9 +174,9 @@ PDMFT
 PIMPURITY
 PSOLVER
 #
-DYSON_PDYSON
-_DYSON
-PDYSON
+DYSON_PDYSON -> It contains the parameters in the `dmft.in` file.
+_DYSON -> It records the names of modified parameters for the Dyson code.
+PDYSON -> An instance for the `DYSON_PDYSON` struct.
 #
 DFERMION_PDFERMION -> It contains the parameters in the `dfa.in` file.
 _DFERMION -> It records the names of modified parameters for the DFermion code. 
