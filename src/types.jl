@@ -370,6 +370,10 @@ end
 
 """
     _struct_to_dict(s::ZEN_PIMPURITY)
+
+Convert a struct to an ordered dictionary (for `ZEN_PIMPURITY`).
+
+See [`ZEN_PIMPURITY`](@ref).
 """
 function _struct_to_dict(s::ZEN_PIMPURITY)
     return OrderedDict{String,Any}(
@@ -387,6 +391,10 @@ end
 
 """
     _struct_to_dict(s::ZEN_PSOLVER)
+
+Convert a struct to an ordered dictionary (for `ZEN_PSOLVER`).
+
+See [`ZEN_PSOLVER`](@ref).
 """
 function _struct_to_dict(s::ZEN_PSOLVER)
     return OrderedDict{String,Any}(
