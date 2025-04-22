@@ -209,17 +209,17 @@ PStochSK
 PStochOM
 PStochPX
 #
-ACTEST_PTEST
-PTEST
+ACTEST_PTEST -> It represents the `[Test]` block in the `act.toml` file
+PTEST        -> An instance for the `ACTEST_PTEST` struct.
 #
-_struct_to_dict
+_struct_to_dict      -> Convert a struct to an ordered dictionary.
 #
-_build_zen_dict
-_build_dyson_dict
-_build_dfermion_dict
-_build_iqist_dict
-_build_acflow_dict
-_build_actest_dict
+_build_zen_dict      -> Assemble dictionary for the Zen package.
+_build_dyson_dict    -> Assemble dictionary for the Dyson code.
+_build_dfermion_dict -> Assemble dictionary for the DFermion code.
+_build_iqist_dict    -> Assemble dictionary for the iQIST package.
+_build_acflow_dict   -> Assemble dictionary for the ACFlow toolkit.
+_build_actest_dict   -> Assemble dictionary for the ACTest toolkit.
 ```
 =#
 
@@ -357,6 +357,8 @@ export set_menu_file
 export set_menu_edit
 export set_menu_style
 export set_menu_help
+
+
 
 #
 include("zen.jl")
