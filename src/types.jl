@@ -560,23 +560,23 @@ An instance for the `DFERMION_PDFERMION` struct.
 See also: [`DFERMION_PDFERMION`](@ref).
 """
 PDFERMION = DFERMION_PDFERMION(
-    2,
-    1,
-    2,
-    2,
-    16,
-    7,
-    64,
-    8,
-    8,
-    8,
-    10,
-    10,
-    0.0,
-    1.0,
-    1.0,
-    1.0,
-    0.7
+    2,   # isdia
+    1,   # nband
+    2,   # nspin
+    2,   # norbs
+    16,  # nffrq
+    7,   # nbfrq
+    64,  # nkpts
+    8,   # nkp_x
+    8,   # nkp_y
+    8,   # nkp_z
+    10,  # ndfit
+    10,  # nbsit
+    0.0, # mune
+    1.0, # beta
+    1.0, # part
+    1.0, # dfmix
+    0.7  # bsmix
 )
 
 """
