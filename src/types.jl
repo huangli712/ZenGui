@@ -1528,6 +1528,10 @@ PTEST = ACTEST_PTEST(
 
 """
     _struct_to_dict(s::ACTEST_PTEST)
+
+Convert a struct to an ordered dictionary (for `ACTEST_PTEST`).
+
+See [`ACTEST_PTEST`](@ref).
 """
 function _struct_to_dict(s::ACTEST_PTEST)
     return OrderedDict{String,Any}(
