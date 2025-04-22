@@ -1478,6 +1478,8 @@ includes `[Test]` and `[Solver]` blocks.
 
 """
     ACTEST_PTEST
+
+This struct represents the `[Test]` block in the `act.toml` file.
 """
 mutable struct ACTEST_PTEST
     solver  :: String
@@ -1500,24 +1502,28 @@ end
 
 """
     PTEST
+
+An instance for the `ACTEST_PTEST` struct.
+
+See also: [`ACTEST_PTEST`](@ref).
 """
 PTEST = ACTEST_PTEST(
-    "MaxEnt",
-    "gauss",
-    "fermi",
-    "ffreq",
-    "linear",
-    10,
-    501,
-    100,
-    5.0,
-    -5.0,
-    4.0,
-    -4.0,
-    10.0,
-    1.0e-6,
-    false,
-    [1,2,3]
+    "MaxEnt", # solver
+    "gauss",  # ptype
+    "fermi",  # ktype
+    "ffreq",  # grid
+    "linear", # mesh
+    10,       # ngrid
+    501,      # nmesh
+    100,      # ntest
+    5.0,      # wmax
+    -5.0,     # wmin
+    4.0,      # pmax
+    -4.0,     # pmin
+    10.0,     # beta
+    1.0e-6,   # noise
+    false,    # offdiag
+    [1,2,3]   # lpeak
 )
 
 """
