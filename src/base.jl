@@ -58,16 +58,16 @@ function zeng_run()
         FMENU.E_ACFLOW   && @c create_app_acflow(&FMENU.E_ACFLOW)
         FMENU.E_ACTEST   && @c create_app_actest(&FMENU.E_ACTEST)
         #
-        FMENU.S_CLASSIC  && handle_menu_classic()
-        FMENU.S_DARK     && handle_menu_dark()
-        FMENU.S_LIGHT    && handle_menu_light()
+        FMENU.S_CLASSIC  && @c handle_menu_classic(&FMENU.S_CLASSIC)
+        FMENU.S_DARK     && @c handle_menu_dark(&FMENU.S_DARK)
+        FMENU.S_LIGHT    && @c handle_menu_light(&FMENU.S_LIGHT)
         #
-        FMENU.H_ZEN      && handle_menu_zen()
-        FMENU.H_DYSON    && handle_menu_dyson()
-        FMENU.H_DFERMION && handle_menu_dfermion()
-        FMENU.H_IQIST    && handle_menu_iqist()
-        FMENU.H_ACFLOW   && handle_menu_acflow()
-        FMENU.H_ACTEST   && handle_menu_actest()
+        FMENU.H_ZEN      && @c handle_menu_zen(&FMENU.H_ZEN)
+        FMENU.H_DYSON    && @c handle_menu_dyson(&FMENU.H_DYSON)
+        FMENU.H_DFERMION && @c handle_menu_dfermion(&FMENU.H_DFERMION)
+        FMENU.H_IQIST    && @c handle_menu_iqist(&FMENU.H_IQIST)
+        FMENU.H_ACFLOW   && @c handle_menu_acflow(&FMENU.H_ACFLOW)
+        FMENU.H_ACTEST   && @c handle_menu_actest(&FMENU.H_ZENGUI)
         FMENU.H_ZENGUI   && @c handle_menu_zengui(&FMENU.H_ZENGUI)
         FMENU.H_ABOUT    && @c create_app_about(&FMENU.H_ABOUT)
     end
@@ -222,106 +222,106 @@ function handle_menu_save()
 end
 
 """
-    handle_menu_classic()
+    handle_menu_classic(p_open::Ref{Bool})
 
 Respond the menu event: classic. Change the appearance of graphic user
 interface to classic style.
 """
-function handle_menu_classic()
+function handle_menu_classic(p_open::Ref{Bool})
     CImGui.StyleColorsClassic()
-    FMENU.S_CLASSIC = false
+    p_open[] = false
 end
 
 """
-    handle_menu_dark()
+    handle_menu_dark(p_open::Ref{Bool})
 
 Respond the menu event: dark. Change the appearance of graphic user
 interface to dark style. Note that the defalt style is dark.
 """
-function handle_menu_dark()
+function handle_menu_dark(p_open::Ref{Bool})
     CImGui.StyleColorsDark()
-    FMENU.S_DARK = false
+    p_open[] = false
 end
 
 """
-    handle_menu_light()
+    handle_menu_light(p_open::Ref{Bool})
 
 Respond the menu event: light. Change the appearance of graphic user
 interface to light style.
 """
-function handle_menu_light()
+function handle_menu_light(p_open::Ref{Bool})
     CImGui.StyleColorsLight()
-    FMENU.S_LIGHT = false
+    p_open[] = false
 end
 
 """
-    handle_menu_zen()
+    handle_menu_zen(p_open::Ref{Bool})
 
 Respond the menu event: zen. Try to open documentation for the Zen package.
 """
-function handle_menu_zen()
+function handle_menu_zen(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/zen/index.html"
     _open_url(url)
-    FMENU.H_ZEN = false
+    p_open[] = false
 end
 
 """
-    handle_menu_dyson()
+    handle_menu_dyson(p_open::Ref{Bool})
 
 Respond the menu event: dyson. Try to open documentation for the Dyson code.
 """
-function handle_menu_dyson()
+function handle_menu_dyson(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/dyson/index.html"
     _open_url(url)
-    FMENU.H_DYSON = false
+    p_open[] = false
 end
 
 """
-    handle_menu_dfermion()
+    handle_menu_dfermion(p_open::Ref{Bool})
 
 Respond the menu event: dfermion. Try to open documentation for the
 DFermion code.
 """
-function handle_menu_dfermion()
+function handle_menu_dfermion(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/dfermion/index.html"
     _open_url(url)
-    FMENU.H_DFERMION = false
+    p_open[] = false
 end
 
 """
-    handle_menu_iqist()
+    handle_menu_iqist(p_open::Ref{Bool})
 
 Respond the menu event: iqist. Try to open documentation for the iQIST
 toolkit.
 """
-function handle_menu_iqist()
+function handle_menu_iqist(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/iqist_new/index.html"
     _open_url(url)
-    FMENU.H_IQIST = false
+    p_open[] = false
 end
 
 """
-    handle_menu_acflow()
+    handle_menu_acflow(p_open::Ref{Bool})
 
 Respond the menu event: acflow. Try to open documentation for the ACFlow
 toolkit.
 """
-function handle_menu_acflow()
+function handle_menu_acflow(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/acflow/index.html"
     _open_url(url)
-    FMENU.H_ACFLOW = false
+    p_open[] = false
 end
 
 """
-    handle_menu_actest()
+    handle_menu_actest(p_open::Ref{Bool})
 
 Respond the menu event: actest. Try to open documentation for the ACTest
 toolkit.
 """
-function handle_menu_actest()
+function handle_menu_actest(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/actest/index.html"
     _open_url(url)
-    FMENU.H_ACTEST = false
+    p_open[] = false
 end
 
 """
