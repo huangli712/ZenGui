@@ -54,9 +54,18 @@ function create_app_dfermion(p_open::Ref{Bool})
 end
 
 """
+    _dfermion_top_block()
+
+Setup widgets in the top of the window for the DFermion code.
+"""
+function _dyson_top_block()
+    CImGui.Text("DFermion: Dual fermion application")
+end
+
+"""
     _dfermion_main_block()
 
-Setup the tab widgets for all the blocks in the dfa.in.
+Setup widgets associated with the parameters in the `dfa.in` file.
 """
 function _dfermion_main_block()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
