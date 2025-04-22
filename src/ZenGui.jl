@@ -431,6 +431,31 @@ export _dfermion_dimension_block
 export _dfermion_kmesh_block
 export _dfermion_cycle_block
 
+#=
+### *Includes And Exports* : *ctseg.jl*
+=#
+
+#=
+*Summary* :
+
+Create and display the `atomic` window for the iQIST/atomic code.
+
+*Members* :
+
+```text
+create_app_atomic    -> Create and display the `atomic` window.
+#
+_atomic_top_block    -> Setup widgets in the top of the window.
+_atomic_main_block   -> Setup widgets associated with the parameters.
+_atomic_bottom_block -> Setup widgets in the bottom of the window.
+#
+_atomic_model_block  -> Setup widgets for the `model` tab.
+_atomic_interaction_block -> Setup widgets for the `interaction` tab.
+_atomic_natural_block  -> Setup widgets for the `natural eigenbasis` tab.
+_atomic_algorithm_block  -> Setup widgets for the `algorithm` tab.
+```
+=#
+
 #
 include("ctseg.jl")
 #
