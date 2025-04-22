@@ -944,6 +944,10 @@ end
 
 """
     _build_iqist_dict()
+
+Assemble the ordered dictionary, which is then converted into
+`solver.ctqmc.in` or `solver.atomic.in` file for the ctseg, cthyb, and
+atomic codes.
 """
 function _build_iqist_dict(solver::String)
     @cswitch solver begin
