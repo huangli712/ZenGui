@@ -476,7 +476,7 @@ PDYSON = DYSON_PDYSON(
 """
     _struct_to_dict(s::DYSON_PDYSON)
 
-Convert a struct to an ordered dictionary (for DYSON_PDYSON).
+Convert a struct to an ordered dictionary (for `DYSON_PDYSON`).
 
 See [`DYSON_PDYSON`](@ref).
 """
@@ -495,7 +495,6 @@ end
 
 """
     _build_dyson_dict()
-
 
 Assemble the ordered dictionary, which is then converted into `dmft.in`,
 for the Dyson code.
@@ -581,6 +580,10 @@ PDFERMION = DFERMION_PDFERMION(
 
 """
     _struct_to_dict(s::DFERMION_PDFERMION)
+
+Convert a struct to an ordered dictionary (for `DFERMION_PDFERMION`).
+
+See [`DFERMION_PDFERMION`](@ref).
 """
 function _struct_to_dict(s::DFERMION_PDFERMION)
     OD = OrderedDict{String,Any}()
@@ -608,6 +611,9 @@ end
 
 """
     _build_dfermion_dict()
+
+Assemble the ordered dictionary, which is then converted into `dfa.in`,
+for the DFermion code.
 """
 function _build_dfermion_dict()
     return _struct_to_dict(PDFERMION)
