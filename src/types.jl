@@ -136,8 +136,17 @@ FMENU = MenuFlags(
 ### *Customized Structs* : *Zen Package*
 =#
 
+#=
+*Remarks* :
+
+The official configuration file for the Zen package is `case.toml`. It
+includes `[case]`, `[dft]`, `[dmft]`, `[impurity]`, and `[solver]` blocks.
+=#
+
 """
     ZEN_PCASE
+
+This struct represents the `[case]` block in the `case.toml` file.
 """
 mutable struct ZEN_PCASE
     case :: String
