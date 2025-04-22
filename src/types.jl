@@ -634,6 +634,11 @@ codes are `solver.ctqmc.in`, while the one for the `atomic` code is just
 
 """
     IQIST_PCTSEG
+
+This struct encapsulates the parameters in the `solver.ctqmc.in` file. It
+is for the iQIST/ctseg code only.
+
+See also: [`PCTSEG`](@ref).
 """
 mutable struct IQIST_PCTSEG
     isscf  :: I64 # Cycle
@@ -679,12 +684,22 @@ end
 
 """
     IQIST_PCTHYB
+
+This struct encapsulates the parameters in the `solver.ctqmc.in` file. It
+is for the iQIST/cthyb code only.
+
+See also: [`PCTHYB`](@ref).
 """
 mutable struct IQIST_PCTHYB
 end
 
 """
     IQIST_PATOMIC
+
+This struct encapsulates the parameters in the `solver.atomic.in` file. It
+is for the iQIST/atomic code only.
+
+See also: [`PATOMIC`](@ref).
 """
 mutable struct IQIST_PATOMIC
     ibasis :: I64 # Natural eigenbasis
