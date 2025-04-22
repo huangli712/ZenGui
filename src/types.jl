@@ -844,6 +844,10 @@ PATOMIC = IQIST_PATOMIC(
 
 """
     _struct_to_dict(s::IQIST_PCTSEG)
+
+Convert a struct to an ordered dictionary (for `IQIST_PCTSEG`).
+
+See [`IQIST_PCTSEG`](@ref).
 """
 function _struct_to_dict(s::IQIST_PCTSEG)
     OD = OrderedDict{String,Any}()
@@ -893,6 +897,10 @@ end
 
 """
     _struct_to_dict(s::IQIST_PCTHYB)
+
+Convert a struct to an ordered dictionary (for `IQIST_PCTHYB`).
+
+See [`IQIST_PCTHYB`](@ref).
 """
 function _struct_to_dict(s::IQIST_PCTHYB)
     return OrderedDict{String,Any}(
@@ -902,6 +910,10 @@ end
 
 """
     _struct_to_dict(s::IQIST_PATOMIC)
+
+Convert a struct to an ordered dictionary (for `IQIST_PATOMIC`).
+
+See [`IQIST_PATOMIC`](@ref).
 """
 function _struct_to_dict(s::IQIST_PATOMIC)
     OD = OrderedDict{String,Any}()
