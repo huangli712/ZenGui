@@ -70,6 +70,7 @@ Setup widgets associated with the parameters in the `dfa.in` file.
 function _dfermion_main_block()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
     #
+    # There are four tabs
     if CImGui.BeginTabBar("dfermionTabBar", tab_bar_flags)
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(1.0,0.0,1.0,1.0))
         CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(1.0,0.0,1.0,1.0))
@@ -78,7 +79,7 @@ function _dfermion_main_block()
         #
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.8,0.0,1.0,1.0))
         CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.8,0.0,1.0,1.0))
-        _dfermion_dim_block()
+        _dfermion_dimension_block()
         CImGui.PopStyleColor(2)
         #
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.6,0.0,1.0,1.0))
@@ -134,6 +135,8 @@ end
 
 """
     _dfermion_model_block()
+
+Setup widgets for the `model` tab.
 """
 function _dfermion_model_block()
     # Define default size for widgets
@@ -213,9 +216,11 @@ function _dfermion_model_block()
 end
 
 """
-    _dfermion_dim_block()
+    _dfermion_dimension_block()
+
+Setup widgets for the `dimension` tab.
 """
-function _dfermion_dim_block()
+function _dfermion_dimension_block()
     # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
@@ -251,6 +256,8 @@ end
 
 """
     _dfermion_kmesh_block()
+
+Setup widgets for the `k-mesh` tab.
 """
 function _dfermion_kmesh_block()
     # Define default size for widgets
@@ -310,6 +317,8 @@ end
 
 """
     _dfermion_cycle_block()
+
+Setup widgets for the `cycle` tab.
 """
 function _dfermion_cycle_block()
     # Define default size for widgets
