@@ -4,8 +4,12 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/18
+# Last modified: 2025/04/23
 #
+
+#=
+### *Main Loop*
+=#
 
 """
     zeng_run()
@@ -31,7 +35,7 @@ function zeng_run()
     # Load fonts
     setup_fonts()
 
-    # Setup style for Dear ImGui
+    # Setup color's style for Dear ImGui
     CImGui.StyleColorsDark()
 
     # Setup background color
@@ -45,14 +49,14 @@ function zeng_run()
         FMENU.F_SAVE     && handle_menu_save()
         FMENU.F_EXIT     && return :imgui_exit_loop
         #
-        FMENU.E_ZEN       && @c create_app_zen(&FMENU.E_ZEN)
-        FMENU.E_DYSON     && @c create_app_dyson(&FMENU.E_DYSON)
-        FMENU.E_DFERMION  && @c create_app_dfermion(&FMENU.E_DFERMION)
-        FMENU.E_CTSEG     && @c create_app_ctseg(&FMENU.E_CTSEG)
-        FMENU.E_CTHYB     && @c create_app_cthyb(&FMENU.E_CTHYB)
-        FMENU.E_ATOMIC    && @c create_app_atomic(&FMENU.E_ATOMIC)
-        FMENU.E_ACFLOW    && @c create_app_acflow(&FMENU.E_ACFLOW)
-        FMENU.E_ACTEST    && @c create_app_actest(&FMENU.E_ACTEST)
+        FMENU.E_ZEN      && @c create_app_zen(&FMENU.E_ZEN)
+        FMENU.E_DYSON    && @c create_app_dyson(&FMENU.E_DYSON)
+        FMENU.E_DFERMION && @c create_app_dfermion(&FMENU.E_DFERMION)
+        FMENU.E_CTSEG    && @c create_app_ctseg(&FMENU.E_CTSEG)
+        FMENU.E_CTHYB    && @c create_app_cthyb(&FMENU.E_CTHYB)
+        FMENU.E_ATOMIC   && @c create_app_atomic(&FMENU.E_ATOMIC)
+        FMENU.E_ACFLOW   && @c create_app_acflow(&FMENU.E_ACFLOW)
+        FMENU.E_ACTEST   && @c create_app_actest(&FMENU.E_ACTEST)
         #
         FMENU.S_CLASSIC  && handle_menu_classic()
         FMENU.S_DARK     && handle_menu_dark()
@@ -68,6 +72,10 @@ function zeng_run()
         FMENU.H_ABOUT    && @c create_app_about(&FMENU.H_ABOUT)
     end
 end
+
+#=
+### *Configure Application*
+=#
 
 """
     setup_flags()
@@ -118,6 +126,10 @@ function setup_window()
         )
     end
 end
+
+#=
+### *Menu Handler*
+=#
 
 """
     handle_menu_save()
