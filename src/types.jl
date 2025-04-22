@@ -975,6 +975,14 @@ end
 ### *Customized Structs* : *ACFlow Toolkit*
 =#
 
+#=
+*Remarks* :
+
+The official configuration file for the ACFlow toolkit is `ac.toml`. It
+includes `[BASE]`, `[MaxEnt]`, `[BarRat]`, `[NevanAC]`, `[StochAC]`,
+`[StochSK]`, `[StochOM]`, and `[StochPX]` blocks.
+=#
+
 """
     ACFLOW_PBASE
 """
