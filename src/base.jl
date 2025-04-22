@@ -138,13 +138,10 @@ Respond the menu event: save. Try to save configurtion files for various
 tools or codes.
 """
 function handle_menu_save()
-    @show "IN SAVE MENU"
-
     @cswitch CWIN.name begin
 
         @case "ZEN"
             if FMENU.E_ZEN
-                @show "SAVE ZEN"
                 @c save_zen(&FMENU.F_SAVE)
             else
                 FMENU.F_SAVE = false
@@ -153,7 +150,6 @@ function handle_menu_save()
 
         @case "DYSON"
             if FMENU.E_DYSON
-                @show "SAVE DYSON"
                 @c save_dyson(&FMENU.F_SAVE)
             else
                 FMENU.F_SAVE = false
@@ -162,7 +158,6 @@ function handle_menu_save()
 
         @case "DFERMION"
             if FMENU.E_DFERMION
-                @show "SAVE DFERMION"
                 @c save_dfermion(&FMENU.F_SAVE)
             else
                 FMENU.F_SAVE = false
@@ -171,7 +166,6 @@ function handle_menu_save()
 
         @case "CTSEG"
             if FMENU.E_CTSEG
-                @show "SAVE CTSEG"
                 @c save_ctseg(&FMENU.F_SAVE)
             else
                 FMENU.F_SAVE = false
@@ -180,7 +174,6 @@ function handle_menu_save()
 
         @case "CTHYB"
             if FMENU.E_CTHYB
-                @show "SAVE CTHYB"
                 @c save_cthyb(&FMENU.F_SAVE)
             else
                 FMENU.F_SAVE = false
@@ -189,7 +182,6 @@ function handle_menu_save()
 
         @case "ATOMIC"
             if FMENU.E_ATOMIC
-                @show "SAVE ATOMIC"
                 @c save_atomic(&FMENU.F_SAVE)
             else
                 FMENU.F_SAVE = false
@@ -198,7 +190,6 @@ function handle_menu_save()
 
         @case "ACFLOW"
             if FMENU.E_ACFLOW
-                @show "SAVE ACFLOW"
                 @c save_acflow(&FMENU.F_SAVE)
             else
                 FMENU.F_SAVE = false
@@ -207,7 +198,6 @@ function handle_menu_save()
 
         @case "ACTEST"
             if FMENU.E_ACTEST
-                @show "SAVE ACTEST"
                 @c save_actest(&FMENU.F_SAVE)
             else
                 FMENU.F_SAVE = false
@@ -268,7 +258,8 @@ end
 """
     handle_menu_dyson(p_open::Ref{Bool})
 
-Respond the menu event: dyson. Try to open documentation for the Dyson code.
+Respond the menu event: dyson. Try to open documentation for the Dyson
+code.
 """
 function handle_menu_dyson(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/dyson/index.html"
@@ -292,7 +283,7 @@ end
     handle_menu_iqist(p_open::Ref{Bool})
 
 Respond the menu event: iqist. Try to open documentation for the iQIST
-toolkit.
+package.
 """
 function handle_menu_iqist(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/iqist_new/index.html"
@@ -339,7 +330,8 @@ end
 """
     _open_url(url::String)
 
-Invoke a web browser to open the given url.
+Invoke the default web browser to open the given url. It only supports the
+windows, macos, and linux systems.
 """
 function _open_url(url::String)
     if Sys.iswindows()
