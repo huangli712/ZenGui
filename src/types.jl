@@ -1307,6 +1307,10 @@ end
 
 """
     _struct_to_dict(s::ACFLOW_PNevanAC)
+
+Convert a struct to an ordered dictionary (for `ACFLOW_PNevanAC`).
+
+See [`ACFLOW_PNevanAC`](@ref).
 """
 function _struct_to_dict(s::ACFLOW_PNevanAC)
     return OrderedDict{String,Any}(
@@ -1320,6 +1324,10 @@ end
 
 """
     _struct_to_dict(s::ACFLOW_PStochAC)
+
+Convert a struct to an ordered dictionary (for `ACFLOW_PStochAC`).
+
+See [`ACFLOW_PStochAC`](@ref).
 """
 function _struct_to_dict(s::ACFLOW_PStochAC)
     return OrderedDict{String,Any}(
@@ -1336,6 +1344,10 @@ end
 
 """
     _struct_to_dict(s::ACFLOW_PStochSK)
+
+Convert a struct to an ordered dictionary (for `ACFLOW_PStochSK`).
+
+See [`ACFLOW_PStochSK`](@ref).
 """
 function _struct_to_dict(s::ACFLOW_PStochSK)
     return OrderedDict{String,Any}(
@@ -1353,6 +1365,10 @@ end
 
 """
     _struct_to_dict(s::ACFLOW_PStochOM)
+
+Convert a struct to an ordered dictionary (for `ACFLOW_PStochOM`).
+
+See [`ACFLOW_PStochOM`](@ref).
 """
 function _struct_to_dict(s::ACFLOW_PStochOM)
     return OrderedDict{String,Any}(
@@ -1367,6 +1383,10 @@ end
 
 """
     _struct_to_dict(s::ACFLOW_PStochPX)
+
+Convert a struct to an ordered dictionary (for `ACFLOW_PStochPX`).
+
+See [`ACFLOW_PStochPX`](@ref).
 """
 function _struct_to_dict(s::ACFLOW_PStochPX)
     return OrderedDict{String,Any}(
