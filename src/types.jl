@@ -1108,6 +1108,10 @@ end
 
 """
     PBASE
+
+An instance for the `ACFLOW_PBASE` struct.
+
+See also: [`ACFLOW_PBASE`](@ref).
 """
 PBASE = ACFLOW_PBASE(
     "giw.data",
@@ -1127,6 +1131,10 @@ PBASE = ACFLOW_PBASE(
 
 """
     PMaxEnt
+
+An instance for the `ACFLOW_PMaxEnt` struct.
+
+See also: [`ACFLOW_PMaxEnt`](@ref).
 """
 PMaxEnt = ACFLOW_PMaxEnt(
     "chi2kink",
@@ -1139,6 +1147,10 @@ PMaxEnt = ACFLOW_PMaxEnt(
 
 """
     PBarRat
+
+An instance for the `ACFLOW_PBarRat` struct.
+
+See also: [`ACFLOW_PBarRat`](@ref).
 """
 PBarRat = ACFLOW_PBarRat(
     "cont",
@@ -1150,6 +1162,10 @@ PBarRat = ACFLOW_PBarRat(
 
 """
     PNevanAC
+
+An instance for the `ACFLOW_PNevanAC` struct.
+
+See also: [`ACFLOW_PNevanAC`](@ref).
 """
 PNevanAC = ACFLOW_PNevanAC(
     true,
@@ -1161,6 +1177,10 @@ PNevanAC = ACFLOW_PNevanAC(
 
 """
     PStochAC
+
+An instance for the `ACFLOW_PStochAC` struct.
+
+See also: [`ACFLOW_PStochAC`](@ref).
 """
 PStochAC = ACFLOW_PStochAC(
     10000,
@@ -1175,6 +1195,10 @@ PStochAC = ACFLOW_PStochAC(
 
 """
     PStochSK
+
+An instance for the `ACFLOW_PStochSK` struct.
+
+See also: [`ACFLOW_PStochSK`](@ref).
 """
 PStochSK = ACFLOW_PStochSK(
     "chi2min",
@@ -1190,6 +1214,10 @@ PStochSK = ACFLOW_PStochSK(
 
 """
     PStochOM
+
+An instance for the `ACFLOW_PStochOM` struct.
+
+See also: [`ACFLOW_PStochOM`](@ref).
 """
 PStochOM = ACFLOW_PStochOM(
     2000,
@@ -1202,6 +1230,10 @@ PStochOM = ACFLOW_PStochOM(
 
 """
     PStochPX
+
+An instance for the `ACFLOW_PStochPX` struct.
+
+See also: [`ACFLOW_PStochPX`](@ref).
 """
 PStochPX = ACFLOW_PStochPX(
     "mean",
