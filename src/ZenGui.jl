@@ -200,14 +200,14 @@ ACFLOW_PStochAC -> It represents the `[StochAC]` block in the `ac.toml` file.
 ACFLOW_PStochSK -> It represents the `[StochSK]` block in the `ac.toml` file.
 ACFLOW_PStochOM -> It represents the `[StochOM]` block in the `ac.toml` file.
 ACFLOW_PStochPX -> It represents the `[StochPX]` block in the `ac.toml` file.
-PBASE
-PMaxEnt
-PBarRat
-PNevanAC
-PStochAC
-PStochSK
-PStochOM
-PStochPX
+PBASE    -> An instance for the `ACFLOW_PBASE` struct.
+PMaxEnt  -> An instance for the `ACFLOW_PMaxEnt` struct.
+PBarRat  -> An instance for the `ACFLOW_PBarRat` struct.
+PNevanAC -> An instance for the `ACFLOW_PNevanAC` struct.
+PStochAC -> An instance for the `ACFLOW_PStochAC` struct.
+PStochSK -> An instance for the `ACFLOW_PStochSK` struct.
+PStochOM -> An instance for the `ACFLOW_PStochOM` struct.
+PStochPX -> An instance for the `ACFLOW_PStochPX` struct.
 #
 ACTEST_PTEST -> It represents the `[Test]` block in the `act.toml` file.
 PTEST        -> An instance for the `ACTEST_PTEST` struct.
