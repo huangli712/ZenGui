@@ -592,15 +592,15 @@ end
 """
     _ctseg_measure_block()
 
-Setup widgets for the `measure` tab.
+Setup widgets for the `measurement` tab.
 """
 function _ctseg_measure_block()
     # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
-    if CImGui.BeginTabItem("measure")
-        CImGui.Text("Configure [measure] Part")
+    if CImGui.BeginTabItem("measurement")
+        CImGui.Text("Configure [measurement] Part")
 
         # Input: iswor
         CImGui.SetNextItemWidth(widget_combo_width)
