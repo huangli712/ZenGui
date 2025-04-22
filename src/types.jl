@@ -222,6 +222,10 @@ end
 
 """
     PCASE
+
+An instance for the `ZEN_PCASE` struct.
+
+See also: [`ZEN_PCASE`](@ref).
 """
 PCASE = ZEN_PCASE(
     "SrVO3"
@@ -229,6 +233,10 @@ PCASE = ZEN_PCASE(
 
 """
     PDFT
+
+An instance for the `ZEN_PDFT` struct.
+
+See also: [`ZEN_PDFT`](@ref).
 """
 PDFT = ZEN_PDFT(
     "vasp",
@@ -247,6 +255,10 @@ PDFT = ZEN_PDFT(
 
 """
     PDMFT
+
+An instance for the `ZEN_PDMFT` struct.
+
+See also: [`ZEN_PDMFT`](@ref).
 """
 PDMFT = ZEN_PDMFT(
     1,
@@ -265,6 +277,10 @@ PDMFT = ZEN_PDMFT(
 
 """
     PIMPURITY
+
+An instance for the `ZEN_PIMPURITY` struct.
+
+See also: [`ZEN_PIMPURITY`](@ref).
 """
 PIMPURITY = ZEN_PIMPURITY(
     1,
@@ -280,6 +296,10 @@ PIMPURITY = ZEN_PIMPURITY(
 
 """
     PSOLVER
+
+An instance for the `ZEN_PSOLVER` struct.
+
+See also: [`ZEN_PSOLVER`](@ref).
 """
 PSOLVER = ZEN_PSOLVER(
     "ctseg",
