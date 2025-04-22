@@ -517,6 +517,10 @@ is actually a ini-like file.
 
 """
     DFERMION_PDFERMION
+
+This struct encapsulates the parameters in the `dfa.in` file.
+
+See also: [`PDFERMION`](@ref).
 """
 mutable struct DFERMION_PDFERMION
     isdia :: I64 # Cycle
