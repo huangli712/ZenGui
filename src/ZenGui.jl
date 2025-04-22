@@ -358,8 +358,6 @@ export set_menu_edit
 export set_menu_style
 export set_menu_help
 
-
-
 #
 include("zen.jl")
 #
@@ -459,10 +457,44 @@ include("cthyb.jl")
 #
 export create_app_cthyb
 
+#=
+### *Includes And Exports* : *atomic.jl*
+=#
+
+#=
+*Summary* :
+
+Create and display the `atomic` window for the iQIST/atomic code.
+
+*Members* :
+
+```text
+create_app_atomic    -> Create and display the `atomic` window.
+#
+_atomic_top_block    -> Setup widgets in the top of the window.
+_atomic_main_block   -> Setup widgets associated with the parameters.
+_atomic_bottom_block -> Setup widgets in the bottom of the window.
+#
+_atomic_model_block  -> Setup widgets for the `model` tab.
+_atomic_interaction_block -> Setup widgets for the `interaction` tab.
+_atomic_natural_block  -> Setup widgets for the `natural eigenbasis` tab.
+_atomic_algorithm_block  -> Setup widgets for the `algorithm` tab.
+```
+=#
+
 #
 include("atomic.jl")
 #
 export create_app_atomic
+#
+export _atomic_top_block
+export _atomic_main_block
+export _atomic_bottom_block
+#
+export _atomic_model_block
+export _atomic_interaction_block
+export _atomic_natural_block
+export _atomic_algorithm_block
 
 #
 include("acflow.jl")
