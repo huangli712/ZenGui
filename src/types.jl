@@ -623,6 +623,15 @@ end
 ### *Customized Structs* : *iQIST Package*
 =#
 
+#=
+*Remarks* :
+
+There are three codes in the iQIST package, namely `ctseg`, `cthyb`, and
+`atomic`. The official configuration files for the `ctseg` and `cthyb`
+codes are `solver.ctqmc.in`, while the one for the `atomic` code is just
+`solver.atomic.in`. These files are actually ini-like files.
+=#
+
 """
     IQIST_PCTSEG
 """
