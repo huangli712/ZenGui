@@ -1220,12 +1220,12 @@ An instance for the `ACFLOW_PStochOM` struct.
 See also: [`ACFLOW_PStochOM`](@ref).
 """
 PStochOM = ACFLOW_PStochOM(
-    2000,
-    1000,
-    100,
-    0.005,
-    0.02,
-    -1.0
+    2000,  # ntry
+    1000,  # nstep
+    100,   # nbox
+    0.005, # sbox
+    0.02,  # wbox
+    -1.0   # norm
 )
 
 """
@@ -1236,13 +1236,13 @@ An instance for the `ACFLOW_PStochPX` struct.
 See also: [`ACFLOW_PStochPX`](@ref).
 """
 PStochPX = ACFLOW_PStochPX(
-    "mean",
-    100000,
-    200,
-    1000,
-    1000000,
-    1e+6,
-    1e-4
+    "mean",  # method
+    100000,  # nfine
+    200,     # npole
+    1000,    # ntry
+    1000000, # nstep
+    1e+6,    # theta
+    1e-4     # eta
 )
 
 """
