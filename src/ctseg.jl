@@ -59,7 +59,7 @@ end
 
 Setup widgets in the top of the window for the iQIST/ctseg code.
 """
-function _atomic_top_block()
+function _ctseg_top_block()
     CImGui.Text("ctseg: A continuous-time quantum impurity solver")
 end
 
