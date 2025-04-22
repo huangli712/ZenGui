@@ -68,7 +68,7 @@ function zeng_run()
         FMENU.H_IQIST    && handle_menu_iqist()
         FMENU.H_ACFLOW   && handle_menu_acflow()
         FMENU.H_ACTEST   && handle_menu_actest()
-        FMENU.H_ZENGUI   && handle_menu_zengui()
+        FMENU.H_ZENGUI   && @c handle_menu_zengui(&FMENU.H_ZENGUI)
         FMENU.H_ABOUT    && @c create_app_about(&FMENU.H_ABOUT)
     end
 end
@@ -325,15 +325,15 @@ function handle_menu_actest()
 end
 
 """
-    handle_menu_zengui()
+    handle_menu_zengui(p_open::Ref{Bool})
 
 Respond the menu event: zengui. Try to open documentation for the ZenGui
 application.
 """
-function handle_menu_zengui()
+function handle_menu_zengui(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/zengui/index.html"
     _open_url(url)
-    FMENU.H_ZENGUI = false
+    p_open[] = false
 end
 
 """
