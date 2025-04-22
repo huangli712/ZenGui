@@ -1469,6 +1469,13 @@ end
 ### *Customized Structs* : *ACTest Toolkit*
 =#
 
+#=
+*Remarks* :
+
+The official configuration file for the ACTest toolkit is `act.toml`. It
+includes `[Test]` and `[Solver]` blocks.
+=#
+
 """
     ACTEST_PTEST
 """
