@@ -144,6 +144,23 @@ export sorry
 export _dict_to_toml
 export _dict_to_string
 
+#=
+### *Includes And Exports* : *types.jl*
+=#
+
+#=
+*Summary* :
+
+Define some dicts and structs, which are used to store the config
+parameters or represent some essential data structures.
+
+*Members* :
+
+```text
+
+```
+=#
+
 #
 include("types.jl")
 #
