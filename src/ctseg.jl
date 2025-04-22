@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/16
+# Last modified: 2025/04/22
 #
 
 """
@@ -31,15 +31,23 @@ function create_app_ctseg(p_open::Ref{Bool})
     window_height = 600.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
-    # For all the blocks in the solver.ctqmc.in
-    _ctseg_tabs_block()
+    # For the widgets in the top of this window
+    _ctseg_top_block()
 
     # For the separator
     CImGui.Spacing()
     CImGui.Separator()
     CImGui.Spacing()
 
-    # For the buttons in the bottom of this window
+    # For all the blocks in the solver.ctqmc.in file
+    _ctseg_main_block()
+
+    # For the separator
+    CImGui.Spacing()
+    CImGui.Separator()
+    CImGui.Spacing()
+
+    # For the widgets in the bottom of this window
     _ctseg_bottom_block(p_open)
 
     # End of this window
