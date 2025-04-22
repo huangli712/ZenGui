@@ -544,11 +544,20 @@ end
 
 """
     _DFERMION
+
+This set records the names of modified parameters, which will be presented
+in the `dfa.in` file.
+
+See also: [`DFERMION_PDFERMION`](@ref).
 """
 _DFERMION = Set{String}()
 
 """
     PDFERMION
+
+An instance for the `DFERMION_PDFERMION` struct.
+
+See also: [`DFERMION_PDFERMION`](@ref).
 """
 PDFERMION = DFERMION_PDFERMION(
     2,
