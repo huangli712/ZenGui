@@ -163,16 +163,16 @@ CWIN
 MenuFlags
 FMENU
 #
-ZEN_PCASE
-ZEN_PDFT
-ZEN_PDMFT
-ZEN_PIMPURITY
-ZEN_PSOLVER
-PCASE
-PDFT
-PDMFT
-PIMPURITY
-PSOLVER
+ZEN_PCASE     -> It represents the `[case]` block in the `case.toml` file.
+ZEN_PDFT      -> It represents the `[dft]` block in the `case.toml` file.
+ZEN_PDMFT     -> It represents the `[dmft]` block in the `case.toml` file.
+ZEN_PIMPURITY -> It represents the `[impurity]` block in the `case.toml` file.
+ZEN_PSOLVER   -> It represents the `[solver]` block in the `case.toml` file.
+PCASE     -> An instance for the `ZEN_PCASE` struct.
+PDFT      -> An instance for the `ZEN_PDFT` struct.
+PDMFT     -> An instance for the `ZEN_PDMFT` struct.
+PIMPURITY -> An instance for the `ZEN_PIMPURITY` struct.
+PSOLVER   -> An instance for the `ZEN_PSOLVER` struct.
 #
 DYSON_PDYSON -> It contains the parameters in the `dmft.in` file.
 _DYSON -> It records the names of modified parameters for the Dyson code.
