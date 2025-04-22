@@ -157,11 +157,11 @@ parameters or represent some essential data structures.
 *Members* :
 
 ```text
-CURRENT_WINDOW
-CWIN
+CURRENT_WINDOW -> A struct used to keep the name of the current (activate) window.
+CWIN           -> An instance for the `CURRENT_WINDOW` struct.
 #
-MenuFlags
-FMENU
+MenuFlags -> A struct used to track the status of all the menu items.
+FMENU     -> An instance for the `MenuFlags` struct.
 #
 ZEN_PCASE     -> It represents the `[case]` block in the `case.toml` file.
 ZEN_PDFT      -> It represents the `[dft]` block in the `case.toml` file.
