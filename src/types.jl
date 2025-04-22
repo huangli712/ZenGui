@@ -726,16 +726,31 @@ end
 
 """
     _CTSEG
+
+This set records the names of modified parameters, which will be presented
+in the `solver.ctqmc.in` file. It is for the iQIST/ctseg code only.
+
+See also: [`IQIST_PCTSEG`](@ref).
 """
 _CTSEG = Set{String}()
 
 """
     _CTHYB
+
+This set records the names of modified parameters, which will be presented
+in the `solver.ctqmc.in` file. It is for the iQIST/cthyb code only.
+
+See also: [`IQIST_PCTHYB`](@ref).
 """
 _CTHYB = Set{String}()
 
 """
     _ATOMIC
+
+This set records the names of modified parameters, which will be presented
+in the `solver.atomic.in` file. It is for the iQIST/atomic code only.
+
+See also: [`IQIST_PATOMIC`](@ref).
 """
 _ATOMIC = Set{String}()
 
