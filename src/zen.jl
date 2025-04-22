@@ -92,18 +92,18 @@ macro _widgets_generator_imp(x)
         @cstatic buf = "V : 2" * "\0"^60 begin
             CImGui.SetNextItemWidth(widget_input_width)
             CImGui.InputText(" Chemical symbols of impurity atom $i", buf, length(buf))
-            PIMP.atoms[i] = rstrip(buf,'\0')
+            PIMPURITY.atoms[i] = rstrip(buf,'\0')
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(atoms_$i)$(PIMP.atoms[i])")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(atoms_$i)$(PIMPURITY.atoms[i])")
         end
         #
         # Input: equiv
         @cstatic _i = Cint(1) begin
             CImGui.SetNextItemWidth(widget_input_width)
             @c CImGui.InputInt(" Equivalency of quantum impurity atom $i", &_i)
-            PIMP.equiv[i] = _i
+            PIMPURITY.equiv[i] = _i
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(equiv_$i)$(PIMP.equiv[i])")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(equiv_$i)$(PIMPURITY.equiv[i])")
         end
         #
         # Input: shell
@@ -111,9 +111,9 @@ macro _widgets_generator_imp(x)
             CImGui.SetNextItemWidth(widget_combo_width)
             shell_list = ["s", "p", "d", "f", "d_t2g", "d_eg"]
             @c CImGui.Combo(" Angular momenta of correlated orbital $i", &id, shell_list)
-            PIMP.shell[i] = shell_list[id + 1]
+            PIMPURITY.shell[i] = shell_list[id + 1]
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(shell_$i)$(PIMP.shell[i])")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(shell_$i)$(PIMPURITY.shell[i])")
         end
         #
         # Input: ising
@@ -121,45 +121,45 @@ macro _widgets_generator_imp(x)
             CImGui.SetNextItemWidth(widget_combo_width)
             ising_list = ["ising", "full"]
             @c CImGui.Combo(" Interaction types of correlated orbital $i", &id, ising_list)
-            PIMP.ising[i] = ising_list[id + 1]
+            PIMPURITY.ising[i] = ising_list[id + 1]
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ising_$i)$(PIMP.ising[i])")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ising_$i)$(PIMPURITY.ising[i])")
         end
         #
         # Input: occup
         @cstatic _f = Cdouble(1.0) begin
             CImGui.SetNextItemWidth(widget_input_width)
             @c CImGui.InputDouble(" Nominal impurity occupancy $i", &_f)
-            PIMP.occup[i] = _f
+            PIMPURITY.occup[i] = _f
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(occup_$i)$(PIMP.occup[i])")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(occup_$i)$(PIMPURITY.occup[i])")
         end
         #
         # Input: upara
         @cstatic _f = Cdouble(4.0) begin
             CImGui.SetNextItemWidth(widget_input_width)
             @c CImGui.InputDouble(" Coulomb interaction parameter $i", &_f)
-            PIMP.upara[i] = _f
+            PIMPURITY.upara[i] = _f
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(upara_$i)$(PIMP.upara[i])")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(upara_$i)$(PIMPURITY.upara[i])")
         end
         #
         # Input: jpara
         @cstatic _f = Cdouble(0.7) begin
             CImGui.SetNextItemWidth(widget_input_width)
             @c CImGui.InputDouble(" Hund's coupling parameter $i", &_f)
-            PIMP.jpara[i] = _f
+            PIMPURITY.jpara[i] = _f
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(jpara_$i)$(PIMP.jpara[i])")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(jpara_$i)$(PIMPURITY.jpara[i])")
         end
         #
         # Input: lpara
         @cstatic _f = Cdouble(0.0) begin
             CImGui.SetNextItemWidth(widget_input_width)
             @c CImGui.InputDouble(" Spin-orbit coupling parameter $i", &_f)
-            PIMP.lpara[i] = _f
+            PIMPURITY.lpara[i] = _f
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lpara_$i)$(PIMP.lpara[i])")
+            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lpara_$i)$(PIMPURITY.lpara[i])")
         end
     end
 
@@ -381,35 +381,35 @@ function _zen_dft_block()
         CImGui.SetNextItemWidth(widget_input_width)
         @cstatic _i = Cint(1) begin
             @c CImGui.SliderInt(" Number of (correlated) impurity sites", &_i, 1, 9)
-            PIMP.nsite = _i
+            PIMPURITY.nsite = _i
             #
-            resize!(PDFT.sproj, PIMP.nsite)
+            resize!(PDFT.sproj, PIMPURITY.nsite)
             fill!(PDFT.sproj, PDFT.sproj[1])
-            resize!(PDFT.window, PIMP.nsite * 2)
-            for i = 2:PIMP.nsite
+            resize!(PDFT.window, PIMPURITY.nsite * 2)
+            for i = 2:PIMPURITY.nsite
                 PDFT.window[2*i-1] = PDFT.window[1]
                 PDFT.window[2*i] = PDFT.window[2]
             end
             #
-            resize!(PIMP.atoms, PIMP.nsite)
-            fill!(PIMP.atoms, PIMP.atoms[1])
-            resize!(PIMP.equiv, PIMP.nsite)
-            fill!(PIMP.equiv, PIMP.equiv[1])
-            resize!(PIMP.shell, PIMP.nsite)
-            fill!(PIMP.shell, PIMP.shell[1])
-            resize!(PIMP.ising, PIMP.nsite)
-            fill!(PIMP.ising, PIMP.ising[1])
-            resize!(PIMP.occup, PIMP.nsite)
-            fill!(PIMP.occup, PIMP.occup[1])
-            resize!(PIMP.upara, PIMP.nsite)
-            fill!(PIMP.upara, PIMP.upara[1])
-            resize!(PIMP.jpara, PIMP.nsite)
-            fill!(PIMP.jpara, PIMP.jpara[1])
-            resize!(PIMP.lpara, PIMP.nsite)
-            fill!(PIMP.lpara, PIMP.lpara[1])
+            resize!(PIMPURITY.atoms, PIMPURITY.nsite)
+            fill!(PIMPURITY.atoms, PIMPURITY.atoms[1])
+            resize!(PIMPURITY.equiv, PIMPURITY.nsite)
+            fill!(PIMPURITY.equiv, PIMPURITY.equiv[1])
+            resize!(PIMPURITY.shell, PIMPURITY.nsite)
+            fill!(PIMPURITY.shell, PIMPURITY.shell[1])
+            resize!(PIMPURITY.ising, PIMPURITY.nsite)
+            fill!(PIMPURITY.ising, PIMPURITY.ising[1])
+            resize!(PIMPURITY.occup, PIMPURITY.nsite)
+            fill!(PIMPURITY.occup, PIMPURITY.occup[1])
+            resize!(PIMPURITY.upara, PIMPURITY.nsite)
+            fill!(PIMPURITY.upara, PIMPURITY.upara[1])
+            resize!(PIMPURITY.jpara, PIMPURITY.nsite)
+            fill!(PIMPURITY.jpara, PIMPURITY.jpara[1])
+            resize!(PIMPURITY.lpara, PIMPURITY.nsite)
+            fill!(PIMPURITY.lpara, PIMPURITY.lpara[1])
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(0.5,0.5,1.0,1.0), "(nsite)$(PIMP.nsite)")
+        CImGui.TextColored(ImVec4(0.5,0.5,1.0,1.0), "(nsite)$(PIMPURITY.nsite)")
 
         # For the separator
         CImGui.Spacing()
@@ -417,7 +417,7 @@ function _zen_dft_block()
         CImGui.Spacing()
 
         # Input: sproj and window
-        for i = 1:PIMP.nsite
+        for i = 1:PIMPURITY.nsite
             if CImGui.CollapsingHeader("impurity $i")
                 i == 1 && @_widgets_generator_dft 1
                 i == 2 && @_widgets_generator_dft 2
@@ -582,7 +582,7 @@ function _zen_imp_block()
     if CImGui.BeginTabItem("impurity")
         CImGui.Text("Configure [impurity] Block")
         #
-        for i = 1:PIMP.nsite
+        for i = 1:PIMPURITY.nsite
             if CImGui.CollapsingHeader("impurity $i")
                 i == 1 && @_widgets_generator_imp 1
                 i == 2 && @_widgets_generator_imp 2

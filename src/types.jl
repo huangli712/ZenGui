@@ -154,6 +154,8 @@ end
 
 """
     ZEN_PDFT
+
+This struct represents the `[dft]` block in the `case.toml` file.
 """
 mutable struct ZEN_PDFT
     engine   :: String
@@ -172,6 +174,8 @@ end
 
 """
     ZEN_PDMFT
+
+This struct represents the `[dmft]` block in the `case.toml` file.
 """
 mutable struct ZEN_PDMFT
     mode   :: I64
@@ -189,9 +193,11 @@ mutable struct ZEN_PDMFT
 end
 
 """
-    ZEN_PIMP
+    ZEN_PIMPURITY
+
+This struct represents the `[impurity]` block in the `case.toml` file.
 """
-mutable struct ZEN_PIMP
+mutable struct ZEN_PIMPURITY
     nsite :: I64
     atoms :: Array
     equiv :: Array
@@ -205,6 +211,8 @@ end
 
 """
     ZEN_PSOLVER
+
+This struct represents the `[solver]` block in the `case.toml` file.
 """
 mutable struct ZEN_PSOLVER
     engine :: String
@@ -256,9 +264,9 @@ PDMFT = ZEN_PDMFT(
 )
 
 """
-    PIMP
+    PIMPURITY
 """
-PIMP = ZEN_PIMP(
+PIMPURITY = ZEN_PIMPURITY(
     1,
     ["V : 2"],
     [1],
@@ -329,9 +337,9 @@ function _struct_to_dict(s::ZEN_PDMFT)
 end
 
 """
-    _struct_to_dict(s::ZEN_PIMP)
+    _struct_to_dict(s::ZEN_PIMPURITY)
 """
-function _struct_to_dict(s::ZEN_PIMP)
+function _struct_to_dict(s::ZEN_PIMPURITY)
     return OrderedDict{String,Any}(
         "nsite"    => s.nsite,
         "atoms"    => s.atoms,
@@ -364,7 +372,7 @@ function _build_zen_dict()
         "case" => _struct_to_dict(PCASE)["case"],
         "dft" => _struct_to_dict(PDFT),
         "dmft" => _struct_to_dict(PDMFT),
-        "impurity" => _struct_to_dict(PIMP),
+        "impurity" => _struct_to_dict(PIMPURITY),
         "solver" => _struct_to_dict(PSOLVER)
     )
 end
