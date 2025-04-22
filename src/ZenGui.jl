@@ -380,7 +380,7 @@ Create and display the `Dyson` window for the Dyson code.
 create_app_dyson    -> Create and display the `Dyson` window.
 #
 _dyson_top_block    -> Setup widgets in the top of the window.
-_dyson_main_block   -> Setup widgets associated with the parameters
+_dyson_main_block   -> Setup widgets associated with the parameters.
 _dyson_bottom_block -> Setup widgets in the bottom of the window.
 ```
 =#
@@ -394,10 +394,44 @@ export _dyson_top_block
 export _dyson_main_block
 export _dyson_bottom_block
 
+#=
+### *Includes And Exports* : *dfermion.jl*
+=#
+
+#=
+*Summary* :
+
+Create and display the `DFermion` window for the DFermion code.
+
+*Members* :
+
+```text
+create_app_dfermion    -> Create and display the `DFermion` window.
+#
+_dfermion_top_block    -> Setup widgets in the top of the window.
+_dfermion_main_block   -> Setup widgets associated with the parameters.
+_dfermion_bottom_block -> Setup widgets in the bottom of the window.
+#
+_dfermion_model_block  -> Setup widgets for the `model` tab.
+_dfermion_dimension_block -> Setup widgets for the `dimension` tab.
+_dfermion_kmesh_block  -> Setup widgets for the `k-mesh` tab.
+_dfermion_cycle_block  -> Setup widgets for the `cycle` tab.
+```
+=#
+
 #
 include("dfermion.jl")
 #
 export create_app_dfermion
+#
+export _dfermion_top_block
+export _dfermion_main_block
+export _dfermion_bottom_block
+#
+export _dfermion_model_block
+export _dfermion_dimension_block
+export _dfermion_kmesh_block
+export _dfermion_cycle_block
 
 #
 include("ctseg.jl")
