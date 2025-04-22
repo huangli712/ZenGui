@@ -820,26 +820,26 @@ An instance for the `IQIST_PATOMIC` struct.
 See also: [`IQIST_PATOMIC`](@ref).
 """
 PATOMIC = IQIST_PATOMIC(
-    1,
-    1,
-    1,
-    0,
-    0,
-    1,
-    2,
-    2,
-    4,
-    0,
-    2,
-    2.0,
-    2.0,
-    0.0,
-    0.0,
-    0.0,
-    2.0,
-    0.0,
-    0.0,
-    0.0
+    1,   # ibasis
+    1,   # ictqmc
+    1,   # icu
+    0,   # icf
+    0,   # isoc
+    1,   # nband
+    2,   # nspin
+    2,   # norbs
+    4,   # ncfgs
+    0,   # nmini
+    2,   # nmaxi
+    2.0, # Uc
+    2.0, # Uv
+    0.0, # Jz
+    0.0, # Js
+    0.0, # Jp
+    2.0, # Ud
+    0.0, # Jh
+    0.0, # mune
+    0.0  # lambda
 )
 
 """
