@@ -406,6 +406,9 @@ end
 
 """
     _build_zen_dict()
+
+Assemble the ordered dictionary, which is then converted into `case.toml`,
+for the Zen package.
 """
 function _build_zen_dict()
     return OrderedDict{String,Any}(
