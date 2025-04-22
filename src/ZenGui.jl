@@ -365,10 +365,34 @@ include("zen.jl")
 #
 export create_app_zen
 
+#=
+### *Includes And Exports* : *dyson.jl*
+=#
+
+#=
+*Summary* :
+
+Create and display the `Dyson` window for the Dyson code.
+
+*Members* :
+
+```text
+create_app_dyson    -> Create and display the `Dyson` window.
+#
+_dyson_top_block    -> Setup widgets in the top of the window.
+_dyson_main_block   -> Setup widgets associated with the parameters
+_dyson_bottom_block -> Setup widgets in the bottom of the window.
+```
+=#
+
 #
 include("dyson.jl")
 #
 export create_app_dyson
+#
+export _dyson_top_block
+export _dyson_main_block
+export _dyson_bottom_block
 
 #
 include("dfermion.jl")

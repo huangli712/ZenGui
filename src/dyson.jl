@@ -66,7 +66,7 @@ end
 """
     _dyson_main_block()
 
-Setup widgets for the parameters in the dmft.in.
+Setup widgets associated with the parameters in the `dmft.in` file.
 """
 function _dyson_main_block()
     # Define default size for widgets
