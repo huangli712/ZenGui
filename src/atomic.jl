@@ -135,6 +135,8 @@ end
 
 """
     _atomic_model_block()
+
+Setup widgets for the `model` tab.
 """
 function _atomic_model_block()
     # Define default size for widgets
@@ -194,6 +196,8 @@ end
 
 """
     _atomic_interaction_block()
+
+Setup widgets for the `interaction` tab.
 """
 function _atomic_interaction_block()
     # Define default size for widgets
