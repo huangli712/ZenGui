@@ -92,7 +92,7 @@ function setup_flags()
     io = CImGui.GetIO()
     io.ConfigFlags = unsafe_load(io.ConfigFlags) | CImGui.ImGuiConfigFlags_DockingEnable
     io.ConfigFlags = unsafe_load(io.ConfigFlags) | CImGui.ImGuiConfigFlags_ViewportsEnable
-    io.IniFilename = C_NULL
+    io.IniFilename = C_NULL # We won't generate the ini file for this app.
 end
 
 """
