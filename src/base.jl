@@ -49,7 +49,7 @@ function zeng_run()
         # Respond to menu events
         #
         # For File menu
-        FMENU.F_SAVE     && handle_menu_save()
+        FMENU.F_SAVE     && @c handle_menu_save(&FMENU.F_SAVE)
         FMENU.F_EXIT     && return :imgui_exit_loop
         #
         # For Edit menu
@@ -139,80 +139,80 @@ end
 =#
 
 """
-    handle_menu_save()
+    handle_menu_save(p_open::Ref{Bool})
 
 Respond the menu event: save. Try to save configurtion files for various
 tools or codes.
 """
-function handle_menu_save()
+function handle_menu_save(p_open::Ref{Bool})
     @cswitch CWIN.name begin
 
         @case "ZEN"
             if FMENU.E_ZEN
-                @c save_zen(&FMENU.F_SAVE)
+                save_zen(p_open)
             else
-                FMENU.F_SAVE = false
+                p_open[] = false
             end
             break
 
         @case "DYSON"
             if FMENU.E_DYSON
-                @c save_dyson(&FMENU.F_SAVE)
+                save_dyson(p_open)
             else
-                FMENU.F_SAVE = false
+                p_open[] = false
             end
             break
 
         @case "DFERMION"
             if FMENU.E_DFERMION
-                @c save_dfermion(&FMENU.F_SAVE)
+                save_dfermion(p_open)
             else
-                FMENU.F_SAVE = false
+                p_open[] = false
             end
             break
 
         @case "CTSEG"
             if FMENU.E_CTSEG
-                @c save_ctseg(&FMENU.F_SAVE)
+                save_ctseg(p_open)
             else
-                FMENU.F_SAVE = false
+                p_open[] = false
             end
             break
 
         @case "CTHYB"
             if FMENU.E_CTHYB
-                @c save_cthyb(&FMENU.F_SAVE)
+                save_cthyb(p_open)
             else
-                FMENU.F_SAVE = false
+                p_open[] = false
             end
             break
 
         @case "ATOMIC"
             if FMENU.E_ATOMIC
-                @c save_atomic(&FMENU.F_SAVE)
+                save_atomic(p_open)
             else
-                FMENU.F_SAVE = false
+                p_open[] = false
             end
             break
 
         @case "ACFLOW"
             if FMENU.E_ACFLOW
-                @c save_acflow(&FMENU.F_SAVE)
+                save_acflow(p_open)
             else
-                FMENU.F_SAVE = false
+                p_open[] = false
             end
             break
 
         @case "ACTEST"
             if FMENU.E_ACTEST
-                @c save_actest(&FMENU.F_SAVE)
+                save_actest(p_open)
             else
-                FMENU.F_SAVE = false
+                p_open[] = false
             end
             break
 
         @default
-            @c save_nothing(&FMENU.F_SAVE)
+            save_nothing(p_open)
             break
 
     end
