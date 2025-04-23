@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/22
+# Last modified: 2025/04/23
 #
 
 #=
@@ -113,4 +113,22 @@ function _dict_to_string(d::AbstractDict)
         println(io, "$key = $value")
     end
     return String(take!(io))
+end
+
+"""
+    open_url(url::String)
+
+Invoke the default web browser to open the given url. It only supports the
+windows, macos, and linux systems.
+"""
+function open_url(url::String)
+    if Sys.iswindows()
+        run(`start $url`)
+    elseif Sys.islinux()
+        run(`xdg-open $url`)
+    elseif Sys.isapple()
+        run(`open $url`)
+    else
+        sorry()
+    end
 end

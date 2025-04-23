@@ -258,7 +258,7 @@ Respond the menu event: zen. Try to open documentation for the Zen package.
 """
 function handle_menu_zen(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/zen/index.html"
-    _open_url(url)
+    open_url(url)
     p_open[] = false
 end
 
@@ -270,7 +270,7 @@ code.
 """
 function handle_menu_dyson(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/dyson/index.html"
-    _open_url(url)
+    open_url(url)
     p_open[] = false
 end
 
@@ -282,7 +282,7 @@ DFermion code.
 """
 function handle_menu_dfermion(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/dfermion/index.html"
-    _open_url(url)
+    open_url(url)
     p_open[] = false
 end
 
@@ -294,7 +294,7 @@ package.
 """
 function handle_menu_iqist(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/iqist_new/index.html"
-    _open_url(url)
+    open_url(url)
     p_open[] = false
 end
 
@@ -306,7 +306,7 @@ toolkit.
 """
 function handle_menu_acflow(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/acflow/index.html"
-    _open_url(url)
+    open_url(url)
     p_open[] = false
 end
 
@@ -318,7 +318,7 @@ toolkit.
 """
 function handle_menu_actest(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/actest/index.html"
-    _open_url(url)
+    open_url(url)
     p_open[] = false
 end
 
@@ -330,24 +330,6 @@ application.
 """
 function handle_menu_zengui(p_open::Ref{Bool})
     url = "https://huangli712.github.io/projects/zengui/index.html"
-    _open_url(url)
+    open_url(url)
     p_open[] = false
-end
-
-"""
-    _open_url(url::String)
-
-Invoke the default web browser to open the given url. It only supports the
-windows, macos, and linux systems.
-"""
-function _open_url(url::String)
-    if Sys.iswindows()
-        run(`start $url`)
-    elseif Sys.islinux()
-        run(`xdg-open $url`)
-    elseif Sys.isapple()
-        run(`open $url`)
-    else
-        sorry()
-    end
 end
