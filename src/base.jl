@@ -14,7 +14,8 @@
 """
     zeng_run()
 
-Main function. It launchs the graphic user interface.
+Main function. It launchs the graphic user interface and respond to user
+inputs unitl the main window is closed.
 """
 function zeng_run()
     # Setup backend for Dear ImGui
@@ -42,13 +43,16 @@ function zeng_run()
     bgc = Cfloat[0.45, 0.55, 0.60, 1.00]
 
     CImGui.render(ctx; clear_color=Ref(bgc), window_title = "ZenGui") do
-        # Setup menu in the main window
+        # Setup global menu in the main window
         create_menu()
 
-        # Respond to events
+        # Respond to menu events
+        #
+        # For File menu
         FMENU.F_SAVE     && handle_menu_save()
         FMENU.F_EXIT     && return :imgui_exit_loop
         #
+        # For Edit menu
         FMENU.E_ZEN      && @c create_app_zen(&FMENU.E_ZEN)
         FMENU.E_DYSON    && @c create_app_dyson(&FMENU.E_DYSON)
         FMENU.E_DFERMION && @c create_app_dfermion(&FMENU.E_DFERMION)
@@ -58,10 +62,12 @@ function zeng_run()
         FMENU.E_ACFLOW   && @c create_app_acflow(&FMENU.E_ACFLOW)
         FMENU.E_ACTEST   && @c create_app_actest(&FMENU.E_ACTEST)
         #
+        # For Style menu
         FMENU.S_CLASSIC  && @c handle_menu_classic(&FMENU.S_CLASSIC)
         FMENU.S_DARK     && @c handle_menu_dark(&FMENU.S_DARK)
         FMENU.S_LIGHT    && @c handle_menu_light(&FMENU.S_LIGHT)
         #
+        # For Help menu
         FMENU.H_ZEN      && @c handle_menu_zen(&FMENU.H_ZEN)
         FMENU.H_DYSON    && @c handle_menu_dyson(&FMENU.H_DYSON)
         FMENU.H_DFERMION && @c handle_menu_dfermion(&FMENU.H_DFERMION)
