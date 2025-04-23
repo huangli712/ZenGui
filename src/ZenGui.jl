@@ -581,6 +581,38 @@ include("about.jl")
 #
 export create_app_about
 
+#=
+### *Includes And Exports* : *base.jl*
+=#
+
+#=
+*Summary* :
+
+To create main window and respond to users inputs for the ZenGui app.
+
+*Members* :
+
+```text
+zeng_run     -> Main function for the ZenGui app.
+#
+setup_flags  -> Setup configuration flags for the Dear ImGui library.
+setup_fonts  -> Setup fonts for this graphic user interface.
+setup_window -> Tweak the window's style in this graphic user interface.
+#
+handle_menu_save     -> Respond the menu event: save.
+handle_menu_classic  -> Respond the menu event: classic.
+handle_menu_dark     -> Respond the menu event: dark.
+handle_menu_light    -> Respond the menu event: light.
+handle_menu_zen      -> Respond the menu event: zen.
+handle_menu_dyson    -> Respond the menu event: dyson.
+handle_menu_dfermion -> Respond the menu event: dfermion.
+handle_menu_iqist    -> Respond the menu event: iqist.
+handle_menu_acflow   -> Respond the menu event: acflow.
+handle_menu_actest   -> Respond the menu event: actest.
+handle_menu_zengui   -> Respond the menu event: zengui.
+```
+=#
+
 #
 include("base.jl")
 #
