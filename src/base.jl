@@ -98,10 +98,11 @@ end
 """
     setup_fonts()
 
-Setup fonts for this graphic user interface.
+Setup fonts for this graphic user interface. Note that the files for fonts
+should be saved in ZenGui/src/.fonts directory.
 """
 function setup_fonts()
-    fonts_dir = "/Users/lihuang/Library/Fonts"
+    fonts_dir = joinpath(ENV["ZEN_GUI"], ".fonts")
     fonts = unsafe_load(CImGui.GetIO().Fonts)
     CImGui.AddFontFromFileTTF(
         fonts,
