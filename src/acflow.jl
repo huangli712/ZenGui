@@ -262,7 +262,7 @@ function _acflow_bottom_block(p_open::Ref{Bool})
     #
     if CImGui.BeginPopupModal("View", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
         @cstatic read_only=false text="Hello World!" begin
-            text = _dict_to_toml(_build_acflow_dict())
+            text = dict_to_toml(_build_acflow_dict())
             @c CImGui.Checkbox("Read-only", &read_only)
             flags = read_only ? CImGui.ImGuiInputTextFlags_ReadOnly : 0
             flags = CImGui.ImGuiInputTextFlags_AllowTabInput | flags

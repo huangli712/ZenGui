@@ -129,8 +129,8 @@ To provide some useful utility macros and functions.
 #
 sorry    -> Say sorry.
 #
-_dict_to_toml -> Convert dictionary to toml.
-_dict_to_string -> Convert dictionary to string.
+dict_to_toml -> Convert dictionary to toml.
+dict_to_string -> Convert dictionary to string.
 ```
 =#
 
@@ -141,8 +141,8 @@ export @cswitch
 #
 export sorry
 #
-export _dict_to_toml
-export _dict_to_string
+export dict_to_toml
+export dict_to_string
 
 #=
 ### *Includes And Exports* : *types.jl*

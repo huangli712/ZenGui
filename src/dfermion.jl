@@ -113,7 +113,7 @@ function _dfermion_bottom_block(p_open::Ref{Bool})
     #
     if CImGui.BeginPopupModal("View", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
         @cstatic text="Hello World!" begin
-            text = _dict_to_string(_build_dfermion_dict())
+            text = dict_to_string(_build_dfermion_dict())
             flags = CImGui.ImGuiInputTextFlags_ReadOnly
             flags = CImGui.ImGuiInputTextFlags_AllowTabInput | flags
             CImGui.InputTextMultiline("##source", text, 10000, ImVec2(400, 600), flags)
