@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/22
+# Last modified: 2025/04/23
 #
 
 """
@@ -131,6 +131,8 @@ sorry    -> Say sorry.
 #
 dict_to_toml -> Convert dictionary to toml.
 dict_to_string -> Convert dictionary to string.
+#
+open_url -> Invoke the default web browser to open the given url.
 ```
 =#
 

@@ -115,6 +115,10 @@ function dict_to_string(d::AbstractDict)
     return String(take!(io))
 end
 
+#=
+### *Miscellaneous Utility*
+=#
+
 """
     open_url(url::String)
 
