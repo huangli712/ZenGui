@@ -75,7 +75,7 @@ function _acflow_main_block()
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(1.0,0.0,1.0,1.0))
         CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(1.0,0.0,1.0,1.0))
         if CImGui.BeginTabItem("general")
-            _acflow_base_block()
+            _acflow_general_block()
             #
             CImGui.EndTabItem()
         end
@@ -132,11 +132,11 @@ function _acflow_bottom_block(p_open::Ref{Bool})
 end
 
 """
-    _acflow_base_block()
+    _acflow_general_block()
 
-Setup widgets for the [BASE] block in the ac.toml.
+Setup widgets for the `general` tab.
 """
-function _acflow_base_block()
+function _acflow_general_block()
     # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
@@ -279,7 +279,7 @@ end
 """
     _acflow_solver_block()
 
-Setup widgets in the lower panel of the window for the ACFlow toolkit.
+Setup widgets for the `solver` tab.
 """
 function _acflow_solver_block()
     # It should change upon the selection of analytic continuation solver.
