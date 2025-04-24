@@ -54,6 +54,15 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.End()
 end
 
+"""
+    _acflow_top_block()
+
+Setup widgets in the top of the window for the ACFlow toolkit.
+"""
+function _acflow_top_block()
+    CImGui.Text("ACFlow: A full-fledged analytic continuation toolkit in Julia")
+end
+
     # For the [BASE] block in the ac.toml
     _acflow_base_block()
 
