@@ -301,6 +301,14 @@ function handle_menu_save(p_open::Ref{Bool})
     end
 end
 
+"""
+    handle_menu_background(p_open::Ref{Bool})
+
+Respond the menu event: change background. It will change the background
+image randomly.
+
+See also: [`setup_background`](@ref).
+"""
 function handle_menu_background(p_open::Ref{Bool})
     p_open[] = false
 end
