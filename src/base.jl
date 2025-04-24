@@ -4,12 +4,15 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/23
+# Last modified: 2025/04/24
 #
 
 function load_texture()
+    img_list = ["bg1.jpg", "bg2.jpg", "bg3.jpg", "bg4.jpg", "bg5.png", "bg6.jpg"]
+    img_indx = rand(1:length(img_list))
     img_dir = joinpath(ENV["ZEN_GUI"], ".images")
-    img_path = joinpath(img_dir, "bg.jpg")
+    img_path = joinpath(img_dir, img_list[img_indx])
+
     img = RGBA.(rotr90( FileIO.load(img_path)))
     width, height = size(img)
     @show width, height, typeof(img)
