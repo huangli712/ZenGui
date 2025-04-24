@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/24
+# Last modified: 2025/04/25
 #
 
 """
@@ -72,8 +72,8 @@ function _actest_main_block()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
     #
     if CImGui.BeginTabBar("ACTestTabBar", tab_bar_flags)
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(1.0,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(1.0,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_CYAN)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_CYAN)
         if CImGui.BeginTabItem("test")
             _actest_test_block()
             #
@@ -81,8 +81,8 @@ function _actest_main_block()
         end
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.5,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.5,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_LIGHTGREEN)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_LIGHTGREEN)
         if CImGui.BeginTabItem("solver")
             _actest_solver_block()
             #
@@ -151,7 +151,7 @@ function _actest_test_block()
         PTEST.solver = solver_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(solver)$(PTEST.solver)")
+    CImGui.TextColored(COL_MAGENTA, "(solver)$(PTEST.solver)")
     #
     # Input: ptype
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -161,7 +161,7 @@ function _actest_test_block()
         PTEST.ptype = ptype_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ptype)$(PTEST.ptype)")
+    CImGui.TextColored(COL_MAGENTA, "(ptype)$(PTEST.ptype)")
     #
     # Input: ktype
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -171,7 +171,7 @@ function _actest_test_block()
         PTEST.ktype = ktype_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ktype)$(PTEST.ktype)")
+    CImGui.TextColored(COL_MAGENTA, "(ktype)$(PTEST.ktype)")
     #
     # Input: grid
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -181,7 +181,7 @@ function _actest_test_block()
         PTEST.grid = grid_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(grid)$(PTEST.grid)")
+    CImGui.TextColored(COL_MAGENTA, "(grid)$(PTEST.grid)")
     #
     # Input: mesh
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -191,7 +191,7 @@ function _actest_test_block()
         PTEST.mesh = mesh_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mesh)$(PTEST.mesh)")
+    CImGui.TextColored(COL_MAGENTA, "(mesh)$(PTEST.mesh)")
     #
     # Input: ngrid
     CImGui.SetNextItemWidth(widget_input_width)
@@ -200,7 +200,7 @@ function _actest_test_block()
         PTEST.ngrid = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ngrid)$(PTEST.ngrid)")
+    CImGui.TextColored(COL_MAGENTA, "(ngrid)$(PTEST.ngrid)")
     #
     # Input: nmesh
     CImGui.SetNextItemWidth(widget_input_width)
@@ -209,7 +209,7 @@ function _actest_test_block()
         PTEST.nmesh = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmesh)$(PTEST.nmesh)")
+    CImGui.TextColored(COL_MAGENTA, "(nmesh)$(PTEST.nmesh)")
     #
     # Input: ntest
     CImGui.SetNextItemWidth(widget_input_width)
@@ -218,7 +218,7 @@ function _actest_test_block()
         PTEST.ntest = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ntest)$(PTEST.ntest)")
+    CImGui.TextColored(COL_MAGENTA, "(ntest)$(PTEST.ntest)")
     #
     # Input: wmax
     CImGui.SetNextItemWidth(widget_input_width)
@@ -227,7 +227,7 @@ function _actest_test_block()
         PTEST.wmax = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmax)$(PTEST.wmax)")
+    CImGui.TextColored(COL_MAGENTA, "(wmax)$(PTEST.wmax)")
     #
     # Input: wmin
     CImGui.SetNextItemWidth(widget_input_width)
@@ -236,7 +236,7 @@ function _actest_test_block()
         PTEST.wmin = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmin)$(PTEST.wmin)")
+    CImGui.TextColored(COL_MAGENTA, "(wmin)$(PTEST.wmin)")
     #
     # Input: pmax
     CImGui.SetNextItemWidth(widget_input_width)
@@ -245,7 +245,7 @@ function _actest_test_block()
         PTEST.pmax = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(pmax)$(PTEST.pmax)")
+    CImGui.TextColored(COL_MAGENTA, "(pmax)$(PTEST.pmax)")
     #
     # Input: pmin
     CImGui.SetNextItemWidth(widget_input_width)
@@ -254,7 +254,7 @@ function _actest_test_block()
         PTEST.pmin = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmin)$(PTEST.pmin)")
+    CImGui.TextColored(COL_MAGENTA, "(wmin)$(PTEST.pmin)")
     #
     # Input: beta
     CImGui.SetNextItemWidth(widget_input_width)
@@ -263,7 +263,7 @@ function _actest_test_block()
         PTEST.beta = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PTEST.beta)")
+    CImGui.TextColored(COL_MAGENTA, "(beta)$(PTEST.beta)")
     #
     # Input: noise
     CImGui.SetNextItemWidth(widget_input_width)
@@ -272,7 +272,7 @@ function _actest_test_block()
         PTEST.noise = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(noise)$(PTEST.noise)")
+    CImGui.TextColored(COL_MAGENTA, "(noise)$(PTEST.noise)")
     #
     # Input: offdiag
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -286,7 +286,7 @@ function _actest_test_block()
         end
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(offdiag)$(PTEST.offdiag)")
+    CImGui.TextColored(COL_MAGENTA, "(offdiag)$(PTEST.offdiag)")
     #
     # Input: lpeak
     CImGui.SetNextItemWidth(widget_input_width)
@@ -299,7 +299,7 @@ function _actest_test_block()
         PTEST.lpeak = lpeak
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lpeak)$(PTEST.lpeak)")
+    CImGui.TextColored(COL_MAGENTA, "(lpeak)$(PTEST.lpeak)")
 end
 
 """
