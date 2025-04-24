@@ -74,7 +74,7 @@ function _acflow_main_block()
     if CImGui.BeginTabBar("ACFlowTabBar", tab_bar_flags)
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(1.0,0.0,1.0,1.0))
         CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(1.0,0.0,1.0,1.0))
-        if CImGui.BeginTabItem("general setup")
+        if CImGui.BeginTabItem("general")
             _acflow_base_block()
             #
             CImGui.EndTabItem()
@@ -83,7 +83,7 @@ function _acflow_main_block()
         #
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.5,0.0,1.0,1.0))
         CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.5,0.0,1.0,1.0))
-        if CImGui.BeginTabItem("analytic continuation solver")
+        if CImGui.BeginTabItem("solver")
             _acflow_solver_block()
             #
             CImGui.EndTabItem()
@@ -111,7 +111,7 @@ function _acflow_bottom_block(p_open::Ref{Bool})
     #
     if CImGui.BeginPopupModal("View", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
         @cstatic text="Hello World!" begin
-            text = dict_to_string(_build_acflow_dict())
+            text = dict_to_toml(_build_acflow_dict())
             flags = CImGui.ImGuiInputTextFlags_ReadOnly
             flags = CImGui.ImGuiInputTextFlags_AllowTabInput | flags
             CImGui.InputTextMultiline("##source", text, 10000, ImVec2(400, 600), flags)
@@ -251,7 +251,7 @@ function _acflow_base_block()
     CImGui.SetNextItemWidth(widget_combo_width)
     offdiag_list = ["Yes", "No"]
     @cstatic id = Cint(1) begin
-        @c CImGui.Combo(" Is it the offdiagonal part in matrix-valued function", &id, offdiag_list)
+        @c CImGui.Combo(" Is it the offdiagonal correlation function", &id, offdiag_list)
         if id == 0
             PBASE.offdiag = true
         else
@@ -265,7 +265,7 @@ function _acflow_base_block()
     CImGui.SetNextItemWidth(widget_combo_width)
     fwrite_list = ["Yes", "No"]
     @cstatic id = Cint(0) begin
-        @c CImGui.Combo(" Are the analytic continuation results written into files", &id, fwrite_list)
+        @c CImGui.Combo(" Are the calculated results written into files", &id, fwrite_list)
         if id == 0
             PBASE.fwrite = true
         else

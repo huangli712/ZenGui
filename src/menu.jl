@@ -138,7 +138,7 @@ function set_menu_help()
         #
         CImGui.Separator()
         #
-        @c CImGui.MenuItem("User's manual", C_NULL, &FMENU.H_ZENGUI)
+        @c CImGui.MenuItem("User's Manual", C_NULL, &FMENU.H_ZENGUI)
         @c CImGui.MenuItem("About ZenGui", C_NULL, &FMENU.H_ABOUT)
         #
         CImGui.EndMenu()
