@@ -181,6 +181,7 @@ function setup_window()
     style = Ptr{ImGuiStyle}(CImGui.GetStyle())
     style.AntiAliasedLines = true
     #
+    # Setup background color for window
     io = CImGui.GetIO()
     if unsafe_load(io.ConfigFlags) & ImGuiConfigFlags_ViewportsEnable == ImGuiConfigFlags_ViewportsEnable
         style.WindowRounding = 5.0f0
@@ -191,6 +192,10 @@ function setup_window()
             ImVec4(col.x, col.y, col.z, 1.0f0)
         )
     end
+    #
+    # Setup default colors for buttons 
+    CImGui.c_set!(style.Colors, CImGui.ImGuiCol_Button, COL_PURPLE)
+    CImGui.c_set!(style.Colors, CImGui.ImGuiCol_ButtonHovered, COL_LIGHTGREEN)
 end
 
 """

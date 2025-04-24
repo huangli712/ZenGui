@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/24
+# Last modified: 2025/04/25
 #
 
 """
@@ -80,16 +80,9 @@ function create_app_about(p_open::Ref{Bool})
     button_width = 80.0
     button_height = 25.0
     #
-    # Change the default color for the button
-    CImGui.PushStyleColor(CImGui.ImGuiCol_Button, COL_MAGENTA)
-    CImGui.PushStyleColor(CImGui.ImGuiCol_ButtonHovered, COL_LIGHTGREEN)
-    #
     if CImGui.Button("OK", ImVec2(button_width, button_height))
         p_open[] = false
     end
-    #
-    # Reset the default color
-    CImGui.PopStyleColor(2)
 
     # End of this window
     CImGui.End()
