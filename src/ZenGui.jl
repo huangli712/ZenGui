@@ -37,8 +37,8 @@ module ZenGui
 =#
 
 using Random
-using Dates
-using Printf
+#using Dates
+#using Printf
 using TOML
 using Base.Sys
 
@@ -51,6 +51,9 @@ The OrderedCollections library provides support to the OrderedDict struct.
 =#
 
 using OrderedCollections
+
+using FileIO
+using Images
 
 #=
 The ZenGui application relies on the **Dear ImGui library**, which is a
@@ -69,8 +72,6 @@ using CImGui.CSyntax
 using CImGui.CSyntax.CStatic
 
 using GLFW
-using FileIO
-using Images
 using ModernGL
 
 #=
