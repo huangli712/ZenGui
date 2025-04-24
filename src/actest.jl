@@ -60,7 +60,7 @@ end
 Setup widgets in the top of the window for the ACTest toolkit.
 """
 function _actest_top_block()
-    CImGui.Text("ACTest: A testing toolkit for analytic continuation methods and codes")
+    CImGui.Text("ACTest: A Testing Toolkit For Analytic Continuation Methods And Codes")
 end
 
 """
