@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/09
+# Last modified: 2025/04/24
 #
 
 """
@@ -31,6 +31,29 @@ function create_app_acflow(p_open::Ref{Bool})
     window_height = 600.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
+    # For the widgets in the top of this window
+    _acflow_top_block()
+
+    # For the separator
+    CImGui.Spacing()
+    CImGui.Separator()
+    CImGui.Spacing()
+
+    # For all the blocks in the ac.toml file
+    _acflow_main_block()
+
+    # For the separator
+    CImGui.Spacing()
+    CImGui.Separator()
+    CImGui.Spacing()
+
+    # For the widgets in the bottosm of this window
+    _acflow_bottom_block(p_open)
+
+    # End of this window
+    CImGui.End()
+end
+
     # For the [BASE] block in the ac.toml
     _acflow_base_block()
 
@@ -41,18 +64,6 @@ function create_app_acflow(p_open::Ref{Bool})
 
     # For the [Solver] block in the ac.toml
     _acflow_solver_block()
-
-    # For the separator
-    CImGui.Spacing()
-    CImGui.Separator()
-    CImGui.Spacing()
-
-    # For the buttons in the bottom of this window
-    _acflow_bottom_block(p_open)
-
-    # End of this window
-    CImGui.End()
-end
 
 """
     _acflow_base_block()
