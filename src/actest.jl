@@ -134,14 +134,14 @@ end
 """
     _actest_test_block()
 
-Setup widgets for the [Test] block in the act.toml.
+Setup widgets for the `test` tab.
 """
 function _actest_test_block()
     # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
 
-    CImGui.Text("Basic Configuration")
+    CImGui.Text("Configure [Test] Part")
 
     # Input: solver
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -305,10 +305,11 @@ end
 """
     _actest_solver_block()
 
-Setup widgets in the lower panel of the window for the ACTest toolkit.
+Setup widgets for the `solver` tab.
 """
 function _actest_solver_block()
     # It should change upon the selection of analytic continuation solver.
+    CImGui.Text("Configure [Solver] Part")
     CImGui.Text("Analytic Continuation Solver: $(PTEST.solver)")
 
     @cswitch PTEST.solver begin
