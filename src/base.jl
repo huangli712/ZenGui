@@ -30,6 +30,16 @@ function load_texture(img)
     return CImGui.ImTextureID(texture_id)
 end
 
+function show_image(texture_id)
+    drawlist = CImGui.GetBackgroundDrawList()
+    viewport = unsafe_load(CImGui.GetMainViewport())
+    
+    pos = viewport.Pos
+    size = viewport.Size
+
+    CImGui.AddImage(drawlist, texture_id, (pos.x, pos.y), (pos.x+size.x, pos.y+size.y))
+end
+
 #=
 ### *Main Loop*
 =#
@@ -66,19 +76,12 @@ function zeng_run()
     bgc = Cfloat[0.45, 0.55, 0.60, 1.00]
 
     img = load_image("/Users/lihuang/Downloads/Compressed/Lille/IMG_20240414_070747.jpg")
-    id = nothing
+    texture_id = nothing
     CImGui.render(ctx; clear_color=Ref(bgc), window_title = "ZenGui") do
-        if isnothing(id)
-            id = load_texture(img)
+        if isnothing(texture_id)
+            texture_id = load_texture(img)
         end
-
-        drawlist = CImGui.GetBackgroundDrawList()
-        viewport = unsafe_load(CImGui.GetMainViewport())
-        
-        pos = viewport.Pos
-        size = viewport.Size
-
-        CImGui.AddImage(drawlist, id, (pos.x, pos.y), (pos.x+size.x, pos.y+size.y))
+        show_image(texture_id)
 
         # Setup global menu in the main window
         create_menu()
