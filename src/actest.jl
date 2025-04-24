@@ -310,6 +310,9 @@ Setup widgets for the `solver` tab.
 function _actest_solver_block()
     # It should change upon the selection of analytic continuation solver.
     CImGui.Text("Configure [Solver] Part")
+    CImGui.SameLine()
+    CImGui.Dummy(ImVec2(5.0,0.0))
+    CImGui.SameLine()
     CImGui.Text("Analytic Continuation Solver: $(PTEST.solver)")
 
     @cswitch PTEST.solver begin
