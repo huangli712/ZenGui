@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/22
+# Last modified: 2025/04/25
 #
 
 """
@@ -59,7 +59,7 @@ end
 Setup widgets in the top of the window for the DFermion code.
 """
 function _dfermion_top_block()
-    CImGui.Text("DFermion: Dual fermion application")
+    CImGui.Text("DFermion: Dual Fermion Application")
 end
 
 """
@@ -72,23 +72,23 @@ function _dfermion_main_block()
     #
     # There are four tabs
     if CImGui.BeginTabBar("dfermionTabBar", tab_bar_flags)
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(1.0,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(1.0,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_LIGHTGREEN)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_LIGHTGREEN)
         _dfermion_model_block()
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.8,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.8,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_MAGENTA)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_MAGENTA)
         _dfermion_dimension_block()
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.6,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.6,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_ORANGE)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_ORANGE)
         _dfermion_kmesh_block()
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.4,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.4,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_PINK)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_PINK)
         _dfermion_cycle_block()
         CImGui.PopStyleColor(2)
         #
@@ -155,7 +155,7 @@ function _dfermion_model_block()
             _i == 1 && delete!(_DFERMION, "nband")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nband)$(PDFERMION.nband)")
+        CImGui.TextColored(COL_MAGENTA, "(nband)$(PDFERMION.nband)")
         #
         # Input: nspin
         CImGui.SetNextItemWidth(widget_input_width)
@@ -164,7 +164,7 @@ function _dfermion_model_block()
             _i = Cint(PDFERMION.nspin) # This parameter should not be changed.
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nspin)$(PDFERMION.nspin)")
+        CImGui.TextColored(COL_MAGENTA, "(nspin)$(PDFERMION.nspin)")
         #
         # Input: norbs
         CImGui.SetNextItemWidth(widget_input_width)
@@ -176,7 +176,7 @@ function _dfermion_model_block()
             _i == 2 && delete!(_DFERMION, "norbs")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(norbs)$(PDFERMION.norbs)")
+        CImGui.TextColored(COL_MAGENTA, "(norbs)$(PDFERMION.norbs)")
         #
         # Input: mune
         CImGui.SetNextItemWidth(widget_input_width)
@@ -187,7 +187,7 @@ function _dfermion_model_block()
             _f == 0.0 && delete!(_DFERMION, "mune")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mune)$(PDFERMION.mune)")
+        CImGui.TextColored(COL_MAGENTA, "(mune)$(PDFERMION.mune)")
         #
         # Input: beta
         CImGui.SetNextItemWidth(widget_input_width)
@@ -198,7 +198,7 @@ function _dfermion_model_block()
             _f == 1.0 && delete!(_DFERMION, "beta")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PDFERMION.beta)")
+        CImGui.TextColored(COL_MAGENTA, "(beta)$(PDFERMION.beta)")
         #
         # Input: part
         CImGui.SetNextItemWidth(widget_input_width)
@@ -209,7 +209,7 @@ function _dfermion_model_block()
             _f == 1.0 && delete!(_DFERMION, "part")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(part)$(PDFERMION.part)")
+        CImGui.TextColored(COL_MAGENTA, "(part)$(PDFERMION.part)")
 
         CImGui.EndTabItem()
     end
@@ -237,7 +237,7 @@ function _dfermion_dimension_block()
             _i == 16 && delete!(_DFERMION, "nffrq")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nffrq)$(PDFERMION.nffrq)")
+        CImGui.TextColored(COL_MAGENTA, "(nffrq)$(PDFERMION.nffrq)")
         #
         # Input: nbfrq
         CImGui.SetNextItemWidth(widget_input_width)
@@ -248,7 +248,7 @@ function _dfermion_dimension_block()
             _i == 7 && delete!(_DFERMION, "nbfrq")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nbfrq)$(PDFERMION.nbfrq)")
+        CImGui.TextColored(COL_MAGENTA, "(nbfrq)$(PDFERMION.nbfrq)")
 
         CImGui.EndTabItem()
     end
@@ -276,7 +276,7 @@ function _dfermion_kmesh_block()
             _i == 64 && delete!(_DFERMION, "nkpts")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nkpts)$(PDFERMION.nkpts)")
+        CImGui.TextColored(COL_MAGENTA, "(nkpts)$(PDFERMION.nkpts)")
         #
         # Input: nkp_x
         CImGui.SetNextItemWidth(widget_input_width)
@@ -287,7 +287,7 @@ function _dfermion_kmesh_block()
             _i == 8 && delete!(_DFERMION, "nkp_x")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nkp_x)$(PDFERMION.nkp_x)")
+        CImGui.TextColored(COL_MAGENTA, "(nkp_x)$(PDFERMION.nkp_x)")
         #
         # Input: nkp_y
         CImGui.SetNextItemWidth(widget_input_width)
@@ -298,7 +298,7 @@ function _dfermion_kmesh_block()
             _i == 8 && delete!(_DFERMION, "nkp_y")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nkp_y)$(PDFERMION.nkp_y)")
+        CImGui.TextColored(COL_MAGENTA, "(nkp_y)$(PDFERMION.nkp_y)")
         #
         # Input: nkp_z
         CImGui.SetNextItemWidth(widget_input_width)
@@ -309,7 +309,7 @@ function _dfermion_kmesh_block()
             _i == 8 && delete!(_DFERMION, "nkp_z")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nkp_z)$(PDFERMION.nkp_z)")
+        CImGui.TextColored(COL_MAGENTA, "(nkp_z)$(PDFERMION.nkp_z)")
 
         CImGui.EndTabItem()
     end
@@ -338,7 +338,7 @@ function _dfermion_cycle_block()
             id == 1 && delete!(_DFERMION, "isdia")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isdia)$(PDFERMION.isdia)")
+        CImGui.TextColored(COL_MAGENTA, "(isdia)$(PDFERMION.isdia)")
         #
         # Input: ndfit
         CImGui.SetNextItemWidth(widget_input_width)
@@ -349,7 +349,7 @@ function _dfermion_cycle_block()
             _i == 10 && delete!(_DFERMION, "ndfit")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ndfit)$(PDFERMION.ndfit)")
+        CImGui.TextColored(COL_MAGENTA, "(ndfit)$(PDFERMION.ndfit)")
         #
         # Input: nbsit
         CImGui.SetNextItemWidth(widget_input_width)
@@ -360,7 +360,7 @@ function _dfermion_cycle_block()
             _i == 10 && delete!(_DFERMION, "nbsit")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nbsit)$(PDFERMION.nbsit)")
+        CImGui.TextColored(COL_MAGENTA, "(nbsit)$(PDFERMION.nbsit)")
         #
         # Input: dfmix
         CImGui.SetNextItemWidth(widget_input_width)
@@ -376,7 +376,7 @@ function _dfermion_cycle_block()
             _f == 1.0 && delete!(_DFERMION, "dfmix")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(dfmix)$(PDFERMION.dfmix)")
+        CImGui.TextColored(COL_MAGENTA, "(dfmix)$(PDFERMION.dfmix)")
         #
         # Input: bsmix
         CImGui.SetNextItemWidth(widget_input_width)
@@ -392,7 +392,7 @@ function _dfermion_cycle_block()
             _f == 0.7 && delete!(_DFERMION, "bsmix")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(bsmix)$(PDFERMION.bsmix)")
+        CImGui.TextColored(COL_MAGENTA, "(bsmix)$(PDFERMION.bsmix)")
 
         CImGui.EndTabItem()
     end
