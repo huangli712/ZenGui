@@ -194,7 +194,7 @@ function setup_window()
     end
     #
     # Setup default colors for buttons 
-    CImGui.c_set!(style.Colors, CImGui.ImGuiCol_Button, COL_PURPLE)
+    CImGui.c_set!(style.Colors, CImGui.ImGuiCol_Button, COL_ORANGE)
     CImGui.c_set!(style.Colors, CImGui.ImGuiCol_ButtonHovered, COL_LIGHTGREEN)
 end
 
