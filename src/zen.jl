@@ -8,62 +8,6 @@
 #
 
 """
-    create_app_zen(p_open::Ref{Bool})
-
-Create an UI window for the Zen toolkit, which is an integrated package
-for ab initio dynamical mean-field theory calculations.
-"""
-function create_app_zen(p_open::Ref{Bool})
-    # Create the Zen window, which can not be resized.
-    CImGui.Begin(
-        "Zen",
-        p_open,
-        CImGui.ImGuiWindowFlags_NoResize
-    )
-
-    # Setup the flag for active window
-    if CImGui.IsWindowFocused()
-        CWIN.name = "ZEN"
-    end
-
-    # Fix size of the window
-    window_width = 600.0
-    window_height = 600.0
-    CImGui.SetWindowSize(ImVec2(window_width, window_height))
-
-    # For the widgets in the top of this window
-    _zen_top_block()
-
-    # For the separator
-    CImGui.Spacing()
-    CImGui.Separator()
-    CImGui.Spacing()
-
-    # For all the blocks in the case.toml file
-    _zen_main_block()
-
-    # For the separator
-    CImGui.Spacing()
-    CImGui.Separator()
-    CImGui.Spacing()
-
-    # For the widgets in the bottom of this window
-    _zen_bottom_block(p_open)
-
-    # End of this window
-    CImGui.End()
-end
-
-"""
-    _zen_top_block()
-
-Setup widgets in the top of the window for the Zen package.
-"""
-function _zen_top_block()
-    CImGui.Text("Zen: A modern DFT + DMFT computation framework")
-end
-
-"""
     @_widgets_generator_dft
 """
 macro _widgets_generator_dft(x)
@@ -181,6 +125,62 @@ macro _widgets_generator_imp(x)
     end
 
     return :( $(esc(ex)) )
+end
+
+"""
+    create_app_zen(p_open::Ref{Bool})
+
+Create an UI window for the Zen toolkit, which is an integrated package
+for ab initio dynamical mean-field theory calculations.
+"""
+function create_app_zen(p_open::Ref{Bool})
+    # Create the Zen window, which can not be resized.
+    CImGui.Begin(
+        "Zen",
+        p_open,
+        CImGui.ImGuiWindowFlags_NoResize
+    )
+
+    # Setup the flag for active window
+    if CImGui.IsWindowFocused()
+        CWIN.name = "ZEN"
+    end
+
+    # Fix size of the window
+    window_width = 600.0
+    window_height = 600.0
+    CImGui.SetWindowSize(ImVec2(window_width, window_height))
+
+    # For the widgets in the top of this window
+    _zen_top_block()
+
+    # For the separator
+    CImGui.Spacing()
+    CImGui.Separator()
+    CImGui.Spacing()
+
+    # For all the blocks in the case.toml file
+    _zen_main_block()
+
+    # For the separator
+    CImGui.Spacing()
+    CImGui.Separator()
+    CImGui.Spacing()
+
+    # For the widgets in the bottom of this window
+    _zen_bottom_block(p_open)
+
+    # End of this window
+    CImGui.End()
+end
+
+"""
+    _zen_top_block()
+
+Setup widgets in the top of the window for the Zen package.
+"""
+function _zen_top_block()
+    CImGui.Text("Zen: A modern DFT + DMFT computation framework")
 end
 
 """
