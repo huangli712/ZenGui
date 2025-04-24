@@ -149,6 +149,8 @@ export sorry
 #
 export dict_to_toml
 export dict_to_string
+#
+export open_url
 
 #=
 ### *Includes And Exports* : *types.jl*
