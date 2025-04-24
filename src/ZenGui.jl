@@ -546,9 +546,12 @@ include("acflow.jl")
 #
 export create_app_acflow
 #
-export _acflow_base_block
-export _acflow_solver_block
+export _acflow_top_block
+export _acflow_main_block
 export _acflow_bottom_block
+#
+export _acflow_general_block
+export _acflow_solver_block
 #
 export _acflow_maxent_block
 export _acflow_barrat_block
