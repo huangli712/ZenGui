@@ -325,7 +325,7 @@ end
 """
     _acflow_maxent_block()
 
-Setup widgets for the [MaxEnt] block in the ac.toml.
+Setup widgets for the [MaxEnt] block in the ac.toml file.
 """
 function _acflow_maxent_block()
     # Define default size for widgets
@@ -335,7 +335,7 @@ function _acflow_maxent_block()
     # Input: method
     CImGui.SetNextItemWidth(widget_combo_width)
     method_list = ["historic", "classic", "bryan", "chi2kink"]
-    @cstatic id = Cint(0) begin
+    @cstatic id = Cint(3) begin
         @c CImGui.Combo(" How to determine the optimized α parameter", &id, method_list)
         PMaxEnt.method = method_list[id + 1]
     end
@@ -392,7 +392,7 @@ end
 """
     _acflow_barrat_block()
 
-Setup widgets for the [BarRat] block in the ac.toml.
+Setup widgets for the [BarRat] block in the ac.toml file.
 """
 function _acflow_barrat_block()
     # Define default size for widgets
@@ -450,7 +450,7 @@ end
 """
     _acflow_nevanac_block()
 
-Setup widgets for the [NevanAC] block in the ac.toml.
+Setup widgets for the [NevanAC] block in the ac.toml file.
 """
 function _acflow_nevanac_block()
     # Define default size for widgets
@@ -460,7 +460,7 @@ function _acflow_nevanac_block()
     # Input: pick
     CImGui.SetNextItemWidth(widget_combo_width)
     pick_list = ["Yes", "No"]
-    @cstatic id = Cint(0) begin
+    @cstatic id = Cint(1) begin
         @c CImGui.Combo(" Check the Pick criterion or not", &id, pick_list)
         if id == 0
             PNevanAC.pick = true
@@ -516,7 +516,7 @@ end
 """
     _acflow_stochac_block()
 
-Setup widgets for the [StochAC] block in the ac.toml.
+Setup widgets for the [StochAC] block in the ac.toml file.
 """
 function _acflow_stochac_block()
     # Define default size for widgets
@@ -599,7 +599,7 @@ end
 """
     _acflow_stochsk_block()
 
-Setup widgets for the [StochSK] block in the ac.toml.
+Setup widgets for the [StochSK] block in the ac.toml file.
 """
 function _acflow_stochsk_block()
     # Define default size for widgets
@@ -692,7 +692,7 @@ end
 """
     _acflow_stochom_block()
 
-Setup widgets for the [StochOM] block in the ac.toml.
+Setup widgets for the [StochOM] block in the ac.toml file.
 """
 function _acflow_stochom_block()
     # Define default size for widgets
@@ -757,7 +757,7 @@ end
 """
     _acflow_stochpx_block()
 
-Setup widgets for the [StochPX] block in the ac.toml.
+Setup widgets for the [StochPX] block in the ac.toml file.
 """
 function _acflow_stochpx_block()
     # Define default size for widgets
