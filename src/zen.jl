@@ -59,7 +59,7 @@ end
 
 Setup widgets in the top of the window for the Zen package.
 """
-function _acflow_top_block()
+function _zen_top_block()
     CImGui.Text("Zen: A modern DFT + DMFT computation framework")
 end
 
