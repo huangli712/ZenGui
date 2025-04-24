@@ -466,15 +466,15 @@ function _zen_dft_block()
         # Input: sproj and window
         for i = 1:PIMPURITY.nsite
             if CImGui.CollapsingHeader("impurity $i")
-                i == 1 && @_widgets_generator_dft 1
-                i == 2 && @_widgets_generator_dft 2
-                i == 3 && @_widgets_generator_dft 3
-                i == 4 && @_widgets_generator_dft 4
-                i == 5 && @_widgets_generator_dft 5
-                i == 6 && @_widgets_generator_dft 6
-                i == 7 && @_widgets_generator_dft 7
-                i == 8 && @_widgets_generator_dft 8
-                i == 9 && @_widgets_generator_dft 9
+                i == 1 && @widgets_generator_dft 1
+                i == 2 && @widgets_generator_dft 2
+                i == 3 && @widgets_generator_dft 3
+                i == 4 && @widgets_generator_dft 4
+                i == 5 && @widgets_generator_dft 5
+                i == 6 && @widgets_generator_dft 6
+                i == 7 && @widgets_generator_dft 7
+                i == 8 && @widgets_generator_dft 8
+                i == 9 && @widgets_generator_dft 9
             end
         end
 
@@ -635,15 +635,15 @@ function _zen_impurity_block()
         #
         for i = 1:PIMPURITY.nsite
             if CImGui.CollapsingHeader("impurity $i")
-                i == 1 && @_widgets_generator_imp 1
-                i == 2 && @_widgets_generator_imp 2
-                i == 3 && @_widgets_generator_imp 3
-                i == 4 && @_widgets_generator_imp 4
-                i == 5 && @_widgets_generator_imp 5
-                i == 6 && @_widgets_generator_imp 6
-                i == 7 && @_widgets_generator_imp 7
-                i == 8 && @_widgets_generator_imp 8
-                i == 9 && @_widgets_generator_imp 9
+                i == 1 && @widgets_generator_impurity 1
+                i == 2 && @widgets_generator_impurity 2
+                i == 3 && @widgets_generator_impurity 3
+                i == 4 && @widgets_generator_impurity 4
+                i == 5 && @widgets_generator_impurity 5
+                i == 6 && @widgets_generator_impurity 6
+                i == 7 && @widgets_generator_impurity 7
+                i == 8 && @widgets_generator_impurity 8
+                i == 9 && @widgets_generator_impurity 9
             end
         end
         #
