@@ -192,11 +192,30 @@ function _zen_main_block()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
     #
     if CImGui.BeginTabBar("ZenTabBar", tab_bar_flags)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(1.0,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(1.0,0.0,1.0,1.0))
         _zen_case_block()
+        CImGui.PopStyleColor(2)
+        #
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.8,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.8,0.0,1.0,1.0))
         _zen_dft_block()
+        CImGui.PopStyleColor(2)
+        #
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.6,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.6,0.0,1.0,1.0))
         _zen_dmft_block()
-        _zen_imp_block()
+        CImGui.PopStyleColor(2)
+        #
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.4,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.4,0.0,1.0,1.0))
+        _zen_impurity_block()
+        CImGui.PopStyleColor(2)
+        #
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.2,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.2,0.0,1.0,1.0))
         _zen_solver_block()
+        CImGui.PopStyleColor(2)
         #
         CImGui.EndTabBar()
     end
@@ -589,9 +608,9 @@ function _zen_dmft_block()
 end
 
 """
-    _zen_imp_block()
+    _zen_impurity_block()
 """
-function _zen_imp_block()
+function _zen_impurity_block()
     # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100
