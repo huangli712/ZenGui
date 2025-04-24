@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/19
+# Last modified: 2025/04/25
 #
 
 """
@@ -22,7 +22,7 @@ function save_zen(p_open::Ref{Bool})
 
     file = joinpath(pwd(), "case.toml")
     CImGui.Text("The configurtion file for Zen will be saved at:")
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
+    CImGui.TextColored(COL_MAGENTA, "  $file")
 
     # If the button is pressed, then the case.toml file will be stored
     # in the current directory.
@@ -54,7 +54,7 @@ function save_dyson(p_open::Ref{Bool})
 
     file = joinpath(pwd(), "dmft.in")
     CImGui.Text("The configurtion file for Dyson will be saved at:")
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
+    CImGui.TextColored(COL_MAGENTA, "  $file")
 
     # If the button is pressed, then the dmft.in file will be stored
     # in the current directory.
@@ -88,7 +88,7 @@ function save_dfermion(p_open::Ref{Bool})
 
     file = joinpath(pwd(), "dfa.in")
     CImGui.Text("The configurtion file for DFermion will be saved at:")
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
+    CImGui.TextColored(COL_MAGENTA, "  $file")
 
     # If the button is pressed, then the dfa.in file will be stored
     # in the current directory.
@@ -122,7 +122,7 @@ function save_ctseg(p_open::Ref{Bool})
 
     file = joinpath(pwd(), "solver.ctqmc.in")
     CImGui.Text("The configurtion file for iQIST/ctseg will be saved at:")
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
+    CImGui.TextColored(COL_MAGENTA, "  $file")
 
     # If the button is pressed, then the solver.ctqmc.in file will be
     # stored in the current directory.
@@ -156,7 +156,7 @@ function save_cthyb(p_open::Ref{Bool})
 
     file = joinpath(pwd(), "solver.ctqmc.in")
     CImGui.Text("The configurtion file for iQIST/cthyb will be saved at:")
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
+    CImGui.TextColored(COL_MAGENTA, "  $file")
 
     # If the button is pressed, then the solver.ctqmc.in file will be
     # stored in the current directory.
@@ -190,7 +190,7 @@ function save_atomic(p_open::Ref{Bool})
 
     file = joinpath(pwd(), "solver.atomic.in")
     CImGui.Text("The configurtion file for iQIST/atomic will be saved at:")
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
+    CImGui.TextColored(COL_MAGENTA, "  $file")
 
     # If the button is pressed, then the solver.atomic.in file will be
     # stored in the current directory.
@@ -224,7 +224,7 @@ function save_acflow(p_open::Ref{Bool})
 
     file = joinpath(pwd(), "ac.toml")
     CImGui.Text("The configurtion file for ACFlow will be saved at:")
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
+    CImGui.TextColored(COL_MAGENTA, "  $file")
 
     # If the button is pressed, then the ac.toml file will be stored in
     # the current directory.
@@ -256,7 +256,7 @@ function save_actest(p_open::Ref{Bool})
 
     file = joinpath(pwd(), "act.toml")
     CImGui.Text("The configurtion file for ACTest will be saved at:")
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "  $file")
+    CImGui.TextColored(COL_MAGENTA, "  $file")
 
     # If the button is pressed, then the act.toml file will be stored in
     # the current directory.
@@ -286,7 +286,7 @@ function save_nothing(p_open::Ref{Bool})
         CImGui.ImGuiWindowFlags_Modal | CImGui.ImGuiWindowFlags_NoResize
     )
 
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Nothing to be saved!")
+    CImGui.TextColored(COL_MAGENTA, "Nothing to be saved!")
 
     # If the button is pressed, then close this window.
     if CImGui.Button("Close")
