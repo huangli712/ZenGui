@@ -657,6 +657,7 @@ end
 Setup widgets for the `solver` tab.
 """
 function _zen_solver_block()
+    # Widgets for the ctseg quantum impurity solver
     function _layout_ctseg()
         empty!(PSOLVER.params)
 
@@ -681,8 +682,13 @@ function _zen_solver_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isort)$(last(PSOLVER.params))")
     end
 
+    # Widgets for the cthyb quantum impurity solver
     function _layout_cthyb() end
+
+    # Widgets for the hia quantum impurity solver
     function _layout_hia() end
+
+    # Widgets for the norg quantum impurity solver
     function _layout_norg() end
 
     # Define default size for widgets
