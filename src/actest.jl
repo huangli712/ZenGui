@@ -55,6 +55,46 @@ function create_app_actest(p_open::Ref{Bool})
 end
 
 """
+    _actest_top_block()
+
+Setup widgets in the top of the window for the ACTest toolkit.
+"""
+function _actest_top_block()
+    CImGui.Text("ACTest: A testing toolkit for analytic continuation methods and codes")
+end
+
+"""
+    _actest_main_block()
+
+Setup widgets associated with the parameters in the `act.toml` file.
+"""
+function _actest_main_block()
+    tab_bar_flags = CImGui.ImGuiTabBarFlags_None
+    #
+    if CImGui.BeginTabBar("ACTestTabBar", tab_bar_flags)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(1.0,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(1.0,0.0,1.0,1.0))
+        if CImGui.BeginTabItem("test")
+            _actest_test_block()
+            #
+            CImGui.EndTabItem()
+        end
+        CImGui.PopStyleColor(2)
+        #
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.5,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.5,0.0,1.0,1.0))
+        if CImGui.BeginTabItem("solver")
+            _actest_solver_block()
+            #
+            CImGui.EndTabItem()
+        end
+        CImGui.PopStyleColor(2)
+        #
+        CImGui.EndTabBar()
+    end
+end
+
+"""
     _actest_test_block()
 
 Setup widgets for the [Test] block in the act.toml.
