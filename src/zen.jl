@@ -4,14 +4,14 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/4/12
+# Last modified: 2025/4/24
 #
 
 """
     create_app_zen(p_open::Ref{Bool})
 
-Create an UI window for the Zen toolkit, which is an integrated package for
-ab initio dynamical mean-field theory calculations.
+Create an UI window for the Zen toolkit, which is an integrated package
+for ab initio dynamical mean-field theory calculations.
 """
 function create_app_zen(p_open::Ref{Bool})
     # Create the Zen window, which can not be resized.
@@ -31,15 +31,23 @@ function create_app_zen(p_open::Ref{Bool})
     window_height = 600.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
-    # For all the blocks in the case.toml
-    _zen_tabs_block()
+    # For the widgets in the top of this window
+    _zen_top_block()
 
     # For the separator
     CImGui.Spacing()
     CImGui.Separator()
     CImGui.Spacing()
 
-    # For the buttons in the bottom of this window
+    # For all the blocks in the case.toml file
+    _zen_main_block()
+
+    # For the separator
+    CImGui.Spacing()
+    CImGui.Separator()
+    CImGui.Spacing()
+
+    # For the widgets in the bottom of this window
     _zen_bottom_block(p_open)
 
     # End of this window
