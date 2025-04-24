@@ -55,6 +55,15 @@ function create_app_zen(p_open::Ref{Bool})
 end
 
 """
+    _zen_top_block()
+
+Setup widgets in the top of the window for the Zen package.
+"""
+function _acflow_top_block()
+    CImGui.Text("Zen: A modern DFT + DMFT computation framework")
+end
+
+"""
     @_widgets_generator_dft
 """
 macro _widgets_generator_dft(x)
