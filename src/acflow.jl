@@ -74,12 +74,20 @@ function _acflow_main_block()
     if CImGui.BeginTabBar("ACFlowTabBar", tab_bar_flags)
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(1.0,0.0,1.0,1.0))
         CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(1.0,0.0,1.0,1.0))
-        _acflow_base_block()
+        if CImGui.BeginTabItem("general setup")
+            _acflow_base_block()
+            #
+            CImGui.EndTabItem()
+        end
         CImGui.PopStyleColor(2)
         #
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.5,0.0,1.0,1.0))
         CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.5,0.0,1.0,1.0))
-        _acflow_solver_block()
+        if CImGui.BeginTabItem("analytic continuation solver")
+            _acflow_solver_block()
+            #
+            CImGui.EndTabItem()
+        end
         CImGui.PopStyleColor(2)
         #
         CImGui.EndTabBar()
