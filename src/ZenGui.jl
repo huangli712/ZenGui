@@ -37,8 +37,6 @@ module ZenGui
 =#
 
 using Random
-#using Dates
-#using Printf
 using TOML
 using Base.Sys
 
