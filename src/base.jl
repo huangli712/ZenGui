@@ -9,12 +9,11 @@
 
 function load_image(img_path)
     img = FileIO.load(img_path)
-    return img
+    return RGBA.(img)
 end
 
 function load_texture(img)
     width, height = size(img)
-    rgba_img = RGBA.(img)
 
     texture_id = GLuint(0)
     @c glGenTextures(1, &texture_id)
@@ -26,9 +25,9 @@ function load_texture(img)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE)
     
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, 
-                 GL_RGBA, GL_UNSIGNED_BYTE, reinterpret(UInt8, rgba_img))
+                 GL_RGBA, GL_UNSIGNED_BYTE, reinterpret(UInt8, img))
     
-    return CImGui.ImTextureID(texture_id), width, height
+    return CImGui.ImTextureID(texture_id)
 end
 
 #=
@@ -67,21 +66,18 @@ function zeng_run()
     bgc = Cfloat[0.45, 0.55, 0.60, 1.00]
 
     img = load_image("/Users/lihuang/Downloads/Compressed/Lille/IMG_20240414_070747.jpg")
-    width = 0
-    height = 0
     id = nothing
     CImGui.render(ctx; clear_color=Ref(bgc), window_title = "ZenGui") do
-        if width == 0
-            id, width, height = load_texture(img)
+        if isnothing(id)
+            id = load_texture(img)
         end
-        #@show id, width, height
 
         drawlist = CImGui.GetBackgroundDrawList()
         viewport = unsafe_load(CImGui.GetMainViewport())
         
         pos = viewport.Pos
         size = viewport.Size
-        @show pos
+
         CImGui.AddImage(drawlist, id, (pos.x, pos.y), (pos.x+size.x, pos.y+size.y))
 
         # Setup global menu in the main window
