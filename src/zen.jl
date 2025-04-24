@@ -260,6 +260,8 @@ end
 
 """
     _zen_case_block()
+
+Setup widgets for the `case` tab.
 """
 function _zen_case_block()
     # Define default size for widgets
@@ -284,6 +286,8 @@ end
 
 """
     _zen_dft_block()
+
+Setup widgets for the `dft` tab.
 """
 function _zen_dft_block()
     # Define default size for widgets
@@ -472,6 +476,8 @@ end
 
 """
     _zen_dmft_block()
+
+Setup widgets for the `dmft` tab.
 """
 function _zen_dmft_block()
     # Define default size for widgets
@@ -483,7 +489,7 @@ function _zen_dmft_block()
 
         # Input: mode
         CImGui.SetNextItemWidth(widget_combo_width)
-        mode_list = ["1:one-shot", "2:self-consistent"]
+        mode_list = ["one-shot", "self-consistent"]
         @cstatic id = Cint(0) begin
             @c CImGui.Combo(" Scheme of dynamical mean-field theory calculations", &id, mode_list)
             PDMFT.mode = id + 1
@@ -493,7 +499,7 @@ function _zen_dmft_block()
         #
         # Input: axis
         CImGui.SetNextItemWidth(widget_combo_width)
-        axis_list = ["1:imaginary", "2:real"]
+        axis_list = ["imaginary", "real"]
         @cstatic id = Cint(0) begin
             @c CImGui.Combo(" Imaginary-time axis or real-frequency axis", &id, axis_list)
             PDMFT.axis = id + 1
@@ -608,6 +614,8 @@ end
 
 """
     _zen_impurity_block()
+
+Setup widgets for the `impurity` tab.
 """
 function _zen_impurity_block()
     # Define default size for widgets
@@ -637,6 +645,8 @@ end
 
 """
     _zen_solver_block()
+
+Setup widgets for the `solver` tab.
 """
 function _zen_solver_block()
     function _layout_ctseg()
@@ -663,8 +673,9 @@ function _zen_solver_block()
         CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isort)$(last(PSOLVER.params))")
     end
 
-    function _layout_cthyb()
-    end
+    function _layout_cthyb() end
+    function _layout_hia() end
+    function _layout_norg() end
 
     # Define default size for widgets
     widget_input_width = 100
@@ -711,9 +722,11 @@ function _zen_solver_block()
                 break
 
             @case "hia"
+                _layout_hia()
                 break
 
             @case "norg"
+                _layout_norg()
                 break
 
             @default
