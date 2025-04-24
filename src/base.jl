@@ -7,6 +7,8 @@
 # Last modified: 2025/04/24
 #
 
+Base.:+(v1::ImVec2, v2::ImVec2) = ImVec2(v1.x + v2.x, v1.y + v2.y)
+
 #=
 ### *Main Loop*
 =#
@@ -148,14 +150,28 @@ function setup_window()
     end
 end
 
+"""
+    setup_background(texture_id)
+
+Setup the background figure for this app. `texture_id` is an `ImTextureID`
+object. which is provided by `load_texture()`.
+
+See also: [`load_texture`](@ref).
+"""
 function setup_background(texture_id)
-    drawlist = CImGui.GetBackgroundDrawList()
+    # Get default viewpoint, determine its size nd position.
     viewport = unsafe_load(CImGui.GetMainViewport())
-    
     pos = viewport.Pos
     size = viewport.Size
 
-    CImGui.AddImage(drawlist, texture_id, (pos.x, pos.y), (pos.x+size.x, pos.y+size.y), (0.0, 1.0), (1.0, 0.0))
+    # Get draw list for background
+    #
+    # The selected figure will be drawn on it directly without creating a
+    # new window.
+    drawlist = CImGui.GetBackgroundDrawList()
+
+    # Draw the figure
+    CImGui.AddImage(drawlist, texture_id, pos, pos + size, (0.0, 1.0), (1.0, 0.0))
 end
 
 function load_texture()
