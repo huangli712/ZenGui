@@ -7,6 +7,7 @@
 # Last modified: 2025/04/24
 #
 
+# Basic algebraic operation for ImVec2.
 Base.:+(v1::ImVec2, v2::ImVec2) = ImVec2(v1.x + v2.x, v1.y + v2.y)
 
 #=
@@ -174,28 +175,45 @@ function setup_background(texture_id)
     CImGui.AddImage(drawlist, texture_id, pos, pos + size, (0.0, 1.0), (1.0, 0.0))
 end
 
+"""
+    load_texture()
+
+Load figures from the ZenGui/src/.images directory. Note that there are
+six figures now. This function will pick one figure randomly and load it.
+Finally, it will return an `ImTextureID` object which is associted with
+the selected figure.
+
+See also: [`setup_background`](@ref).
+"""
 function load_texture()
+    # Prepare images
+    #
+    # Setup image list
     img_list = ["bg1.jpg", "bg2.jpg", "bg3.jpg", "bg4.jpg", "bg5.png", "bg6.jpg"]
+    #
+    # Select one image randomly.
     img_indx = rand(MersenneTwister(), 1:length(img_list))
+    #
+    # Setup directory and path for the selected image
     img_dir = joinpath(ENV["ZEN_GUI"], ".images")
     img_path = joinpath(img_dir, img_list[img_indx])
 
-    img = RGBA.(rotr90( FileIO.load(img_path)))
+    # Load the selected image by the FileIO and Images packages.
+    img = RGBA.(rotr90(FileIO.load(img_path)))
     width, height = size(img)
-    @show width, height, typeof(img)
 
+    # Setup texture and the related properties by opengl
     texture_id = GLuint(0)
     @c glGenTextures(1, &texture_id)
     glBindTexture(GL_TEXTURE_2D, texture_id)
-    
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE)
-    
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, 
                  GL_RGBA, GL_UNSIGNED_BYTE, reinterpret(UInt8, img))
-    
+
+    # Return an ImTextureID object
     return CImGui.ImTextureID(texture_id)
 end
 
