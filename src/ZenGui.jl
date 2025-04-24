@@ -36,6 +36,7 @@ module ZenGui
 ### *Using Standard Libraries*
 =#
 
+using Random
 using Dates
 using Printf
 using TOML

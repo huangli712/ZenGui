@@ -9,7 +9,7 @@
 
 function load_texture()
     img_list = ["bg1.jpg", "bg2.jpg", "bg3.jpg", "bg4.jpg", "bg5.png", "bg6.jpg"]
-    img_indx = rand(1:length(img_list))
+    img_indx = rand(MersenneTwister(), 1:length(img_list))
     img_dir = joinpath(ENV["ZEN_GUI"], ".images")
     img_path = joinpath(img_dir, img_list[img_indx])
 
@@ -101,6 +101,8 @@ function zeng_run()
         FMENU.E_ACTEST   && @c create_app_actest(&FMENU.E_ACTEST)
         #
         # For Style menu
+        FMENU.S_BGIMAGE  && (texture_id = nothing)
+        FMENU.S_BGIMAGE  && @c handle_menu_background(&FMENU.S_BGIMAGE)
         FMENU.S_CLASSIC  && @c handle_menu_classic(&FMENU.S_CLASSIC)
         FMENU.S_DARK     && @c handle_menu_dark(&FMENU.S_DARK)
         FMENU.S_LIGHT    && @c handle_menu_light(&FMENU.S_LIGHT)
@@ -254,6 +256,10 @@ function handle_menu_save(p_open::Ref{Bool})
             break
 
     end
+end
+
+function handle_menu_background(p_open::Ref{Bool})
+    p_open[] = false
 end
 
 """
