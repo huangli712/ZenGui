@@ -75,34 +75,9 @@ function zeng_run()
             id, width, height = load_texture(img)
         end
         @show id, width, height
-        #viewport = CImGui.GetMainViewport()
-        #@show viewport.WorkSize.x
 
-        #io = CImGui.GetIO()
-        #CImGui.SetNextWindowPos(ImVec2(0,0), 0, ImVec2(0,0))
-        #CImGui.SetNextWindowSize(ImVec2(1280,720))
-        #CImGui.SetNextWindowBgAlpha(0)
-
-        #CImGui.PushStyleVar(CImGui.ImGuiStyleVar_WindowPadding, ImVec2(0,0))
-        #CImGui.PushStyleVar(CImGui.ImGuiStyleVar_WindowBorderSize, 0)
-        #bg_flags = CImGui.ImGuiWindowFlags_NoMove | 
-        #CImGui.ImGuiWindowFlags_NoTitleBar | 
-        #CImGui.ImGuiWindowFlags_NoBringToFrontOnFocus |
-        #CImGui.ImGuiWindowFlags_NoInputs |
-        #CImGui.ImGuiWindowFlags_NoCollapse |  
-        #CImGui.ImGuiWindowFlags_NoResize |
-        #CImGui.ImGuiWindowFlags_NoScrollbar 
-        
-        #CImGui.Begin("Background", C_NULL, bg_flags)
-        #CImGui.SetWindowPos(viewport.WorkPos)
-        #CImGui.SetWindowSize(viewport.WorkSize)
-        #CImGui.Image(id, ImVec2(1280, 720))
         drawlist = CImGui.GetBackgroundDrawList()
         CImGui.AddImage(drawlist, id, (CImGui.GetWindowPos().x, CImGui.GetWindowPos().y), (CImGui.GetWindowPos().x+1280, CImGui.GetWindowPos().y+720))
-        #CImGui.Image(id, CImGui.GetContentRegionAvail())
-        #CImGui.End()
-
-        #CImGui.PopStyleVar(2)
 
         # Setup global menu in the main window
         create_menu()
