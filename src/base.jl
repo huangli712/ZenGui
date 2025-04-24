@@ -74,10 +74,15 @@ function zeng_run()
         if width == 0
             id, width, height = load_texture(img)
         end
-        @show id, width, height
+        #@show id, width, height
 
         drawlist = CImGui.GetBackgroundDrawList()
-        CImGui.AddImage(drawlist, id, (CImGui.GetWindowPos().x, CImGui.GetWindowPos().y), (CImGui.GetWindowPos().x+1280, CImGui.GetWindowPos().y+720))
+        viewport = unsafe_load(CImGui.GetMainViewport())
+        
+        pos = viewport.Pos
+        size = viewport.Size
+        @show pos
+        CImGui.AddImage(drawlist, id, (pos.x, pos.y), (pos.x+size.x, pos.y+size.y))
 
         # Setup global menu in the main window
         create_menu()
