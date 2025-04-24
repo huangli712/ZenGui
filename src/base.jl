@@ -18,11 +18,14 @@ Main function. It launchs the graphic user interface and respond to user
 inputs unitl the main window is closed.
 """
 function zeng_run()
-    # Setup backend for Dear ImGui
+    # Setup backend for Dear ImGui. Now CImGui.jl only supports opengl.
     CImGui.set_backend(:GlfwOpenGL3)
 
     # Setup context for Dear ImGui
     ctx = CImGui.CreateContext()
+
+    # Setup color's style for Dear ImGui
+    CImGui.StyleColorsDark()
 
     # Setup flags for Dear ImGui, enabling docking and multi-viewport.
     setup_flags()
@@ -33,21 +36,24 @@ function zeng_run()
     # platform windows can look identical to regular ones.
     setup_window()
 
-    # Load fonts
+    # Load special fonts if available
     setup_fonts()
 
-    # Setup color's style for Dear ImGui
-    CImGui.StyleColorsDark()
-
+    # Global id for texture.
+    # When it is nothing, it means that the figure has not been loaded.
     texture_id = nothing
     CImGui.render(ctx; window_title = "ZenGui") do
+        # If texture is nothing, we should try to load the figure and
+        # setup the texture's id.
         if isnothing(texture_id)
             texture_id = load_texture()
         end
-        setup_background(texture_id)
 
         # Setup global menu in the main window
         create_menu()
+
+        # Setup the background images for the main viewport
+        setup_background(texture_id)
 
         # Respond to menu events
         #
@@ -66,6 +72,9 @@ function zeng_run()
         FMENU.E_ACTEST   && @c create_app_actest(&FMENU.E_ACTEST)
         #
         # For Style menu
+        # Once the menu `Change Background` is clicked, texture_id must be
+        # reset to nothing. Then the load_texture() function is called
+        # again to load a new figure and reassign texture_id.
         FMENU.S_BGIMAGE  && (texture_id = nothing)
         FMENU.S_BGIMAGE  && @c handle_menu_background(&FMENU.S_BGIMAGE)
         FMENU.S_CLASSIC  && @c handle_menu_classic(&FMENU.S_CLASSIC)
