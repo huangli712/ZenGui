@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/24
+# Last modified: 2025/04/25
 #
 
 # Basic algebraic operation for ImVec2.
@@ -326,6 +326,7 @@ interface to classic style.
 """
 function handle_menu_classic(p_open::Ref{Bool})
     CImGui.StyleColorsClassic()
+    setup_window() # We should reset color style for the buttons
     p_open[] = false
 end
 
@@ -337,6 +338,7 @@ interface to dark style. Note that the defalt style is dark.
 """
 function handle_menu_dark(p_open::Ref{Bool})
     CImGui.StyleColorsDark()
+    setup_window() # We should reset color style for the buttons
     p_open[] = false
 end
 
@@ -348,6 +350,7 @@ interface to light style.
 """
 function handle_menu_light(p_open::Ref{Bool})
     CImGui.StyleColorsLight()
+    setup_window() # We should reset color style for the buttons
     p_open[] = false
 end
 
