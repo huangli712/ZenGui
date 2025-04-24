@@ -68,6 +68,8 @@ using CImGui.CSyntax
 using CImGui.CSyntax.CStatic
 
 using GLFW
+using FileIO
+using Images
 using ModernGL
 
 #=

@@ -7,6 +7,30 @@
 # Last modified: 2025/04/23
 #
 
+function load_image(img_path)
+    img = FileIO.load(img_path)
+    return img
+end
+
+function load_texture(img)
+    width, height = size(img)
+    rgba_img = RGBA.(img)
+
+    texture_id = GLuint(0)
+    @c glGenTextures(1, &texture_id)
+    glBindTexture(GL_TEXTURE_2D, texture_id)
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE)
+    
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, 
+                 GL_RGBA, GL_UNSIGNED_BYTE, reinterpret(UInt8, rgba_img))
+    
+    return CImGui.ImTextureID(texture_id), width, height
+end
+
 #=
 ### *Main Loop*
 =#
@@ -42,7 +66,44 @@ function zeng_run()
     # Setup background color
     bgc = Cfloat[0.45, 0.55, 0.60, 1.00]
 
+    img = load_image("/Users/lihuang/Downloads/Compressed/Lille/IMG_20240414_070747.jpg")
+    width = 0
+    height = 0
+    id = nothing
     CImGui.render(ctx; clear_color=Ref(bgc), window_title = "ZenGui") do
+        if width == 0
+            id, width, height = load_texture(img)
+        end
+        @show id, width, height
+        #viewport = CImGui.GetMainViewport()
+        #@show viewport.WorkSize.x
+
+        #io = CImGui.GetIO()
+        #CImGui.SetNextWindowPos(ImVec2(0,0), 0, ImVec2(0,0))
+        #CImGui.SetNextWindowSize(ImVec2(1280,720))
+        #CImGui.SetNextWindowBgAlpha(0)
+
+        #CImGui.PushStyleVar(CImGui.ImGuiStyleVar_WindowPadding, ImVec2(0,0))
+        #CImGui.PushStyleVar(CImGui.ImGuiStyleVar_WindowBorderSize, 0)
+        #bg_flags = CImGui.ImGuiWindowFlags_NoMove | 
+        #CImGui.ImGuiWindowFlags_NoTitleBar | 
+        #CImGui.ImGuiWindowFlags_NoBringToFrontOnFocus |
+        #CImGui.ImGuiWindowFlags_NoInputs |
+        #CImGui.ImGuiWindowFlags_NoCollapse |  
+        #CImGui.ImGuiWindowFlags_NoResize |
+        #CImGui.ImGuiWindowFlags_NoScrollbar 
+        
+        #CImGui.Begin("Background", C_NULL, bg_flags)
+        #CImGui.SetWindowPos(viewport.WorkPos)
+        #CImGui.SetWindowSize(viewport.WorkSize)
+        #CImGui.Image(id, ImVec2(1280, 720))
+        drawlist = CImGui.GetBackgroundDrawList()
+        CImGui.AddImage(drawlist, id, (CImGui.GetWindowPos().x, CImGui.GetWindowPos().y), (CImGui.GetWindowPos().x+1280, CImGui.GetWindowPos().y+720))
+        #CImGui.Image(id, CImGui.GetContentRegionAvail())
+        #CImGui.End()
+
+        #CImGui.PopStyleVar(2)
+
         # Setup global menu in the main window
         create_menu()
 
