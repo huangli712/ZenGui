@@ -615,6 +615,13 @@ _actest_solver_block -> Setup widgets for the `solver` tab.
 include("actest.jl")
 #
 export create_app_actest
+#
+export _actest_top_block
+export _actest_main_block
+export _actest_bottom_block
+#
+export _actest_test_block
+export _actest_solver_block
 
 #=
 ### *Includes And Exports* : *about.jl*
