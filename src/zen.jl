@@ -309,7 +309,7 @@ function _zen_dft_block()
         CImGui.SetNextItemWidth(widget_combo_width)
         engine_list = ["vasp", "qe"]
         @cstatic id = Cint(0) begin
-            @c CImGui.Combo(" Engine for density functional theory calculations", &id, engine_list)
+            @c CImGui.Combo(" Name of density functional theory code", &id, engine_list)
             PDFT.engine = engine_list[id + 1]
         end
         CImGui.SameLine()
@@ -339,7 +339,7 @@ function _zen_dft_block()
         CImGui.SetNextItemWidth(widget_combo_width)
         kmesh_list = ["accurate", "medium", "coarse", "file"]
         @cstatic id = Cint(0) begin
-            @c CImGui.Combo(" K-mesh for brillouin zone sampling / integration", &id, kmesh_list)
+            @c CImGui.Combo(" K-mesh for brillouin zone integration", &id, kmesh_list)
             PDFT.kmesh = kmesh_list[id + 1]
         end
         CImGui.SameLine()
@@ -456,7 +456,7 @@ function _zen_dft_block()
             fill!(PIMPURITY.lpara, PIMPURITY.lpara[1])
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(0.5,0.5,1.0,1.0), "(nsite)$(PIMPURITY.nsite)")
+        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nsite)$(PIMPURITY.nsite)")
 
         # For the separator
         CImGui.Spacing()
