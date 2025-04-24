@@ -363,10 +363,52 @@ export set_menu_edit
 export set_menu_style
 export set_menu_help
 
+#=
+### *Includes And Exports* : *zen.jl*
+=#
+
+#=
+*Summary* :
+
+Create and display the `Zen` window for the Zen package.
+
+*Members* :
+
+```text
+@widgets_generator_dft -> Macro for generating codes for the `dft` tab.
+@widgets_generator_impurity -> Macro for generating codes for the `impurity` tab.
+#
+create_app_zen      -> Create and display the `Zen` window.
+#
+_zen_top_block      -> Setup widgets in the top of the window.
+_zen_main_block     -> Setup widgets associated with the parameters.
+_zen_bottom_block   -> Setup widgets in the bottom of the window.
+#
+_zen_case_block     -> Setup widgets for the `case` tab.
+_zen_dft_block      -> Setup widgets for the `dft` tab.
+_zen_dmft_block     -> Setup widgets for the `dmft` tab.
+_zen_impurity_block -> Setup widgets for the `impurity` tab.
+_zen_solver_block   -> Setup widgets for the `solver` tab.
+```
+=#
+
 #
 include("zen.jl")
 #
+export @widgets_generator_dft
+export @widgets_generator_impurity
+#
 export create_app_zen
+#
+export _zen_top_block
+export _zen_main_block
+export _zen_bottom_block
+#
+export _zen_case_block
+export _zen_dft_block
+export _zen_dmft_block
+export _zen_impurity_block
+export _zen_solver_block
 
 #=
 ### *Includes And Exports* : *dyson.jl*
