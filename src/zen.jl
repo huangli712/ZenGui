@@ -184,11 +184,11 @@ function _zen_top_block()
 end
 
 """
-    _zen_tabs_block()
+    _zen_main_block()
 
-Setup the tab widgets for all the blocks in the case.toml.
+Setup widgets associated with the parameters in the `case.toml` file.
 """
-function _zen_tabs_block()
+function _zen_main_block()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
     #
     if CImGui.BeginTabBar("ZenTabBar", tab_bar_flags)
