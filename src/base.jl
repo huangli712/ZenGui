@@ -196,6 +196,10 @@ function setup_window()
     # Setup default colors for buttons 
     CImGui.c_set!(style.Colors, CImGui.ImGuiCol_Button, COL_ORANGE)
     CImGui.c_set!(style.Colors, CImGui.ImGuiCol_ButtonHovered, COL_LIGHTGREEN)
+    #
+    # Setup default colors for sliders
+    CImGui.c_set!(style.Colors, CImGui.ImGuiCol_SliderGrab, COL_PINK)
+    CImGui.c_set!(style.Colors, CImGui.ImGuiCol_SliderGrabActive, COL_PINK)
 end
 
 """
