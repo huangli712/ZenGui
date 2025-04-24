@@ -7,41 +7,6 @@
 # Last modified: 2025/04/24
 #
 
-function load_texture()
-    img_list = ["bg1.jpg", "bg2.jpg", "bg3.jpg", "bg4.jpg", "bg5.png", "bg6.jpg"]
-    img_indx = rand(MersenneTwister(), 1:length(img_list))
-    img_dir = joinpath(ENV["ZEN_GUI"], ".images")
-    img_path = joinpath(img_dir, img_list[img_indx])
-
-    img = RGBA.(rotr90( FileIO.load(img_path)))
-    width, height = size(img)
-    @show width, height, typeof(img)
-
-    texture_id = GLuint(0)
-    @c glGenTextures(1, &texture_id)
-    glBindTexture(GL_TEXTURE_2D, texture_id)
-    
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE)
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE)
-    
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, 
-                 GL_RGBA, GL_UNSIGNED_BYTE, reinterpret(UInt8, img))
-    
-    return CImGui.ImTextureID(texture_id)
-end
-
-function setup_background(texture_id)
-    drawlist = CImGui.GetBackgroundDrawList()
-    viewport = unsafe_load(CImGui.GetMainViewport())
-    
-    pos = viewport.Pos
-    size = viewport.Size
-
-    CImGui.AddImage(drawlist, texture_id, (pos.x, pos.y), (pos.x+size.x, pos.y+size.y), (0.0, 1.0), (1.0, 0.0))
-end
-
 #=
 ### *Main Loop*
 =#
@@ -172,6 +137,41 @@ function setup_window()
             ImVec4(col.x, col.y, col.z, 1.0f0)
         )
     end
+end
+
+function setup_background(texture_id)
+    drawlist = CImGui.GetBackgroundDrawList()
+    viewport = unsafe_load(CImGui.GetMainViewport())
+    
+    pos = viewport.Pos
+    size = viewport.Size
+
+    CImGui.AddImage(drawlist, texture_id, (pos.x, pos.y), (pos.x+size.x, pos.y+size.y), (0.0, 1.0), (1.0, 0.0))
+end
+
+function load_texture()
+    img_list = ["bg1.jpg", "bg2.jpg", "bg3.jpg", "bg4.jpg", "bg5.png", "bg6.jpg"]
+    img_indx = rand(MersenneTwister(), 1:length(img_list))
+    img_dir = joinpath(ENV["ZEN_GUI"], ".images")
+    img_path = joinpath(img_dir, img_list[img_indx])
+
+    img = RGBA.(rotr90( FileIO.load(img_path)))
+    width, height = size(img)
+    @show width, height, typeof(img)
+
+    texture_id = GLuint(0)
+    @c glGenTextures(1, &texture_id)
+    glBindTexture(GL_TEXTURE_2D, texture_id)
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE)
+    
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, 
+                 GL_RGBA, GL_UNSIGNED_BYTE, reinterpret(UInt8, img))
+    
+    return CImGui.ImTextureID(texture_id)
 end
 
 #=
