@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/22
+# Last modified: 2025/04/24
 #
 
 #=
@@ -59,6 +59,7 @@ The meun items are created at `src/menu.jl`.
 * E_ATOMIC   -> Edit | Quantum Impurity Solvers | iQIST | atomic.
 * E_ACFLOW   -> Edit | Analytic Continuation Tools | ACFlow.
 * E_ACTEST   -> Edit | Analytic Continuation Tools | ACTest.
+* S_BGIMAGE  -> Style | Change Background.
 * S_CLASSIC  -> Style | Classic.
 * S_DARK     -> Style | Dark.
 * S_LIGHT    -> Style | Light.
@@ -86,6 +87,7 @@ mutable struct MenuFlags
     E_ACFLOW   :: Bool
     E_ACTEST   :: Bool
     #
+    S_BGIMAGE  :: Bool
     S_CLASSIC  :: Bool
     S_DARK     :: Bool
     S_LIGHT    :: Bool
@@ -119,6 +121,7 @@ FMENU = MenuFlags(
     false, # E_ATOMIC
     false, # E_ACFLOW
     false, # E_ACTEST
+    false, # S_BGIMAGE
     false, # S_CLASSIC
     false, # S_DARK
     false, # S_LIGHT

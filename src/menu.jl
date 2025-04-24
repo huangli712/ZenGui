@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/22
+# Last modified: 2025/04/24
 #
 
 """
@@ -96,6 +96,10 @@ this window-based application.
 """
 function set_menu_style()
     if CImGui.BeginMenu("Style")
+        @c CImGui.MenuItem("Change Background", C_NULL, &FMENU.S_BGIMAGE)
+        #
+        CImGui.Separator()
+        #
         @c CImGui.MenuItem("Classic", C_NULL, &FMENU.S_CLASSIC)
         @c CImGui.MenuItem("Dark", C_NULL, &FMENU.S_DARK)
         @c CImGui.MenuItem("Light", C_NULL, &FMENU.S_LIGHT)
