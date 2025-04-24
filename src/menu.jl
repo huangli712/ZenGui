@@ -4,13 +4,13 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/24
+# Last modified: 2025/04/25
 #
 
 """
     create_menu()
 
-Generate all menu items in the main window. Note that the FMENU struct
+Generate all menu items in the main window. Note that the `FMENU` struct
 should be modified here.
 
 See also: [`FMENU`](@ref).
@@ -91,8 +91,8 @@ end
 """
    set_menu_style()
 
-Setup menu items in ``Style''. They are used to change the appearance of
-this window-based application.
+Setup menu items in ``Style''. They are used to modify the appearance,
+including background image and color styles, of this window-based app.
 """
 function set_menu_style()
     if CImGui.BeginMenu("Style")
