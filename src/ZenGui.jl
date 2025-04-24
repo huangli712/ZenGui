@@ -592,6 +592,25 @@ export _acflow_stochsk_block
 export _acflow_stochom_block
 export _acflow_stochpx_block
 
+#=
+*Summary* :
+
+Create and display the `ACTest` window for the ZenGui app.
+
+*Members* :
+
+```text
+create_app_actest    -> Create and display the `ACTest` window.
+#
+_actest_top_block    -> Setup widgets in the top of the window.
+_actest_main_block   -> Setup widgets associated with the parameters.
+_actest_bottom_block -> Setup widgets in the bottom of the window.
+#
+_actest_test_block   -> Setup widgets for the `test` tab.
+_actest_solver_block -> Setup widgets for the `solver` tab.
+```
+=#
+
 #
 include("actest.jl")
 #
