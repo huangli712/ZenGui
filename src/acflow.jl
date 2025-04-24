@@ -47,7 +47,7 @@ function create_app_acflow(p_open::Ref{Bool})
     CImGui.Separator()
     CImGui.Spacing()
 
-    # For the widgets in the bottosm of this window
+    # For the widgets in the bottom of this window
     _acflow_bottom_block(p_open)
 
     # End of this window
