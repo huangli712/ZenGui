@@ -88,7 +88,7 @@ function _atomic_main_block()
         CImGui.PopStyleColor(2)
         #
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.4,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.4,0.0,1.0,1.0))        
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.4,0.0,1.0,1.0))
         _atomic_algorithm_block()
         CImGui.PopStyleColor(2)
         #
