@@ -553,22 +553,22 @@ Create and display the `ACFlow` window for the ZenGui app.
 *Members* :
 
 ```text
-create_app_acflow -> Create and display the `ACFlow` window.
+create_app_acflow     -> Create and display the `ACFlow` window.
 #
-_acflow_top_block
-_acflow_main_block
-_acflow_bottom_block
+_acflow_top_block     -> Setup widgets in the top of the window.
+_acflow_main_block    -> Setup widgets associated with the parameters.
+_acflow_bottom_block  -> Setup widgets in the bottom of the window.
 #
-_acflow_general_block
-_acflow_solver_block
+_acflow_general_block -> Setup widgets for the `general` tab.
+_acflow_solver_block  -> Setup widgets for the `solver` tab.
 #
-_acflow_maxent_block
-_acflow_barrat_block
-_acflow_nevanac_block
-_acflow_stochac_block
-_acflow_stochsk_block
-_acflow_stochom_block
-_acflow_stochpx_block
+_acflow_maxent_block  -> Setup widgets for the [MaxEnt] block in the ac.toml file.
+_acflow_barrat_block  -> Setup widgets for the [BarRat] block in the ac.toml file.
+_acflow_nevanac_block -> Setup widgets for the [NevanAC] block in the ac.toml file.
+_acflow_stochac_block -> Setup widgets for the [StochAC] block in the ac.toml file.
+_acflow_stochsk_block -> Setup widgets for the [StochSK] block in the ac.toml file.
+_acflow_stochom_block -> Setup widgets for the [StochOM] block in the ac.toml file.
+_acflow_stochpx_block -> Setup widgets for the [StochPX] block in the ac.toml file.
 ```
 =#
 
