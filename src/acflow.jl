@@ -87,6 +87,43 @@ function _acflow_main_block()
 end
 
 """
+    _acflow_bottom_block(p_open::Ref{Bool})
+
+Setup widgets in the bottom of the window for the ACFlow toolkit.
+"""
+function _acflow_bottom_block(p_open::Ref{Bool})
+    # Define default size for widgets
+    widget_button_width = 80.0
+    widget_button_height = 25.0
+
+    # For the buttons
+    if CImGui.Button("View", ImVec2(widget_button_width, widget_button_height))
+        CImGui.OpenPopup("View")
+    end
+    #
+    if CImGui.BeginPopupModal("View", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
+        @cstatic text="Hello World!" begin
+            text = dict_to_string(_build_acflow_dict())
+            flags = CImGui.ImGuiInputTextFlags_ReadOnly
+            flags = CImGui.ImGuiInputTextFlags_AllowTabInput | flags
+            CImGui.InputTextMultiline("##source", text, 10000, ImVec2(400, 600), flags)
+        end
+        #
+        if CImGui.Button("OK", ImVec2(widget_button_width, widget_button_height))
+            CImGui.CloseCurrentPopup()
+        end
+        #
+        CImGui.EndPopup()
+    end
+    #
+    CImGui.SameLine()
+    #
+    if CImGui.Button("Close", ImVec2(widget_button_width, widget_button_height))
+        p_open[] = false
+    end
+end
+
+"""
     _acflow_base_block()
 
 Setup widgets for the [BASE] block in the ac.toml.
@@ -274,44 +311,6 @@ function _acflow_solver_block()
             sorry()
             break
 
-    end
-end
-
-"""
-    _acflow_bottom_block(p_open::Ref{Bool})
-
-Setup widgets in the bottom of the window for the ACFlow toolkit.
-"""
-function _acflow_bottom_block(p_open::Ref{Bool})
-    # Define default size for widgets
-    widget_button_width = 80.0
-    widget_button_height = 25.0
-
-    # For the buttons
-    if CImGui.Button("View", ImVec2(widget_button_width, widget_button_height))
-        CImGui.OpenPopup("View")
-    end
-    #
-    if CImGui.BeginPopupModal("View", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
-        @cstatic read_only=false text="Hello World!" begin
-            text = dict_to_toml(_build_acflow_dict())
-            @c CImGui.Checkbox("Read-only", &read_only)
-            flags = read_only ? CImGui.ImGuiInputTextFlags_ReadOnly : 0
-            flags = CImGui.ImGuiInputTextFlags_AllowTabInput | flags
-            CImGui.InputTextMultiline("##source", text, 10000, ImVec2(400, 600), flags)
-        end
-        #
-        if CImGui.Button("OK", ImVec2(widget_button_width, widget_button_height))
-            CImGui.CloseCurrentPopup()
-        end
-        #
-        CImGui.EndPopup()
-    end
-    #
-    CImGui.SameLine()
-    #
-    if CImGui.Button("Close", ImVec2(widget_button_width, widget_button_height))
-        p_open[] = false
     end
 end
 
