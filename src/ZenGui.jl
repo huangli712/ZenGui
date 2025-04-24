@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/24
+# Last modified: 2025/04/25
 #
 
 """
@@ -131,8 +131,8 @@ To provide some useful utility macros and functions.
 #
 sorry    -> Say sorry.
 #
-dict_to_toml -> Convert dictionary to toml.
-dict_to_string -> Convert dictionary to string.
+dict_to_toml -> Convert dictionary to toml file.
+dict_to_ini -> Convert dictionary to ini file.
 #
 open_url -> Invoke the default web browser to open the given url.
 ```
@@ -146,7 +146,7 @@ export @cswitch
 export sorry
 #
 export dict_to_toml
-export dict_to_string
+export dict_to_ini
 #
 export open_url
 

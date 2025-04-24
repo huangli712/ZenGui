@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/23
+# Last modified: 2025/04/25
 #
 
 #=
@@ -94,7 +94,7 @@ end
 """
     dict_to_toml(d::AbstractDict)
 
-Convert an ordered dictionary to toml file.
+Convert an ordered dictionary to toml file (actually String).
 """
 function dict_to_toml(d::AbstractDict)
     io = IOBuffer()
@@ -103,11 +103,11 @@ function dict_to_toml(d::AbstractDict)
 end
 
 """
-    dict_to_string(d::AbstractDict)
+    dict_to_ini(d::AbstractDict)
 
-Convert an ordered dictionary to string.
+Convert an ordered dictionary to ini file (actually String).
 """
-function dict_to_string(d::AbstractDict)
+function dict_to_ini(d::AbstractDict)
     io = IOBuffer()
     for (key, value) in d
         println(io, "$key = $value")
