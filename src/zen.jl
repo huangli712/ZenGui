@@ -8,9 +8,13 @@
 #
 
 """
-    @_widgets_generator_dft
+    @widgets_generator_dft
+
+Macro for generating codes for the `dft` tab.
+
+See also: [`_zen_dft_block`](@ref).
 """
-macro _widgets_generator_dft(x)
+macro widgets_generator_dft(x)
     ex = quote
         i = $x
 
@@ -43,9 +47,13 @@ macro _widgets_generator_dft(x)
 end
 
 """
-    @_widgets_generator_imp
+    @widgets_generator_impurity
+
+Macro for generating codes for the `impurity` tab.
+
+See also: [`_zen_impurity_block`](@ref).
 """
-macro _widgets_generator_imp(x)
+macro widgets_generator_impurity(x)
     ex = quote
         i = $x
 
