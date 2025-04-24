@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/19
+# Last modified: 2025/04/24
 #
 
 """
@@ -29,10 +29,10 @@ function create_app_about(p_open::Ref{Bool})
     # Show header
     #
     # We want to make sure `ZenGui` is shown in the middle of the window.
-    txt_width = CImGui.CalcTextSize("ZenGui").x
-    offset = (window_width - txt_width) / 2.0
+    text_width = CImGui.CalcTextSize("ZenGui").x
+    offset = (window_width - text_width) / 2.0
     CImGui.SameLine(offset)
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "ZenGui")
+    CImGui.TextColored(COL_MAGENTA, "ZenGui")
     #
     CImGui.Spacing()
     CImGui.TextWrapped("A general-purposed graphic user interface for " *
@@ -44,27 +44,27 @@ function create_app_about(p_open::Ref{Bool})
     CImGui.Dummy(ImVec2(0.0,10.0))
 
     # Show author
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Author :")
+    CImGui.TextColored(COL_MAGENTA, "Author :")
     CImGui.SameLine()
     CImGui.Text(__AUTHORS__[1].name)
 
     # Show email
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Contact:")
+    CImGui.TextColored(COL_MAGENTA, "Contact:")
     CImGui.SameLine()
     CImGui.Text(__AUTHORS__[1].email)
 
     # Show version
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Version:")
+    CImGui.TextColored(COL_MAGENTA, "Version:")
     CImGui.SameLine()
     CImGui.Text("v$(__VERSION__)")
 
     # Show license
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "License:")
+    CImGui.TextColored(COL_MAGENTA, "License:")
     CImGui.SameLine()
     CImGui.Text("GNU General Public License Version 3")
 
     # Show github url
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "Github :")
+    CImGui.TextColored(COL_MAGENTA, "Github :")
     CImGui.SameLine()
     CImGui.Text("https://github.com/huangli712/ZenGui")
 
@@ -81,14 +81,15 @@ function create_app_about(p_open::Ref{Bool})
     button_height = 25.0
     #
     # Change the default color for the button
-    CImGui.PushStyleColor(CImGui.ImGuiCol_Button, ImVec4(1.0,0.0,1.0,1.0))
+    CImGui.PushStyleColor(CImGui.ImGuiCol_Button, COL_MAGENTA)
+    CImGui.PushStyleColor(CImGui.ImGuiCol_ButtonHovered, COL_LIGHTGREEN)
     #
     if CImGui.Button("OK", ImVec2(button_width, button_height))
         p_open[] = false
     end
     #
     # Reset the default color
-    CImGui.PopStyleColor(1)
+    CImGui.PopStyleColor(2)
 
     # End of this window
     CImGui.End()
