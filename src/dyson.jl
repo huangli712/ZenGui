@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/22
+# Last modified: 2025/04/25
 #
 
 """
@@ -60,7 +60,7 @@ end
 Setup widgets in the top of the window for the Dyson code.
 """
 function _dyson_top_block()
-    CImGui.Text("Dyson: Dyson's equation solver for the Zen computation framework")
+    CImGui.Text("Dyson: Dyson's Equation Solver For The Zen Computation Framework")
 end
 
 """
@@ -90,7 +90,7 @@ function _dyson_main_block()
         id == 0 && delete!(_DYSON, "task")
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(task)$(PDYSON.task)")
+    CImGui.TextColored(COL_MAGENTA, "(task)$(PDYSON.task)")
     #
     # Input: axis
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -102,7 +102,7 @@ function _dyson_main_block()
         id == 0 && delete!(_DYSON, "axis")
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(axis)$(PDYSON.axis)")
+    CImGui.TextColored(COL_MAGENTA, "(axis)$(PDYSON.axis)")
     #
     # Input: beta
     CImGui.SetNextItemWidth(widget_input_width)
@@ -113,7 +113,7 @@ function _dyson_main_block()
         _f == 8.0 && delete!(_DYSON, "beta")
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PDYSON.beta)")
+    CImGui.TextColored(COL_MAGENTA, "(beta)$(PDYSON.beta)")
     #
     # Input: mc
     CImGui.SetNextItemWidth(widget_input_width)
@@ -124,7 +124,7 @@ function _dyson_main_block()
         _f == 0.0001 && delete!(_DYSON, "mc")
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mc)$(PDYSON.mc)")
+    CImGui.TextColored(COL_MAGENTA, "(mc)$(PDYSON.mc)")
     #
     # Input: lfermi
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -136,7 +136,7 @@ function _dyson_main_block()
         id == 0 && delete!(_DYSON, "lfermi")
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lfermi)$(PDYSON.lfermi)")
+    CImGui.TextColored(COL_MAGENTA, "(lfermi)$(PDYSON.lfermi)")
     #
     # Input: ltetra
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -148,7 +148,7 @@ function _dyson_main_block()
         id == 0 && delete!(_DYSON, "ltetra")
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ltetra)$(PDYSON.ltetra)")
+    CImGui.TextColored(COL_MAGENTA, "(ltetra)$(PDYSON.ltetra)")
 end
 
 """
