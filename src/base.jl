@@ -7,13 +7,12 @@
 # Last modified: 2025/04/23
 #
 
-function load_image(img_path)
-    img = FileIO.load(img_path)
-    return RGBA.(img)
-end
-
-function load_texture(img)
+function load_texture()
+    img_dir = joinpath(ENV["ZEN_GUI"], ".images")
+    img_path = joinpath(img_dir, "bg.jpg")
+    img = RGBA.(rotr90( FileIO.load(img_path)))
     width, height = size(img)
+    @show width, height, typeof(img)
 
     texture_id = GLuint(0)
     @c glGenTextures(1, &texture_id)
@@ -30,14 +29,14 @@ function load_texture(img)
     return CImGui.ImTextureID(texture_id)
 end
 
-function show_image(texture_id)
+function setup_background(texture_id)
     drawlist = CImGui.GetBackgroundDrawList()
     viewport = unsafe_load(CImGui.GetMainViewport())
     
     pos = viewport.Pos
     size = viewport.Size
 
-    CImGui.AddImage(drawlist, texture_id, (pos.x, pos.y), (pos.x+size.x, pos.y+size.y))
+    CImGui.AddImage(drawlist, texture_id, (pos.x, pos.y), (pos.x+size.x, pos.y+size.y), (0.0, 1.0), (1.0, 0.0))
 end
 
 #=
@@ -72,16 +71,12 @@ function zeng_run()
     # Setup color's style for Dear ImGui
     CImGui.StyleColorsDark()
 
-    # Setup background color
-    bgc = Cfloat[0.45, 0.55, 0.60, 1.00]
-
-    img = load_image("/Users/lihuang/Downloads/Compressed/Lille/IMG_20240414_070747.jpg")
     texture_id = nothing
-    CImGui.render(ctx; clear_color=Ref(bgc), window_title = "ZenGui") do
+    CImGui.render(ctx; window_title = "ZenGui") do
         if isnothing(texture_id)
-            texture_id = load_texture(img)
+            texture_id = load_texture()
         end
-        show_image(texture_id)
+        setup_background(texture_id)
 
         # Setup global menu in the main window
         create_menu()
