@@ -541,6 +541,37 @@ export _atomic_interaction_block
 export _atomic_natural_block
 export _atomic_algorithm_block
 
+#=
+### *Includes And Exports* : *acflow.jl*
+=#
+
+#=
+*Summary* :
+
+Create and display the `ACFlow` window for the ZenGui app.
+
+*Members* :
+
+```text
+create_app_acflow -> Create and display the `ACFlow` window.
+#
+_acflow_top_block
+_acflow_main_block
+_acflow_bottom_block
+#
+_acflow_general_block
+_acflow_solver_block
+#
+_acflow_maxent_block
+_acflow_barrat_block
+_acflow_nevanac_block
+_acflow_stochac_block
+_acflow_stochsk_block
+_acflow_stochom_block
+_acflow_stochpx_block
+```
+=#
+
 #
 include("acflow.jl")
 #
