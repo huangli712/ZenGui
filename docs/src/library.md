@@ -73,6 +73,7 @@ set_menu_help
 ## Structs: Zen
 
 ```@docs
+ZEN_PDMFT
 PCASE
 PDFT
 PDMFT
@@ -80,9 +81,25 @@ PIMPURITY
 PSOLVER
 ```
 
+## Widgets: Zen
+
+```@docs
+create_app_zen
+_zen_case_block
+_zen_main_block
+_zen_dmft_block
+_zen_solver_block
+```
+
 ## Structs: Dyson
 
 ```@docs
+```
+
+## Widgets: Dyson
+
+```@docs
+_dyson_top_block
 ```
 
 ## Structs: DFermion
@@ -94,6 +111,7 @@ PDFERMION
 ## Widgets: DFermion
 
 ```@docs
+_dfermion_top_block
 _dfermion_main_block
 _dfermion_kmesh_block
 ```
@@ -101,6 +119,9 @@ _dfermion_kmesh_block
 ## Structs: iQIST
 
 ```@docs
+_CTHYB
+_ATOMIC
+PCTHYB
 PATOMIC
 ```
 
@@ -119,6 +140,8 @@ _atomic_model_block
 ## Structs: ACFlow
 
 ```@docs
+PStochAC
+ACFLOW_PBarRat
 ACFLOW_PNevanAC
 ACFLOW_PStochPX
 ```
@@ -128,23 +151,19 @@ ACFLOW_PStochPX
 ## Widgets: ACTest
 
 ```@docs
+_actest_main_block
+_actest_bottom_block
 _actest_general_block
+_actest_solver_block
 ```
 
-## Structs: Zen
-
-## Widgets: Zen
-
-```@docs
-create_app_zen
-_zen_case_block
-_zen_main_block
-_zen_dmft_block
-_zen_solver_block
-```
-
-# Widgets: Window
+## Widgets: About
 
 ```@docs
 create_app_about
+```
+
+## Functions: Save
+
+```@docs
 ```
