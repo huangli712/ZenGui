@@ -74,8 +74,8 @@ function _actest_main_block()
     if CImGui.BeginTabBar("ACTestTabBar", tab_bar_flags)
         CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_TEAL)
         CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_TEAL)
-        if CImGui.BeginTabItem("test")
-            _actest_test_block()
+        if CImGui.BeginTabItem("general")
+            _actest_general_block()
             #
             CImGui.EndTabItem()
         end
@@ -132,11 +132,11 @@ function _actest_bottom_block(p_open::Ref{Bool})
 end
 
 """
-    _actest_test_block()
+    _actest_general_block()
 
-Setup widgets for the `test` tab.
+Setup widgets for the `general` tab.
 """
-function _actest_test_block()
+function _actest_general_block()
     # Define default size for widgets
     widget_input_width = 100
     widget_combo_width = 100

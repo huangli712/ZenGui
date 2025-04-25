@@ -656,14 +656,14 @@ Create and display a window for configuring the ACTest toolkit.
 *Members* :
 
 ```text
-create_app_actest    -> Create and display the `ACTest` window.
+create_app_actest     -> Create and display the `ACTest` window.
 #
-_actest_top_block    -> Setup widgets in the top of the window.
-_actest_main_block   -> Setup widgets associated with the parameters.
-_actest_bottom_block -> Setup widgets in the bottom of the window.
+_actest_top_block     -> Setup widgets in the top of the window.
+_actest_main_block    -> Setup widgets associated with the parameters.
+_actest_bottom_block  -> Setup widgets in the bottom of the window.
 #
-_actest_test_block   -> Setup widgets for the `test` tab.
-_actest_solver_block -> Setup widgets for the `solver` tab.
+_actest_general_block -> Setup widgets for the `general` tab.
+_actest_solver_block  -> Setup widgets for the `solver` tab.
 ```
 =#
 
@@ -676,7 +676,7 @@ export _actest_top_block
 export _actest_main_block
 export _actest_bottom_block
 #
-export _actest_test_block
+export _actest_general_block
 export _actest_solver_block
 
 #=
