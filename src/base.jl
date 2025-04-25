@@ -43,10 +43,10 @@ function zeng_run()
     setup_fonts()
 
     # Global id for texture.
-    # When it is nothing, it means that the figure has not been loaded.
+    # When texture_id is nothing, it means that the texture has not been loaded.
     texture_id = nothing
     CImGui.render(ctx; window_title = "ZenGui") do
-        # If texture_id is nothing, we should try to load the figure and
+        # If texture_id is nothing, we should try to load the image and
         # setup the texture's id.
         if isnothing(texture_id)
             texture_id = load_texture()
@@ -77,7 +77,7 @@ function zeng_run()
         # For Style menu
         # Once the menu `Change Background` is clicked, texture_id must be
         # reset to nothing. Then the load_texture() function is called
-        # again to load a new figure and reassign texture_id.
+        # again to load a new image and reassign texture_id.
         FMENU.S_BGIMAGE  && (texture_id = nothing)
         FMENU.S_BGIMAGE  && @c handle_menu_background(&FMENU.S_BGIMAGE)
         FMENU.S_CLASSIC  && @c handle_menu_classic(&FMENU.S_CLASSIC)
@@ -103,10 +103,10 @@ end
 """
     load_texture()
 
-Load figures from the ZenGui/src/.images directory. Note that there are
-12 figures now. This function will pick one figure randomly and load it.
+Load images from the ZenGui/src/.images directory. Note that there are
+12 images now. This function will pick one image randomly and load it.
 Finally, it will return an `ImTextureID` object which is associted with
-the selected figure.
+the selected image.
 
 See also: [`setup_background`](@ref).
 """
@@ -210,7 +210,7 @@ end
 """
     setup_background(texture_id)
 
-Setup the background figure for this app. `texture_id` is an `ImTextureID`
+Setup the background image for this app. `texture_id` is an `ImTextureID`
 object. which is provided by `load_texture()`.
 
 See also: [`load_texture`](@ref).
@@ -223,11 +223,11 @@ function setup_background(texture_id)
 
     # Get draw list for background
     #
-    # The selected figure will be drawn on it directly without creating a
+    # The selected image will be drawn on it directly without creating a
     # new window.
     drawlist = CImGui.GetBackgroundDrawList()
 
-    # Draw the figure
+    # Draw the image
     CImGui.AddImage(drawlist, texture_id, pos, pos + size, (0.0, 1.0), (1.0, 0.0))
 end
 
