@@ -80,7 +80,7 @@ The meun items are created at `src/menu.jl`.
 * H_IQIST    -> Help | Documentation | iQIST.
 * H_ACFLOW   -> Help | Documentation | ACFlow.
 * H_ACTEST   -> Help | Documentation | ACTest.
-* H_ZENGUI   -> Help | User's manual.
+* H_ZENGUI   -> Help | User's Manual.
 * H_ABOUT    -> Help | About ZenGui.
 
 See also: [`FMENU`](@ref), [`zen_run`](@ref).
@@ -422,7 +422,7 @@ end
     _build_zen_dict()
 
 Assemble the ordered dictionary, which is then converted into `case.toml`,
-for the Zen package.
+for the `Zen` package.
 """
 function _build_zen_dict()
     return OrderedDict{String,Any}(
@@ -465,7 +465,8 @@ end
     _DYSON
 
 This set records the names of modified parameters, which will be presented
-in the `dmft.in` file.
+in the `dmft.in` file. Note that not all the parameters in `DYSON_PDYSON`
+should be presented in the `dmft.in` file.
 
 See also: [`DYSON_PDYSON`](@ref).
 """
@@ -492,7 +493,7 @@ PDYSON = DYSON_PDYSON(
 
 Convert a struct to an ordered dictionary (for `DYSON_PDYSON`).
 
-See [`DYSON_PDYSON`](@ref).
+See also: [`DYSON_PDYSON`](@ref).
 """
 function _struct_to_dict(s::DYSON_PDYSON)
     OD = OrderedDict{String,Any}()
@@ -512,6 +513,8 @@ end
 
 Assemble the ordered dictionary, which is then converted into `dmft.in`,
 for the Dyson code.
+
+See also: [`DYSON_PDYSON`](@ref).
 """
 function _build_dyson_dict()
     return _struct_to_dict(PDYSON)
@@ -559,7 +562,8 @@ end
     _DFERMION
 
 This set records the names of modified parameters, which will be presented
-in the `dfa.in` file.
+in the `dfa.in` file. Note that not all the parameters in `DFERMION_PDFERMION`
+should be presented in the `dfa.in` file.
 
 See also: [`DFERMION_PDFERMION`](@ref).
 """
@@ -597,7 +601,7 @@ PDFERMION = DFERMION_PDFERMION(
 
 Convert a struct to an ordered dictionary (for `DFERMION_PDFERMION`).
 
-See [`DFERMION_PDFERMION`](@ref).
+See also: [`DFERMION_PDFERMION`](@ref).
 """
 function _struct_to_dict(s::DFERMION_PDFERMION)
     OD = OrderedDict{String,Any}()
@@ -628,6 +632,8 @@ end
 
 Assemble the ordered dictionary, which is then converted into `dfa.in`,
 for the DFermion code.
+
+See also: [`DFERMION_PDFERMION`](@ref).
 """
 function _build_dfermion_dict()
     return _struct_to_dict(PDFERMION)
@@ -744,6 +750,9 @@ end
 This set records the names of modified parameters, which will be presented
 in the `solver.ctqmc.in` file. It is for the iQIST/ctseg code only.
 
+Note that not all the parameters in `IQIST_PCTSEG` will be presented in
+the `solver.ctqmc.in` file.
+
 See also: [`IQIST_PCTSEG`](@ref).
 """
 _CTSEG = Set{String}()
@@ -754,6 +763,9 @@ _CTSEG = Set{String}()
 This set records the names of modified parameters, which will be presented
 in the `solver.ctqmc.in` file. It is for the iQIST/cthyb code only.
 
+Note that not all the parameters in `IQIST_PCTHYB` will be presented in
+the `solver.ctqmc.in` file.
+
 See also: [`IQIST_PCTHYB`](@ref).
 """
 _CTHYB = Set{String}()
@@ -763,6 +775,9 @@ _CTHYB = Set{String}()
 
 This set records the names of modified parameters, which will be presented
 in the `solver.atomic.in` file. It is for the iQIST/atomic code only.
+
+Note that not all the parameters in `IQIST_PATOMIC` will be presented in
+the `solver.atomic.in` file.
 
 See also: [`IQIST_PATOMIC`](@ref).
 """
