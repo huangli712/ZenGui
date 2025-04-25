@@ -16,9 +16,9 @@ Engineeing Physics. It should be used to generate necessary configuration
 files for them. Now it supports the following codes:
 
 * All-in-one DFT + DMFT package (**Zen**)
+* Dynamical mean-field theory engines (**Dyson** and **DFermion**)
 * Quantum impurity solver toolkit (**iQIST**)
 * Analytic continuation tools (**ACFlow** and **ACTest**)
-* Dynamical mean-field theory engines (**Dyson** and **DFermion**)
 
 More codes will be supported in the future. Now this code is under heavy
 development. **PLEASE USE IT AT YOUR OWN RISK**.
@@ -49,6 +49,10 @@ The OrderedCollections library provides support to the OrderedDict struct.
 =#
 
 using OrderedCollections
+
+#=
+The FileIO and Images packages are used to load and parse images.
+=#
 
 using FileIO
 using Images
