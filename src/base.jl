@@ -77,7 +77,7 @@ function zeng_run()
         # For Style menu
         # Once the menu `Change Background` is clicked, texture_id must be
         # reset to nothing. Then the load_texture() function is called
-        # again to load a new image and reassign texture_id.
+        # again to load a new image and reassign the texture_id.
         FMENU.S_BGIMAGE  && (texture_id = nothing)
         FMENU.S_BGIMAGE  && @c handle_menu_background(&FMENU.S_BGIMAGE)
         FMENU.S_CLASSIC  && @c handle_menu_classic(&FMENU.S_CLASSIC)
@@ -156,14 +156,14 @@ function setup_flags()
     io = CImGui.GetIO()
     io.ConfigFlags = unsafe_load(io.ConfigFlags) | CImGui.ImGuiConfigFlags_DockingEnable
     io.ConfigFlags = unsafe_load(io.ConfigFlags) | CImGui.ImGuiConfigFlags_ViewportsEnable
-    io.IniFilename = C_NULL # We won't generate the ini file for this app.
+    io.IniFilename = C_NULL # We never generate the ini file for this app.
 end
 
 """
     setup_fonts()
 
 Setup fonts for this graphic user interface. Note that the files for fonts
-should be saved in ZenGui/src/.fonts directory.
+should be saved in the ZenGui/src/.fonts directory.
 """
 function setup_fonts()
     fonts_dir = joinpath(ENV["ZEN_GUI"], ".fonts")
