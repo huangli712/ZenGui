@@ -171,7 +171,7 @@ function _ctseg_model_block()
             id == 0 && delete!(_CTSEG, "isscr")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isscr)$(PCTSEG.isscr)")
+        CImGui.TextColored(COL_MAGENTA, "(isscr)$(PCTSEG.isscr)")
         #
         # Input: nband
         CImGui.SetNextItemWidth(widget_input_width)
@@ -182,7 +182,7 @@ function _ctseg_model_block()
             _i == 1 && delete!(_CTSEG, "nband")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nband)$(PCTSEG.nband)")
+        CImGui.TextColored(COL_MAGENTA, "(nband)$(PCTSEG.nband)")
         #
         # Input: nspin
         CImGui.SetNextItemWidth(widget_input_width)
@@ -191,7 +191,7 @@ function _ctseg_model_block()
             _i = Cint(PCTSEG.nspin) # This parameter should not be changed.
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nspin)$(PCTSEG.nspin)")
+        CImGui.TextColored(COL_MAGENTA, "(nspin)$(PCTSEG.nspin)")
         #
         # Input: norbs
         CImGui.SetNextItemWidth(widget_input_width)
@@ -203,7 +203,7 @@ function _ctseg_model_block()
             _i == 2 && delete!(_CTSEG, "norbs")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(norbs)$(PCTSEG.norbs)")
+        CImGui.TextColored(COL_MAGENTA, "(norbs)$(PCTSEG.norbs)")
         #
         # Input: ncfgs
         CImGui.SetNextItemWidth(widget_input_width)
@@ -215,7 +215,7 @@ function _ctseg_model_block()
             _i == 4 && delete!(_CTSEG, "ncfgs")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ncfgs)$(PCTSEG.ncfgs)")
+        CImGui.TextColored(COL_MAGENTA, "(ncfgs)$(PCTSEG.ncfgs)")
         #
         # Input: Uc
         CImGui.SetNextItemWidth(widget_input_width)
@@ -226,7 +226,7 @@ function _ctseg_model_block()
             _f == 4.0 && delete!(_CTSEG, "Uc")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Uc)$(PCTSEG.Uc)")
+        CImGui.TextColored(COL_MAGENTA, "(Uc)$(PCTSEG.Uc)")
         #
         # Input: Jz
         CImGui.SetNextItemWidth(widget_input_width)
@@ -237,7 +237,7 @@ function _ctseg_model_block()
             _f == 0.0 && delete!(_CTSEG, "Jz")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Jz)$(PCTSEG.Jz)")
+        CImGui.TextColored(COL_MAGENTA, "(Jz)$(PCTSEG.Jz)")
         #
         # Input: lc
         CImGui.SetNextItemWidth(widget_input_width)
@@ -248,7 +248,7 @@ function _ctseg_model_block()
             _f == 1.0 && delete!(_CTSEG, "lc")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lc)$(PCTSEG.lc)")
+        CImGui.TextColored(COL_MAGENTA, "(lc)$(PCTSEG.lc)")
         #
         # Input: wc
         CImGui.SetNextItemWidth(widget_input_width)
@@ -259,7 +259,7 @@ function _ctseg_model_block()
             _f == 1.0 && delete!(_CTSEG, "wc")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wc)$(PCTSEG.wc)")
+        CImGui.TextColored(COL_MAGENTA, "(wc)$(PCTSEG.wc)")
         #
         # Input: mune
         CImGui.SetNextItemWidth(widget_input_width)
@@ -270,7 +270,7 @@ function _ctseg_model_block()
             _f == 2.0 && delete!(_CTSEG, "mune")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mune)$(PCTSEG.mune)")
+        CImGui.TextColored(COL_MAGENTA, "(mune)$(PCTSEG.mune)")
         #
         # Input: beta
         CImGui.SetNextItemWidth(widget_input_width)
@@ -281,7 +281,7 @@ function _ctseg_model_block()
             _f == 8.0 && delete!(_CTSEG, "beta")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PCTSEG.beta)")
+        CImGui.TextColored(COL_MAGENTA, "(beta)$(PCTSEG.beta)")
         #
         # Input: part
         CImGui.SetNextItemWidth(widget_input_width)
@@ -292,7 +292,7 @@ function _ctseg_model_block()
             _f == 0.5 && delete!(_CTSEG, "part")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(part)$(PCTSEG.part)")
+        CImGui.TextColored(COL_MAGENTA, "(part)$(PCTSEG.part)")
 
         CImGui.EndTabItem()
     end
@@ -320,7 +320,7 @@ function _ctseg_dimension_block()
             _i == 8193 && delete!(_CTSEG, "mfreq")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mfreq)$(PCTSEG.mfreq)")
+        CImGui.TextColored(COL_MAGENTA, "(mfreq)$(PCTSEG.mfreq)")
         #
         # Input: nffrq
         CImGui.SetNextItemWidth(widget_input_width)
@@ -331,7 +331,7 @@ function _ctseg_dimension_block()
             _i == 32 && delete!(_CTSEG, "nffrq")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nffrq)$(PCTSEG.nffrq)")
+        CImGui.TextColored(COL_MAGENTA, "(nffrq)$(PCTSEG.nffrq)")
         #
         # Input: nbfrq
         CImGui.SetNextItemWidth(widget_input_width)
@@ -342,7 +342,7 @@ function _ctseg_dimension_block()
             _i == 8 && delete!(_CTSEG, "nbfrq")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nbfrq)$(PCTSEG.nbfrq)")
+        CImGui.TextColored(COL_MAGENTA, "(nbfrq)$(PCTSEG.nbfrq)")
         #
         # Input: nfreq
         CImGui.SetNextItemWidth(widget_input_width)
@@ -353,7 +353,7 @@ function _ctseg_dimension_block()
             _i == 128 && delete!(_CTSEG, "nfreq")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nfreq)$(PCTSEG.nfreq)")
+        CImGui.TextColored(COL_MAGENTA, "(nfreq)$(PCTSEG.nfreq)")
         #
         # Input: ntime
         CImGui.SetNextItemWidth(widget_input_width)
@@ -364,7 +364,7 @@ function _ctseg_dimension_block()
             _i == 1024 && delete!(_CTSEG, "ntime")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ntime)$(PCTSEG.ntime)")
+        CImGui.TextColored(COL_MAGENTA, "(ntime)$(PCTSEG.ntime)")
 
         CImGui.EndTabItem()
     end
@@ -393,7 +393,7 @@ function _ctseg_symmetry_block()
             id == 0 && delete!(_CTSEG, "isbnd")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isbnd)$(PCTSEG.isbnd)")
+        CImGui.TextColored(COL_MAGENTA, "(isbnd)$(PCTSEG.isbnd)")
         #
         # Input: isspn
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -405,7 +405,7 @@ function _ctseg_symmetry_block()
             id == 0 && delete!(_CTSEG, "isspn")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isspn)$(PCTSEG.isspn)")
+        CImGui.TextColored(COL_MAGENTA, "(isspn)$(PCTSEG.isspn)")
 
         CImGui.EndTabItem()
     end
@@ -434,7 +434,7 @@ function _ctseg_represent_block()
             id == 0 && delete!(_CTSEG, "isort")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isort)$(PCTSEG.isort)")
+        CImGui.TextColored(COL_MAGENTA, "(isort)$(PCTSEG.isort)")
         #
         # Input: lemax
         CImGui.SetNextItemWidth(widget_input_width)
@@ -445,7 +445,7 @@ function _ctseg_represent_block()
             _i == 32 && delete!(_CTSEG, "lemax")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lemax)$(PCTSEG.lemax)")
+        CImGui.TextColored(COL_MAGENTA, "(lemax)$(PCTSEG.lemax)")
         #
         # Input: legrd
         CImGui.SetNextItemWidth(widget_input_width)
@@ -456,7 +456,7 @@ function _ctseg_represent_block()
             _i == 20001 && delete!(_CTSEG, "legrd")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(legrd)$(PCTSEG.legrd)")
+        CImGui.TextColored(COL_MAGENTA, "(legrd)$(PCTSEG.legrd)")
         #
         # Input: svmax
         CImGui.SetNextItemWidth(widget_input_width)
@@ -467,7 +467,7 @@ function _ctseg_represent_block()
             _i == 32 && delete!(_CTSEG, "svmax")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(svmax)$(PCTSEG.svmax)")
+        CImGui.TextColored(COL_MAGENTA, "(svmax)$(PCTSEG.svmax)")
         #
         # Input: svgrd
         CImGui.SetNextItemWidth(widget_input_width)
@@ -478,7 +478,7 @@ function _ctseg_represent_block()
             _i == 2001 && delete!(_CTSEG, "svgrd")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(svgrd)$(PCTSEG.svgrd)")
+        CImGui.TextColored(COL_MAGENTA, "(svgrd)$(PCTSEG.svgrd)")
 
         CImGui.EndTabItem()
     end
@@ -506,7 +506,7 @@ function _ctseg_monte_block()
             _i == 1024 && delete!(_CTSEG, "mkink")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mkink)$(PCTSEG.mkink)")
+        CImGui.TextColored(COL_MAGENTA, "(mkink)$(PCTSEG.mkink)")
         #
         # Input: nflip
         CImGui.SetNextItemWidth(widget_input_width)
@@ -517,7 +517,7 @@ function _ctseg_monte_block()
             _i == 20000 && delete!(_CTSEG, "nflip")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nflip)$(PCTSEG.nflip)")
+        CImGui.TextColored(COL_MAGENTA, "(nflip)$(PCTSEG.nflip)")
         #
         # Input: ntherm
         CImGui.SetNextItemWidth(widget_input_width)
@@ -528,7 +528,7 @@ function _ctseg_monte_block()
             _i == 200000 && delete!(_CTSEG, "ntherm")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ntherm)$(PCTSEG.ntherm)")
+        CImGui.TextColored(COL_MAGENTA, "(ntherm)$(PCTSEG.ntherm)")
         #
         # Input: nsweep
         CImGui.SetNextItemWidth(widget_input_width)
@@ -539,7 +539,7 @@ function _ctseg_monte_block()
             _i == 20000000 && delete!(_CTSEG, "nsweep")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nsweep)$(PCTSEG.nsweep)")
+        CImGui.TextColored(COL_MAGENTA, "(nsweep)$(PCTSEG.nsweep)")
         #
         # Input: nwrite
         CImGui.SetNextItemWidth(widget_input_width)
@@ -550,7 +550,7 @@ function _ctseg_monte_block()
             _i == 2000000 && delete!(_CTSEG, "nwrite")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nwrite)$(PCTSEG.nwrite)")
+        CImGui.TextColored(COL_MAGENTA, "(nwrite)$(PCTSEG.nwrite)")
         #
         # Input: nclean
         CImGui.SetNextItemWidth(widget_input_width)
@@ -561,7 +561,7 @@ function _ctseg_monte_block()
             _i == 100000 && delete!(_CTSEG, "nclean")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nclean)$(PCTSEG.nclean)")
+        CImGui.TextColored(COL_MAGENTA, "(nclean)$(PCTSEG.nclean)")
         #
         # Input: nmonte
         CImGui.SetNextItemWidth(widget_input_width)
@@ -572,7 +572,7 @@ function _ctseg_monte_block()
             _i == 10 && delete!(_CTSEG, "nmonte")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmonte)$(PCTSEG.nmonte)")
+        CImGui.TextColored(COL_MAGENTA, "(nmonte)$(PCTSEG.nmonte)")
         #
         # Input: ncarlo
         CImGui.SetNextItemWidth(widget_input_width)
@@ -583,7 +583,7 @@ function _ctseg_monte_block()
             _i == 10 && delete!(_CTSEG, "ncarlo")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ncarlo)$(PCTSEG.ncarlo)")
+        CImGui.TextColored(COL_MAGENTA, "(ncarlo)$(PCTSEG.ncarlo)")
 
         CImGui.EndTabItem()
     end
@@ -612,7 +612,7 @@ function _ctseg_measure_block()
             id == 0 && delete!(_CTSEG, "iswor")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(iswor)$(PCTSEG.iswor)")
+        CImGui.TextColored(COL_MAGENTA, "(iswor)$(PCTSEG.iswor)")
         #
         # Input: isobs
         if CImGui.CollapsingHeader("Calculate physical observables")
@@ -686,7 +686,7 @@ function _ctseg_cycle_block()
             id == 0 && delete!(_CTSEG, "isscf")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isscf)$(PCTSEG.isscf)")
+        CImGui.TextColored(COL_MAGENTA, "(isscf)$(PCTSEG.isscf)")
         #
         # Input: niter
         CImGui.SetNextItemWidth(widget_input_width)
@@ -697,7 +697,7 @@ function _ctseg_cycle_block()
             _i == 20 && delete!(_CTSEG, "niter")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(niter)$(PCTSEG.niter)")
+        CImGui.TextColored(COL_MAGENTA, "(niter)$(PCTSEG.niter)")
         #
         # Input: alpha
         CImGui.SetNextItemWidth(widget_input_width)
@@ -713,7 +713,7 @@ function _ctseg_cycle_block()
             _f == 0.7 && delete!(_CTSEG, "alpha")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(alpha)$(PCTSEG.alpha)")
+        CImGui.TextColored(COL_MAGENTA, "(alpha)$(PCTSEG.alpha)")
 
         CImGui.EndTabItem()
     end
