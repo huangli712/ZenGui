@@ -52,6 +52,7 @@ __AUTHORS__
 
 ```@docs
 authors
+_struct_to_dict
 ```
 
 ## Structs: Menu
@@ -68,6 +69,8 @@ set_menu_file
 set_menu_edit
 set_menu_style
 set_menu_help
+handle_menu_dark
+handle_menu_classic
 ```
 
 ## Structs: Zen
@@ -100,6 +103,8 @@ _zen_solver_block
 
 ```@docs
 _dyson_top_block
+_dyson_main_block
+_build_dyson_dict
 ```
 
 ## Structs: DFermion
@@ -149,6 +154,7 @@ ACFLOW_PStochPX
 ## Widgets: ACFlow
 
 ```@docs
+_acflow_stochac_block
 ```
 
 ## Structs: ACTest
@@ -174,4 +180,6 @@ create_app_about
 ## Functions: Save
 
 ```@docs
+save_dfermion
+save_ctseg
 ```
