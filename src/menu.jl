@@ -13,7 +13,7 @@
 Generate all menu items in the main window. Note that the `FMENU` struct
 should be modified here.
 
-See also: [`FMENU`](@ref).
+See also: [`MenuFlags`](@ref).
 """
 function create_menu()
     if CImGui.BeginMainMenuBar()
