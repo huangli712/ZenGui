@@ -136,14 +136,14 @@ To provide some useful utility macros and functions.
 *Members* :
 
 ```text
-@cswitch -> C-style switch.
+@cswitch     -> C-style switch.
 #
-sorry    -> Say sorry.
+sorry        -> Say sorry.
 #
 dict_to_toml -> Convert dictionary to toml file.
-dict_to_ini -> Convert dictionary to ini file.
+dict_to_ini  -> Convert dictionary to ini file.
 #
-open_url -> Invoke the default web browser to open the given url.
+open_url     -> Invoke the default web browser to open the given url.
 ```
 =#
 
@@ -166,46 +166,46 @@ export open_url
 #=
 *Summary* :
 
-Define some dicts and structs, which are used to store the config
+Define some dicts and structs, which are used to store the configuration
 parameters or represent some essential data structures.
 
 *Members* :
 
 ```text
-CURRENT_WINDOW -> A struct used to keep the name of the current (activate) window.
-CWIN           -> An instance for the `CURRENT_WINDOW` struct.
+CURRENT_WINDOW  -> A struct used to keep the name of the current window.
+CWIN            -> An instance for the `CURRENT_WINDOW` struct.
 #
-MenuFlags -> A struct used to track the status of all the menu items.
-FMENU     -> An instance for the `MenuFlags` struct.
+MenuFlags       -> A struct used to track the status of all the menu items.
+FMENU           -> An instance for the `MenuFlags` struct.
 #
-ZEN_PCASE     -> It represents the `[case]` block in the `case.toml` file.
-ZEN_PDFT      -> It represents the `[dft]` block in the `case.toml` file.
-ZEN_PDMFT     -> It represents the `[dmft]` block in the `case.toml` file.
-ZEN_PIMPURITY -> It represents the `[impurity]` block in the `case.toml` file.
-ZEN_PSOLVER   -> It represents the `[solver]` block in the `case.toml` file.
-PCASE     -> An instance for the `ZEN_PCASE` struct.
-PDFT      -> An instance for the `ZEN_PDFT` struct.
-PDMFT     -> An instance for the `ZEN_PDMFT` struct.
-PIMPURITY -> An instance for the `ZEN_PIMPURITY` struct.
-PSOLVER   -> An instance for the `ZEN_PSOLVER` struct.
+ZEN_PCASE       -> It represents the `[case]` block in the `case.toml` file.
+ZEN_PDFT        -> It represents the `[dft]` block in the `case.toml` file.
+ZEN_PDMFT       -> It represents the `[dmft]` block in the `case.toml` file.
+ZEN_PIMPURITY   -> It represents the `[impurity]` block in the `case.toml` file.
+ZEN_PSOLVER     -> It represents the `[solver]` block in the `case.toml` file.
+PCASE           -> An instance for the `ZEN_PCASE` struct.
+PDFT            -> An instance for the `ZEN_PDFT` struct.
+PDMFT           -> An instance for the `ZEN_PDMFT` struct.
+PIMPURITY       -> An instance for the `ZEN_PIMPURITY` struct.
+PSOLVER         -> An instance for the `ZEN_PSOLVER` struct.
 #
-DYSON_PDYSON -> It contains the parameters in the `dmft.in` file.
-_DYSON -> It records the names of modified parameters for the Dyson code.
-PDYSON -> An instance for the `DYSON_PDYSON` struct.
+DYSON_PDYSON    -> It contains the parameters in the `dmft.in` file.
+_DYSON          -> It records the names of modified parameters for the Dyson code.
+PDYSON          -> An instance for the `DYSON_PDYSON` struct.
 #
 DFERMION_PDFERMION -> It contains the parameters in the `dfa.in` file.
-_DFERMION -> It records the names of modified parameters for the DFermion code.
-PDFERMION -> An instance for the `DFERMION_PDFERMION` struct.
+_DFERMION       -> It records the names of modified parameters for the DFermion code.
+PDFERMION       -> An instance for the `DFERMION_PDFERMION` struct.
 #
-IQIST_PCTSEG  -> It contains the parameters in the `solver.ctqmc.in` file.
-IQIST_PCTHYB  -> It contains the parameters in the `solver.ctqmc.in` file.
-IQIST_PATOMIC -> It contains the parameters in the `solver.atomic.in` file.
-_CTSEG  -> It records the names of modified parameters for the ctseg code.
-_CTHYB  -> It records the names of modified parameters for the cthyb code.
-_ATOMIC -> It records the names of modified parameters for the atomic code.
-PCTSEG  -> An instance for the `IQIST_PCTSEG` struct.
-PCTHYB  -> An instance for the `IQIST_PCTHYB` struct.
-PATOMIC -> An instance for the `IQIST_PATOMIC` struct.
+IQIST_PCTSEG    -> It contains the parameters in the `solver.ctqmc.in` file.
+IQIST_PCTHYB    -> It contains the parameters in the `solver.ctqmc.in` file.
+IQIST_PATOMIC   -> It contains the parameters in the `solver.atomic.in` file.
+_CTSEG          -> It records the names of modified parameters for the ctseg code.
+_CTHYB          -> It records the names of modified parameters for the cthyb code.
+_ATOMIC         -> It records the names of modified parameters for the atomic code.
+PCTSEG          -> An instance for the `IQIST_PCTSEG` struct.
+PCTHYB          -> An instance for the `IQIST_PCTHYB` struct.
+PATOMIC         -> An instance for the `IQIST_PATOMIC` struct.
 #
 ACFLOW_PBASE    -> It represents the `[BASE]` block in the `ac.toml` file.
 ACFLOW_PMaxEnt  -> It represents the `[MaxEnt]` block in the `ac.toml` file.
@@ -215,17 +215,17 @@ ACFLOW_PStochAC -> It represents the `[StochAC]` block in the `ac.toml` file.
 ACFLOW_PStochSK -> It represents the `[StochSK]` block in the `ac.toml` file.
 ACFLOW_PStochOM -> It represents the `[StochOM]` block in the `ac.toml` file.
 ACFLOW_PStochPX -> It represents the `[StochPX]` block in the `ac.toml` file.
-PBASE    -> An instance for the `ACFLOW_PBASE` struct.
-PMaxEnt  -> An instance for the `ACFLOW_PMaxEnt` struct.
-PBarRat  -> An instance for the `ACFLOW_PBarRat` struct.
-PNevanAC -> An instance for the `ACFLOW_PNevanAC` struct.
-PStochAC -> An instance for the `ACFLOW_PStochAC` struct.
-PStochSK -> An instance for the `ACFLOW_PStochSK` struct.
-PStochOM -> An instance for the `ACFLOW_PStochOM` struct.
-PStochPX -> An instance for the `ACFLOW_PStochPX` struct.
+PBASE           -> An instance for the `ACFLOW_PBASE` struct.
+PMaxEnt         -> An instance for the `ACFLOW_PMaxEnt` struct.
+PBarRat         -> An instance for the `ACFLOW_PBarRat` struct.
+PNevanAC        -> An instance for the `ACFLOW_PNevanAC` struct.
+PStochAC        -> An instance for the `ACFLOW_PStochAC` struct.
+PStochSK        -> An instance for the `ACFLOW_PStochSK` struct.
+PStochOM        -> An instance for the `ACFLOW_PStochOM` struct.
+PStochPX        -> An instance for the `ACFLOW_PStochPX` struct.
 #
-ACTEST_PTEST -> It represents the `[Test]` block in the `act.toml` file.
-PTEST        -> An instance for the `ACTEST_PTEST` struct.
+ACTEST_PTEST    -> It represents the `[Test]` block in the `act.toml` file.
+PTEST           -> An instance for the `ACTEST_PTEST` struct.
 #
 _struct_to_dict      -> Convert a struct to an ordered dictionary.
 #
