@@ -52,6 +52,7 @@ __AUTHORS__
 
 ```@docs
 authors
+sorry
 open_url
 _struct_to_dict
 ```
@@ -72,10 +73,12 @@ set_menu_file
 set_menu_edit
 set_menu_style
 set_menu_help
+handle_menu_save
 handle_menu_background
 handle_menu_dark
 handle_menu_classic
 handle_menu_light
+handle_menu_zen
 handle_menu_dfermion
 handle_menu_iqist
 handle_menu_acflow
@@ -115,6 +118,7 @@ _build_zen_dict
 ## Structs: Dyson
 
 ```@docs
+DYSON_PDYSON
 _DYSON
 PDYSON
 ```
@@ -145,7 +149,9 @@ _dfermion_top_block
 _dfermion_main_block
 _dfermion_bottom_block
 _dfermion_model_block
+_dfermion_dimension_block
 _dfermion_kmesh_block
+_dfermion_cycle_block
 _build_dfermion_dict
 ```
 
@@ -173,6 +179,7 @@ _ctseg_top_block
 _ctseg_main_block
 _ctseg_bottom_block
 _ctseg_model_block
+_ctseg_dimension_block
 _ctseg_symmetry_block
 _ctseg_represent_block
 _ctseg_measure_block
@@ -183,7 +190,9 @@ _atomic_main_block
 _atomic_bottom_block
 _atomic_model_block
 _atomic_interaction_block
+_atomic_natural_block
 _atomic_algorithm_block
+_build_iqist_dict
 ```
 
 ## Structs: ACFlow
@@ -216,6 +225,7 @@ _acflow_bottom_block
 _acflow_solver_block
 _acflow_general_block
 _acflow_maxent_block
+_acflow_barrat_block
 _acflow_stochac_block
 _acflow_stochsk_block
 _acflow_stochom_block
@@ -261,6 +271,7 @@ setup_background
 
 ```@docs
 save_zen
+save_dyson
 save_dfermion
 save_ctseg
 save_cthyb
