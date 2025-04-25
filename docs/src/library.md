@@ -54,6 +54,8 @@ __AUTHORS__
 authors
 sorry
 open_url
+dict_to_toml
+dict_to_ini
 _struct_to_dict
 ```
 
@@ -61,6 +63,7 @@ _struct_to_dict
 
 ```docs
 CURRENT_WINDOW
+CWIN
 MenuFlags
 FMENU
 ```
@@ -79,6 +82,7 @@ handle_menu_dark
 handle_menu_classic
 handle_menu_light
 handle_menu_zen
+handle_menu_dyson
 handle_menu_dfermion
 handle_menu_iqist
 handle_menu_acflow
@@ -211,6 +215,7 @@ PMaxEnt
 PBarRat
 PNevanAC
 PStochAC
+PStochSK
 PStochOM
 PStochPX
 ```
