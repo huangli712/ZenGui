@@ -106,10 +106,10 @@ function _actest_bottom_block(p_open::Ref{Bool})
 
     # For the buttons
     if CImGui.Button("View", ImVec2(widget_button_width, widget_button_height))
-        CImGui.OpenPopup("View")
+        CImGui.OpenPopup("View act.toml")
     end
     #
-    if CImGui.BeginPopupModal("View", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
+    if CImGui.BeginPopupModal("View act.toml", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
         @cstatic text="Hello World!" begin
             text = dict_to_toml(_build_actest_dict())
             flags = CImGui.ImGuiInputTextFlags_ReadOnly
