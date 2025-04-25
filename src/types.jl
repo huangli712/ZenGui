@@ -19,10 +19,9 @@ const COL_TEAL       = ImVec4(0.00, 0.50, 0.50, 1.00)
 const COL_INDIGO     = ImVec4(0.29, 0.00, 0.51, 1.00)
 const COL_PURPLE     = ImVec4(0.50, 0.00, 0.50, 1.00)
 const COL_SALMON     = ImVec4(0.98, 0.50, 0.45, 1.00)
-const COL_CORAL      = ImVec4(1.00, 0.50, 0.31, 1.00)
+const COL_TAN        = ImVec4(0.82, 0.71, 0.55, 1.00)
 const COL_TOMATO     = ImVec4(1.00, 0.39, 0.28, 1.00)
 const COL_HOTPINK    = ImVec4(1.00, 0.41, 0.71, 1.00)
-const COL_TAN        = ImVec4(0.82, 0.71, 0.55, 1.00)
 const COL_SKYBLUE    = ImVec4(0.50, 0.80, 1.00, 1.00)
 
 #=

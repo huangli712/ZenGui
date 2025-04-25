@@ -92,8 +92,8 @@ function _ctseg_main_block()
         _ctseg_represent_block()
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_CORAL)
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_CORAL)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_TAN)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_TAN)
         _ctseg_monte_block()
         CImGui.PopStyleColor(2)
         #
