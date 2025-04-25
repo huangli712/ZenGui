@@ -155,7 +155,7 @@ function _atomic_model_block()
             _i == 1 && delete!(_ATOMIC, "nband")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nband)$(PATOMIC.nband)")
+        CImGui.TextColored(COL_MAGENTA, "(nband)$(PATOMIC.nband)")
         #
         # Input: nspin
         CImGui.SetNextItemWidth(widget_input_width)
@@ -164,7 +164,7 @@ function _atomic_model_block()
             _i = Cint(PATOMIC.nspin) # This parameter should not be changed.
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nspin)$(PATOMIC.nspin)")
+        CImGui.TextColored(COL_MAGENTA, "(nspin)$(PATOMIC.nspin)")
         #
         # Input: norbs
         CImGui.SetNextItemWidth(widget_input_width)
@@ -176,7 +176,7 @@ function _atomic_model_block()
             _i == 2 && delete!(_ATOMIC, "norbs")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(norbs)$(PATOMIC.norbs)")
+        CImGui.TextColored(COL_MAGENTA, "(norbs)$(PATOMIC.norbs)")
         #
         # Input: ncfgs
         CImGui.SetNextItemWidth(widget_input_width)
@@ -188,7 +188,7 @@ function _atomic_model_block()
             _i == 4 && delete!(_ATOMIC, "ncfgs")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ncfgs)$(PATOMIC.ncfgs)")
+        CImGui.TextColored(COL_MAGENTA, "(ncfgs)$(PATOMIC.ncfgs)")
 
         CImGui.EndTabItem()
     end
@@ -217,7 +217,7 @@ function _atomic_interaction_block()
             id == 0 && delete!(_ATOMIC, "icu")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(icu)$(PATOMIC.icu)")
+        CImGui.TextColored(COL_MAGENTA, "(icu)$(PATOMIC.icu)")
         #
         # Input: Uc
         CImGui.SetNextItemWidth(widget_input_width)
@@ -228,7 +228,7 @@ function _atomic_interaction_block()
             _f == 2.0 && delete!(_ATOMIC, "Uc")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Uc)$(PATOMIC.Uc)")
+        CImGui.TextColored(COL_MAGENTA, "(Uc)$(PATOMIC.Uc)")
         #
         # Input: Uv
         CImGui.SetNextItemWidth(widget_input_width)
@@ -239,7 +239,7 @@ function _atomic_interaction_block()
             _f == 2.0 && delete!(_ATOMIC, "Uv")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Uv)$(PATOMIC.Uv)")
+        CImGui.TextColored(COL_MAGENTA, "(Uv)$(PATOMIC.Uv)")
         #
         # Input: Jz
         CImGui.SetNextItemWidth(widget_input_width)
@@ -250,7 +250,7 @@ function _atomic_interaction_block()
             _f == 0.0 && delete!(_ATOMIC, "Jz")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Jz)$(PATOMIC.Jz)")
+        CImGui.TextColored(COL_MAGENTA, "(Jz)$(PATOMIC.Jz)")
         #
         # Input: Js
         CImGui.SetNextItemWidth(widget_input_width)
@@ -261,7 +261,7 @@ function _atomic_interaction_block()
             _f == 0.0 && delete!(_ATOMIC, "Js")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Js)$(PATOMIC.Js)")
+        CImGui.TextColored(COL_MAGENTA, "(Js)$(PATOMIC.Js)")
         #
         # Input: Jp
         CImGui.SetNextItemWidth(widget_input_width)
@@ -272,7 +272,7 @@ function _atomic_interaction_block()
             _f == 0.0 && delete!(_ATOMIC, "Jp")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Jp)$(PATOMIC.Jp)")
+        CImGui.TextColored(COL_MAGENTA, "(Jp)$(PATOMIC.Jp)")
         #
         # Input: Ud
         CImGui.SetNextItemWidth(widget_input_width)
@@ -283,7 +283,7 @@ function _atomic_interaction_block()
             _f == 2.0 && delete!(_ATOMIC, "Ud")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Ud)$(PATOMIC.Ud)")
+        CImGui.TextColored(COL_MAGENTA, "(Ud)$(PATOMIC.Ud)")
         #
         # Input: Jh
         CImGui.SetNextItemWidth(widget_input_width)
@@ -294,7 +294,7 @@ function _atomic_interaction_block()
             _f == 0.0 && delete!(_ATOMIC, "Jh")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(Jh)$(PATOMIC.Jh)")
+        CImGui.TextColored(COL_MAGENTA, "(Jh)$(PATOMIC.Jh)")
 
         CImGui.EndTabItem()
     end
@@ -323,7 +323,7 @@ function _atomic_natural_block()
             id == 0 && delete!(_ATOMIC, "ibasis")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ibasis)$(PATOMIC.ibasis)")
+        CImGui.TextColored(COL_MAGENTA, "(ibasis)$(PATOMIC.ibasis)")
         #
         # Input: icf
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -335,7 +335,7 @@ function _atomic_natural_block()
             id == 0 && delete!(_ATOMIC, "icf")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(icf)$(PATOMIC.icf)")
+        CImGui.TextColored(COL_MAGENTA, "(icf)$(PATOMIC.icf)")
         #
         # Input: isoc
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -347,7 +347,7 @@ function _atomic_natural_block()
             id == 0 && delete!(_ATOMIC, "isoc")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isoc)$(PATOMIC.isoc)")
+        CImGui.TextColored(COL_MAGENTA, "(isoc)$(PATOMIC.isoc)")
         #
         # Input: mune
         CImGui.SetNextItemWidth(widget_input_width)
@@ -358,7 +358,7 @@ function _atomic_natural_block()
             _f == 0.0 && delete!(_ATOMIC, "mune")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mune)$(PATOMIC.mune)")
+        CImGui.TextColored(COL_MAGENTA, "(mune)$(PATOMIC.mune)")
         #
         # Input: lambda
         CImGui.SetNextItemWidth(widget_input_width)
@@ -369,7 +369,7 @@ function _atomic_natural_block()
             _f == 0.0 && delete!(_ATOMIC, "lambda")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lambda)$(PATOMIC.lambda)")
+        CImGui.TextColored(COL_MAGENTA, "(lambda)$(PATOMIC.lambda)")
 
         CImGui.EndTabItem()
     end
@@ -398,7 +398,7 @@ function _atomic_algorithm_block()
             id == 0 && delete!(_ATOMIC, "ictqmc")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ictqmc)$(PATOMIC.ictqmc)")
+        CImGui.TextColored(COL_MAGENTA, "(ictqmc)$(PATOMIC.ictqmc)")
         #
         # Input: nmini
         CImGui.SetNextItemWidth(widget_input_width)
@@ -409,7 +409,7 @@ function _atomic_algorithm_block()
             _i == 0 && delete!(_ATOMIC, "nmini")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmini)$(PATOMIC.nmini)")
+        CImGui.TextColored(COL_MAGENTA, "(nmini)$(PATOMIC.nmini)")
         #
         # Input: nmaxi
         CImGui.SetNextItemWidth(widget_input_width)
@@ -420,7 +420,7 @@ function _atomic_algorithm_block()
             _i == 2 && delete!(_ATOMIC, "nmaxi")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmaxi)$(PATOMIC.nmaxi)")
+        CImGui.TextColored(COL_MAGENTA, "(nmaxi)$(PATOMIC.nmaxi)")
 
         CImGui.EndTabItem()
     end
