@@ -72,23 +72,23 @@ function _dfermion_main_block()
     #
     # There are four tabs
     if CImGui.BeginTabBar("dfermionTabBar", tab_bar_flags)
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_LIGHTGREEN)
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_LIGHTGREEN)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_TEAL)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_TEAL)
         _dfermion_model_block()
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_MAGENTA)
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_MAGENTA)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_INDIGO)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_INDIGO)
         _dfermion_dimension_block()
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_ORANGE)
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_ORANGE)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_PURPLE)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_PURPLE)
         _dfermion_kmesh_block()
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_PINK)
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_PINK)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_SALMON)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_SALMON)
         _dfermion_cycle_block()
         CImGui.PopStyleColor(2)
         #

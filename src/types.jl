@@ -13,13 +13,14 @@
 
 const COL_MAGENTA    = ImVec4(1.00, 0.00, 1.00, 1.00)
 const COL_ORANGE     = ImVec4(1.00, 0.50, 0.00, 1.00)
-const COL_PURPLE     = ImVec4(0.50, 0.00, 0.50, 1.00)
-const COL_PINK       = ImVec4(1.00, 0.75, 0.80, 1.00)
-const COL_SKYBLUE    = ImVec4(0.50, 0.80, 1.00, 1.00)
 const COL_LIGHTGREEN = ImVec4(0.50, 0.90, 0.50, 1.00)
+const COL_PINK       = ImVec4(1.00, 0.75, 0.80, 1.00)
 const COL_TEAL       = ImVec4(0.00, 0.50, 0.50, 1.00)
-const COL_BEIGE      = ImVec4(0.96, 0.96, 0.86, 1.00)
 const COL_INDIGO     = ImVec4(0.29, 0.00, 0.51, 1.00)
+const COL_PURPLE     = ImVec4(0.50, 0.00, 0.50, 1.00)
+const COL_SALMON     = ImVec4(0.98, 0.50, 0.45, 1.00)
+const COL_SKYBLUE    = ImVec4(0.50, 0.80, 1.00, 1.00)
+const COL_OLIVE      = ImVec4(0.50, 0.50, 0.00, 1.00)
 
 #=
 ### *Customized Structs* : *Active Window*
