@@ -150,7 +150,7 @@ function _acflow_general_block()
         PBASE.finput = rstrip(buf,'\0')
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(finput)$(PBASE.finput)")
+    CImGui.TextColored(COL_MAGENTA, "(finput)$(PBASE.finput)")
     #
     # Input: solver
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -160,7 +160,7 @@ function _acflow_general_block()
         PBASE.solver = solver_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(solver)$(PBASE.solver)")
+    CImGui.TextColored(COL_MAGENTA, "(solver)$(PBASE.solver)")
     #
     # Input: ktype
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -170,7 +170,7 @@ function _acflow_general_block()
         PBASE.ktype = ktype_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ktype)$(PBASE.ktype)")
+    CImGui.TextColored(COL_MAGENTA, "(ktype)$(PBASE.ktype)")
     #
     # Input: mtype
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -180,7 +180,7 @@ function _acflow_general_block()
         PBASE.mtype = mtype_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mtype)$(PBASE.mtype)")
+    CImGui.TextColored(COL_MAGENTA, "(mtype)$(PBASE.mtype)")
     #
     # Input: grid
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -190,7 +190,7 @@ function _acflow_general_block()
         PBASE.grid = grid_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(grid)$(PBASE.grid)")
+    CImGui.TextColored(COL_MAGENTA, "(grid)$(PBASE.grid)")
     #
     # Input: mesh
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -200,7 +200,7 @@ function _acflow_general_block()
         PBASE.mesh = mesh_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mesh)$(PBASE.mesh)")
+    CImGui.TextColored(COL_MAGENTA, "(mesh)$(PBASE.mesh)")
     #
     # Input: ngrid
     CImGui.SetNextItemWidth(widget_input_width)
@@ -209,7 +209,7 @@ function _acflow_general_block()
         PBASE.ngrid = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ngrid)$(PBASE.ngrid)")
+    CImGui.TextColored(COL_MAGENTA, "(ngrid)$(PBASE.ngrid)")
     #
     # Input: nmesh
     CImGui.SetNextItemWidth(widget_input_width)
@@ -218,7 +218,7 @@ function _acflow_general_block()
         PBASE.nmesh = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmesh)$(PBASE.nmesh)")
+    CImGui.TextColored(COL_MAGENTA, "(nmesh)$(PBASE.nmesh)")
     #
     # Input: wmax
     CImGui.SetNextItemWidth(widget_input_width)
@@ -227,7 +227,7 @@ function _acflow_general_block()
         PBASE.wmax = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmax)$(PBASE.wmax)")
+    CImGui.TextColored(COL_MAGENTA, "(wmax)$(PBASE.wmax)")
     #
     # Input: wmin
     CImGui.SetNextItemWidth(widget_input_width)
@@ -236,7 +236,7 @@ function _acflow_general_block()
         PBASE.wmin = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wmin)$(PBASE.wmin)")
+    CImGui.TextColored(COL_MAGENTA, "(wmin)$(PBASE.wmin)")
     #
     # Input: beta
     CImGui.SetNextItemWidth(widget_input_width)
@@ -245,7 +245,7 @@ function _acflow_general_block()
         PBASE.beta = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PBASE.beta)")
+    CImGui.TextColored(COL_MAGENTA, "(beta)$(PBASE.beta)")
     #
     # Input: offdiag
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -259,7 +259,7 @@ function _acflow_general_block()
         end
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(offdiag)$(PBASE.offdiag)")
+    CImGui.TextColored(COL_MAGENTA, "(offdiag)$(PBASE.offdiag)")
     #
     # Input: fwrite
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -273,7 +273,7 @@ function _acflow_general_block()
         end
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(fwrite)$(PBASE.fwrite)")
+    CImGui.TextColored(COL_MAGENTA, "(fwrite)$(PBASE.fwrite)")
 end
 
 """
@@ -340,7 +340,7 @@ function _acflow_maxent_block()
         PMaxEnt.method = method_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(method)$(PMaxEnt.method)")
+    CImGui.TextColored(COL_MAGENTA, "(method)$(PMaxEnt.method)")
     #
     # Input: stype
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -350,7 +350,7 @@ function _acflow_maxent_block()
         PMaxEnt.stype = stype_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(stype)$(PMaxEnt.stype)")
+    CImGui.TextColored(COL_MAGENTA, "(stype)$(PMaxEnt.stype)")
     #
     # Input: nalph
     CImGui.SetNextItemWidth(widget_input_width)
@@ -359,7 +359,7 @@ function _acflow_maxent_block()
         PMaxEnt.nalph = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nalph)$(PMaxEnt.nalph)")
+    CImGui.TextColored(COL_MAGENTA, "(nalph)$(PMaxEnt.nalph)")
     #
     # Input: alpha
     CImGui.SetNextItemWidth(widget_input_width)
@@ -368,7 +368,7 @@ function _acflow_maxent_block()
         PMaxEnt.alpha = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(alpha)$(PMaxEnt.alpha)")
+    CImGui.TextColored(COL_MAGENTA, "(alpha)$(PMaxEnt.alpha)")
     #
     # Input: ratio
     CImGui.SetNextItemWidth(widget_input_width)
@@ -377,7 +377,7 @@ function _acflow_maxent_block()
         PMaxEnt.ratio = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ratio)$(PMaxEnt.ratio)")
+    CImGui.TextColored(COL_MAGENTA, "(ratio)$(PMaxEnt.ratio)")
     #
     # Input: blur
     CImGui.SetNextItemWidth(widget_input_width)
@@ -386,7 +386,7 @@ function _acflow_maxent_block()
         PMaxEnt.blur = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(blur)$(PMaxEnt.blur)")
+    CImGui.TextColored(COL_MAGENTA, "(blur)$(PMaxEnt.blur)")
 end
 
 """
@@ -407,7 +407,7 @@ function _acflow_barrat_block()
         PBarRat.atype = atype_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(atype)$(PBarRat.atype)")
+    CImGui.TextColored(COL_MAGENTA, "(atype)$(PBarRat.atype)")
     #
     # Input: denoise
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -417,7 +417,7 @@ function _acflow_barrat_block()
         PBarRat.denoise = denoise_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(denoise)$(PBarRat.denoise)")
+    CImGui.TextColored(COL_MAGENTA, "(denoise)$(PBarRat.denoise)")
     #
     # Input: epsilon
     CImGui.SetNextItemWidth(widget_input_width)
@@ -426,7 +426,7 @@ function _acflow_barrat_block()
         PBarRat.epsilon = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(epsilon)$(PBarRat.epsilon)")
+    CImGui.TextColored(COL_MAGENTA, "(epsilon)$(PBarRat.epsilon)")
     #
     # Input: pcut
     CImGui.SetNextItemWidth(widget_input_width)
@@ -435,7 +435,7 @@ function _acflow_barrat_block()
         PBarRat.pcut = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(pcut)$(PBarRat.pcut)")
+    CImGui.TextColored(COL_MAGENTA, "(pcut)$(PBarRat.pcut)")
     #
     # Input: eta
     CImGui.SetNextItemWidth(widget_input_width)
@@ -444,7 +444,7 @@ function _acflow_barrat_block()
         PBarRat.eta = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(eta)$(PBarRat.eta)")
+    CImGui.TextColored(COL_MAGENTA, "(eta)$(PBarRat.eta)")
 end
 
 """
@@ -469,7 +469,7 @@ function _acflow_nevanac_block()
         end
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(pick)$(PNevanAC.pick)")
+    CImGui.TextColored(COL_MAGENTA, "(pick)$(PNevanAC.pick)")
     #
     # Input: pick
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -483,7 +483,7 @@ function _acflow_nevanac_block()
         end
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(hardy)$(PNevanAC.hardy)")
+    CImGui.TextColored(COL_MAGENTA, "(hardy)$(PNevanAC.hardy)")
     #
     # Input: hmax
     CImGui.SetNextItemWidth(widget_input_width)
@@ -492,7 +492,7 @@ function _acflow_nevanac_block()
         PNevanAC.hmax = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(hmax)$(PNevanAC.hmax)")
+    CImGui.TextColored(COL_MAGENTA, "(hmax)$(PNevanAC.hmax)")
     #
     # Input: alpha
     CImGui.SetNextItemWidth(widget_input_width)
@@ -501,7 +501,7 @@ function _acflow_nevanac_block()
         PNevanAC.alpha = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(alpha)$(PNevanAC.alpha)")
+    CImGui.TextColored(COL_MAGENTA, "(alpha)$(PNevanAC.alpha)")
     #
     # Input: eta
     CImGui.SetNextItemWidth(widget_input_width)
@@ -510,7 +510,7 @@ function _acflow_nevanac_block()
         PNevanAC.eta = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(eta)$(PNevanAC.eta)")
+    CImGui.TextColored(COL_MAGENTA, "(eta)$(PNevanAC.eta)")
 end
 
 """
@@ -530,7 +530,7 @@ function _acflow_stochac_block()
         PStochAC.nfine = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nfine)$(PStochAC.nfine)")
+    CImGui.TextColored(COL_MAGENTA, "(nfine)$(PStochAC.nfine)")
     #
     # Input: ngamm
     CImGui.SetNextItemWidth(widget_input_width)
@@ -539,7 +539,7 @@ function _acflow_stochac_block()
         PStochAC.ngamm = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ngamm)$(PStochAC.ngamm)")
+    CImGui.TextColored(COL_MAGENTA, "(ngamm)$(PStochAC.ngamm)")
     #
     # Input: nwarm
     CImGui.SetNextItemWidth(widget_input_width)
@@ -548,7 +548,7 @@ function _acflow_stochac_block()
         PStochAC.nwarm = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nwarm)$(PStochAC.nwarm)")
+    CImGui.TextColored(COL_MAGENTA, "(nwarm)$(PStochAC.nwarm)")
     #
     # Input: nstep
     CImGui.SetNextItemWidth(widget_input_width)
@@ -557,7 +557,7 @@ function _acflow_stochac_block()
         PStochAC.nstep = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nstep)$(PStochAC.nstep)")
+    CImGui.TextColored(COL_MAGENTA, "(nstep)$(PStochAC.nstep)")
     #
     # Input: ndump
     CImGui.SetNextItemWidth(widget_input_width)
@@ -566,7 +566,7 @@ function _acflow_stochac_block()
         PStochAC.ndump = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ndump)$(PStochAC.ndump)")
+    CImGui.TextColored(COL_MAGENTA, "(ndump)$(PStochAC.ndump)")
     #
     # Input: nalph
     CImGui.SetNextItemWidth(widget_input_width)
@@ -575,7 +575,7 @@ function _acflow_stochac_block()
         PStochAC.nalph = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nalph)$(PStochAC.nalph)")
+    CImGui.TextColored(COL_MAGENTA, "(nalph)$(PStochAC.nalph)")
     #
     # Input: alpha
     CImGui.SetNextItemWidth(widget_input_width)
@@ -584,7 +584,7 @@ function _acflow_stochac_block()
         PStochAC.alpha = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(alpha)$(PStochAC.alpha)")
+    CImGui.TextColored(COL_MAGENTA, "(alpha)$(PStochAC.alpha)")
     #
     # Input: ratio
     CImGui.SetNextItemWidth(widget_input_width)
@@ -593,7 +593,7 @@ function _acflow_stochac_block()
         PStochAC.ratio = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ratio)$(PStochAC.ratio)")
+    CImGui.TextColored(COL_MAGENTA, "(ratio)$(PStochAC.ratio)")
 end
 
 """
@@ -614,7 +614,7 @@ function _acflow_stochsk_block()
         PStochSK.method = method_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(method)$(PStochSK.method)")
+    CImGui.TextColored(COL_MAGENTA, "(method)$(PStochSK.method)")
     #
     # Input: nfine
     CImGui.SetNextItemWidth(widget_input_width)
@@ -623,7 +623,7 @@ function _acflow_stochsk_block()
         PStochSK.nfine = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nfine)$(PStochSK.nfine)")
+    CImGui.TextColored(COL_MAGENTA, "(nfine)$(PStochSK.nfine)")
     #
     # Input: ngamm
     CImGui.SetNextItemWidth(widget_input_width)
@@ -632,7 +632,7 @@ function _acflow_stochsk_block()
         PStochSK.ngamm = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ngamm)$(PStochSK.ngamm)")
+    CImGui.TextColored(COL_MAGENTA, "(ngamm)$(PStochSK.ngamm)")
     #
     # Input: nwarm
     CImGui.SetNextItemWidth(widget_input_width)
@@ -641,7 +641,7 @@ function _acflow_stochsk_block()
         PStochSK.nwarm = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nwarm)$(PStochSK.nwarm)")
+    CImGui.TextColored(COL_MAGENTA, "(nwarm)$(PStochSK.nwarm)")
     #
     # Input: nstep
     CImGui.SetNextItemWidth(widget_input_width)
@@ -650,7 +650,7 @@ function _acflow_stochsk_block()
         PStochSK.nstep = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nstep)$(PStochSK.nstep)")
+    CImGui.TextColored(COL_MAGENTA, "(nstep)$(PStochSK.nstep)")
     #
     # Input: ndump
     CImGui.SetNextItemWidth(widget_input_width)
@@ -659,7 +659,7 @@ function _acflow_stochsk_block()
         PStochSK.ndump = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ndump)$(PStochSK.ndump)")
+    CImGui.TextColored(COL_MAGENTA, "(ndump)$(PStochSK.ndump)")
     #
     # Input: retry
     CImGui.SetNextItemWidth(widget_input_width)
@@ -668,7 +668,7 @@ function _acflow_stochsk_block()
         PStochSK.retry = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(retry)$(PStochSK.retry)")
+    CImGui.TextColored(COL_MAGENTA, "(retry)$(PStochSK.retry)")
     #
     # Input: theta
     CImGui.SetNextItemWidth(widget_input_width)
@@ -677,7 +677,7 @@ function _acflow_stochsk_block()
         PStochSK.theta = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(theta)$(PStochSK.theta)")
+    CImGui.TextColored(COL_MAGENTA, "(theta)$(PStochSK.theta)")
     #
     # Input: ratio
     CImGui.SetNextItemWidth(widget_input_width)
@@ -686,7 +686,7 @@ function _acflow_stochsk_block()
         PStochSK.ratio = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ratio)$(PStochSK.ratio)")
+    CImGui.TextColored(COL_MAGENTA, "(ratio)$(PStochSK.ratio)")
 end
 
 """
