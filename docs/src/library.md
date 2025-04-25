@@ -71,6 +71,8 @@ set_menu_style
 set_menu_help
 handle_menu_dark
 handle_menu_classic
+handle_menu_light
+handle_menu_iqist
 handle_menu_acflow
 ```
 
@@ -90,9 +92,10 @@ PSOLVER
 
 ```@docs
 create_app_zen
+_zen_main_block
+_zen_bottom_block
 _zen_case_block
 _zen_dft_block
-_zen_main_block
 _zen_dmft_block
 _zen_solver_block
 ```
@@ -123,12 +126,14 @@ PDFERMION
 create_app_dfermion
 _dfermion_top_block
 _dfermion_main_block
+_dfermion_model_block
 _dfermion_kmesh_block
 ```
 
 ## Structs: iQIST
 
 ```@docs
+IQIST_PATOMIC
 _CTSEG
 _CTHYB
 _ATOMIC
@@ -147,13 +152,18 @@ _ctseg_represent_block
 _ctseg_measure_block
 _ctseg_cycle_block
 _atomic_top_block
+_atomic_main_block
 _atomic_model_block
+_atomic_interaction_block
 ```
 
 ## Structs: ACFlow
 
 ```@docs
+PBarRat
+PNevanAC
 PStochAC
+ACFLOW_PBASE
 ACFLOW_PBarRat
 ACFLOW_PNevanAC
 ACFLOW_PStochSK
@@ -163,10 +173,12 @@ ACFLOW_PStochPX
 ## Widgets: ACFlow
 
 ```@docs
+_acflow_solver_block
 _acflow_general_block
 _acflow_stochac_block
 _acflow_stochom_block
 _acflow_stochpx_block
+_build_acflow_dict
 ```
 
 ## Structs: ACTest
@@ -177,6 +189,7 @@ _acflow_stochpx_block
 ## Widgets: ACTest
 
 ```@docs
+create_app_actest
 _actest_main_block
 _actest_bottom_block
 _actest_general_block
