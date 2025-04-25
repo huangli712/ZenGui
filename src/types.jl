@@ -31,25 +31,20 @@ const COL_SKYBLUE    = ImVec4(0.50, 0.80, 1.00, 1.00)
 """
     CURRENT_WINDOW
 
-A struct used to keep the name of the current (activate) window.
+A struct used to keep the name of the current (activate) window. Note that
+its global instance is `CWIN`
 
 ### Members
 * name -> Name of the current window.
-
-See also: [`CWIN`](@ref).
 """
 mutable struct CURRENT_WINDOW
     name :: String
 end
 
-"""
-    CWIN
-
-An instance for the `CURRENT_WINDOW` struct.
-
-See also: [`CURRENT_WINDOW`](@ref).
-"""
-CWIN = CURRENT_WINDOW(
+#
+# An instance for the `CURRENT_WINDOW` struct.
+#
+const CWIN = CURRENT_WINDOW(
     "nothing"
 )
 
@@ -61,7 +56,8 @@ CWIN = CURRENT_WINDOW(
     MenuFlags
 
 A struct used to track the status of all the menu items. The renderloop
-should respond the mouse events according to this struct.
+should respond the mouse events according to this struct. Note that its
+global instance is `FMENU`
 
 The meun items are created at `src/menu.jl`.
 
@@ -88,8 +84,6 @@ The meun items are created at `src/menu.jl`.
 * H_ACTEST   -> Help | Documentation | ACTest.
 * H_ZENGUI   -> Help | User's Manual.
 * H_ABOUT    -> Help | About ZenGui.
-
-See also: [`FMENU`](@ref), [`zen_run`](@ref).
 """
 mutable struct MenuFlags
     F_SAVE     :: Bool
@@ -116,18 +110,14 @@ mutable struct MenuFlags
     H_ACFLOW   :: Bool
     H_ACTEST   :: Bool
     H_ZENGUI   :: Bool
-    H_ABOUT    :: Bool
+    H_ABOUT    :: Bools
 end
 
-"""
-    FMENU
-
-An instance for the `MenuFlags` struct. Initially, all members are set
-to be false.
-
-See also: [`MenuFlags`](@ref).
-"""
-FMENU = MenuFlags(
+#
+# An instance for the `MenuFlags` struct. Initially, all members are set
+# to be false.
+#
+const FMENU = MenuFlags(
     false, # F_SAVE
     false, # F_EXIT
     false, # E_ZEN
