@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/22
+# Last modified: 2025/04/25
 #
 
 """
@@ -60,7 +60,7 @@ end
 Setup widgets in the top of the window for the iQIST/atomic code.
 """
 function _atomic_top_block()
-    CImGui.Text("atomic: An atomic eigenvalue problem solver")
+    CImGui.Text("atomic: An Atomic Eigenvalue Problem Solver")
 end
 
 """
@@ -72,23 +72,23 @@ function _atomic_main_block()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
     #
     if CImGui.BeginTabBar("atomicTabBar", tab_bar_flags)
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(1.0,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(1.0,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_TEAL)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_TEAL)
         _atomic_model_block()
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.8,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.8,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_INDIGO)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_INDIGO)
         _atomic_interaction_block()
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.6,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.6,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_PURPLE)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_PURPLE)
         _atomic_natural_block()
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.4,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.4,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_SALMON)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_SALMON)
         _atomic_algorithm_block()
         CImGui.PopStyleColor(2)
         #
