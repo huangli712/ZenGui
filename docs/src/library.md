@@ -72,6 +72,7 @@ set_menu_file
 set_menu_edit
 set_menu_style
 set_menu_help
+handle_menu_background
 handle_menu_dark
 handle_menu_classic
 handle_menu_light
@@ -85,7 +86,9 @@ handle_menu_zengui
 
 ```@docs
 ZEN_PCASE
+ZEN_PDFT
 ZEN_PDMFT
+ZEN_PIMPURITY
 ZEN_PSOLVER
 PCASE
 PDFT
@@ -98,6 +101,7 @@ PSOLVER
 
 ```@docs
 create_app_zen
+_zen_top_block
 _zen_main_block
 _zen_bottom_block
 _zen_case_block
@@ -128,6 +132,8 @@ _build_dyson_dict
 ## Structs: DFermion
 
 ```@docs
+DFERMION_PDFERMION
+_DFERMION
 PDFERMION
 ```
 
@@ -167,6 +173,7 @@ _ctseg_top_block
 _ctseg_main_block
 _ctseg_bottom_block
 _ctseg_model_block
+_ctseg_symmetry_block
 _ctseg_represent_block
 _ctseg_measure_block
 _ctseg_monte_block
@@ -196,16 +203,19 @@ PBarRat
 PNevanAC
 PStochAC
 PStochOM
+PStochPX
 ```
 
 ## Widgets: ACFlow
 
 ```@docs
+create_app_acflow
 _acflow_top_block
 _acflow_main_block
 _acflow_bottom_block
 _acflow_solver_block
 _acflow_general_block
+_acflow_maxent_block
 _acflow_stochac_block
 _acflow_stochsk_block
 _acflow_stochom_block
@@ -217,16 +227,19 @@ _build_acflow_dict
 
 ```@docs
 ACTEST_PTEST
+PTEST
 ```
 
 ## Widgets: ACTest
 
 ```@docs
 create_app_actest
+_actest_top_block
 _actest_main_block
 _actest_bottom_block
 _actest_general_block
 _actest_solver_block
+_build_actest_dict
 ```
 
 ## Widgets: About
@@ -253,5 +266,6 @@ save_ctseg
 save_cthyb
 save_atomic
 save_acflow
+save_actest
 save_nothing
 ```
