@@ -312,7 +312,7 @@ export _build_actest_dict
 #=
 *Summary* :
 
-Save configuration files for various codes.
+Save configuration files for various quantum many-body codes.
 
 *Members* :
 
@@ -380,7 +380,7 @@ export set_menu_help
 #=
 *Summary* :
 
-Create and display the `Zen` window for the Zen package.
+Create and display a window for configuring the Zen package.
 
 *Members* :
 
@@ -427,7 +427,7 @@ export _zen_solver_block
 #=
 *Summary* :
 
-Create and display the `Dyson` window for the Dyson code.
+Create and display a window for configuring the Dyson code.
 
 *Members* :
 
@@ -456,7 +456,7 @@ export _dyson_bottom_block
 #=
 *Summary* :
 
-Create and display the `DFermion` window for the DFermion code.
+Create and display a window for configuring the DFermion code.
 
 *Members* :
 
@@ -495,7 +495,7 @@ export _dfermion_cycle_block
 #=
 *Summary* :
 
-Create and display the `ctseg` window for the iQIST/ctseg code.
+Create and display a window for configuring the iQIST/ctseg code.
 
 *Members* :
 
@@ -540,7 +540,7 @@ export _ctseg_cycle_block
 #=
 *Summary* :
 
-Create and display the `cthyb` window for the iQIST/cthyb code.
+Create and display a window for configuring the iQIST/cthyb code.
 
 *Members* :
 
@@ -561,21 +561,21 @@ export create_app_cthyb
 #=
 *Summary* :
 
-Create and display the `atomic` window for the iQIST/atomic code.
+Create and display a window for configuring the iQIST/atomic code.
 
 *Members* :
 
 ```text
-create_app_atomic    -> Create and display the `atomic` window.
+create_app_atomic         -> Create and display the `atomic` window.
 #
-_atomic_top_block    -> Setup widgets in the top of the window.
-_atomic_main_block   -> Setup widgets associated with the parameters.
-_atomic_bottom_block -> Setup widgets in the bottom of the window.
+_atomic_top_block         -> Setup widgets in the top of the window.
+_atomic_main_block        -> Setup widgets associated with the parameters.
+_atomic_bottom_block      -> Setup widgets in the bottom of the window.
 #
-_atomic_model_block  -> Setup widgets for the `model` tab.
+_atomic_model_block       -> Setup widgets for the `model` tab.
 _atomic_interaction_block -> Setup widgets for the `interaction` tab.
-_atomic_natural_block  -> Setup widgets for the `natural eigenbasis` tab.
-_atomic_algorithm_block  -> Setup widgets for the `algorithm` tab.
+_atomic_natural_block     -> Setup widgets for the `natural eigenbasis` tab.
+_atomic_algorithm_block   -> Setup widgets for the `algorithm` tab.
 ```
 =#
 
@@ -600,7 +600,7 @@ export _atomic_algorithm_block
 #=
 *Summary* :
 
-Create and display the `ACFlow` window for the ZenGui app.
+Create and display a window for configuring the ACFlow toolkit.
 
 *Members* :
 
@@ -645,9 +645,13 @@ export _acflow_stochom_block
 export _acflow_stochpx_block
 
 #=
+### *Includes And Exports* : *actest.jl*
+=#
+
+#=
 *Summary* :
 
-Create and display the `ACTest` window for the ZenGui app.
+Create and display a window for configuring the ACTest toolkit.
 
 *Members* :
 
