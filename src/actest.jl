@@ -72,8 +72,8 @@ function _actest_main_block()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
     #
     if CImGui.BeginTabBar("ACTestTabBar", tab_bar_flags)
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_LIGHTGREEN)
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_LIGHTGREEN)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_TEAL)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_TEAL)
         if CImGui.BeginTabItem("test")
             _actest_test_block()
             #
@@ -81,8 +81,8 @@ function _actest_main_block()
         end
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_MAGENTA)
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_MAGENTA)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_INDIGO)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_INDIGO)
         if CImGui.BeginTabItem("solver")
             _actest_solver_block()
             #
