@@ -88,6 +88,7 @@ PSOLVER
 ## Structs: DFermion
 
 ```@docs
+PDFERMION
 ```
 
 ## Widgets: DFermion
@@ -100,6 +101,7 @@ _dfermion_kmesh_block
 ## Structs: iQIST
 
 ```@docs
+PATOMIC
 ```
 
 ## Widgets: iQIST
@@ -116,7 +118,18 @@ _atomic_model_block
 
 ## Structs: ACFlow
 
+```@docs
+ACFLOW_PNevanAC
+ACFLOW_PStochPX
+```
+
 ## Structs: ACTest
+
+## Widgets: ACTest
+
+```@docs
+_actest_general_block
+```
 
 ## Structs: Zen
 
