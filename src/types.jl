@@ -41,9 +41,13 @@ mutable struct CURRENT_WINDOW
     name :: String
 end
 
-#
-# An instance for the `CURRENT_WINDOW` struct.
-#
+"""
+    CWIN
+
+An instance for the `CURRENT_WINDOW` struct.
+
+See also: [`CURRENT_WINDOW`](@ref).
+"""
 const CWIN = CURRENT_WINDOW(
     "nothing"
 )
@@ -110,13 +114,17 @@ mutable struct MenuFlags
     H_ACFLOW   :: Bool
     H_ACTEST   :: Bool
     H_ZENGUI   :: Bool
-    H_ABOUT    :: Bools
+    H_ABOUT    :: Bool
 end
 
-#
-# An instance for the `MenuFlags` struct. Initially, all members are set
-# to be false.
-#
+"""
+    FMENU
+
+An instance for the `MenuFlags` struct. Initially, all members are set to
+be false.
+
+See also: [`MenuFlags`](@ref).
+"""
 const FMENU = MenuFlags(
     false, # F_SAVE
     false, # F_EXIT
