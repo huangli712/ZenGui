@@ -45,13 +45,13 @@ using Base.Sys
 =#
 
 #=
-The OrderedCollections library provides support to the OrderedDict struct.
+The **OrderedCollections** library provides support to the OrderedDict struct.
 =#
 
 using OrderedCollections
 
 #=
-The FileIO and Images packages are used to load and parse images.
+The **FileIO** and **Images** packages are used to load and parse images.
 =#
 
 using FileIO
@@ -61,17 +61,22 @@ using Images
 The ZenGui application relies on the **Dear ImGui library**, which is a
 C++ immediate mode graphic user interface library. Note that **CImGui**
 is a C-API wrapper for **Dear ImGui**, and **CImGui.jl** provides a Julia
-interface to **CImGui**. **GLFW** is an open source multi-platform library
-for OpenGL, OpenGL ES and Vulkan development on the desktop. It provides
-a simple API for creating windows, contexts and surfaces, receiving input
-and events. **ModernGL** is a OpenGL binding for Julia. Here, **GLFW**
-and **ModernGL** are backends for **Dear ImGui**.
+interface to **CImGui**.
 =#
 
 using CImGui
 using CImGui.lib
 using CImGui.CSyntax
 using CImGui.CSyntax.CStatic
+
+#=
+**GLFW** is an open source multi-platform library for OpenGL, OpenGL ES
+and Vulkan development on the desktop. It just provides a simple API for
+creating windows, contexts and surfaces, receiving user's input and events.
+**ModernGL** is a OpenGL binding for Julia.
+
+Here, **GLFW** and **ModernGL** are backends for **Dear ImGui**.
+=#
 
 using GLFW
 using ModernGL
