@@ -51,6 +51,7 @@ __AUTHORS__
 ## Utilities
 
 ```@docs
+@cswitch
 authors
 sorry
 open_url
@@ -108,6 +109,8 @@ PSOLVER
 ## Widgets: Zen
 
 ```@docs
+@widgets_generator_dft
+@widgets_generator_impurity
 create_app_zen
 _zen_top_block
 _zen_main_block
