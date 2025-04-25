@@ -144,6 +144,7 @@ _dfermion_kmesh_block
 ## Structs: iQIST
 
 ```@docs
+IQIST_PCTSEG
 IQIST_PCTHYB
 IQIST_PATOMIC
 _CTSEG
@@ -175,6 +176,7 @@ _atomic_interaction_block
 
 ```@docs
 ACFLOW_PBASE
+ACFLOW_PMaxEnt
 ACFLOW_PBarRat
 ACFLOW_PNevanAC
 ACFLOW_PStochAC
