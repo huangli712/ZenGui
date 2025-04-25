@@ -706,7 +706,7 @@ function _acflow_stochom_block()
         PStochOM.ntry = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ntry)$(PStochOM.ntry)")
+    CImGui.TextColored(COL_MAGENTA, "(ntry)$(PStochOM.ntry)")
     #
     # Input: nstep
     CImGui.SetNextItemWidth(widget_input_width)
@@ -715,7 +715,7 @@ function _acflow_stochom_block()
         PStochOM.nstep = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nstep)$(PStochOM.nstep)")
+    CImGui.TextColored(COL_MAGENTA, "(nstep)$(PStochOM.nstep)")
     #
     # Input: nbox
     CImGui.SetNextItemWidth(widget_input_width)
@@ -724,7 +724,7 @@ function _acflow_stochom_block()
         PStochOM.nbox = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nbox)$(PStochOM.nbox)")
+    CImGui.TextColored(COL_MAGENTA, "(nbox)$(PStochOM.nbox)")
     #
     # Input: sbox
     CImGui.SetNextItemWidth(widget_input_width)
@@ -733,7 +733,7 @@ function _acflow_stochom_block()
         PStochOM.sbox = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sbox)$(PStochOM.sbox)")
+    CImGui.TextColored(COL_MAGENTA, "(sbox)$(PStochOM.sbox)")
     #
     # Input: wbox
     CImGui.SetNextItemWidth(widget_input_width)
@@ -742,7 +742,7 @@ function _acflow_stochom_block()
         PStochOM.wbox = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(wbox)$(PStochOM.wbox)")
+    CImGui.TextColored(COL_MAGENTA, "(wbox)$(PStochOM.wbox)")
     #
     # Input: norm
     CImGui.SetNextItemWidth(widget_input_width)
@@ -751,7 +751,7 @@ function _acflow_stochom_block()
         PStochOM.norm = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(norm)$(PStochOM.norm)")
+    CImGui.TextColored(COL_MAGENTA, "(norm)$(PStochOM.norm)")
 end
 
 """
@@ -772,7 +772,7 @@ function _acflow_stochpx_block()
         PStochPX.method = method_list[id + 1]
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(method)$(PStochPX.method)")
+    CImGui.TextColored(COL_MAGENTA, "(method)$(PStochPX.method)")
     #
     # Input: nfine
     CImGui.SetNextItemWidth(widget_input_width)
@@ -781,7 +781,7 @@ function _acflow_stochpx_block()
         PStochPX.nfine = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nfine)$(PStochPX.nfine)")
+    CImGui.TextColored(COL_MAGENTA, "(nfine)$(PStochPX.nfine)")
     #
     # Input: npole
     CImGui.SetNextItemWidth(widget_input_width)
@@ -790,7 +790,7 @@ function _acflow_stochpx_block()
         PStochPX.npole = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(npole)$(PStochPX.npole)")
+    CImGui.TextColored(COL_MAGENTA, "(npole)$(PStochPX.npole)")
     #
     # Input: ntry
     CImGui.SetNextItemWidth(widget_input_width)
@@ -799,7 +799,7 @@ function _acflow_stochpx_block()
         PStochPX.ntry = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ntry)$(PStochPX.ntry)")
+    CImGui.TextColored(COL_MAGENTA, "(ntry)$(PStochPX.ntry)")
     #
     # Input: nstep
     CImGui.SetNextItemWidth(widget_input_width)
@@ -808,7 +808,7 @@ function _acflow_stochpx_block()
         PStochPX.nstep = _i
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nstep)$(PStochPX.nstep)")
+    CImGui.TextColored(COL_MAGENTA, "(nstep)$(PStochPX.nstep)")
     #
     # Input: theta
     CImGui.SetNextItemWidth(widget_input_width)
@@ -817,7 +817,7 @@ function _acflow_stochpx_block()
         PStochPX.theta = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(theta)$(PStochPX.theta)")
+    CImGui.TextColored(COL_MAGENTA, "(theta)$(PStochPX.theta)")
     #
     # Input: eta
     CImGui.SetNextItemWidth(widget_input_width)
@@ -826,5 +826,5 @@ function _acflow_stochpx_block()
         PStochPX.eta = _f
     end
     CImGui.SameLine()
-    CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(eta)$(PStochPX.eta)")
+    CImGui.TextColored(COL_MAGENTA, "(eta)$(PStochPX.eta)")
 end
