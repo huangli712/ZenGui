@@ -141,7 +141,7 @@ function _actest_general_block()
     widget_input_width = 100
     widget_combo_width = 100
 
-    CImGui.Text("Configure [Test] Part")
+    CImGui.Text("Configure [Test] Block")
 
     # Input: solver
     CImGui.SetNextItemWidth(widget_combo_width)
@@ -309,7 +309,7 @@ Setup widgets for the `solver` tab.
 """
 function _actest_solver_block()
     # It should change upon the selection of analytic continuation solver.
-    CImGui.Text("Configure [Solver] Part / Analytic Continuation Solver: $(PTEST.solver)")
+    CImGui.Text("Configure [Solver] Block / Analytic Continuation Solver: $(PTEST.solver)")
 
     @cswitch PTEST.solver begin
 

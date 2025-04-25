@@ -141,7 +141,7 @@ function _acflow_general_block()
     widget_input_width = 100
     widget_combo_width = 100
 
-    CImGui.Text("Configure [BASE] Part")
+    CImGui.Text("Configure [BASE] Block")
 
     # Input: finput
     CImGui.SetNextItemWidth(widget_input_width)
@@ -283,7 +283,7 @@ Setup widgets for the `solver` tab.
 """
 function _acflow_solver_block()
     # It should change upon the selection of analytic continuation solver.
-    CImGui.Text("Configure [$(PBASE.solver)] Part")
+    CImGui.Text("Configure [$(PBASE.solver)] Block")
 
     @cswitch PBASE.solver begin
 
