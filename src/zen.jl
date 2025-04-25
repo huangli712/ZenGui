@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/4/24
+# Last modified: 2025/4/25
 #
 
 """
@@ -200,28 +200,28 @@ function _zen_main_block()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
     #
     if CImGui.BeginTabBar("ZenTabBar", tab_bar_flags)
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(1.0,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(1.0,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_TEAL)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_TEAL)
         _zen_case_block()
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.8,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.8,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_INDIGO)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_INDIGO)
         _zen_dft_block()
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.6,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.6,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_PURPLE)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_PURPLE)
         _zen_dmft_block()
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.4,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.4,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_SALMON)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_SALMON)
         _zen_impurity_block()
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.2,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.2,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_TAN)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_TAN)
         _zen_solver_block()
         CImGui.PopStyleColor(2)
         #
