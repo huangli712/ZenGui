@@ -24,7 +24,7 @@ macro widgets_generator_dft(x)
             CImGui.InputText(" Specifications for generating projector $i", buf, length(buf))
             PDFT.sproj[i] = rstrip(buf,'\0')
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sproj_$i)$(PDFT.sproj[i])")
+            CImGui.TextColored(COL_MAGENTA, "(sproj_$i)$(PDFT.sproj[i])")
         end
         #
         # Input: window
@@ -39,7 +39,7 @@ macro widgets_generator_dft(x)
             PDFT.window[2*i-1] = vec[1]
             PDFT.window[2*i] = vec[2]
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(window_$i)$(PDFT.window[2*i-1:2*i])")
+            CImGui.TextColored(COL_MAGENTA, "(window_$i)$(PDFT.window[2*i-1:2*i])")
         end
     end
 
@@ -63,7 +63,7 @@ macro widgets_generator_impurity(x)
             CImGui.InputText(" Chemical symbols of impurity atom $i", buf, length(buf))
             PIMPURITY.atoms[i] = rstrip(buf,'\0')
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(atoms_$i)$(PIMPURITY.atoms[i])")
+            CImGui.TextColored(COL_MAGENTA, "(atoms_$i)$(PIMPURITY.atoms[i])")
         end
         #
         # Input: equiv
@@ -72,7 +72,7 @@ macro widgets_generator_impurity(x)
             @c CImGui.InputInt(" Equivalency of quantum impurity atom $i", &_i)
             PIMPURITY.equiv[i] = _i
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(equiv_$i)$(PIMPURITY.equiv[i])")
+            CImGui.TextColored(COL_MAGENTA, "(equiv_$i)$(PIMPURITY.equiv[i])")
         end
         #
         # Input: shell
@@ -82,7 +82,7 @@ macro widgets_generator_impurity(x)
             @c CImGui.Combo(" Angular momenta of correlated orbital $i", &id, shell_list)
             PIMPURITY.shell[i] = shell_list[id + 1]
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(shell_$i)$(PIMPURITY.shell[i])")
+            CImGui.TextColored(COL_MAGENTA, "(shell_$i)$(PIMPURITY.shell[i])")
         end
         #
         # Input: ising
@@ -92,7 +92,7 @@ macro widgets_generator_impurity(x)
             @c CImGui.Combo(" Interaction types of correlated orbital $i", &id, ising_list)
             PIMPURITY.ising[i] = ising_list[id + 1]
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ising_$i)$(PIMPURITY.ising[i])")
+            CImGui.TextColored(COL_MAGENTA, "(ising_$i)$(PIMPURITY.ising[i])")
         end
         #
         # Input: occup
@@ -101,7 +101,7 @@ macro widgets_generator_impurity(x)
             @c CImGui.InputDouble(" Nominal impurity occupancy $i", &_f)
             PIMPURITY.occup[i] = _f
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(occup_$i)$(PIMPURITY.occup[i])")
+            CImGui.TextColored(COL_MAGENTA, "(occup_$i)$(PIMPURITY.occup[i])")
         end
         #
         # Input: upara
@@ -110,7 +110,7 @@ macro widgets_generator_impurity(x)
             @c CImGui.InputDouble(" Coulomb interaction parameter $i", &_f)
             PIMPURITY.upara[i] = _f
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(upara_$i)$(PIMPURITY.upara[i])")
+            CImGui.TextColored(COL_MAGENTA, "(upara_$i)$(PIMPURITY.upara[i])")
         end
         #
         # Input: jpara
@@ -119,7 +119,7 @@ macro widgets_generator_impurity(x)
             @c CImGui.InputDouble(" Hund's coupling parameter $i", &_f)
             PIMPURITY.jpara[i] = _f
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(jpara_$i)$(PIMPURITY.jpara[i])")
+            CImGui.TextColored(COL_MAGENTA, "(jpara_$i)$(PIMPURITY.jpara[i])")
         end
         #
         # Input: lpara
@@ -128,7 +128,7 @@ macro widgets_generator_impurity(x)
             @c CImGui.InputDouble(" Spin-orbit coupling parameter $i", &_f)
             PIMPURITY.lpara[i] = _f
             CImGui.SameLine()
-            CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lpara_$i)$(PIMPURITY.lpara[i])")
+            CImGui.TextColored(COL_MAGENTA, "(lpara_$i)$(PIMPURITY.lpara[i])")
         end
     end
 
@@ -286,7 +286,7 @@ function _zen_case_block()
             PCASE.case = rstrip(buf,'\0')
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(case)$(PCASE.case)")
+        CImGui.TextColored(COL_MAGENTA, "(case)$(PCASE.case)")
 
         CImGui.EndTabItem()
     end
@@ -313,7 +313,7 @@ function _zen_dft_block()
             PDFT.engine = engine_list[id + 1]
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(engine)$(PDFT.engine)")
+        CImGui.TextColored(COL_MAGENTA, "(engine)$(PDFT.engine)")
         #
         # Input: projtype
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -323,7 +323,7 @@ function _zen_dft_block()
             PDFT.projtype = projtype_list[id + 1]
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(projtype)$(PDFT.projtype)")
+        CImGui.TextColored(COL_MAGENTA, "(projtype)$(PDFT.projtype)")
         #
         # Input: smear
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -333,7 +333,7 @@ function _zen_dft_block()
             PDFT.smear = smear_list[id + 1]
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(smear)$(PDFT.smear)")
+        CImGui.TextColored(COL_MAGENTA, "(smear)$(PDFT.smear)")
         #
         # Input: kmesh
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -343,7 +343,7 @@ function _zen_dft_block()
             PDFT.kmesh = kmesh_list[id + 1]
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(kmesh)$(PDFT.kmesh)")
+        CImGui.TextColored(COL_MAGENTA, "(kmesh)$(PDFT.kmesh)")
         #
         # Input: magmom
         CImGui.SetNextItemWidth(widget_input_width)
@@ -352,7 +352,7 @@ function _zen_dft_block()
             PDFT.magmom = rstrip(buf,'\0')
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(magmom)$(PDFT.magmom)")
+        CImGui.TextColored(COL_MAGENTA, "(magmom)$(PDFT.magmom)")
         #
         # Input: ncycle
         CImGui.SetNextItemWidth(widget_input_width)
@@ -361,7 +361,7 @@ function _zen_dft_block()
             PDFT.ncycle = _i
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ncycle)$(PDFT.ncycle)")
+        CImGui.TextColored(COL_MAGENTA, "(ncycle)$(PDFT.ncycle)")
         #
         # Input: lsymm
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -375,7 +375,7 @@ function _zen_dft_block()
             end
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lsymm)$(PDFT.lsymm)")
+        CImGui.TextColored(COL_MAGENTA, "(lsymm)$(PDFT.lsymm)")
         #
         # Input: lspins
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -389,7 +389,7 @@ function _zen_dft_block()
             end
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lspins)$(PDFT.lspins)")
+        CImGui.TextColored(COL_MAGENTA, "(lspins)$(PDFT.lspins)")
         #
         # Input: lspinorb
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -403,7 +403,7 @@ function _zen_dft_block()
             end
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lspinorb)$(PDFT.lspinorb)")
+        CImGui.TextColored(COL_MAGENTA, "(lspinorb)$(PDFT.lspinorb)")
         #
         # Input: lproj
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -417,7 +417,7 @@ function _zen_dft_block()
             end
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lproj)$(PDFT.lproj)")
+        CImGui.TextColored(COL_MAGENTA, "(lproj)$(PDFT.lproj)")
 
         # For the separator
         CImGui.Spacing()
@@ -456,7 +456,7 @@ function _zen_dft_block()
             fill!(PIMPURITY.lpara, PIMPURITY.lpara[1])
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nsite)$(PIMPURITY.nsite)")
+        CImGui.TextColored(COL_MAGENTA, "(nsite)$(PIMPURITY.nsite)")
 
         # For the separator
         CImGui.Spacing()
@@ -503,7 +503,7 @@ function _zen_dmft_block()
             PDMFT.mode = id + 1
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mode)$(PDMFT.mode)")
+        CImGui.TextColored(COL_MAGENTA, "(mode)$(PDMFT.mode)")
         #
         # Input: axis
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -513,7 +513,7 @@ function _zen_dmft_block()
             PDMFT.axis = id + 1
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(axis)$(PDMFT.axis)")
+        CImGui.TextColored(COL_MAGENTA, "(axis)$(PDMFT.axis)")
         #
         # Input: niter
         CImGui.SetNextItemWidth(widget_input_width)
@@ -522,7 +522,7 @@ function _zen_dmft_block()
             PDMFT.niter = _i
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(niter)$(PDMFT.niter)")
+        CImGui.TextColored(COL_MAGENTA, "(niter)$(PDMFT.niter)")
         #
         # Input: nmesh
         CImGui.SetNextItemWidth(widget_input_width)
@@ -531,7 +531,7 @@ function _zen_dmft_block()
             PDMFT.nmesh = _i
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(nmesh)$(PDMFT.nmesh)")
+        CImGui.TextColored(COL_MAGENTA, "(nmesh)$(PDMFT.nmesh)")
         #
         # Input: dcount
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -541,7 +541,7 @@ function _zen_dmft_block()
             PDMFT.dcount = dcount_list[id + 1]
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(dcount)$(PDMFT.dcount)")
+        CImGui.TextColored(COL_MAGENTA, "(dcount)$(PDMFT.dcount)")
         #
         # Input: beta
         CImGui.SetNextItemWidth(widget_input_width)
@@ -550,7 +550,7 @@ function _zen_dmft_block()
             PDMFT.beta = _f
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(beta)$(PDMFT.beta)")
+        CImGui.TextColored(COL_MAGENTA, "(beta)$(PDMFT.beta)")
         #
         # Input: mixer
         CImGui.SetNextItemWidth(widget_input_width)
@@ -564,7 +564,7 @@ function _zen_dmft_block()
             PDMFT.mixer = _f
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mixer)$(PDMFT.mixer)")
+        CImGui.TextColored(COL_MAGENTA, "(mixer)$(PDMFT.mixer)")
         #
         # Input: mc
         CImGui.SetNextItemWidth(widget_input_width)
@@ -573,7 +573,7 @@ function _zen_dmft_block()
             PDMFT.mc = _f
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(mc)$(PDMFT.mc)")
+        CImGui.TextColored(COL_MAGENTA, "(mc)$(PDMFT.mc)")
         #
         # Input: cc
         CImGui.SetNextItemWidth(widget_input_width)
@@ -582,7 +582,7 @@ function _zen_dmft_block()
             PDMFT.cc = _f
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(cc)$(PDMFT.cc)")
+        CImGui.TextColored(COL_MAGENTA, "(cc)$(PDMFT.cc)")
         #
         # Input: ec
         CImGui.SetNextItemWidth(widget_input_width)
@@ -591,7 +591,7 @@ function _zen_dmft_block()
             PDMFT.ec = _f
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ec)$(PDMFT.ec)")
+        CImGui.TextColored(COL_MAGENTA, "(ec)$(PDMFT.ec)")
         #
         # Input: sc
         CImGui.SetNextItemWidth(widget_input_width)
@@ -600,7 +600,7 @@ function _zen_dmft_block()
             PDMFT.sc = _f
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(sc)$(PDMFT.sc)")
+        CImGui.TextColored(COL_MAGENTA, "(sc)$(PDMFT.sc)")
         #
         # Input: lfermi
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -614,7 +614,7 @@ function _zen_dmft_block()
             end
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(lfermi)$(PDMFT.lfermi)")
+        CImGui.TextColored(COL_MAGENTA, "(lfermi)$(PDMFT.lfermi)")
 
         CImGui.EndTabItem()
     end
@@ -669,7 +669,7 @@ function _zen_solver_block()
             push!(PSOLVER.params, "isscr = $(id + 1)")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isscr)$(last(PSOLVER.params))")
+        CImGui.TextColored(COL_MAGENTA, "(isscr)$(last(PSOLVER.params))")
         #
         # Input: isort
         CImGui.SetNextItemWidth(widget_combo_width)
@@ -679,7 +679,7 @@ function _zen_solver_block()
             push!(PSOLVER.params, "isort = $(id + 1)")
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(isort)$(last(PSOLVER.params))")
+        CImGui.TextColored(COL_MAGENTA, "(isort)$(last(PSOLVER.params))")
     end
 
     # Widgets for the cthyb quantum impurity solver
@@ -706,7 +706,7 @@ function _zen_solver_block()
             PSOLVER.engine = engine_list[id + 1]
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(engine)$(PSOLVER.engine)")
+        CImGui.TextColored(COL_MAGENTA, "(engine)$(PSOLVER.engine)")
         #
         # Input: ncycle
         CImGui.SetNextItemWidth(widget_input_width)
@@ -715,7 +715,7 @@ function _zen_solver_block()
             PSOLVER.ncycle = _i
         end
         CImGui.SameLine()
-        CImGui.TextColored(ImVec4(1.0,0.0,1.0,1.0), "(ncycle)$(PSOLVER.ncycle)")
+        CImGui.TextColored(COL_MAGENTA, "(ncycle)$(PSOLVER.ncycle)")
 
         # For the separator
         CImGui.Spacing()
