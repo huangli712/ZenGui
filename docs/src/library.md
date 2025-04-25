@@ -62,7 +62,7 @@ _struct_to_dict
 
 ## Structs: Menu
 
-```docs
+```@docs
 CURRENT_WINDOW
 CWIN
 MenuFlags
