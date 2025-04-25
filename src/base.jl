@@ -46,7 +46,7 @@ function zeng_run()
     # When it is nothing, it means that the figure has not been loaded.
     texture_id = nothing
     CImGui.render(ctx; window_title = "ZenGui") do
-        # If texture is nothing, we should try to load the figure and
+        # If texture_id is nothing, we should try to load the figure and
         # setup the texture's id.
         if isnothing(texture_id)
             texture_id = load_texture()
@@ -104,7 +104,7 @@ end
     load_texture()
 
 Load figures from the ZenGui/src/.images directory. Note that there are
-six figures now. This function will pick one figure randomly and load it.
+12 figures now. This function will pick one figure randomly and load it.
 Finally, it will return an `ImTextureID` object which is associted with
 the selected figure.
 
@@ -114,7 +114,12 @@ function load_texture()
     # Prepare images
     #
     # Setup image list
-    img_list = ["bg1.jpg", "bg2.jpg", "bg3.jpg", "bg4.jpg", "bg5.png", "bg6.jpg"]
+    img_list = ["bg1.jpg", "bg2.jpg", "bg3.jpg",
+                "bg4.jpg", "bg5.png", "bg6.jpg",
+                "bg7.jpg", "bg8.jpg", "bg9.jpg",
+                "bg10.jpg",
+                "bg11.jpg",
+                "bg12.jpg"]
     #
     # Select one image randomly.
     img_indx = rand(MersenneTwister(), 1:length(img_list))
