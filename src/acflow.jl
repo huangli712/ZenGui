@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/24
+# Last modified: 2025/04/25
 #
 
 """
@@ -60,7 +60,7 @@ end
 Setup widgets in the top of the window for the ACFlow toolkit.
 """
 function _acflow_top_block()
-    CImGui.Text("ACFlow: A full-fledged analytic continuation toolkit in Julia")
+    CImGui.Text("ACFlow: A Full-Fledged Analytic Continuation Toolkit In Julia")
 end
 
 """
@@ -72,8 +72,8 @@ function _acflow_main_block()
     tab_bar_flags = CImGui.ImGuiTabBarFlags_None
     #
     if CImGui.BeginTabBar("ACFlowTabBar", tab_bar_flags)
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(1.0,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(1.0,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_TEAL)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_TEAL)
         if CImGui.BeginTabItem("general")
             _acflow_general_block()
             #
@@ -81,8 +81,8 @@ function _acflow_main_block()
         end
         CImGui.PopStyleColor(2)
         #
-        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, ImVec4(0.5,0.0,1.0,1.0))
-        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, ImVec4(0.5,0.0,1.0,1.0))
+        CImGui.PushStyleColor(CImGui.ImGuiCol_Tab, COL_INDIGO)
+        CImGui.PushStyleColor(CImGui.ImGuiCol_TabSelected, COL_INDIGO)
         if CImGui.BeginTabItem("solver")
             _acflow_solver_block()
             #
