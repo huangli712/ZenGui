@@ -86,6 +86,7 @@ handle_menu_dyson
 handle_menu_dfermion
 handle_menu_iqist
 handle_menu_acflow
+handle_menu_actest
 handle_menu_zengui
 ```
 
@@ -231,6 +232,7 @@ _acflow_solver_block
 _acflow_general_block
 _acflow_maxent_block
 _acflow_barrat_block
+_acflow_nevanac_block
 _acflow_stochac_block
 _acflow_stochsk_block
 _acflow_stochom_block
@@ -266,6 +268,8 @@ create_app_about
 ## Functions: Setup
 
 ```@docs
+zeng_run
+load_texture
 setup_flags
 setup_fonts
 setup_window
