@@ -512,7 +512,7 @@ end
     _build_dyson_dict()
 
 Assemble the ordered dictionary, which is then converted into `dmft.in`,
-for the Dyson code.
+for the `Dyson` code.
 
 See also: [`DYSON_PDYSON`](@ref).
 """
@@ -631,7 +631,7 @@ end
     _build_dfermion_dict()
 
 Assemble the ordered dictionary, which is then converted into `dfa.in`,
-for the DFermion code.
+for the `DFermion` code.
 
 See also: [`DFERMION_PDFERMION`](@ref).
 """
@@ -656,7 +656,7 @@ codes are `solver.ctqmc.in`, while the one for the `atomic` code is just
     IQIST_PCTSEG
 
 This struct encapsulates the parameters in the `solver.ctqmc.in` file. It
-is for the iQIST/ctseg code only.
+is for the `iQIST/ctseg` code only.
 
 See also: [`PCTSEG`](@ref).
 """
@@ -706,7 +706,7 @@ end
     IQIST_PCTHYB
 
 This struct encapsulates the parameters in the `solver.ctqmc.in` file. It
-is for the iQIST/cthyb code only.
+is for the `iQIST/cthyb` code only.
 
 See also: [`PCTHYB`](@ref).
 """
@@ -717,7 +717,7 @@ end
     IQIST_PATOMIC
 
 This struct encapsulates the parameters in the `solver.atomic.in` file. It
-is for the iQIST/atomic code only.
+is for the `iQIST/atomic` code only.
 
 See also: [`PATOMIC`](@ref).
 """
@@ -748,7 +748,7 @@ end
     _CTSEG
 
 This set records the names of modified parameters, which will be presented
-in the `solver.ctqmc.in` file. It is for the iQIST/ctseg code only.
+in the `solver.ctqmc.in` file. It is for the `iQIST/ctseg` code only.
 
 Note that not all the parameters in `IQIST_PCTSEG` will be presented in
 the `solver.ctqmc.in` file.
@@ -761,7 +761,7 @@ _CTSEG = Set{String}()
     _CTHYB
 
 This set records the names of modified parameters, which will be presented
-in the `solver.ctqmc.in` file. It is for the iQIST/cthyb code only.
+in the `solver.ctqmc.in` file. It is for the `iQIST/cthyb` code only.
 
 Note that not all the parameters in `IQIST_PCTHYB` will be presented in
 the `solver.ctqmc.in` file.
@@ -774,7 +774,7 @@ _CTHYB = Set{String}()
     _ATOMIC
 
 This set records the names of modified parameters, which will be presented
-in the `solver.atomic.in` file. It is for the iQIST/atomic code only.
+in the `solver.atomic.in` file. It is for the `iQIST/atomic` code only.
 
 Note that not all the parameters in `IQIST_PATOMIC` will be presented in
 the `solver.atomic.in` file.
@@ -975,8 +975,8 @@ end
     _build_iqist_dict()
 
 Assemble the ordered dictionary, which is then converted into
-`solver.ctqmc.in` or `solver.atomic.in` file for the ctseg, cthyb, and
-atomic codes.
+`solver.ctqmc.in` or `solver.atomic.in` file for the `ctseg`, `cthyb`,
+and `atomic` codes.
 """
 function _build_iqist_dict(solver::String)
     @cswitch solver begin
@@ -1433,7 +1433,7 @@ end
     _build_acflow_dict()
 
 Assemble the ordered dictionary, which is then converted into `ac.toml`,
-for the ACFlow toolkit.
+for the `ACFlow` toolkit.
 """
 function _build_acflow_dict()
     @cswitch PBASE.solver begin
@@ -1587,7 +1587,7 @@ end
     _build_actest_dict()
 
 Assemble the ordered dictionary, which is then converted into `act.toml`,
-for the ACTest toolkit.
+for the `ACTest` toolkit.
 """
 function _build_actest_dict()
     @cswitch PTEST.solver begin
