@@ -75,6 +75,7 @@ set_menu_help
 handle_menu_dark
 handle_menu_classic
 handle_menu_light
+handle_menu_dfermion
 handle_menu_iqist
 handle_menu_acflow
 handle_menu_zengui
@@ -139,6 +140,7 @@ _dfermion_main_block
 _dfermion_bottom_block
 _dfermion_model_block
 _dfermion_kmesh_block
+_build_dfermion_dict
 ```
 
 ## Structs: iQIST
@@ -150,6 +152,7 @@ IQIST_PATOMIC
 _CTSEG
 _CTHYB
 _ATOMIC
+PCTSEG
 PCTHYB
 PATOMIC
 ```
@@ -159,17 +162,21 @@ PATOMIC
 ```@docs
 create_app_ctseg
 create_app_cthyb
+create_app_atomic
 _ctseg_top_block
 _ctseg_main_block
 _ctseg_bottom_block
 _ctseg_model_block
 _ctseg_represent_block
 _ctseg_measure_block
+_ctseg_monte_block
 _ctseg_cycle_block
 _atomic_top_block
 _atomic_main_block
+_atomic_bottom_block
 _atomic_model_block
 _atomic_interaction_block
+_atomic_algorithm_block
 ```
 
 ## Structs: ACFlow
@@ -183,15 +190,19 @@ ACFLOW_PStochAC
 ACFLOW_PStochSK
 ACFLOW_PStochOM
 ACFLOW_PStochPX
+PBASE
 PMaxEnt
 PBarRat
 PNevanAC
 PStochAC
+PStochOM
 ```
 
 ## Widgets: ACFlow
 
 ```@docs
+_acflow_top_block
+_acflow_main_block
 _acflow_bottom_block
 _acflow_solver_block
 _acflow_general_block
@@ -205,6 +216,7 @@ _build_acflow_dict
 ## Structs: ACTest
 
 ```@docs
+ACTEST_PTEST
 ```
 
 ## Widgets: ACTest
@@ -226,6 +238,7 @@ create_app_about
 ## Functions: Setup
 
 ```@docs
+setup_flags
 setup_fonts
 setup_window
 setup_background
@@ -237,4 +250,8 @@ setup_background
 save_zen
 save_dfermion
 save_ctseg
+save_cthyb
+save_atomic
+save_acflow
+save_nothing
 ```
