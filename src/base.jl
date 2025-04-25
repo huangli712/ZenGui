@@ -211,12 +211,12 @@ end
     setup_background(texture_id)
 
 Setup the background image for this app. `texture_id` is an `ImTextureID`
-object. which is provided by `load_texture()`.
+object. which is initialized by `load_texture()`.
 
 See also: [`load_texture`](@ref).
 """
 function setup_background(texture_id)
-    # Get default viewpoint, determine its size nd position.
+    # Get default viewpoint, determine its size and position.
     viewport = unsafe_load(CImGui.GetMainViewport())
     pos = viewport.Pos
     size = viewport.Size
@@ -332,6 +332,8 @@ end
 
 Respond the menu event: classic. Change the appearance of graphic user
 interface to classic style.
+
+See also: [`setup_window`](@ref).
 """
 function handle_menu_classic(p_open::Ref{Bool})
     CImGui.StyleColorsClassic()
@@ -344,6 +346,8 @@ end
 
 Respond the menu event: dark. Change the appearance of graphic user
 interface to dark style. Note that the defalt style is dark.
+
+See also: [`setup_window`](@ref).
 """
 function handle_menu_dark(p_open::Ref{Bool})
     CImGui.StyleColorsDark()
@@ -356,6 +360,8 @@ end
 
 Respond the menu event: light. Change the appearance of graphic user
 interface to light style.
+
+See also: [`setup_window`](@ref).
 """
 function handle_menu_light(p_open::Ref{Bool})
     CImGui.StyleColorsLight()
