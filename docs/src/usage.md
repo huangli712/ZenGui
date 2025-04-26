@@ -30,7 +30,7 @@ Please use the menu group *Edit*. For example, if we want to configure the *Zen*
 
 **Figure 2 |** The GUI for the *Zen* package.
 
-At this window, we can setup the parameters for the *Zen* package easily. Be careful, there are five tabs in this window. They are related to the five blocks in the configuration file for the *Zen* package. So please click them one by one, and check whether all of the parameters are reasonable and valid. If you want to have a look at the configuration file, please click the *View* button at the bottom of this window. Then ZenGui will popup a new ``Preview'' window. It looks like as follows (See **Figure 3**):
+At this window, we can setup the parameters for the *Zen* package easily. Be careful, there are five tabs in this window. They are related to the five blocks in the configuration file for the *Zen* package. So please click them one by one, and check whether all of the parameters are reasonable and valid. If you want to have a look at the configuration file, please click the *View* button at the bottom of this window. Then ZenGui will popup a new ``Preview'' window. It looks like as follows (see **Figure 3**):
 
 ![fig3.png](./assets/fig3.png)
 
@@ -42,4 +42,4 @@ Well, if every parameters is correctly setup. Now we can try to generate the con
 
 At first, please make sure that the window for the code is activated (on front of any other windows). This is quite important.
 
-Second, please click the menu *File -> Save*. 
+Second, please click the menu *File -> Save*. Then a new window is shown (see **Figure 4**). It tells us the path for the generated configuration file. Please click the *Save It* button. Then you can find the generated configuration file in the current directory.
