@@ -227,7 +227,7 @@ PStochPX        -> An instance for the `ACFLOW_PStochPX` struct.
 ACTEST_PTEST    -> It represents the `[Test]` block in the `act.toml` file.
 PTEST           -> An instance for the `ACTEST_PTEST` struct.
 #
-struct_do_dict      -> Convert a struct to an ordered dictionary.
+struct_to_dict      -> Convert a struct to an ordered dictionary.
 #
 build_zen_dict      -> Assemble dictionary for the Zen package.
 build_dyson_dict    -> Assemble dictionary for the Dyson code.
@@ -296,7 +296,7 @@ export PStochPX
 export ACTEST_PTEST
 export PTEST
 #
-export struct_do_dict
+export struct_to_dict
 #
 export build_zen_dict
 export build_dyson_dict
