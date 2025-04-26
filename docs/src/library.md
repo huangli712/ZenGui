@@ -122,7 +122,7 @@ _zen_dft_block
 _zen_dmft_block
 _zen_impurity_block
 _zen_solver_block
-_build_zen_dict
+build_zen_dict
 ```
 
 ## Structs: Dyson
@@ -140,7 +140,7 @@ create_app_dyson
 _dyson_top_block
 _dyson_main_block
 _dyson_bottom_block
-_build_dyson_dict
+build_dyson_dict
 ```
 
 ## Structs: DFermion
@@ -162,7 +162,7 @@ _dfermion_model_block
 _dfermion_dimension_block
 _dfermion_kmesh_block
 _dfermion_cycle_block
-_build_dfermion_dict
+build_dfermion_dict
 ```
 
 ## Structs: iQIST
@@ -202,7 +202,7 @@ _atomic_model_block
 _atomic_interaction_block
 _atomic_natural_block
 _atomic_algorithm_block
-_build_iqist_dict
+build_iqist_dict
 ```
 
 ## Structs: ACFlow
@@ -242,7 +242,7 @@ _acflow_stochac_block
 _acflow_stochsk_block
 _acflow_stochom_block
 _acflow_stochpx_block
-_build_acflow_dict
+build_acflow_dict
 ```
 
 ## Structs: ACTest
@@ -261,7 +261,7 @@ _actest_main_block
 _actest_bottom_block
 _actest_general_block
 _actest_solver_block
-_build_actest_dict
+build_actest_dict
 ```
 
 ## Widgets: About
