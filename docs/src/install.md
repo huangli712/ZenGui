@@ -29,9 +29,23 @@ It should be a compresed file (`ZenGui.tar.gz`). Please uncompress it in your fa
 In MacOS, you can accomplish this by execute the following command in the terminal:
 
 ```shell
-export ZEN_GUI=/home/your_home/zengui/src
+$ export ZEN_GUI=/home/your_home/zengui/src
 ```
 
-Of course, you can put this command into the `.profile` or `.bashrc` file, such that the OS can execute it automatically.
+Of course, you can put this command into the `.profile` or `.bashrc` file, such that the OS can execute it automatically when it is rebooted next time.
 
 ## Documentation
+
+The official documentation for ZenGui is at the following website:
+
+```text
+https://huangli712.github.io/projects/zengui/index.html
+```
+
+Sometimes, users might want to generate the documentation by themselves. Please go to the directory *zengui/docs*, and execute the following command in the terminal:
+
+```shell
+$ julia make.jl
+```
+
+If everything is OK, you can find the documentation is generated in *zengui/docs/build*.
