@@ -46,18 +46,20 @@ __LIBNAME__
 __VERSION__
 __RELEASE__
 __AUTHORS__
+authors
 ```
 
-## Utilities
+## General Macros
 
 ```@docs
 @cswitch
-authors
+```
+
+## General Utilities
+
+```@docs
 sorry
 open_url
-dict_to_toml
-dict_to_ini
-_struct_to_dict
 ```
 
 ## Structs: Menu
@@ -231,8 +233,8 @@ create_app_acflow
 _acflow_top_block
 _acflow_main_block
 _acflow_bottom_block
-_acflow_solver_block
 _acflow_general_block
+_acflow_solver_block
 _acflow_maxent_block
 _acflow_barrat_block
 _acflow_nevanac_block
@@ -268,10 +270,17 @@ _build_actest_dict
 create_app_about
 ```
 
+## Functions: Utilities
+
+```@docs
+dict_to_toml
+dict_to_ini
+struct_to_dict
+```
+
 ## Functions: Setup
 
 ```@docs
-zeng_run
 load_texture
 setup_flags
 setup_fonts
@@ -291,4 +300,10 @@ save_atomic
 save_acflow
 save_actest
 save_nothing
+```
+
+## Functions: Main
+
+```@docs
+zeng_run
 ```
