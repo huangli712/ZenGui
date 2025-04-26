@@ -38,3 +38,4 @@ At this window, we can setup the parameters for the *Zen* package easily. Be car
 
 ## Save configure files
 
+Well, if every parameters is correctly setup. Now we can try to generate the configuration file and save it.
