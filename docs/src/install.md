@@ -48,4 +48,4 @@ Sometimes, users might want to generate the documentation by themselves. Please 
 $ julia make.jl
 ```
 
-If everything is OK, you can find the documentation is generated in *zengui/docs/build*.
+If everything is OK, you can find the generated documentation at the folder *zengui/docs/build*.
