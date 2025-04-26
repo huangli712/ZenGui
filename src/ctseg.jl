@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/25
+# Last modified: 2025/04/26
 #
 
 """
@@ -128,7 +128,7 @@ function _ctseg_bottom_block(p_open::Ref{Bool})
     #
     if CImGui.BeginPopupModal("View solver.ctqmc.in", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
         @cstatic text="Hello World!" begin
-            text = dict_to_ini(_build_iqist_dict("ctseg"))
+            text = dict_to_ini(build_iqist_dict("ctseg"))
             flags = CImGui.ImGuiInputTextFlags_ReadOnly
             flags = CImGui.ImGuiInputTextFlags_AllowTabInput | flags
             CImGui.InputTextMultiline("##source", text, 10000, ImVec2(400, 600), flags)

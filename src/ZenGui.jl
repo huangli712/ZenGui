@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/25
+# Last modified: 2025/04/26
 #
 
 """
@@ -227,14 +227,14 @@ PStochPX        -> An instance for the `ACFLOW_PStochPX` struct.
 ACTEST_PTEST    -> It represents the `[Test]` block in the `act.toml` file.
 PTEST           -> An instance for the `ACTEST_PTEST` struct.
 #
-_struct_to_dict      -> Convert a struct to an ordered dictionary.
+struct_do_dict      -> Convert a struct to an ordered dictionary.
 #
-_build_zen_dict      -> Assemble dictionary for the Zen package.
-_build_dyson_dict    -> Assemble dictionary for the Dyson code.
-_build_dfermion_dict -> Assemble dictionary for the DFermion code.
-_build_iqist_dict    -> Assemble dictionary for the iQIST package.
-_build_acflow_dict   -> Assemble dictionary for the ACFlow toolkit.
-_build_actest_dict   -> Assemble dictionary for the ACTest toolkit.
+build_zen_dict      -> Assemble dictionary for the Zen package.
+build_dyson_dict    -> Assemble dictionary for the Dyson code.
+build_dfermion_dict -> Assemble dictionary for the DFermion code.
+build_iqist_dict    -> Assemble dictionary for the iQIST package.
+build_acflow_dict   -> Assemble dictionary for the ACFlow toolkit.
+build_actest_dict   -> Assemble dictionary for the ACTest toolkit.
 ```
 =#
 
@@ -296,14 +296,14 @@ export PStochPX
 export ACTEST_PTEST
 export PTEST
 #
-export _struct_to_dict
+export struct_do_dict
 #
-export _build_zen_dict
-export _build_dyson_dict
-export _build_dfermion_dict
-export _build_iqist_dict
-export _build_acflow_dict
-export _build_actest_dict
+export build_zen_dict
+export build_dyson_dict
+export build_dfermion_dict
+export build_iqist_dict
+export build_acflow_dict
+export build_actest_dict
 
 #=
 ### *Includes And Exports* : *save.jl*

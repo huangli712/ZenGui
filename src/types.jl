@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/25
+# Last modified: 2025/04/26
 #
 
 #=
@@ -326,26 +326,26 @@ PSOLVER = ZEN_PSOLVER(
 )
 
 """
-    _struct_to_dict(s::ZEN_PCASE)
+    struct_do_dict(s::ZEN_PCASE)
 
 Convert a struct to an ordered dictionary (for `ZEN_PCASE`).
 
 See [`ZEN_PCASE`](@ref).
 """
-function _struct_to_dict(s::ZEN_PCASE)
+function struct_do_dict(s::ZEN_PCASE)
     return OrderedDict{String,Any}(
         "case" => s.case,
     )
 end
 
 """
-    _struct_to_dict(s::ZEN_PDFT)
+    struct_do_dict(s::ZEN_PDFT)
 
 Convert a struct to an ordered dictionary (for `ZEN_PDFT`).
 
 See [`ZEN_PDFT`](@ref).
 """
-function _struct_to_dict(s::ZEN_PDFT)
+function struct_do_dict(s::ZEN_PDFT)
     return OrderedDict{String,Any}(
         "engine"   => s.engine,
         "projtype" => s.projtype,
@@ -363,13 +363,13 @@ function _struct_to_dict(s::ZEN_PDFT)
 end
 
 """
-    _struct_to_dict(s::ZEN_PDMFT)
+    struct_do_dict(s::ZEN_PDMFT)
 
 Convert a struct to an ordered dictionary (for `ZEN_PDMFT`).
 
 See [`ZEN_PDMFT`](@ref).
 """
-function _struct_to_dict(s::ZEN_PDMFT)
+function struct_do_dict(s::ZEN_PDMFT)
     return OrderedDict{String,Any}(
         "mode"     => s.mode,
         "axis"     => s.axis,
@@ -387,13 +387,13 @@ function _struct_to_dict(s::ZEN_PDMFT)
 end
 
 """
-    _struct_to_dict(s::ZEN_PIMPURITY)
+    struct_do_dict(s::ZEN_PIMPURITY)
 
 Convert a struct to an ordered dictionary (for `ZEN_PIMPURITY`).
 
 See [`ZEN_PIMPURITY`](@ref).
 """
-function _struct_to_dict(s::ZEN_PIMPURITY)
+function struct_do_dict(s::ZEN_PIMPURITY)
     return OrderedDict{String,Any}(
         "nsite"    => s.nsite,
         "atoms"    => s.atoms,
@@ -408,13 +408,13 @@ function _struct_to_dict(s::ZEN_PIMPURITY)
 end
 
 """
-    _struct_to_dict(s::ZEN_PSOLVER)
+    struct_do_dict(s::ZEN_PSOLVER)
 
 Convert a struct to an ordered dictionary (for `ZEN_PSOLVER`).
 
 See [`ZEN_PSOLVER`](@ref).
 """
-function _struct_to_dict(s::ZEN_PSOLVER)
+function struct_do_dict(s::ZEN_PSOLVER)
     return OrderedDict{String,Any}(
         "engine"   => s.engine,
         "ncycle"   => s.ncycle,
@@ -423,18 +423,18 @@ function _struct_to_dict(s::ZEN_PSOLVER)
 end
 
 """
-    _build_zen_dict()
+    build_zen_dict()
 
 Assemble the ordered dictionary, which is then converted into `case.toml`,
 for the `Zen` package.
 """
-function _build_zen_dict()
+function build_zen_dict()
     return OrderedDict{String,Any}(
-        "case" => _struct_to_dict(PCASE)["case"],
-        "dft" => _struct_to_dict(PDFT),
-        "dmft" => _struct_to_dict(PDMFT),
-        "impurity" => _struct_to_dict(PIMPURITY),
-        "solver" => _struct_to_dict(PSOLVER)
+        "case" => struct_do_dict(PCASE)["case"],
+        "dft" => struct_do_dict(PDFT),
+        "dmft" => struct_do_dict(PDMFT),
+        "impurity" => struct_do_dict(PIMPURITY),
+        "solver" => struct_do_dict(PSOLVER)
     )
 end
 
@@ -493,13 +493,13 @@ PDYSON = DYSON_PDYSON(
 )
 
 """
-    _struct_to_dict(s::DYSON_PDYSON)
+    struct_do_dict(s::DYSON_PDYSON)
 
 Convert a struct to an ordered dictionary (for `DYSON_PDYSON`).
 
 See also: [`DYSON_PDYSON`](@ref).
 """
-function _struct_to_dict(s::DYSON_PDYSON)
+function struct_do_dict(s::DYSON_PDYSON)
     OD = OrderedDict{String,Any}()
     #
     "task"   ∈ _DYSON && ( OD["task"]   = s.task   )
@@ -513,15 +513,15 @@ function _struct_to_dict(s::DYSON_PDYSON)
 end
 
 """
-    _build_dyson_dict()
+    build_dyson_dict()
 
 Assemble the ordered dictionary, which is then converted into `dmft.in`,
 for the `Dyson` code.
 
 See also: [`DYSON_PDYSON`](@ref).
 """
-function _build_dyson_dict()
-    return _struct_to_dict(PDYSON)
+function build_dyson_dict()
+    return struct_do_dict(PDYSON)
 end
 
 #=
@@ -601,13 +601,13 @@ PDFERMION = DFERMION_PDFERMION(
 )
 
 """
-    _struct_to_dict(s::DFERMION_PDFERMION)
+    struct_do_dict(s::DFERMION_PDFERMION)
 
 Convert a struct to an ordered dictionary (for `DFERMION_PDFERMION`).
 
 See also: [`DFERMION_PDFERMION`](@ref).
 """
-function _struct_to_dict(s::DFERMION_PDFERMION)
+function struct_do_dict(s::DFERMION_PDFERMION)
     OD = OrderedDict{String,Any}()
     #
     "isdia" ∈ _DFERMION && ( OD["isdia"] = s.isdia )
@@ -632,15 +632,15 @@ function _struct_to_dict(s::DFERMION_PDFERMION)
 end
 
 """
-    _build_dfermion_dict()
+    build_dfermion_dict()
 
 Assemble the ordered dictionary, which is then converted into `dfa.in`,
 for the `DFermion` code.
 
 See also: [`DFERMION_PDFERMION`](@ref).
 """
-function _build_dfermion_dict()
-    return _struct_to_dict(PDFERMION)
+function build_dfermion_dict()
+    return struct_do_dict(PDFERMION)
 end
 
 #=
@@ -876,13 +876,13 @@ PATOMIC = IQIST_PATOMIC(
 )
 
 """
-    _struct_to_dict(s::IQIST_PCTSEG)
+    struct_do_dict(s::IQIST_PCTSEG)
 
 Convert a struct to an ordered dictionary (for `IQIST_PCTSEG`).
 
 See [`IQIST_PCTSEG`](@ref).
 """
-function _struct_to_dict(s::IQIST_PCTSEG)
+function struct_do_dict(s::IQIST_PCTSEG)
     OD = OrderedDict{String,Any}()
     #
     "isscf"  ∈ _CTSEG && ( OD["isscf"]  = s.isscf  )
@@ -929,26 +929,26 @@ function _struct_to_dict(s::IQIST_PCTSEG)
 end
 
 """
-    _struct_to_dict(s::IQIST_PCTHYB)
+    struct_do_dict(s::IQIST_PCTHYB)
 
 Convert a struct to an ordered dictionary (for `IQIST_PCTHYB`).
 
 See [`IQIST_PCTHYB`](@ref).
 """
-function _struct_to_dict(s::IQIST_PCTHYB)
+function struct_do_dict(s::IQIST_PCTHYB)
     return OrderedDict{String,Any}(
         "key" => "value",
     )
 end
 
 """
-    _struct_to_dict(s::IQIST_PATOMIC)
+    struct_do_dict(s::IQIST_PATOMIC)
 
 Convert a struct to an ordered dictionary (for `IQIST_PATOMIC`).
 
 See [`IQIST_PATOMIC`](@ref).
 """
-function _struct_to_dict(s::IQIST_PATOMIC)
+function struct_do_dict(s::IQIST_PATOMIC)
     OD = OrderedDict{String,Any}()
     #
     "ibasis" ∈ _ATOMIC && ( OD["ibasis"] = s.ibasis )
@@ -976,25 +976,25 @@ function _struct_to_dict(s::IQIST_PATOMIC)
 end
 
 """
-    _build_iqist_dict()
+    build_iqist_dict()
 
 Assemble the ordered dictionary, which is then converted into
 `solver.ctqmc.in` or `solver.atomic.in` file for the `ctseg`, `cthyb`,
 and `atomic` codes.
 """
-function _build_iqist_dict(solver::String)
+function build_iqist_dict(solver::String)
     @cswitch solver begin
 
         @case "ctseg"
-            return _struct_to_dict(PCTSEG)
+            return struct_do_dict(PCTSEG)
             break
 
         @case "cthyb"
-            return _struct_to_dict(PCTHYB)
+            return struct_do_dict(PCTHYB)
             break
 
         @case "atomic"
-            return _struct_to_dict(PATOMIC)
+            return struct_do_dict(PATOMIC)
             break
 
         @default
@@ -1279,13 +1279,13 @@ PStochPX = ACFLOW_PStochPX(
 )
 
 """
-    _struct_to_dict(s::ACFLOW_PBASE)
+    struct_do_dict(s::ACFLOW_PBASE)
 
 Convert a struct to an ordered dictionary (for `ACFLOW_PBASE`).
 
 See [`ACFLOW_PBASE`](@ref).
 """
-function _struct_to_dict(s::ACFLOW_PBASE)
+function struct_do_dict(s::ACFLOW_PBASE)
     return OrderedDict{String,Any}(
         "finput"  => s.finput,
         "solver"  => s.solver,
@@ -1304,13 +1304,13 @@ function _struct_to_dict(s::ACFLOW_PBASE)
 end
 
 """
-    _struct_to_dict(s::ACFLOW_PMaxEnt)
+    struct_do_dict(s::ACFLOW_PMaxEnt)
 
 Convert a struct to an ordered dictionary (for `ACFLOW_PMaxEnt`).
 
 See [`ACFLOW_PMaxEnt`](@ref).
 """
-function _struct_to_dict(s::ACFLOW_PMaxEnt)
+function struct_do_dict(s::ACFLOW_PMaxEnt)
     return OrderedDict{String,Any}(
         "method" => s.method,
         "stype"  => s.stype,
@@ -1322,13 +1322,13 @@ function _struct_to_dict(s::ACFLOW_PMaxEnt)
 end
 
 """
-    _struct_to_dict(s::ACFLOW_PBarRat)
+    struct_do_dict(s::ACFLOW_PBarRat)
 
 Convert a struct to an ordered dictionary (for `ACFLOW_PBarRat`).
 
 See [`ACFLOW_PBarRat`](@ref).
 """
-function _struct_to_dict(s::ACFLOW_PBarRat)
+function struct_do_dict(s::ACFLOW_PBarRat)
     return OrderedDict{String,Any}(
         "atype"   => s.atype,
         "denoise" => s.denoise,
@@ -1339,13 +1339,13 @@ function _struct_to_dict(s::ACFLOW_PBarRat)
 end
 
 """
-    _struct_to_dict(s::ACFLOW_PNevanAC)
+    struct_do_dict(s::ACFLOW_PNevanAC)
 
 Convert a struct to an ordered dictionary (for `ACFLOW_PNevanAC`).
 
 See [`ACFLOW_PNevanAC`](@ref).
 """
-function _struct_to_dict(s::ACFLOW_PNevanAC)
+function struct_do_dict(s::ACFLOW_PNevanAC)
     return OrderedDict{String,Any}(
         "pick"    => s.pick,
         "hardy"   => s.hardy,
@@ -1356,13 +1356,13 @@ function _struct_to_dict(s::ACFLOW_PNevanAC)
 end
 
 """
-    _struct_to_dict(s::ACFLOW_PStochAC)
+    struct_do_dict(s::ACFLOW_PStochAC)
 
 Convert a struct to an ordered dictionary (for `ACFLOW_PStochAC`).
 
 See [`ACFLOW_PStochAC`](@ref).
 """
-function _struct_to_dict(s::ACFLOW_PStochAC)
+function struct_do_dict(s::ACFLOW_PStochAC)
     return OrderedDict{String,Any}(
         "nfine"   => s.nfine,
         "ngamm"   => s.ngamm,
@@ -1376,13 +1376,13 @@ function _struct_to_dict(s::ACFLOW_PStochAC)
 end
 
 """
-    _struct_to_dict(s::ACFLOW_PStochSK)
+    struct_do_dict(s::ACFLOW_PStochSK)
 
 Convert a struct to an ordered dictionary (for `ACFLOW_PStochSK`).
 
 See [`ACFLOW_PStochSK`](@ref).
 """
-function _struct_to_dict(s::ACFLOW_PStochSK)
+function struct_do_dict(s::ACFLOW_PStochSK)
     return OrderedDict{String,Any}(
         "method"  => s.method,
         "nfine"   => s.nfine,
@@ -1397,13 +1397,13 @@ function _struct_to_dict(s::ACFLOW_PStochSK)
 end
 
 """
-    _struct_to_dict(s::ACFLOW_PStochOM)
+    struct_do_dict(s::ACFLOW_PStochOM)
 
 Convert a struct to an ordered dictionary (for `ACFLOW_PStochOM`).
 
 See [`ACFLOW_PStochOM`](@ref).
 """
-function _struct_to_dict(s::ACFLOW_PStochOM)
+function struct_do_dict(s::ACFLOW_PStochOM)
     return OrderedDict{String,Any}(
         "ntry"    => s.ntry,
         "nstep"   => s.nstep,
@@ -1415,13 +1415,13 @@ function _struct_to_dict(s::ACFLOW_PStochOM)
 end
 
 """
-    _struct_to_dict(s::ACFLOW_PStochPX)
+    struct_do_dict(s::ACFLOW_PStochPX)
 
 Convert a struct to an ordered dictionary (for `ACFLOW_PStochPX`).
 
 See [`ACFLOW_PStochPX`](@ref).
 """
-function _struct_to_dict(s::ACFLOW_PStochPX)
+function struct_do_dict(s::ACFLOW_PStochPX)
     return OrderedDict{String,Any}(
         "method"  => s.method,
         "nfine"   => s.nfine,
@@ -1434,60 +1434,60 @@ function _struct_to_dict(s::ACFLOW_PStochPX)
 end
 
 """
-    _build_acflow_dict()
+    build_acflow_dict()
 
 Assemble the ordered dictionary, which is then converted into `ac.toml`,
 for the `ACFlow` toolkit.
 """
-function _build_acflow_dict()
+function build_acflow_dict()
     @cswitch PBASE.solver begin
 
         @case "MaxEnt"
             return OrderedDict{String,Any}(
-                "BASE" => _struct_to_dict(PBASE),
-                "MaxEnt" => _struct_to_dict(PMaxEnt)
+                "BASE" => struct_do_dict(PBASE),
+                "MaxEnt" => struct_do_dict(PMaxEnt)
             )
             break
 
         @case "BarRat"
             return OrderedDict{String,Any}(
-                "BASE" => _struct_to_dict(PBASE),
-                "BarRat" => _struct_to_dict(PBarRat)
+                "BASE" => struct_do_dict(PBASE),
+                "BarRat" => struct_do_dict(PBarRat)
             )
             break
 
         @case "NevanAC"
             return OrderedDict{String,Any}(
-                "BASE" => _struct_to_dict(PBASE),
-                "NevanAC" => _struct_to_dict(PNevanAC)
+                "BASE" => struct_do_dict(PBASE),
+                "NevanAC" => struct_do_dict(PNevanAC)
             )
             break
 
         @case "StochAC"
             return OrderedDict{String,Any}(
-                "BASE" => _struct_to_dict(PBASE),
-                "StochAC" => _struct_to_dict(PStochAC)
+                "BASE" => struct_do_dict(PBASE),
+                "StochAC" => struct_do_dict(PStochAC)
             )
             break
 
         @case "StochSK"
             return OrderedDict{String,Any}(
-                "BASE" => _struct_to_dict(PBASE),
-                "StochSK" => _struct_to_dict(PStochSK)
+                "BASE" => struct_do_dict(PBASE),
+                "StochSK" => struct_do_dict(PStochSK)
             )
             break
 
         @case "StochOM"
             return OrderedDict{String,Any}(
-                "BASE" => _struct_to_dict(PBASE),
-                "StochOM" => _struct_to_dict(PStochOM)
+                "BASE" => struct_do_dict(PBASE),
+                "StochOM" => struct_do_dict(PStochOM)
             )
             break
 
         @case "StochPX"
             return OrderedDict{String,Any}(
-                "BASE" => _struct_to_dict(PBASE),
-                "StochPX" => _struct_to_dict(PStochPX)
+                "BASE" => struct_do_dict(PBASE),
+                "StochPX" => struct_do_dict(PStochPX)
             )
             break
 
@@ -1560,13 +1560,13 @@ PTEST = ACTEST_PTEST(
 )
 
 """
-    _struct_to_dict(s::ACTEST_PTEST)
+    struct_do_dict(s::ACTEST_PTEST)
 
 Convert a struct to an ordered dictionary (for `ACTEST_PTEST`).
 
 See [`ACTEST_PTEST`](@ref).
 """
-function _struct_to_dict(s::ACTEST_PTEST)
+function struct_do_dict(s::ACTEST_PTEST)
     return OrderedDict{String,Any}(
         "solver"  => s.solver,
         "ptype"   => s.ptype,
@@ -1588,60 +1588,60 @@ function _struct_to_dict(s::ACTEST_PTEST)
 end
 
 """
-    _build_actest_dict()
+    build_actest_dict()
 
 Assemble the ordered dictionary, which is then converted into `act.toml`,
 for the `ACTest` toolkit.
 """
-function _build_actest_dict()
+function build_actest_dict()
     @cswitch PTEST.solver begin
 
         @case "MaxEnt"
             return OrderedDict{String,Any}(
-                "Test" => _struct_to_dict(PTEST),
-                "Solver" => _struct_to_dict(PMaxEnt)
+                "Test" => struct_do_dict(PTEST),
+                "Solver" => struct_do_dict(PMaxEnt)
             )
             break
 
         @case "BarRat"
             return OrderedDict{String,Any}(
-                "Test" => _struct_to_dict(PTEST),
-                "Solver" => _struct_to_dict(PBarRat)
+                "Test" => struct_do_dict(PTEST),
+                "Solver" => struct_do_dict(PBarRat)
             )
             break
 
         @case "NevanAC"
             return OrderedDict{String,Any}(
-                "Test" => _struct_to_dict(PTEST),
-                "Solver" => _struct_to_dict(PNevanAC)
+                "Test" => struct_do_dict(PTEST),
+                "Solver" => struct_do_dict(PNevanAC)
             )
             break
 
         @case "StochAC"
             return OrderedDict{String,Any}(
-                "Test" => _struct_to_dict(PTEST),
-                "Solver" => _struct_to_dict(PStochAC)
+                "Test" => struct_do_dict(PTEST),
+                "Solver" => struct_do_dict(PStochAC)
             )
             break
 
         @case "StochSK"
             return OrderedDict{String,Any}(
-                "Test" => _struct_to_dict(PTEST),
-                "Solver" => _struct_to_dict(PStochSK)
+                "Test" => struct_do_dict(PTEST),
+                "Solver" => struct_do_dict(PStochSK)
             )
             break
 
         @case "StochOM"
             return OrderedDict{String,Any}(
-                "Test" => _struct_to_dict(PTEST),
-                "Solver" => _struct_to_dict(PStochOM)
+                "Test" => struct_do_dict(PTEST),
+                "Solver" => struct_do_dict(PStochOM)
             )
             break
 
         @case "StochPX"
             return OrderedDict{String,Any}(
-                "Test" => _struct_to_dict(PTEST),
-                "Solver" => _struct_to_dict(PStochPX)
+                "Test" => struct_do_dict(PTEST),
+                "Solver" => struct_do_dict(PStochPX)
             )
             break
 

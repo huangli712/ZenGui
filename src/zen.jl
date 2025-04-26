@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/4/25
+# Last modified: 2025/4/26
 #
 
 """
@@ -246,7 +246,7 @@ function _zen_bottom_block(p_open::Ref{Bool})
     #
     if CImGui.BeginPopupModal("View case.toml", C_NULL, CImGui.ImGuiWindowFlags_AlwaysAutoResize)
         @cstatic text="Hello World!" begin
-            text = dict_to_toml(_build_zen_dict())
+            text = dict_to_toml(build_zen_dict())
             flags = CImGui.ImGuiInputTextFlags_ReadOnly
             flags = CImGui.ImGuiInputTextFlags_AllowTabInput | flags
             CImGui.InputTextMultiline("##source", text, 10000, ImVec2(400, 600), flags)

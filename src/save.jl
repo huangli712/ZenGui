@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/25
+# Last modified: 2025/04/26
 #
 
 """
@@ -29,7 +29,7 @@ function save_zen(p_open::Ref{Bool})
     if CImGui.Button("Save It")
         p_open[] = false
         #
-        D = _build_zen_dict()
+        D = build_zen_dict()
         open("case.toml", "w") do fout
             TOML.print(fout, D)
         end
@@ -61,7 +61,7 @@ function save_dyson(p_open::Ref{Bool})
     if CImGui.Button("Save It")
         p_open[] = false
         #
-        D = _build_dyson_dict()
+        D = build_dyson_dict()
         open("dmft.in", "w") do fout
             for (key, value) in D
                 println(fout, "$key = $value")
@@ -95,7 +95,7 @@ function save_dfermion(p_open::Ref{Bool})
     if CImGui.Button("Save It")
         p_open[] = false
         #
-        D = _build_dfermion_dict()
+        D = build_dfermion_dict()
         open("dfa.in", "w") do fout
             for (key, value) in D
                 println(fout, "$key = $value")
@@ -129,7 +129,7 @@ function save_ctseg(p_open::Ref{Bool})
     if CImGui.Button("Save It")
         p_open[] = false
         #
-        D = _build_iqist_dict("ctseg")
+        D = build_iqist_dict("ctseg")
         open("solver.ctqmc.in", "w") do fout
             for (key, value) in D
                 println(fout, "$key = $value")
@@ -163,7 +163,7 @@ function save_cthyb(p_open::Ref{Bool})
     if CImGui.Button("Save It")
         p_open[] = false
         #
-        D = _build_iqist_dict("cthyb")
+        D = build_iqist_dict("cthyb")
         open("solver.ctqmc.in", "w") do fout
             for (key, value) in D
                 println(fout, "$key = $value")
@@ -197,7 +197,7 @@ function save_atomic(p_open::Ref{Bool})
     if CImGui.Button("Save It")
         p_open[] = false
         #
-        D = _build_iqist_dict("atomic")
+        D = build_iqist_dict("atomic")
         open("solver.atomic.in", "w") do fout
             for (key, value) in D
                 println(fout, "$key = $value")
@@ -231,7 +231,7 @@ function save_acflow(p_open::Ref{Bool})
     if CImGui.Button("Save It")
         p_open[] = false
         #
-        D = _build_acflow_dict()
+        D = build_acflow_dict()
         open("ac.toml", "w") do fout
             TOML.print(fout, D)
         end
@@ -263,7 +263,7 @@ function save_actest(p_open::Ref{Bool})
     if CImGui.Button("Save It")
         p_open[] = false
         #
-        D = _build_actest_dict()
+        D = build_actest_dict()
         open("act.toml", "w") do fout
             TOML.print(fout, D)
         end
