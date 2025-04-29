@@ -4,7 +4,7 @@
 
 !!! info
 
-    Thank you for using ZenGui. This documentation will help you to be familiar with and explore the ZenGui toolkit. It is just compatible with ZenGui v1.0.1-devel.250426.
+    Thank you for using ZenGui. This documentation will help you to be familiar with and explore the ZenGui toolkit. It is just compatible with ZenGui v1.0.2-devel.250429.
 
 !!! warning
 
