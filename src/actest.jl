@@ -285,7 +285,7 @@ function _actest_general_block()
     #
     # Input: tcorr
     CImGui.SetNextItemWidth(widget_combo_width)
-    tcorr_list = ["yes", "No"]
+    tcorr_list = ["yes", "no"]
     @cstatic id = Cint(1) begin
         @c CImGui.Combo(" Is the noise correlated in imaginary time axis", &id, tcorr_list)
         if id == 0
@@ -299,7 +299,7 @@ function _actest_general_block()
     #
     # Input: offdiag
     CImGui.SetNextItemWidth(widget_combo_width)
-    offdiag_list = ["yes", "No"]
+    offdiag_list = ["yes", "no"]
     @cstatic id = Cint(1) begin
         @c CImGui.Combo(" Is it the offdiagonal correlation function", &id, offdiag_list)
         if id == 0
