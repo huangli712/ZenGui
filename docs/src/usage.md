@@ -16,7 +16,7 @@ The ZenGui is a *menu*-driven GUI. It has four menu groups: *File*, *Edit*, *Sty
 
 ## Change window's style
 
-Please click the menus in *Style* one by one to see what will happen.
+Please click the menus in *Style* one by one to see what will happen. Now ZenGui supports three color styles: classic, dark, and light. You can change the background image of main window as well.
 
 ## Seek helps
 
