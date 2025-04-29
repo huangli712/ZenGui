@@ -18,7 +18,7 @@ Though ZenGui is not a registried Julia package, it is quite easy to install it.
 ```text
 https://github.com/huangli712/ZenGui
 ```
-It should be a compresed file (`ZenGui.tar.gz`). Please uncompress it in your favourite directory, such as /home/your_home/zengui. Then, please setup the environment variable `ZEN_GUI` and make it point to `home/your_home/zengui/src`. In MacOS, you can accomplish this by execute the following command in the terminal:
+It should be a compresed file (`ZenGui.tar.gz`). Please uncompress it in your favourite directory, such as `/home/your_home/zengui`. Then, please setup the environment variable `ZEN_GUI`, which should point to `home/your_home/zengui/src` directory. In MacOS, you can accomplish this by execute the following command in the terminal:
 ```shell
 $ export ZEN_GUI=/home/your_home/zengui/src
 ```
