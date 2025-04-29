@@ -7,9 +7,7 @@ The ZenGui is a general-purpose graphic user interface (GUI) for *ab initio* dyn
 * Quantum impurity solver toolkit (**iQIST**)
 * Analytic continuation tools (**ACFlow** and **ACTest**)
 
-More codes will be supported in the future.
-
-Actually, the purpose of ZeGui is to generate the configuration files or input files for the codes. So, it can not be used to launch the codes to perform calculations. Furthermore, it is unable to parse, analyze, and visualize the calculated results as well.
+More codes will be supported in the future. Actually, the purpose of ZeGui is to generate the configuration files or input files for the codes. So, it can not be used to launch the codes to perform calculations. Furthermore, it is unable to parse, analyze, and visualize the calculated results as well.
 
 Now this code is under heavy development. **SO PLEASE USE IT AT YOUR OWN RISK**.
 
