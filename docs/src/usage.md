@@ -28,13 +28,13 @@ Please use the menu group *Edit*. For example, if we want to configure the *Zen*
 
 ![fig2.png](./assets/fig2.png)
 
-**Figure 2 |** The GUI for the *Zen* package.
+**Figure 2 |** The GUI for the Zen package.
 
-At this window, we can setup the parameters for the *Zen* package easily. Be careful, there are five tabs (*case*, *dft*, *dmft*, *impurity*, and *solver*) in this window. They are related to the five blocks in the configuration file for the *Zen* package. So please click them one by one, and check whether all of the parameters are reasonable and valid. If you want to have a look at the configuration file, please click the *View* button at the bottom of this window. Then ZenGui will popup a new **Preview** window. It looks like as follows (see **Figure 3**):
+At this window, we can setup the parameters for the Zen package easily. Be careful, there are five tabs (*case*, *dft*, *dmft*, *impurity*, and *solver*) in this window. They are related to the five blocks in the configuration file for the Zen package. So please click them one by one, and check whether all of the parameters are reasonable and valid. If you want to have a look at the configuration file, please click the *View* button at the bottom of this window. Then ZenGui will popup a new **Preview** window. It looks like as follows (see **Figure 3**):
 
 ![fig3.png](./assets/fig3.png)
 
-**Figure 3 |** The **Preview** window for the *Zen* package.
+**Figure 3 |** The **Preview** window for the Zen package.
 
 ## Save configure files
 
@@ -46,7 +46,7 @@ Second, please click the menu *File -> Save*. Then a new window is shown (see **
 
 ![fig4.png](./assets/fig4.png)
 
-**Figure 4 |** The **Save It** window for the *Zen* package.
+**Figure 4 |** The **Save It** window for the Zen package.
 
 ## Close ZenGui
 
