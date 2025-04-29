@@ -28,7 +28,7 @@ function create_app_actest(p_open::Ref{Bool})
 
     # Fix size of the window
     window_width = 600.0
-    window_height = 600.0
+    window_height = 625.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
     # For the widgets in the top of this window
