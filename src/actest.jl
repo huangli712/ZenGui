@@ -220,6 +220,15 @@ function _actest_general_block()
     CImGui.SameLine()
     CImGui.TextColored(COL_MAGENTA, "(ntest)$(PTEST.ntest)")
     #
+    # Input: nbins
+    CImGui.SetNextItemWidth(widget_input_width)
+    @cstatic _i = Cint(1) begin
+        @c CImGui.InputInt(" Number of data bins per test", &_i)
+        PTEST.nbins = _i
+    end
+    CImGui.SameLine()
+    CImGui.TextColored(COL_MAGENTA, "(nbins)$(PTEST.nbins)")
+    #
     # Input: wmax
     CImGui.SetNextItemWidth(widget_input_width)
     @cstatic _f = Cdouble(5.0) begin
