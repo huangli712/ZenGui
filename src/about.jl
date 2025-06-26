@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/25
+# Last modified: 2025/06/27
 #
 
 """
@@ -23,16 +23,22 @@ function create_app_about(p_open::Ref{Bool})
 
     # Fix size of the window
     window_width = 400.0
-    window_height = 300.0
+    window_height = 360.0
     CImGui.SetWindowSize(ImVec2(window_width, window_height))
 
     # Show header
     #
-    # We want to make sure `ZenGui` is shown in the middle of the window.
-    text_width = CImGui.CalcTextSize("ZenGui").x
-    offset = (window_width - text_width) / 2.0
+    # Load the logo image
+    image_id, image_width, image_height = load_logo()
+    scale = 20.0
+    image_width = image_width / scale
+    image_height = image_height / scale
+    #
+    # We want to make sure the logo is shown in the middle of the window.
+    offset = (window_width - image_width) / 2.0
     CImGui.SameLine(offset)
-    CImGui.TextColored(COL_MAGENTA, "ZenGui")
+    CImGui.Image(image_id, (image_width, image_height), (0.0, 1.0), (1.0, 0.0))
+    @show "haha"
     #
     CImGui.Spacing()
     CImGui.TextWrapped("A general-purposed graphic user interface for " *

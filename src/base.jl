@@ -147,6 +147,32 @@ function load_texture()
     return CImGui.ImTextureID(texture_id)
 end
 
+function load_logo()
+    # Prepare images
+    #
+    # Setup directory and path for the selected image
+    img_dir = joinpath(ENV["ZEN_GUI"], ".images")
+    img_path = joinpath(img_dir, "logo.png")
+
+    # Load the selected image by the FileIO and Images packages.
+    img = RGBA.(rotr90(FileIO.load(img_path)))
+    width, height = size(img)
+
+    # Setup texture and the related properties by opengl
+    texture_id = GLuint(0)
+    @c glGenTextures(1, &texture_id)
+    glBindTexture(GL_TEXTURE_2D, texture_id)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE)
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0,
+                 GL_RGBA, GL_UNSIGNED_BYTE, reinterpret(UInt8, img))
+
+    # Return an ImTextureID object
+    return CImGui.ImTextureID(texture_id), width, height
+end
+
 """
     setup_flags()
 
