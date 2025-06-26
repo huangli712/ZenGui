@@ -411,7 +411,7 @@ Respond the menu event: iqist. Try to open documentation for the iQIST
 package.
 """
 function handle_menu_iqist(p_open::Ref{Bool})
-    url = "https://huangli712.github.io/projects/iqist_new/index.html"
+    url = "https://huangli712.github.io/projects/iqist/index.html"
     open_url(url)
     p_open[] = false
 end
