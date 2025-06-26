@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/04/25
+# Last modified: 2025/06/27
 #
 
 # Basic algebraic operation for ImVec2.
@@ -90,7 +90,7 @@ function zeng_run()
         FMENU.H_DFERMION && @c handle_menu_dfermion(&FMENU.H_DFERMION)
         FMENU.H_IQIST    && @c handle_menu_iqist(&FMENU.H_IQIST)
         FMENU.H_ACFLOW   && @c handle_menu_acflow(&FMENU.H_ACFLOW)
-        FMENU.H_ACTEST   && @c handle_menu_actest(&FMENU.H_ZENGUI)
+        FMENU.H_ACTEST   && @c handle_menu_actest(&FMENU.H_ACTEST)
         FMENU.H_ZENGUI   && @c handle_menu_zengui(&FMENU.H_ZENGUI)
         FMENU.H_ABOUT    && @c create_app_about(&FMENU.H_ABOUT)
     end
