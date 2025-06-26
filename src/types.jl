@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/05/08
+# Last modified: 2025/06/27
 #
 
 #=
@@ -1533,6 +1533,7 @@ mutable struct ACTEST_PTEST
     lcorr   :: F64
     tcorr   :: Bool
     offdiag :: Bool
+    fpbc    :: Bool
     lpeak   :: Array
 end
 
@@ -1562,6 +1563,7 @@ PTEST = ACTEST_PTEST(
     0.5,      # lcorr
     false,    # tcorr
     false,    # offdiag
+    false,    # fpbc
     [1,2,3]   # lpeak
 )
 
@@ -1592,6 +1594,7 @@ function struct_to_dict(s::ACTEST_PTEST)
         "lcorr"   => s.lcorr,
         "tcorr"   => s.tcorr,
         "offdiag" => s.offdiag,
+        "fpbc"    => s.fpbc,
         "lpeak"   => s.lpeak,
     )
 end
