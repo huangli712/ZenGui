@@ -38,4 +38,4 @@ Sometimes, users might want to generate the documentation by themselves. Please 
 $ julia make.jl
 ```
 
-If everything is OK, you can find the generated documentation at the folder `zengui/docs/build`. Please open the index.html file with your favourite web browser.
+If everything is OK, you can find the generated documentation at the folder `zengui/docs/build`. Please open the `index.html` file with your favourite web browser.
