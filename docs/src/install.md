@@ -18,7 +18,7 @@ Though ZenGui is not a registried Julia package, it is quite easy to install it.
 ```text
 https://github.com/huangli712/ZenGui
 ```
-It should be a compresed file (`ZenGui.tar.gz`). Please uncompress it in your favourite directory, such as `/home/your_home/zengui`. Then, please setup the environment variable `ZEN_GUI`, which should point to `home/your_home/zengui/src` directory. In MacOS, you can accomplish this by execute the following command in the terminal:
+It should be a compresed file (`ZenGui.tar.gz`). Please uncompress it in your favourite directory, such as `/home/your_home/zengui`. Then, please setup the environment variable `ZEN_GUI`, which should point to the `/home/your_home/zengui/src` directory. In MacOS, you can accomplish this by execute the following command in the terminal:
 ```shell
 $ export ZEN_GUI=/home/your_home/zengui/src
 ```
@@ -32,10 +32,10 @@ The official documentation for ZenGui is at the following website:
 https://huangli712.github.io/projects/zengui/index.html
 ```
 
-Sometimes, users might want to generate the documentation by themselves. Please go to the directory zengui/docs, and execute the following command in the terminal:
+Sometimes, users might want to generate the documentation by themselves. Please go to the directory `zengui/docs`, and execute the following command in the terminal:
 
 ```shell
 $ julia make.jl
 ```
 
-If everything is OK, you can find the generated documentation at the folder zengui/docs/build. Please open the index.html file with your favourite web browser.
+If everything is OK, you can find the generated documentation at the folder `zengui/docs/build`. Please open the index.html file with your favourite web browser.
