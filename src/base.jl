@@ -147,6 +147,15 @@ function load_texture()
     return CImGui.ImTextureID(texture_id)
 end
 
+"""
+    load_logo()
+
+Load logo image from the ZenGui/src/.images directory. It will return an
+`ImTextureID` object which is associted with the logo image. Note that the
+logo image will be displayed in the `About` window.
+
+See also: [`load_texture`](@ref).
+"""
 function load_logo()
     # Prepare images
     #
@@ -170,7 +179,7 @@ function load_logo()
                  GL_RGBA, GL_UNSIGNED_BYTE, reinterpret(UInt8, img))
 
     # Return an ImTextureID object
-    return CImGui.ImTextureID(texture_id), width, height
+    return CImGui.ImTextureID(texture_id)
 end
 
 """
