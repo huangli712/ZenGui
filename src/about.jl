@@ -8,7 +8,7 @@
 #
 
 """
-    create_app_about(p_open::Ref{Bool})
+    create_app_about(p_open::Ref{Bool}, logo_id)
 
 Display the `About` window, which is used to show some userful information
 about this ZenGui app.
@@ -28,11 +28,10 @@ function create_app_about(p_open::Ref{Bool}, logo_id)
 
     # Show header
     #
-    # Load the logo image
-    #logo_id = load_logo()
+    # Setup the logo image, which is already loaded in load_logo().
     scale = 20.0
-    logo_width = 4188 / scale
-    logo_height = 1372 / scale
+    logo_width = 4188.0 / scale
+    logo_height = 1372.0 / scale
     #
     # We want to make sure the logo is shown in the middle of the window.
     offset = (window_width - logo_width) / 2.0
