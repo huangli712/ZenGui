@@ -28,7 +28,7 @@ function zeng_run()
     ctx = CImGui.CreateContext()
 
     # Setup color's style for Dear ImGui
-    CImGui.StyleColorsLight()
+    CImGui.StyleColorsDark()
 
     # Setup flags for Dear ImGui, enabling docking and multi-viewport.
     setup_flags()
