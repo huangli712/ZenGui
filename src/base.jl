@@ -28,7 +28,7 @@ function zeng_run()
     ctx = CImGui.CreateContext()
 
     # Setup color's style for Dear ImGui
-    CImGui.StyleColorsDark()
+    CImGui.StyleColorsLight()
 
     # Setup flags for Dear ImGui, enabling docking and multi-viewport.
     setup_flags()
@@ -42,14 +42,26 @@ function zeng_run()
     # Load special fonts if available
     setup_fonts()
 
-    # Global id for texture.
-    # When texture_id is nothing, it means that the texture has not been loaded.
+    # Global id for texture
+    # If texture_id is nothing, it means that the texture has not been loaded.
     texture_id = nothing
+
+    # Global id for logo image
+    # If logo_id is nothing, it means that the logo image has not been loaded.
+    logo_id = nothing
+
+    # Main Event Loop
     CImGui.render(ctx; window_title = "ZenGui") do
         # If texture_id is nothing, we should try to load the image and
         # setup the texture's id.
         if isnothing(texture_id)
             texture_id = load_texture()
+        end
+
+        # If logo_id is nothing, we should try to load the image and
+        # setup the logo's id.
+        if isnothing(logo_id)
+            logo_id = load_logo()
         end
 
         # Setup global menu in the main window
@@ -92,7 +104,7 @@ function zeng_run()
         FMENU.H_ACFLOW   && @c handle_menu_acflow(&FMENU.H_ACFLOW)
         FMENU.H_ACTEST   && @c handle_menu_actest(&FMENU.H_ACTEST)
         FMENU.H_ZENGUI   && @c handle_menu_zengui(&FMENU.H_ZENGUI)
-        FMENU.H_ABOUT    && @c create_app_about(&FMENU.H_ABOUT)
+        FMENU.H_ABOUT    && @c create_app_about(&FMENU.H_ABOUT, logo_id)
     end
 end
 

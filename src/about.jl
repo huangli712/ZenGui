@@ -13,7 +13,7 @@
 Display the `About` window, which is used to show some userful information
 about this ZenGui app.
 """
-function create_app_about(p_open::Ref{Bool})
+function create_app_about(p_open::Ref{Bool}, logo_id)
     # Create the About window, which is modal and can not be resized.
     CImGui.Begin(
         "About ZenGui",
@@ -29,16 +29,15 @@ function create_app_about(p_open::Ref{Bool})
     # Show header
     #
     # Load the logo image
-    image_id, image_width, image_height = load_logo()
+    #logo_id = load_logo()
     scale = 20.0
-    image_width = image_width / scale
-    image_height = image_height / scale
+    logo_width = 4188 / scale
+    logo_height = 1372 / scale
     #
     # We want to make sure the logo is shown in the middle of the window.
-    offset = (window_width - image_width) / 2.0
+    offset = (window_width - logo_width) / 2.0
     CImGui.SameLine(offset)
-    CImGui.Image(image_id, (image_width, image_height), (0.0, 1.0), (1.0, 0.0))
-    @show "haha"
+    CImGui.Image(logo_id, (logo_width, logo_height), (0.0, 1.0), (1.0, 0.0))
     #
     CImGui.Spacing()
     CImGui.TextWrapped("A general-purposed graphic user interface for " *
