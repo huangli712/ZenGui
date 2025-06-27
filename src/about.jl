@@ -39,7 +39,7 @@ function create_app_about(p_open::Ref{Bool}, logo_id)
     CImGui.Image(logo_id, (logo_width, logo_height), (0.0, 1.0), (1.0, 0.0))
     #
     CImGui.Spacing()
-    CImGui.TextWrapped("ZenGui: A general-purposed graphic user interface " *
+    CImGui.TextWrapped("A general-purposed graphic user interface " *
         "for ab initio dynamical mean-field theory codes")
 
     # Vertical space
