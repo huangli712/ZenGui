@@ -282,6 +282,7 @@ struct_to_dict
 
 ```@docs
 load_texture
+load_logo
 setup_flags
 setup_fonts
 setup_window
