@@ -6,7 +6,7 @@ This package is currently under heavy developement. It might be not compatible w
 
 ## Version
 
-v1.0.4-devel.250627
+v1.0.5-devel.250716
 
 ## License
 
