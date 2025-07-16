@@ -4,7 +4,7 @@
 # Author  : Li Huang (huangli@caep.cn)
 # Status  : Unstable
 #
-# Last modified: 2025/06/27
+# Last modified: 2025/07/16
 #
 
 """
@@ -306,19 +306,19 @@ function _actest_general_block()
     CImGui.SameLine()
     CImGui.TextColored(COL_MAGENTA, "(tcorr)$(PTEST.tcorr)")
     #
-    # Input: offdiag
+    # Input: fnpd
     CImGui.SetNextItemWidth(widget_combo_width)
-    offdiag_list = ["yes", "no"]
+    fnpd_list = ["yes", "no"]
     @cstatic id = Cint(1) begin
-        @c CImGui.Combo(" Is it the offdiagonal correlation function", &id, offdiag_list)
+        @c CImGui.Combo(" Is the spectral function with negative weight", &id, fnpd_list)
         if id == 0
-            PTEST.offdiag = true
+            PTEST.fnpd = true
         else
-            PTEST.offdiag = false
+            PTEST.fnpd = false
         end
     end
     CImGui.SameLine()
-    CImGui.TextColored(COL_MAGENTA, "(offdiag)$(PTEST.offdiag)")
+    CImGui.TextColored(COL_MAGENTA, "(fnpd)$(PTEST.fnpd)")
     #
     # Input: fpbc
     CImGui.SetNextItemWidth(widget_combo_width)
