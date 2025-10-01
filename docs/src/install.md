@@ -1,5 +1,3 @@
-# Installation
-
 ## Prerequisite
 
 The ZenGui is a Julia package. So, please make sure that the newest version of Julia language is already installed in your system. Besides the standard library, the ZenGui also relies on the following third-party packages:

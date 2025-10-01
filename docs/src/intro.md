@@ -1,5 +1,3 @@
-# Introduction
-
 The ZenGui is a general-purpose graphic user interface (GUI) for *ab initio* dynamical mean-field theory codes. Originally, it was developed for facilitating the generation of configuration files for the Zen package. Later, it was extended to support the other quantum many-body computation codes developed by myself. Now ZenGui supports the following codes:
 
 * All-in-one DFT + DMFT package (**Zen**)

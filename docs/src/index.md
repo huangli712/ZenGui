@@ -1,4 +1,6 @@
-# ZenGui
+```@raw html
+<img src="./assets/logo.png" alt="logo.png" width="50%" class="center"/>
+```
 
 *A general-purpose graphic user interface for ab initio dynamical mean-field theory codes*
 

@@ -1,12 +1,3 @@
-# Library
-
-## Contents
-
-```@contents
-Pages = ["library.md"]
-Depth = 2
-```
-
 ## Index
 
 ```@index

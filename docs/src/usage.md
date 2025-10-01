@@ -1,5 +1,3 @@
-# Usage
-
 ## Launch the GUI
 
 At first, you should lanuch the GUI. Please execute the following command in the terminal:
