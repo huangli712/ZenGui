@@ -1,4 +1,4 @@
-## Launch the GUI
+## Launch The GUI
 
 At first, you should lanuch the GUI. Please execute the following command in the terminal:
 ```
@@ -12,15 +12,15 @@ Then you can see the main GUI (see **Figure 1**).
 
 The ZenGui is a *menu*-driven GUI. It has four menu groups: *File*, *Edit*, *Style*, and *Help*.
 
-## Change window's style
+## Change Window's Style
 
 Please click the menus in *Style* one by one to see what will happen. Now ZenGui supports three color styles: classic, dark, and light. You can change the background image of main window as well.
 
-## Seek helps
+## Seek Helps
 
 Please use the menu group *Help*. The ZenGui will invoke the default web browser of the OS to open the official documentation for the codes you are interested in.
 
-## Edit configuration files
+## Edit Configuration Files
 
 Please use the menu group *Edit*. For example, if we want to configure the *Zen* package, please click *Edit -> Integrated Package -> Zen*. Then ZenGui will popup a new window. It looks like as follows (see **Figure 2**):
 
@@ -34,7 +34,7 @@ At this window, we can setup the parameters for the Zen package easily. Be caref
 
 **Figure 3 |** The **Preview** window for the Zen package.
 
-## Save configure files
+## Save Configure Files
 
 Well, if every parameters is correctly setup. Now we can try to generate the configuration file and save it.
 
