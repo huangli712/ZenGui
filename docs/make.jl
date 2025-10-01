@@ -4,8 +4,8 @@ using Documenter
 using ZenGui
 
 makedocs(
-    sitename = "ZenGui",
-    clean = false,
+    sitename = "ZenGui: The User Guide",
+    clean = true,
     authors = "Li Huang <huangli@caep.cn> and contributors",
     format = Documenter.HTML(
         prettyurls = false,
@@ -15,10 +15,11 @@ makedocs(
         assets = ["assets/zengui.css"],
         collapselevel = 1,
     ),
+    #format = Documenter.LaTeX(platform = "none"),
     remotes = nothing,
     modules = [ZenGui],
     pages = [
-        "Home" => "index.md",
+        "Welcome" => "index.md",
         "Introduction" => "intro.md",
         "Installation" => "install.md",
         "Usage" => "usage.md",
