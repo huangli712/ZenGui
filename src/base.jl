@@ -218,7 +218,7 @@ function setup_fonts()
     CImGui.AddFontFromFileTTF(
         fonts,
         joinpath(fonts_dir, "FiraCode-Regular.ttf"),
-        32,
+        40,
         C_NULL,
         CImGui.GetGlyphRangesDefault(fonts) # To display the Greek letters
     )
