@@ -36,7 +36,7 @@ function create_app_about(p_open::Ref{Bool}, logo_id)
     # We want to make sure the logo is shown in the middle of the window.
     offset = (window_width - logo_width) / 2.0
     CImGui.SameLine(offset)
-    CImGui.Image(logo_id, (logo_width, logo_height), (0.0, 1.0), (1.0, 0.0))
+    CImGui.Image(ImTextureRef(logo_id), (logo_width, logo_height), (0.0, 1.0), (1.0, 0.0))
     #
     CImGui.Spacing()
     CImGui.TextWrapped("A general-purposed graphic user interface " *
